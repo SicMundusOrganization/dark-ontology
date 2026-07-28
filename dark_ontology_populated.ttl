@@ -1,0 +1,2266 @@
+@prefix : <https://w3id.org/dark-ontology/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dark: <https://w3id.org/dark-ontology/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@base <https://w3id.org/dark-ontology/> .
+
+<https://w3id.org/dark-ontology/> rdf:type owl:Ontology ;
+                                   dcterms:description "An OWL ontology designed to distinguish a persistent person from their temporal manifestations and to represent changes in name, age, role, family, world, and temporal location."@en ;
+                                   dcterms:source "Change of Time Varying Entities, EventCore, Participation, AgentRole" ,
+                                                  "https://github.com/odpa/patterns-repository" ;
+                                   dcterms:title "Dark Ontology: identity and temporal manifestations"@en ;
+                                   vann:preferredNamespacePrefix "dark" ;
+                                   vann:preferredNamespaceUri "https://w3id.org/dark-ontology/" ;
+                                   rdfs:comment "Initial project TBox. The patterns are specialized for the narrative domain of Dark and are not imported automatically in order to avoid unstable remote dependencies."@en ;
+                                   owl:versionInfo "0.1.0" .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/terms/description
+dcterms:description rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/source
+dcterms:source rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/title
+dcterms:title rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/vocab/vann/preferredNamespacePrefix
+vann:preferredNamespacePrefix rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/vocab/vann/preferredNamespaceUri
+vann:preferredNamespaceUri rdf:type owl:AnnotationProperty .
+
+
+###  https://w3id.org/dark-ontology/modelingNote
+dark:modelingNote rdf:type owl:AnnotationProperty ;
+                  rdfs:label "modeling note"@en .
+
+
+###  https://w3id.org/dark-ontology/reusesPattern
+dark:reusesPattern rdf:type owl:AnnotationProperty ;
+                   rdfs:label "reuses pattern"@en .
+
+
+###  https://w3id.org/dark-ontology/supportsCompetencyQuestion
+dark:supportsCompetencyQuestion rdf:type owl:AnnotationProperty ;
+                                rdfs:label "supports competency question"@en .
+
+
+#################################################################
+#    Datatypes
+#################################################################
+
+###  http://www.w3.org/2001/XMLSchema#gYear
+xsd:gYear rdf:type rdfs:Datatype .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.W3id.org/dark-ontology/hasAlternateWorldCounterpart
+<http://www.W3id.org/dark-ontology/hasAlternateWorldCounterpart> rdf:type owl:ObjectProperty ,
+                                                                          owl:SymmetricProperty ;
+                                                                 rdfs:domain dark:Person ;
+                                                                 rdfs:comment "Relates a person to a corresponding person in an alternate narrative world."@en ;
+                                                                 rdfs:label "has alternate-world counterpart"@en .
+
+
+###  http://www.w3id.org/dark-ontology/arrivesInWorld
+<http://www.w3id.org/dark-ontology/arrivesInWorld> rdf:type owl:ObjectProperty ;
+                                                   rdfs:domain dark:TimeTravelEvent ;
+                                                   rdfs:range dark:World ;
+                                                   rdfs:comment "Relates a time travel event to the world in which it arrives."@en ;
+                                                   rdfs:label "arrives in world"@en .
+
+
+###  http://www.w3id.org/dark-ontology/departsFromWorld
+<http://www.w3id.org/dark-ontology/departsFromWorld> rdf:type owl:ObjectProperty ;
+                                                     rdfs:domain dark:TimeTravelEvent ;
+                                                     rdfs:range dark:World ;
+                                                     rdfs:comment "Relates a time travel event to the world from which it departs."@en ;
+                                                     rdfs:label "departs from world"@en .
+
+
+###  http://www.w3id.org/dark-ontology/hasOrganizationMember
+<http://www.w3id.org/dark-ontology/hasOrganizationMember> rdf:type owl:ObjectProperty ;
+                                                          owl:inverseOf dark:belongsToOrganization ;
+                                                          rdfs:domain dark:Organization ;
+                                                          rdfs:range dark:PersonManifestation ;
+                                                          rdfs:comment "Relates an organization to a person manifestation that belongs to it."@en ;
+                                                          rdfs:label "has organization member"@en .
+
+
+###  http://www.w3id.org/dark-ontology/occursInReality
+<http://www.w3id.org/dark-ontology/occursInReality> rdf:type owl:ObjectProperty ;
+                                                    rdfs:domain dark:Event ;
+                                                    rdfs:range <http://www.w3id.org/dark-ontology/Reality> ;
+                                                    rdfs:comment "Relates an event to the narrative reality or branch in which it occurs."@en ;
+                                                    rdfs:label "occurs in reality"@en .
+
+
+###  https://w3id.org/dark-ontology/adoptiveChildOf
+dark:adoptiveChildOf rdf:type owl:ObjectProperty ;
+                     owl:inverseOf dark:adoptiveParentOf ;
+                     rdf:type owl:AsymmetricProperty ,
+                              owl:IrreflexiveProperty ;
+                     rdfs:domain dark:Person ;
+                     rdfs:range dark:Person ;
+                     rdfs:comment "Relates a person to their adoptive parent."@en ;
+                     rdfs:label "adoptive child of"@en .
+
+
+###  https://w3id.org/dark-ontology/adoptiveParentOf
+dark:adoptiveParentOf rdf:type owl:ObjectProperty ,
+                               owl:AsymmetricProperty ,
+                               owl:IrreflexiveProperty ;
+                      rdfs:domain dark:Person ;
+                      rdfs:range dark:Person ;
+                      rdfs:comment "Relates a person to their adopted child."@en ;
+                      rdfs:label "adoptive parent of"@en .
+
+
+###  https://w3id.org/dark-ontology/arrivesAtPlace
+dark:arrivesAtPlace rdf:type owl:ObjectProperty ,
+                             owl:FunctionalProperty ;
+                    rdfs:domain dark:TimeTravelEvent ;
+                    rdfs:range dark:Place ;
+                    rdfs:comment "Relates a time travel event to the place at which it arrives."@en ;
+                    rdfs:label "arrives at place"@en .
+
+
+###  https://w3id.org/dark-ontology/arrivesAtTime
+dark:arrivesAtTime rdf:type owl:ObjectProperty ,
+                            owl:FunctionalProperty ;
+                   rdfs:domain dark:TimeTravelEvent ;
+                   rdfs:range dark:TimeInterval ;
+                   rdfs:comment "Relates a time travel event to its temporal destination."@en ;
+                   rdfs:label "arrives at time"@en .
+
+
+###  https://w3id.org/dark-ontology/belongsToOrganization
+dark:belongsToOrganization rdf:type owl:ObjectProperty ;
+                           rdfs:domain dark:PersonManifestation ;
+                           rdfs:range dark:Organization ;
+                           rdfs:comment "Relates a person manifestation to an organization to which it belongs."@en ;
+                           rdfs:label "belongs to organization"@en .
+
+
+###  https://w3id.org/dark-ontology/built
+dark:built rdf:type owl:ObjectProperty ;
+           owl:inverseOf dark:builtBy ;
+           rdfs:domain dark:PersonManifestation ;
+           rdfs:range dark:TimeTravelDevice ;
+           rdfs:comment "Relates a person manifestation to a device that they constructed."@en ;
+           rdfs:label "built"@en .
+
+
+###  https://w3id.org/dark-ontology/builtBy
+dark:builtBy rdf:type owl:ObjectProperty ;
+             rdfs:domain dark:TimeTravelDevice ;
+             rdfs:range dark:PersonManifestation ;
+             rdfs:comment "Relates a device to the person manifestation that constructed it."@en ;
+             rdfs:label "built by"@en .
+
+
+###  https://w3id.org/dark-ontology/childOf
+dark:childOf rdf:type owl:ObjectProperty ;
+             owl:inverseOf dark:parentOf ;
+             rdf:type owl:IrreflexiveProperty ;
+             rdfs:domain dark:Person ;
+             rdfs:range dark:Person ;
+             rdfs:comment "Relates a person to one of their parents."@en ;
+             rdfs:label "child of"@en .
+
+
+###  https://w3id.org/dark-ontology/departsFromPlace
+dark:departsFromPlace rdf:type owl:ObjectProperty ,
+                               owl:FunctionalProperty ;
+                      rdfs:domain dark:TimeTravelEvent ;
+                      rdfs:range dark:Place ;
+                      rdfs:comment "Relates a time travel event to the place from which it departs."@en ;
+                      rdfs:label "departs from place"@en .
+
+
+###  https://w3id.org/dark-ontology/departsFromTime
+dark:departsFromTime rdf:type owl:ObjectProperty ,
+                              owl:FunctionalProperty ;
+                     rdfs:domain dark:TimeTravelEvent ;
+                     rdfs:range dark:TimeInterval ;
+                     rdfs:comment "Relates a time travel event to its temporal point or interval of departure."@en ;
+                     rdfs:label "departs from time"@en .
+
+
+###  https://w3id.org/dark-ontology/existsDuring
+dark:existsDuring rdf:type owl:ObjectProperty ;
+                  rdfs:range dark:TimeInterval ;
+                  rdfs:comment "Relates a person manifestation to the temporal interval during which it exists."@en ;
+                  rdfs:label "exists during"@en .
+
+
+###  https://w3id.org/dark-ontology/existsInWorld
+dark:existsInWorld rdf:type owl:ObjectProperty ;
+                   rdfs:range dark:World ;
+                   rdfs:comment "Relates an entity to the narrative world in which it exists."@en ;
+                   rdfs:label "exists in world"@en .
+
+
+###  https://w3id.org/dark-ontology/hasFamilyMember
+dark:hasFamilyMember rdf:type owl:ObjectProperty ;
+                     owl:inverseOf dark:memberOfFamily ;
+                     rdfs:domain dark:Family ;
+                     rdfs:range dark:PersonManifestation ;
+                     rdfs:comment "Relates a family unit to one of its person manifestations."@en ;
+                     rdfs:label "has family member"@en .
+
+
+###  https://w3id.org/dark-ontology/hasManifestation
+dark:hasManifestation rdf:type owl:ObjectProperty ;
+                      owl:inverseOf dark:manifestationOf ;
+                      rdfs:domain dark:Person ;
+                      rdfs:range dark:PersonManifestation ;
+                      rdfs:comment "Relates a persistent person to one of their contextualized manifestations."@en ;
+                      rdfs:label "has manifestation"@en .
+
+
+###  https://w3id.org/dark-ontology/hasParticipant
+dark:hasParticipant rdf:type owl:ObjectProperty ;
+                    owl:inverseOf dark:participatesIn ;
+                    rdfs:domain dark:Event ;
+                    rdfs:range dark:PersonManifestation ;
+                    rdfs:comment "Relates an event to a person manifestation participating in it."@en ;
+                    rdfs:label "has participant"@en .
+
+
+###  https://w3id.org/dark-ontology/hasRole
+dark:hasRole rdf:type owl:ObjectProperty ;
+             owl:inverseOf dark:isRoleOf ;
+             rdfs:domain dark:PersonManifestation ;
+             rdfs:range dark:Role ;
+             rdfs:comment "Relates a person manifestation to a role held within a specific narrative context."@en ;
+             rdfs:label "has role"@en .
+
+
+###  https://w3id.org/dark-ontology/hasTraveler
+dark:hasTraveler rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf dark:hasParticipant ;
+                 owl:inverseOf dark:isTravelerIn ;
+                 rdfs:domain dark:TimeTravelEvent ;
+                 rdfs:range dark:PersonManifestation ;
+                 rdfs:comment "Relates a time travel event to a person manifestation that travels in it."@en ;
+                 rdfs:label "has traveler"@en .
+
+
+###  https://w3id.org/dark-ontology/isRoleOf
+dark:isRoleOf rdf:type owl:ObjectProperty ;
+              rdfs:domain dark:Role ;
+              rdfs:range dark:PersonManifestation ;
+              rdfs:comment "Relates a role to the person manifestation that holds it."@en ;
+              rdfs:label "is role of"@en .
+
+
+###  https://w3id.org/dark-ontology/isTravelerIn
+dark:isTravelerIn rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf dark:participatesIn ;
+                  rdfs:domain dark:PersonManifestation ;
+                  rdfs:range dark:TimeTravelEvent ;
+                  rdfs:comment "Relates a person manifestation to a time travel event in which it travels."@en ;
+                  rdfs:label "is traveler in"@en .
+
+
+###  https://w3id.org/dark-ontology/isUsedIn
+dark:isUsedIn rdf:type owl:ObjectProperty ;
+              owl:inverseOf dark:usesDevice ;
+              rdfs:domain dark:TimeTravelDevice ;
+              rdfs:range dark:TimeTravelEvent ;
+              rdfs:comment "Relates a time travel device to a time travel event in which it is used."@en ;
+              rdfs:label "is used in"@en .
+
+
+###  https://w3id.org/dark-ontology/locatedIn
+dark:locatedIn rdf:type owl:ObjectProperty ;
+               rdfs:range dark:Place ;
+               rdfs:comment "Relates a place to a broader place in which it is located."@en ;
+               rdfs:label "located in"@en .
+
+
+###  https://w3id.org/dark-ontology/manifestationOf
+dark:manifestationOf rdf:type owl:ObjectProperty ,
+                              owl:FunctionalProperty ;
+                     rdfs:domain dark:PersonManifestation ;
+                     rdfs:range dark:Person ;
+                     rdfs:comment "Relates a contextualized person manifestation to its persistent personal identity."@en ;
+                     rdfs:label "manifestation of"@en .
+
+
+###  https://w3id.org/dark-ontology/memberOfFamily
+dark:memberOfFamily rdf:type owl:ObjectProperty ;
+                    rdfs:domain dark:PersonManifestation ;
+                    rdfs:range dark:Family ;
+                    rdfs:comment "Relates a person manifestation to the family unit to which it belongs."@en ;
+                    rdfs:label "member of family"@en .
+
+
+###  https://w3id.org/dark-ontology/occursAtPlace
+dark:occursAtPlace rdf:type owl:ObjectProperty ;
+                   rdfs:domain dark:Event ;
+                   rdfs:range dark:Place ;
+                   rdfs:comment "Relates an event to a place at which it occurs."@en ;
+                   rdfs:label "occurs at place"@en .
+
+
+###  https://w3id.org/dark-ontology/occursAtTime
+dark:occursAtTime rdf:type owl:ObjectProperty ;
+                  rdfs:domain dark:Event ;
+                  rdfs:range dark:TemporalEntity ;
+                  rdfs:comment "Relates an event to the temporal interval during which it occurs."@en ;
+                  rdfs:label "occurs at time"@en .
+
+
+###  https://w3id.org/dark-ontology/occursInWorld
+dark:occursInWorld rdf:type owl:ObjectProperty ;
+                   rdfs:domain dark:Event ;
+                   rdfs:range dark:World ;
+                   rdfs:comment "Relates an event to the narrative world in which it occurs."@en ;
+                   rdfs:label "occurs in world"@en .
+
+
+###  https://w3id.org/dark-ontology/parentOf
+dark:parentOf rdf:type owl:ObjectProperty ,
+                       owl:IrreflexiveProperty ;
+              rdfs:domain dark:Person ;
+              rdfs:range dark:Person ;
+              rdfs:comment "Relates a person to one of their children."@en ;
+              rdfs:label "parent of"@en .
+
+
+###  https://w3id.org/dark-ontology/participatesIn
+dark:participatesIn rdf:type owl:ObjectProperty ;
+                    rdfs:domain dark:PersonManifestation ;
+                    rdfs:range dark:Event ;
+                    rdfs:comment "Relates a person manifestation to an event in which it participates."@en ;
+                    rdfs:label "participates in"@en .
+
+
+###  https://w3id.org/dark-ontology/passesThroughPlace
+dark:passesThroughPlace rdf:type owl:ObjectProperty ;
+                        rdfs:domain dark:TimeTravelEvent ;
+                        rdfs:range dark:Place ;
+                        rdfs:comment "Relates a time travel event to an intermediate place through which it passes."@en ;
+                        rdfs:label "passes through place"@en .
+
+
+###  https://w3id.org/dark-ontology/siblingOf
+dark:siblingOf rdf:type owl:ObjectProperty ,
+                        owl:SymmetricProperty ,
+                        owl:IrreflexiveProperty ;
+               rdfs:domain dark:Person ;
+               rdfs:range dark:Person ;
+               rdfs:comment "Relates a person to one of their siblings."@en ;
+               rdfs:label "sibling of"@en .
+
+
+###  https://w3id.org/dark-ontology/spouseOf
+dark:spouseOf rdf:type owl:ObjectProperty ,
+                       owl:SymmetricProperty ,
+                       owl:IrreflexiveProperty ;
+              rdfs:domain dark:Person ;
+              rdfs:range dark:Person ;
+              rdfs:comment "Relates a person to their spouse."@en ;
+              rdfs:label "spouse of"@en .
+
+
+###  https://w3id.org/dark-ontology/usesDevice
+dark:usesDevice rdf:type owl:ObjectProperty ;
+                rdfs:domain dark:TimeTravelEvent ;
+                rdfs:range dark:TimeTravelDevice ;
+                rdfs:comment "Relates a time travel event to the device or mechanism used to enable it."@en ;
+                rdfs:label "uses device"@en .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  https://w3id.org/dark-ontology/hasAge
+dark:hasAge rdf:type owl:DatatypeProperty ,
+                     owl:FunctionalProperty ;
+            rdfs:domain dark:PersonManifestation ;
+            rdfs:range xsd:nonNegativeInteger ;
+            rdfs:comment "Relates a person manifestation to its age within a specific narrative context."@en ;
+            rdfs:label "has age"@en .
+
+
+###  https://w3id.org/dark-ontology/hasCanonicalName
+dark:hasCanonicalName rdf:type owl:DatatypeProperty ,
+                               owl:FunctionalProperty ;
+                      rdfs:domain dark:Person ;
+                      rdfs:range xsd:string ;
+                      rdfs:comment "Relates a persistent person to the canonical name used to identify them in the ontology."@en ;
+                      rdfs:label "has canonical name"@en .
+
+
+###  https://w3id.org/dark-ontology/hasDescription
+dark:hasDescription rdf:type owl:DatatypeProperty ;
+                    rdfs:range xsd:string ;
+                    rdfs:comment "Provides a textual description of an entity."@en ;
+                    rdfs:label "has description"@en .
+
+
+###  https://w3id.org/dark-ontology/hasManifestationName
+dark:hasManifestationName rdf:type owl:DatatypeProperty ,
+                                   owl:FunctionalProperty ;
+                          rdfs:domain dark:PersonManifestation ;
+                          rdfs:range xsd:string ;
+                          rdfs:comment "Relates a person manifestation to the name or alias used in that specific narrative context."@en ;
+                          rdfs:label "has manifestation name"@en .
+
+
+###  https://w3id.org/dark-ontology/hasSourceReference
+dark:hasSourceReference rdf:type owl:DatatypeProperty ;
+                        rdfs:range xsd:anyURI ;
+                        rdfs:comment "Provides a textual reference to a source supporting the modeled information."@en ;
+                        rdfs:label "has source reference"@en .
+
+
+###  https://w3id.org/dark-ontology/hasYearValue
+dark:hasYearValue rdf:type owl:DatatypeProperty ,
+                           owl:FunctionalProperty ;
+                  rdfs:domain dark:Year ;
+                  rdfs:range xsd:gYear ;
+                  rdfs:comment "Relates a year individual to its numerical calendar value.e"@en ;
+                  rdfs:label "has year value"@en .
+
+
+###  https://w3id.org/dark-ontology/isIntentional
+dark:isIntentional rdf:type owl:DatatypeProperty ,
+                            owl:FunctionalProperty ;
+                   rdfs:domain dark:TimeTravelEvent ;
+                   rdfs:range xsd:boolean ;
+                   rdfs:comment "Indicates whether the time travel event was intentionally initiated by the traveler."@en ;
+                   rdfs:label "is intentional"@en .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.co-ode.org/ontologies/ont.owl#CavePassage
+<http://www.co-ode.org/ontologies/ont.owl#CavePassage> rdf:type owl:Class ;
+                                                       rdfs:subClassOf dark:TimeTravelDevice ;
+                                                       rdfs:comment "A passage through the Winden caves that functions as a time travel mechanism within a specific world."@en ;
+                                                       rdfs:label "Cave passage"@en .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#InterworldSpace
+<http://www.co-ode.org/ontologies/ont.owl#InterworldSpace> rdf:type owl:Class ;
+                                                           rdfs:subClassOf dark:Place .
+
+
+###  http://www.w3id.org/dark-ontology/Reality
+<http://www.w3id.org/dark-ontology/Reality> rdf:type owl:Class ;
+                                            rdfs:comment "A reality is a distinct narrative branch in which events may unfold differently while involving the same worlds, persons, or temporal locations." ;
+                                            rdfs:label "Reality"@en .
+
+
+###  https://w3id.org/dark-ontology/ApocalypseEvent
+dark:ApocalypseEvent rdf:type owl:Class ;
+                     rdfs:subClassOf dark:Event ;
+                     rdfs:comment "An event representing an apocalypse occurring in a specific world and temporal context."@en ;
+                     rdfs:label "Apocalypse event"@en .
+
+
+###  https://w3id.org/dark-ontology/DisappearanceEvent
+dark:DisappearanceEvent rdf:type owl:Class ;
+                        rdfs:subClassOf dark:Event ;
+                        rdfs:comment "An event representing the disappearance of a person from a specific temporal and narrative context."@en ;
+                        rdfs:label "Disappearance Event"@en .
+
+
+###  https://w3id.org/dark-ontology/Event
+dark:Event rdf:type owl:Class ;
+           owl:disjointWith dark:Person ,
+                            dark:PersonManifestation ;
+           rdfs:comment "A narrative occurrence involving participants and contextual information such as time, place, world, and reality."@en ;
+           rdfs:label "Event"@en ;
+           dark:reusesPattern "EventCore" .
+
+
+###  https://w3id.org/dark-ontology/Family
+dark:Family rdf:type owl:Class ;
+            owl:disjointWith dark:Role ;
+            rdfs:comment "A family unit whose members are represented through specific person manifestations."@en ;
+            rdfs:label "Family"@en .
+
+
+###  https://w3id.org/dark-ontology/MeetingEvent
+dark:MeetingEvent rdf:type owl:Class ;
+                  rdfs:subClassOf dark:Event ;
+                  rdfs:comment "An event representing a meeting between two or more person manifestations in a specific temporal and narrative context."@en ;
+                  rdfs:label "Meeting Event"@en .
+
+
+###  https://w3id.org/dark-ontology/Organization
+dark:Organization rdf:type owl:Class ;
+                  rdfs:comment "A structured group to which person manifestations may belong and within which they may hold specific roles."@en ;
+                  rdfs:label "Organization"@en .
+
+
+###  https://w3id.org/dark-ontology/OrganizationRole
+dark:OrganizationRole rdf:type owl:Class ;
+                      rdfs:subClassOf dark:Role ;
+                      rdfs:comment "A role held by a person manifestation within an organization."@en ;
+                      rdfs:label "Organization role"@en ;
+                      dark:reusesPattern "AgentRole" .
+
+
+###  https://w3id.org/dark-ontology/Person
+dark:Person rdf:type owl:Class ;
+            owl:disjointWith dark:PersonManifestation ;
+            rdfs:comment "A persistent personal identity, distinct from its contextualized temporal manifestations."@en ;
+            rdfs:label "Person"@en ;
+            dark:reusesPattern "Change of Time Varying Entities" ;
+            dark:supportsCompetencyQuestion "CQ1: Which temporal manifestations belong to the same person?"@en ,
+                                            "CQ4: Which persons assume different names across their temporal manifestations?"@en .
+
+
+###  https://w3id.org/dark-ontology/PersonManifestation
+dark:PersonManifestation rdf:type owl:Class ;
+                         rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                           owl:onProperty dark:manifestationOf ;
+                                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                           owl:onClass dark:Person
+                                         ] ;
+                         rdfs:comment "A manifestation of a person within a specific temporal and narrative context."@en ;
+                         rdfs:label "Person manifestation"@en ;
+                         dark:reusesPattern "Change of Time Varying Entities" .
+
+
+###  https://w3id.org/dark-ontology/Place
+dark:Place rdf:type owl:Class ;
+           owl:disjointWith dark:TimeInterval ,
+                            dark:World ;
+           rdfs:comment "A spatial entity in which events may occur or from which time travel events may depart or arrive."@en ;
+           rdfs:label "Place"@en .
+
+
+###  https://w3id.org/dark-ontology/ProfessionalRole
+dark:ProfessionalRole rdf:type owl:Class ;
+                      rdfs:subClassOf dark:Role ;
+                      rdfs:comment "A role representing a profession or occupational function held by a person manifestation."@en ;
+                      rdfs:label "Professional role"@en ;
+                      dark:reusesPattern "AgentRole" .
+
+
+###  https://w3id.org/dark-ontology/Role
+dark:Role rdf:type owl:Class ;
+          rdfs:comment "A function, position, or social capacity held by a person manifestation within a specific narrative context.\""@en ;
+          rdfs:label "Role"@en ;
+          dark:reusesPattern "AgentRole" .
+
+
+###  https://w3id.org/dark-ontology/TemporalEntity
+dark:TemporalEntity rdf:type owl:Class ;
+                    rdfs:comment "An entity representing a temporal dimension, such as an interval or a specific year."@en ;
+                    rdfs:label "Temporal entity"@en .
+
+
+###  https://w3id.org/dark-ontology/TimeInterval
+dark:TimeInterval rdf:type owl:Class ;
+                  rdfs:subClassOf dark:TemporalEntity ;
+                  rdfs:comment "A temporal period used to represent when an event occurs or when a person manifestation exists."@en ;
+                  rdfs:label "Time interval"@en .
+
+
+###  https://w3id.org/dark-ontology/TimeTravelDevice
+dark:TimeTravelDevice rdf:type owl:Class ;
+                      rdfs:comment "A device or mechanism used to enable a time travel event."@en ;
+                      rdfs:label "Time travel device"@en .
+
+
+###  https://w3id.org/dark-ontology/TimeTravelEvent
+dark:TimeTravelEvent rdf:type owl:Class ;
+                     rdfs:subClassOf dark:Event ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty dark:hasTraveler ;
+                                       owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                       owl:onClass dark:PersonManifestation
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty dark:arrivesAtTime ;
+                                       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                       owl:onClass dark:TimeInterval
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty dark:departsFromTime ;
+                                       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                       owl:onClass dark:TimeInterval
+                                     ] ;
+                     rdfs:comment "An event connecting a departure time with an arrival time."@en ;
+                     rdfs:label "Time travel event"@en ;
+                     dark:reusesPattern "EventCore" .
+
+
+###  https://w3id.org/dark-ontology/TimeTraveler
+dark:TimeTraveler rdf:type owl:Class ;
+                  owl:equivalentClass [ owl:intersectionOf ( dark:Person
+                                                             [ rdf:type owl:Restriction ;
+                                                               owl:onProperty dark:hasManifestation ;
+                                                               owl:someValuesFrom [ owl:intersectionOf ( dark:PersonManifestation
+                                                                                                         [ rdf:type owl:Restriction ;
+                                                                                                           owl:onProperty dark:isTravelerIn ;
+                                                                                                           owl:someValuesFrom dark:TimeTravelEvent
+                                                                                                         ]
+                                                                                                       ) ;
+                                                                                    rdf:type owl:Class
+                                                                                  ]
+                                                             ]
+                                                           ) ;
+                                        rdf:type owl:Class
+                                      ] ;
+                  rdfs:comment "A person inferred as a time traveler when at least one of their manifestations is related through isTravelerIn to a time travel event."@en ;
+                  rdfs:label "Time traveler"@en .
+
+
+###  https://w3id.org/dark-ontology/World
+dark:World rdf:type owl:Class ;
+           rdfs:comment "A narrative world in which persons, manifestations, places, and events may exist or occur."@en ;
+           rdfs:label "World"@en .
+
+
+###  https://w3id.org/dark-ontology/Year
+dark:Year rdf:type owl:Class ;
+          rdfs:subClassOf dark:TimeInterval ;
+          rdfs:comment "A narrative year represented as an individual."@en ;
+          rdfs:label "Year"@en .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  https://w3id.org/dark-ontology/Adam
+dark:Adam rdf:type owl:NamedIndividual ,
+                   dark:PersonManifestation ;
+          dark:belongsToOrganization dark:SicMundus ;
+          dark:existsInWorld dark:AdamWorld ;
+          dark:hasRole dark:SicMundusLeaderRole ;
+          dark:manifestationOf dark:JonasKahnwald ;
+          dark:hasManifestationName "Adam" ;
+          rdfs:comment "The elderly manifestation of Jonas Kahnwald and the leader of Sic Mundus."@en ;
+          rdfs:label "Adam"@en .
+
+
+###  https://w3id.org/dark-ontology/AdamTravel01_1921_2020
+dark:AdamTravel01_1921_2020 rdf:type owl:NamedIndividual ,
+                                     dark:TimeTravelEvent ;
+                            <http://www.w3id.org/dark-ontology/arrivesInWorld> dark:AdamWorld ;
+                            <http://www.w3id.org/dark-ontology/departsFromWorld> dark:AdamWorld ;
+                            <http://www.w3id.org/dark-ontology/occursInReality> dark:FirstReality ;
+                            dark:arrivesAtTime dark:Year_2020 ;
+                            dark:departsFromTime dark:Year_1921 ;
+                            dark:hasTraveler dark:Adam ;
+                            dark:usesDevice dark:GodParticle ;
+                            dark:isIntentional "true"^^xsd:boolean ;
+                            rdfs:comment "An intentional time travel event in which Adam travels from 1921 to 2020 and kills Martha in front of Jonas in an attempt to preserve the temporal cycle."@en ;
+                            rdfs:label "Adam's journey from 1921 to 2020"@en .
+
+
+###  https://w3id.org/dark-ontology/AdamTravel02_2053_2020
+dark:AdamTravel02_2053_2020 rdf:type owl:NamedIndividual ,
+                                     dark:TimeTravelEvent ;
+                            <http://www.w3id.org/dark-ontology/arrivesInWorld> dark:AdamWorld ;
+                            <http://www.w3id.org/dark-ontology/departsFromWorld> dark:AdamWorld ;
+                            <http://www.w3id.org/dark-ontology/occursInReality> dark:ThirdReality ;
+                            dark:arrivesAtTime dark:Year_2020 ;
+                            dark:departsFromTime dark:Year_2053 ;
+                            dark:hasTraveler dark:Adam ;
+                            dark:isIntentional "true"^^xsd:boolean ;
+                            rdfs:comment "After Claudia reveals the existence of the origin world, Adam travels from 2053 to the moment of the 2020 apocalypse and saves Jonas so that he can break the temporal knot."@en ;
+                            rdfs:label "Adam's journey from 2053 to 2020"@en .
+
+
+###  https://w3id.org/dark-ontology/AdamTravel03_2020_2019
+dark:AdamTravel03_2020_2019 rdf:type owl:NamedIndividual ,
+                                     dark:TimeTravelEvent ;
+                            <http://www.w3id.org/dark-ontology/arrivesInWorld> dark:EvaWorld ;
+                            <http://www.w3id.org/dark-ontology/departsFromWorld> dark:AdamWorld ;
+                            <http://www.w3id.org/dark-ontology/occursInReality> dark:ThirdReality ;
+                            dark:arrivesAtTime dark:Year_2019 ;
+                            dark:departsFromTime dark:Year_2020 ;
+                            dark:hasTraveler dark:Adam ,
+                                             dark:Jonas_2019 ;
+                            dark:usesDevice dark:GoldenSphere ;
+                            dark:isIntentional "true"^^xsd:boolean ;
+                            rdfs:comment "Adam takes Jonas from Adam's world in 2020 to Eva's world in 2019 and explains how he can reach the origin world and break the temporal knot."@en ;
+                            rdfs:label "Adam's journey from 2020 to 2019"@en .
+
+
+###  https://w3id.org/dark-ontology/AdamTravel04_2019_2052
+dark:AdamTravel04_2019_2052 rdf:type owl:NamedIndividual ,
+                                     dark:TimeTravelEvent ;
+                            <http://www.w3id.org/dark-ontology/arrivesInWorld> dark:EvaWorld ;
+                            <http://www.w3id.org/dark-ontology/departsFromWorld> dark:EvaWorld ;
+                            <http://www.w3id.org/dark-ontology/occursInReality> dark:ThirdReality ;
+                            dark:arrivesAtTime dark:Year_2052 ;
+                            dark:departsFromTime dark:Year_2019 ;
+                            dark:hasTraveler dark:Adam ;
+                            dark:usesDevice dark:CavePassage_EvaWorld ;
+                            rdfs:comment "After entrusting Jonas with the mission of reaching the origin world and breaking the temporal knot, Adam travels from Eva's world in 2019 to 2052 to meet Eva."@en ;
+                            rdfs:label "Adam's journey from 2019 to 2052"@en .
+
+
+###  https://w3id.org/dark-ontology/AdamWorld
+dark:AdamWorld rdf:type owl:NamedIndividual ,
+                        dark:World ;
+               owl:differentFrom dark:EvaWorld ,
+                                 dark:OriginWorld ;
+               rdfs:comment "The narrative world associated with Adam and the original version of Jonas Kahnwald."@en ;
+               rdfs:label "Adam's world"@en .
+
+
+###  https://w3id.org/dark-ontology/AdultElisabeth
+dark:AdultElisabeth rdf:type owl:NamedIndividual ,
+                             dark:PersonManifestation ;
+                    rdfs:label "Elisabeth Doppler"@en .
+
+
+###  https://w3id.org/dark-ontology/Agnes
+dark:Agnes rdf:type owl:NamedIndividual ,
+                    dark:PersonManifestation ;
+           dark:memberOfFamily dark:NielsenFamily ;
+           dark:hasManifestationName "Agnes Nielsen" ;
+           rdfs:comment "A manifestation of Agnes Nielsen, daughter of Bartosz Tiedemann and Silja Tiedemann."@en ;
+           rdfs:label "Agnes Nielsen"@en .
+
+
+###  https://w3id.org/dark-ontology/AgnesNielsen
+dark:AgnesNielsen rdf:type owl:NamedIndividual ,
+                           dark:Person ;
+                  dark:hasCanonicalName "Agnes Nielsen" ;
+                  rdfs:label "Agnes Nielsen"@en .
+
+
+###  https://w3id.org/dark-ontology/Aleksander
+dark:Aleksander rdf:type owl:NamedIndividual ;
+                dark:hasRole dark:NuclearPlantDirector ;
+                dark:manifestationOf dark:AleksanderTiedemann ;
+                dark:hasManifestationName "Aleksander Tiedemann" ;
+                rdfs:label "Aleksander Tiedemann"@en .
+
+
+###  https://w3id.org/dark-ontology/AleksanderTiedemann
+dark:AleksanderTiedemann rdf:type owl:NamedIndividual ,
+                                  dark:Person ;
+                         dark:parentOf dark:BartoszTiedemann ;
+                         dark:hasCanonicalName "Aleksander Tiedemann" ;
+                         rdfs:label "Aleksander Tiedemann"@en .
+
+
+###  https://w3id.org/dark-ontology/Apocalypse_2019_EvaWorld
+dark:Apocalypse_2019_EvaWorld rdf:type owl:NamedIndividual ,
+                                       dark:ApocalypseEvent ;
+                              <http://www.w3id.org/dark-ontology/occursInReality> dark:FirstReality ;
+                              dark:occursAtTime dark:Year_2019 ;
+                              dark:occursInWorld dark:EvaWorld ;
+                              rdfs:comment "An apocalypse event occurring in Eva's world in 2019."@en ;
+                              rdfs:label "The 2019 apocalypse in Eva's world"@en .
+
+
+###  https://w3id.org/dark-ontology/Apocalypse_2020_AdamWorld
+dark:Apocalypse_2020_AdamWorld rdf:type owl:NamedIndividual ,
+                                        dark:ApocalypseEvent ;
+                               <http://www.w3id.org/dark-ontology/occursInReality> dark:FirstReality ;
+                               dark:occursAtTime dark:Year_2020 ;
+                               dark:occursInWorld dark:AdamWorld ;
+                               rdfs:comment "An apocalypse event occurring in Adam's world in 2020."@en ;
+                               rdfs:label "The 2020 apocalypse in Adam's world"@en .
+
+
+###  https://w3id.org/dark-ontology/Bartosz
+dark:Bartosz rdf:type owl:NamedIndividual ,
+                      dark:PersonManifestation ;
+             dark:existsInWorld dark:AdamWorld ;
+             dark:manifestationOf dark:BartoszTiedemann ;
+             dark:memberOfFamily dark:TiedemannFamily ;
+             dark:hasManifestationName "Bartosz Tiedemann" ;
+             rdfs:label "Bartosz Tiedemann"@en .
+
+
+###  https://w3id.org/dark-ontology/BartoszTiedemann
+dark:BartoszTiedemann rdf:type owl:NamedIndividual ,
+                               dark:Person ;
+                      dark:parentOf dark:AgnesNielsen ,
+                                    dark:NoahTauber ;
+                      dark:spouseOf dark:SiljaTiedemann ;
+                      dark:hasCanonicalName "Bartosz Tiedemann" ;
+                      rdfs:comment "The persistent personal identity of Bartosz Tiedemann across his temporal manifestations."@en ;
+                      rdfs:label "Bartosz Tiedemann"@en .
+
+
+###  https://w3id.org/dark-ontology/BartoszTravel01_2020_1987
+dark:BartoszTravel01_2020_1987 rdf:type owl:NamedIndividual ,
+                                        dark:TimeTravelEvent ;
+                               dark:hasTraveler dark:Bartosz ,
+                                                dark:Elisabeth ,
+                                                dark:Franziska ,
+                                                dark:Magnus ,
+                                                dark:Martha_2019_AdamWorld ;
+                               dark:usesDevice dark:PortableTimeMachine ;
+                               dark:isIntentional "true"^^xsd:boolean ;
+                               rdfs:comment "An intentional time travel event in which Bartosz uses the portable time machine to take Martha, Magnus, Franziska, and Elisabeth from 2020 to 1987 and demonstrate that time travel is real."@en ;
+                               rdfs:label "Bartosz, Martha, Magnus, Franziska, and Elisabeth's journey from 2020 to 1987"@en .
+
+
+###  https://w3id.org/dark-ontology/BartoszTravel02_1987_2020
+dark:BartoszTravel02_1987_2020 rdf:type owl:NamedIndividual ,
+                                        dark:TimeTravelEvent ;
+                               dark:hasTraveler dark:Bartosz ,
+                                                dark:Elisabeth ,
+                                                dark:Franziska ,
+                                                dark:Magnus ,
+                                                dark:Martha_2019_AdamWorld ;
+                               dark:usesDevice dark:PortableTimeMachine ;
+                               dark:isIntentional "true"^^xsd:boolean ;
+                               rdfs:comment "An intentional time travel event in which Bartosz, Martha, Magnus, Franziska, and Elisabeth return from 1987 to 2020 using the portable time machine."@en ;
+                               rdfs:label "Bartosz, Martha, Magnus, Franziska, and Elisabeth's return journey from 1987 to 2020"@en .
+
+
+###  https://w3id.org/dark-ontology/BetweenWorlds
+dark:BetweenWorlds rdf:type owl:NamedIndividual ,
+                            <http://www.co-ode.org/ontologies/ont.owl#InterworldSpace> ;
+                   rdfs:comment "A transitional space connecting different narrative worlds during the creation of AdamWorld and EvaWorld."@en ;
+                   rdfs:label "Between the worlds"@en .
+
+
+###  https://w3id.org/dark-ontology/BunkerPortal
+dark:BunkerPortal rdf:type owl:NamedIndividual ,
+                           dark:TimeTravelDevice ;
+                  rdfs:comment "A temporal portal associated with the Doppler bunker."@en ;
+                  rdfs:label "Bunker portal"@en .
+
+
+###  https://w3id.org/dark-ontology/CavePassage_AdamWorld
+dark:CavePassage_AdamWorld rdf:type owl:NamedIndividual ,
+                                    <http://www.co-ode.org/ontologies/ont.owl#CavePassage> ;
+                           dark:existsInWorld dark:AdamWorld ;
+                           rdfs:comment "The temporal cave passage located in Adam's world"@en ;
+                           rdfs:label "Cave passage in Adam's world"@en .
+
+
+###  https://w3id.org/dark-ontology/CavePassage_EvaWorld
+dark:CavePassage_EvaWorld rdf:type owl:NamedIndividual ,
+                                   <http://www.co-ode.org/ontologies/ont.owl#CavePassage> ;
+                          dark:existsInWorld dark:EvaWorld ;
+                          rdfs:comment "The temporal cave passage located in Eva's world."@en ;
+                          rdfs:label "Cave passage in Eva's world"@en .
+
+
+###  https://w3id.org/dark-ontology/Charlotte
+dark:Charlotte rdf:type owl:NamedIndividual ,
+                        dark:PersonManifestation ;
+               dark:hasRole dark:PoliceOfficer ;
+               dark:manifestationOf dark:CharlotteDoppler ;
+               dark:hasManifestationName "Charlotte Doppler" ;
+               rdfs:label "Charlotte Doppler"@en .
+
+
+###  https://w3id.org/dark-ontology/CharlotteDoppler
+dark:CharlotteDoppler rdf:type owl:NamedIndividual ,
+                               dark:Person ;
+                      dark:parentOf dark:ElisabethDoppler ,
+                                    dark:FranziskaDoppler ;
+                      dark:spouseOf dark:PeterDoppler ;
+                      dark:hasCanonicalName "Charlotte Doppler" ;
+                      rdfs:label "Charlotte Doppler"@en .
+
+
+###  https://w3id.org/dark-ontology/CharlotteTravel01_2020_2053
+dark:CharlotteTravel01_2020_2053 rdf:type owl:NamedIndividual ,
+                                          dark:TimeTravelEvent ;
+                                 <http://www.w3id.org/dark-ontology/arrivesInWorld> dark:AdamWorld ;
+                                 <http://www.w3id.org/dark-ontology/departsFromWorld> dark:AdamWorld ;
+                                 dark:arrivesAtTime dark:Year_2053 ;
+                                 dark:departsFromPlace dark:WindenNuclearPlant ;
+                                 dark:departsFromTime dark:Year_2020 ;
+                                 dark:hasTraveler dark:Charlotte ;
+                                 dark:usesDevice dark:GodParticle ;
+                                 dark:isIntentional "false"^^xsd:boolean ;
+                                 rdfs:comment "During the 2020 apocalypse, Charlotte touches adult Elisabeth through the temporal portal in the nuclear power plant and is unintentionally transported from 2020 to 2053."@en ;
+                                 rdfs:label "Charlotte's journey from 2020 to 2053"@en .
+
+
+###  https://w3id.org/dark-ontology/Claudia
+dark:Claudia rdf:type owl:NamedIndividual ,
+                      dark:PersonManifestation ;
+             dark:hasRole dark:NuclearPlantDirector ;
+             dark:hasManifestationName "Claudia Tiedemann" ;
+             rdfs:label "Claudia Tiedemann"@en .
+
+
+###  https://w3id.org/dark-ontology/ClaudiaTiedemann
+dark:ClaudiaTiedemann rdf:type owl:NamedIndividual ,
+                               dark:Person ;
+                      dark:hasCanonicalName "Claudia Tiedemann" ;
+                      rdfs:label "Claudia Tiedemann"@en .
+
+
+###  https://w3id.org/dark-ontology/ClaudiaTravel01_1987_2020
+dark:ClaudiaTravel01_1987_2020 rdf:type owl:NamedIndividual ,
+                                        dark:TimeTravelEvent ;
+                               <http://www.w3id.org/dark-ontology/arrivesInWorld> dark:AdamWorld ;
+                               <http://www.w3id.org/dark-ontology/departsFromWorld> dark:AdamWorld ;
+                               dark:arrivesAtTime dark:Year_2020 ;
+                               dark:departsFromTime dark:Year_1987 ;
+                               dark:hasTraveler dark:Claudia ;
+                               dark:usesDevice dark:PortableTimeMachine ;
+                               dark:isIntentional "true"^^xsd:boolean ;
+                               rdfs:comment "Claudia uses the portable time machine for the first time and intentionally travels from 1987 to 2020, where she discovers the consequences of the apocalypse and sees her daughter Regina suffering from cancer."@en ;
+                               rdfs:label "Claudia's journey from 1987 to 2020"@en .
+
+
+###  https://w3id.org/dark-ontology/ClaudiaTravel02_2020_1987
+dark:ClaudiaTravel02_2020_1987 rdf:type owl:NamedIndividual ,
+                                        dark:TimeTravelEvent ;
+                               <http://www.w3id.org/dark-ontology/arrivesInWorld> dark:AdamWorld ;
+                               <http://www.w3id.org/dark-ontology/departsFromWorld> dark:AdamWorld ;
+                               dark:departsFromTime dark:Year_2020 ;
+                               dark:hasTraveler dark:Claudia ;
+                               dark:usesDevice dark:PortableTimeMachine ;
+                               dark:isIntentional "true"^^xsd:boolean ;
+                               rdfs:comment "After learning about Regina's illness and the future consequences of the temporal cycle, Claudia intentionally returns from 2020 to 1987."@en ;
+                               rdfs:label "Claudia's return journey from 2020 to 1987"@en .
+
+
+###  https://w3id.org/dark-ontology/Clockmaker
+dark:Clockmaker rdf:type owl:NamedIndividual ,
+                         dark:ProfessionalRole ;
+                rdfs:label "Clockmaker"@en .
+
+
+###  https://w3id.org/dark-ontology/DopplerBunker
+dark:DopplerBunker rdf:type owl:NamedIndividual ,
+                            dark:Place ;
+                   dark:locatedIn dark:Winden ;
+                   rdfs:comment "A bunker in Winden involved in several temporal experiments and events."@en ;
+                   rdfs:label "Doppler Bunker"@en .
+
+
+###  https://w3id.org/dark-ontology/DopplerFamily
+dark:DopplerFamily rdf:type owl:NamedIndividual ,
+                            dark:Family ;
+                   rdfs:label "Doppler family"@en .
+
+
+###  https://w3id.org/dark-ontology/Egon
+dark:Egon rdf:type owl:NamedIndividual ,
+                   dark:PersonManifestation ;
+          dark:manifestationOf dark:EgonTiedemann ;
+          dark:hasManifestationName "Egon Tiedemann" ;
+          rdfs:label "Egon Tiedemann"@en .
+
+
+###  https://w3id.org/dark-ontology/EgonTiedemann
+dark:EgonTiedemann rdf:type owl:NamedIndividual ,
+                            dark:Person ;
+                   dark:parentOf dark:SiljaTiedemann ;
+                   dark:hasCanonicalName "Egon Tiedemann" ;
+                   rdfs:label "Egon Tiedemann"@en .
+
+
+###  https://w3id.org/dark-ontology/Elisabeth
+dark:Elisabeth rdf:type owl:NamedIndividual ,
+                        dark:PersonManifestation ;
+               dark:manifestationOf dark:ElisabethDoppler ;
+               dark:hasManifestationName "Elisabeth Doppler" ;
+               rdfs:label "Elisabeth Doppler"@en .
+
+
+###  https://w3id.org/dark-ontology/ElisabethAndCharlotteTravel01_2053_2041
+dark:ElisabethAndCharlotteTravel01_2053_2041 rdf:type owl:NamedIndividual ,
+                                                      dark:TimeTravelEvent ;
+                                             <http://www.w3id.org/dark-ontology/arrivesInWorld> dark:AdamWorld ;
+                                             <http://www.w3id.org/dark-ontology/departsFromWorld> dark:AdamWorld ;
+                                             dark:arrivesAtTime dark:Year_2041 ;
+                                             dark:departsFromTime dark:Year_2053 ;
+                                             dark:hasTraveler dark:AdultElisabeth ,
+                                                              dark:Charlotte ;
+                                             dark:usesDevice dark:GodParticle ;
+                                             dark:isIntentional "true"^^xsd:boolean ;
+                                             rdfs:comment "An intentional time travel event in which adult Elisabeth and Charlotte travel from 2053 to 2041 to take the infant Charlotte from Noah and Elisabeth."@en ;
+                                             rdfs:label "Elisabeth and Charlotte's journey from 2053 to 2041"@en .
+
+
+###  https://w3id.org/dark-ontology/ElisabethAndCharlotteTravel02_2041_1971
+dark:ElisabethAndCharlotteTravel02_2041_1971 rdf:type owl:NamedIndividual ,
+                                                      dark:TimeTravelEvent ;
+                                             <http://www.w3id.org/dark-ontology/arrivesInWorld> dark:AdamWorld ;
+                                             <http://www.w3id.org/dark-ontology/departsFromWorld> dark:AdamWorld ;
+                                             dark:arrivesAtTime dark:Year_1971 ;
+                                             dark:departsFromTime dark:Year_2041 ;
+                                             dark:hasTraveler dark:AdultElisabeth ,
+                                                              dark:Charlotte ,
+                                                              dark:InfantCharlotte ;
+                                             dark:isIntentional "true"^^xsd:boolean ;
+                                             rdfs:comment "An intentional time travel event in which adult Elisabeth and Charlotte take the infant Charlotte from 2041 to 1971 and leave her with H. G. Tannhaus."@en ;
+                                             rdfs:label "Elisabeth and Charlotte's journey from 2041 to 1971"@en .
+
+
+###  https://w3id.org/dark-ontology/ElisabethDoppler
+dark:ElisabethDoppler rdf:type owl:NamedIndividual ,
+                               dark:Person ;
+                      dark:parentOf dark:CharlotteDoppler ;
+                      dark:hasCanonicalName "Elisabeth Doppler" ;
+                      rdfs:label "Elisabeth Doppler"@en .
+
+
+###  https://w3id.org/dark-ontology/Erik
+dark:Erik rdf:type owl:NamedIndividual ,
+                   dark:PersonManifestation ;
+          dark:manifestationOf dark:ErikObendorf ;
+          dark:hasManifestationName "Erik Obendorf" ;
+          rdfs:label "Erik Obendorf"@en .
+
+
+###  https://w3id.org/dark-ontology/ErikObendorf
+dark:ErikObendorf rdf:type owl:NamedIndividual ,
+                           dark:Person ;
+                  dark:hasCanonicalName "Erik Obendorf" ;
+                  rdfs:label "Erik Obendorf"@en .
+
+
+###  https://w3id.org/dark-ontology/ErikObendorfDisappearance_2019
+dark:ErikObendorfDisappearance_2019 rdf:type owl:NamedIndividual ,
+                                             dark:DisappearanceEvent ;
+                                    <http://www.w3id.org/dark-ontology/occursInReality> dark:FirstReality ;
+                                    dark:hasParticipant dark:Erik ;
+                                    dark:occursAtTime dark:Year_2019 ;
+                                    dark:occursInWorld dark:AdamWorld ;
+                                    rdfs:comment "A disappearance event in which Erik Obendorf vanishes from Adam's world in 2019 after being abducted and taken to the Doppler bunker."@en ;
+                                    rdfs:label "Erik Obendorf's disappearance in 2019"@en .
+
+
+###  https://w3id.org/dark-ontology/EritLux
+dark:EritLux rdf:type owl:NamedIndividual ,
+                      dark:Organization ;
+             rdfs:comment "An organization operating in Eva's world and led by Eva."@en ;
+             rdfs:label "Erit Lux"@en .
+
+
+###  https://w3id.org/dark-ontology/EritLuxLeaderRole
+dark:EritLuxLeaderRole rdf:type owl:NamedIndividual ,
+                                dark:OrganizationRole ;
+                       rdfs:comment "An organizational role representing the leadership of Erit Lux."@en ;
+                       rdfs:label "Erit Lux leader role"@en .
+
+
+###  https://w3id.org/dark-ontology/Eva
+dark:Eva rdf:type owl:NamedIndividual ,
+                  dark:PersonManifestation ;
+         dark:belongsToOrganization dark:EritLux ;
+         dark:existsInWorld dark:EvaWorld ;
+         dark:hasRole dark:EritLuxLeaderRole ;
+         dark:manifestationOf dark:MarthaNielsen_EvaWorld ;
+         dark:hasManifestationName "Eva" ;
+         rdfs:comment "The elderly manifestation of Martha Nielsen and the leader of Erit Lux."@en ;
+         rdfs:label "Eva"@en .
+
+
+###  https://w3id.org/dark-ontology/EvaWorld
+dark:EvaWorld rdf:type owl:NamedIndividual ,
+                       dark:World ;
+              owl:differentFrom dark:OriginWorld ;
+              rdfs:comment "The alternate narrative world associated with Eva and the alternate Martha Nielsen."@en ;
+              rdfs:label "Eva's world"@en .
+
+
+###  https://w3id.org/dark-ontology/FirstReality
+dark:FirstReality rdf:type owl:NamedIndividual ,
+                           <http://www.w3id.org/dark-ontology/Reality> ;
+                  owl:differentFrom dark:SecondReality ,
+                                    dark:ThirdReality ;
+                  rdfs:comment "The first narrative branch associated with the events leading to the preservation of the temporal knot."@en ;
+                  rdfs:label "First reality"@en .
+
+
+###  https://w3id.org/dark-ontology/Franziska
+dark:Franziska rdf:type owl:NamedIndividual ,
+                        dark:PersonManifestation ;
+               dark:existsInWorld dark:AdamWorld ;
+               dark:manifestationOf dark:FranziskaDoppler ;
+               dark:memberOfFamily dark:DopplerFamily ;
+               dark:hasManifestationName "Franziska Doppler" ;
+               rdfs:label "Franziska Doppler"@en .
+
+
+###  https://w3id.org/dark-ontology/FranziskaDoppler
+dark:FranziskaDoppler rdf:type owl:NamedIndividual ,
+                               dark:Person ;
+                      dark:siblingOf dark:ElisabethDoppler ;
+                      dark:hasCanonicalName "Franziska Doppler" ;
+                      rdfs:comment "The persistent personal identity of Franziska Doppler across her temporal manifestations."@en ;
+                      rdfs:label "Franziska Doppler"@en .
+
+
+###  https://w3id.org/dark-ontology/GodParticle
+dark:GodParticle rdf:type owl:NamedIndividual ,
+                          dark:TimeTravelDevice ;
+                 rdfs:comment "A temporal mechanism used to enable travel between different periods."@en ;
+                 rdfs:label "God particle"@en .
+
+
+###  https://w3id.org/dark-ontology/GoldenSphere
+dark:GoldenSphere rdf:type owl:NamedIndividual ,
+                           dark:TimeTravelDevice ;
+                  rdfs:comment "A portable time travel device capable of enabling travel between different times and worlds."@en ;
+                  rdfs:label "Golden sphere"@en .
+
+
+###  https://w3id.org/dark-ontology/HGTannhaus
+dark:HGTannhaus rdf:type owl:NamedIndividual ,
+                         dark:Person ;
+                dark:adoptiveParentOf dark:CharlotteDoppler ;
+                dark:hasCanonicalName "H. G. Tannhaus" ;
+                rdfs:comment "The persistent personal identity of H. G. Tannhaus across his temporal manifestations."@en ;
+                rdfs:label "Tannhaus"@en .
+
+
+###  https://w3id.org/dark-ontology/Hannah
+dark:Hannah rdf:type owl:NamedIndividual ,
+                     dark:PersonManifestation ;
+            dark:existsInWorld dark:AdamWorld ;
+            dark:manifestationOf dark:HannahKahnwald ;
+            dark:memberOfFamily dark:KahnwaldFamily ;
+            dark:hasManifestationName "Hannah Kahnwald" ;
+            rdfs:label "Hannah Kahnwald"@en .
+
+
+###  https://w3id.org/dark-ontology/HannahKahnwald
+dark:HannahKahnwald rdf:type owl:NamedIndividual ,
+                             dark:Person ;
+                    dark:parentOf dark:JonasKahnwald ,
+                                  dark:SiljaTiedemann ;
+                    dark:spouseOf dark:MikkelNielsen ;
+                    dark:hasCanonicalName "Hannah Kahnwald" ;
+                    rdfs:comment "The persistent personal identity of Hannah Kahnwald across her temporal manifestations."@en ;
+                    rdfs:label "Hannah Kahnwald"@en .
+
+
+###  https://w3id.org/dark-ontology/HannahTravel01_2020_1954
+dark:HannahTravel01_2020_1954 rdf:type owl:NamedIndividual ,
+                                       dark:TimeTravelEvent ;
+                              <http://www.w3id.org/dark-ontology/arrivesInWorld> dark:AdamWorld ;
+                              <http://www.w3id.org/dark-ontology/departsFromWorld> dark:AdamWorld ;
+                              <http://www.w3id.org/dark-ontology/occursInReality> dark:FirstReality ;
+                              dark:arrivesAtTime dark:Year_1954 ;
+                              dark:departsFromTime dark:Year_2020 ;
+                              dark:hasTraveler dark:Hannah ;
+                              dark:usesDevice dark:PortableTimeMachine ;
+                              dark:isIntentional "true"^^xsd:boolean ;
+                              rdfs:comment "An intentional time travel event in which Hannah uses the portable time machine to travel from 2020 to 1954 and remain in the past."@en ;
+                              rdfs:label "Hannah's journey from 2020 to 1954"@en .
+
+
+###  https://w3id.org/dark-ontology/Helge
+dark:Helge rdf:type owl:NamedIndividual ,
+                    dark:PersonManifestation ;
+           dark:manifestationOf dark:HelgeDoppler ;
+           dark:memberOfFamily dark:DopplerFamily ;
+           dark:hasManifestationName "Helge Doppler" ;
+           rdfs:label "Helge Doppler"@en .
+
+
+###  https://w3id.org/dark-ontology/HelgeDoppler
+dark:HelgeDoppler rdf:type owl:NamedIndividual ,
+                           dark:Person ;
+                  dark:parentOf dark:PeterDoppler ;
+                  dark:hasCanonicalName "Helge Doppler" ;
+                  rdfs:label "Helge Doppler"@en .
+
+
+###  https://w3id.org/dark-ontology/Ines
+dark:Ines rdf:type owl:NamedIndividual ,
+                   dark:PersonManifestation ;
+          dark:manifestationOf dark:InesKahnwald ;
+          dark:memberOfFamily dark:KahnwaldFamily ;
+          dark:hasManifestationName "Ines Kahnwald" ;
+          rdfs:label "Ines Kahnwald"@en .
+
+
+###  https://w3id.org/dark-ontology/InesKahnwald
+dark:InesKahnwald rdf:type owl:NamedIndividual ,
+                           dark:Person ;
+                  dark:adoptiveParentOf dark:MikkelNielsen ;
+                  dark:hasCanonicalName "Ines Kahnwald" ;
+                  rdfs:comment "The persistent personal identity of Ines Kahnwald across her temporal manifestations."@en ;
+                  rdfs:label "Ines Kahnwald"@en .
+
+
+###  https://w3id.org/dark-ontology/InfantCharlotte
+dark:InfantCharlotte rdf:type owl:NamedIndividual ,
+                              dark:PersonManifestation ;
+                     dark:existsDuring dark:Year_2041 ;
+                     dark:manifestationOf dark:CharlotteDoppler ;
+                     dark:hasManifestationName "Charlotte Doppler" ;
+                     rdfs:comment "The infant manifestation of Charlotte Doppler who is taken from 2041 to 1971 by her adult self and adult Elisabeth."@en ;
+                     rdfs:label "Infant Charlotte Doppler in 2041"@en .
+
+
+###  https://w3id.org/dark-ontology/JonasFinalTravel01_2019_1986
+dark:JonasFinalTravel01_2019_1986 rdf:type owl:NamedIndividual ,
+                                           dark:TimeTravelEvent ;
+                                  <http://www.w3id.org/dark-ontology/departsFromWorld> dark:EvaWorld ;
+                                  <http://www.w3id.org/dark-ontology/occursInReality> dark:ThirdReality ;
+                                  dark:arrivesAtTime dark:Year_1986 ;
+                                  dark:departsFromTime dark:Year_2019 ;
+                                  dark:hasTraveler dark:Jonas_2019 ,
+                                                   dark:Martha_2019_EvaWorld ;
+                                  dark:usesDevice dark:GoldenSphere ;
+                                  dark:isIntentional "true"^^xsd:boolean ;
+                                  rdfs:comment "An intentional time travel event in which Jonas and Martha travel from Eva's world in 2019 to Adam's world in 1986, shortly before the event that leads to the creation of Adam's and Eva's worlds."@en ;
+                                  rdfs:label "Jonas and Martha's final journey from 2019 to 1986"@en .
+
+
+###  https://w3id.org/dark-ontology/JonasFinalTravel02_1986_1971
+dark:JonasFinalTravel02_1986_1971 rdf:type owl:NamedIndividual ,
+                                           dark:TimeTravelEvent ;
+                                  <http://www.w3id.org/dark-ontology/arrivesInWorld> dark:OriginWorld ;
+                                  <http://www.w3id.org/dark-ontology/departsFromWorld> dark:AdamWorld ;
+                                  dark:arrivesAtTime dark:Year_1971 ;
+                                  dark:departsFromPlace dark:WindenCave ;
+                                  dark:departsFromTime dark:Year_1986 ;
+                                  dark:hasTraveler dark:Jonas_2019 ,
+                                                   dark:Martha_2019_EvaWorld ;
+                                  dark:passesThroughPlace dark:BetweenWorlds ;
+                                  dark:usesDevice dark:GoldenSphere ;
+                                  dark:isIntentional "true"^^xsd:boolean ;
+                                  rdfs:comment "An intentional time travel event in which Jonas and Martha travel from Adam's world in 1986 to the origin world in 1971, passing through the interworld space formed at the moment when the temporal knot was created."@en ;
+                                  rdfs:label "Jonas and Martha's final journey from 1986 to 1971"@en .
+
+
+###  https://w3id.org/dark-ontology/JonasKahnwald
+dark:JonasKahnwald rdf:type owl:NamedIndividual ,
+                            dark:Person ;
+                   dark:childOf dark:MikkelNielsen ;
+                   dark:hasCanonicalName "Jonas Kahnwald" ;
+                   rdfs:comment "The persistent personal identity shared by Jonas's different temporal manifestations, including Jonas in 2019, the Stranger, and Adam."@en ;
+                   rdfs:label "Jonas Kahnwald"@en .
+
+
+###  https://w3id.org/dark-ontology/JonasMeetsAdam_1921
+dark:JonasMeetsAdam_1921 rdf:type owl:NamedIndividual ,
+                                  dark:MeetingEvent ;
+                         <http://www.w3id.org/dark-ontology/occursInReality> dark:FirstReality ;
+                         dark:hasParticipant dark:Adam ,
+                                             dark:Jonas_2019 ;
+                         dark:occursAtPlace dark:SicMundusHeadquarters ;
+                         dark:occursAtTime dark:Year_1921 ;
+                         dark:occursInWorld dark:AdamWorld ;
+                         rdfs:comment "A meeting event in which Jonas encounters Adam, an older manifestation of his own persistent identity, in 1921."@en ;
+                         rdfs:label "Jonas meets Adam in 1921"@en .
+
+
+###  https://w3id.org/dark-ontology/JonasTravel01_2019_1986
+dark:JonasTravel01_2019_1986 rdf:type owl:NamedIndividual ,
+                                      dark:TimeTravelEvent ;
+                             <http://www.w3id.org/dark-ontology/arrivesInWorld> dark:AdamWorld ;
+                             <http://www.w3id.org/dark-ontology/departsFromWorld> dark:AdamWorld ;
+                             <http://www.w3id.org/dark-ontology/occursInReality> dark:FirstReality ;
+                             dark:arrivesAtPlace dark:WindenCave ;
+                             dark:arrivesAtTime dark:Year_1986 ;
+                             dark:departsFromPlace dark:WindenCave ;
+                             dark:departsFromTime dark:Year_2019 ;
+                             dark:hasTraveler dark:Jonas_2019 ;
+                             dark:usesDevice dark:CavePassage_AdamWorld ;
+                             dark:isIntentional "false"^^xsd:boolean ;
+                             rdfs:comment "Jonas enters the cave passage for the first time and unknowingly travels from 2019 to 1986, where he discovers that the missing Mikkel is living in the past."@en ;
+                             rdfs:label "Jonas's journey from 2019 to 1986"@en .
+
+
+###  https://w3id.org/dark-ontology/JonasTravel02_1986_2019
+dark:JonasTravel02_1986_2019 rdf:type owl:NamedIndividual ,
+                                      dark:TimeTravelEvent ;
+                             <http://www.w3id.org/dark-ontology/arrivesInWorld> dark:AdamWorld ;
+                             <http://www.w3id.org/dark-ontology/departsFromWorld> dark:AdamWorld ;
+                             <http://www.w3id.org/dark-ontology/occursInReality> dark:FirstReality ;
+                             dark:arrivesAtPlace dark:WindenCave ;
+                             dark:arrivesAtTime dark:Year_2019 ;
+                             dark:departsFromPlace dark:WindenCave ;
+                             dark:departsFromTime dark:Year_1986 ;
+                             dark:hasTraveler dark:Jonas_2019 ;
+                             dark:usesDevice dark:CavePassage_AdamWorld ;
+                             dark:isIntentional "true"^^xsd:boolean ;
+                             rdfs:comment "After discovering Mikkel in 1986, Jonas returns to 2019 through the cave passage, now aware that Mikkel will grow up to become his father, Michael Kahnwald."@en ;
+                             rdfs:label "Jonas's journey from 1986 to 2019"@en .
+
+
+###  https://w3id.org/dark-ontology/JonasTravel03_2019_1986
+dark:JonasTravel03_2019_1986 rdf:type owl:NamedIndividual ,
+                                      dark:TimeTravelEvent ;
+                             <http://www.w3id.org/dark-ontology/arrivesInWorld> dark:AdamWorld ;
+                             <http://www.w3id.org/dark-ontology/departsFromWorld> dark:AdamWorld ;
+                             <http://www.w3id.org/dark-ontology/occursInReality> dark:FirstReality ;
+                             dark:arrivesAtPlace dark:WindenCave ;
+                             dark:arrivesAtTime dark:Year_1986 ;
+                             dark:departsFromPlace dark:WindenCave ;
+                             dark:departsFromTime dark:Year_2019 ;
+                             dark:hasTraveler dark:Jonas_2019 ;
+                             dark:usesDevice dark:CavePassage_AdamWorld ;
+                             dark:isIntentional "true"^^xsd:boolean ;
+                             rdfs:comment "Jonas deliberately returns to 1986 intending to bring Mikkel back to 2019, but the Stranger prevents him from intervening because doing so would erase Jonas's own existence."@en ;
+                             rdfs:label "Jonas's second journey from 2019 to 1986"@en .
+
+
+###  https://w3id.org/dark-ontology/JonasTravel04_1986_2052
+dark:JonasTravel04_1986_2052 rdf:type owl:NamedIndividual ,
+                                      dark:TimeTravelEvent ;
+                             <http://www.w3id.org/dark-ontology/arrivesInWorld> dark:AdamWorld ;
+                             <http://www.w3id.org/dark-ontology/departsFromWorld> dark:AdamWorld ;
+                             <http://www.w3id.org/dark-ontology/occursInReality> dark:FirstReality ;
+                             dark:arrivesAtPlace dark:DopplerBunker ;
+                             dark:arrivesAtTime dark:Year_2052 ;
+                             dark:departsFromPlace dark:DopplerBunker ;
+                             dark:departsFromTime dark:Year_1986 ;
+                             dark:hasTraveler dark:Jonas_2019 ;
+                             dark:usesDevice dark:BunkerPortal ;
+                             dark:isIntentional "false"^^xsd:boolean ;
+                             rdfs:comment "While being held in the Doppler bunker in 1986, Jonas touches Helge through the temporal portal and is unexpectedly transported to the post-apocalyptic year 2052."@en ;
+                             rdfs:label "Jonas's journey from 1986 to 2052"@en .
+
+
+###  https://w3id.org/dark-ontology/JonasTravel05_2053_1921
+dark:JonasTravel05_2053_1921 rdf:type owl:NamedIndividual ,
+                                      dark:TimeTravelEvent ;
+                             <http://www.w3id.org/dark-ontology/arrivesInWorld> dark:AdamWorld ;
+                             <http://www.w3id.org/dark-ontology/departsFromWorld> dark:AdamWorld ;
+                             <http://www.w3id.org/dark-ontology/occursInReality> dark:FirstReality ;
+                             dark:arrivesAtTime dark:Year_1921 ;
+                             dark:departsFromPlace dark:WindenNuclearPlant ;
+                             dark:departsFromTime dark:Year_2053 ;
+                             dark:hasTraveler dark:Jonas_2019 ;
+                             dark:usesDevice dark:GodParticle ;
+                             dark:isIntentional "true"^^xsd:boolean ;
+                             rdfs:comment "After stabilizing the God Particle in the post-apocalyptic nuclear power plant, Jonas deliberately enters it to escape 2053 but unexpectedly arrives in 1921."@en ;
+                             rdfs:label "Jonas's journey from 2053 to 1921"@en .
+
+
+###  https://w3id.org/dark-ontology/JonasTravel06_1921_2019
+dark:JonasTravel06_1921_2019 rdf:type owl:NamedIndividual ,
+                                      dark:TimeTravelEvent ;
+                             <http://www.w3id.org/dark-ontology/arrivesInWorld> dark:AdamWorld ;
+                             <http://www.w3id.org/dark-ontology/departsFromWorld> dark:AdamWorld ;
+                             <http://www.w3id.org/dark-ontology/occursInReality> dark:FirstReality ;
+                             dark:arrivesAtTime dark:Year_2019 ;
+                             dark:departsFromPlace dark:SicMundusHeadquarters ;
+                             dark:departsFromTime dark:Year_1921 ;
+                             dark:hasTraveler dark:Jonas_2019 ;
+                             dark:usesDevice dark:GodParticle ;
+                             dark:isIntentional "true"^^xsd:boolean ;
+                             rdfs:comment "Adam sends Jonas from 1921 to 20 June 2019, the day before Michael's suicide, after convincing him that preventing Michael's death could break the temporal cycle."@en ;
+                             rdfs:label "Jonas's journey from 1921 to 2019"@en .
+
+
+###  https://w3id.org/dark-ontology/JonasTravel07_1987_2020
+dark:JonasTravel07_1987_2020 rdf:type owl:NamedIndividual ,
+                                      dark:TimeTravelEvent ;
+                             <http://www.w3id.org/dark-ontology/arrivesInWorld> dark:AdamWorld ;
+                             <http://www.w3id.org/dark-ontology/departsFromWorld> dark:AdamWorld ;
+                             <http://www.w3id.org/dark-ontology/occursInReality> dark:FirstReality ;
+                             dark:arrivesAtPlace dark:WindenCave ;
+                             dark:arrivesAtTime dark:Year_2020 ;
+                             dark:departsFromPlace dark:WindenCave ;
+                             dark:departsFromTime dark:Year_1987 ;
+                             dark:hasTraveler dark:Claudia ,
+                                              dark:Jonas_2019 ;
+                             dark:usesDevice dark:CavePassage_AdamWorld ;
+                             dark:isIntentional "true"^^xsd:boolean ;
+                             rdfs:comment "After spending a year learning about time travel with Claudia, Jonas travels from 1987 to 2020 to help prepare the events surrounding the approaching apocalypse."@en ;
+                             rdfs:label "Jonas's journey from 1987 to 2020"@en .
+
+
+###  https://w3id.org/dark-ontology/JonasTravel08_2020_2019
+dark:JonasTravel08_2020_2019 rdf:type owl:NamedIndividual ,
+                                      dark:TimeTravelEvent ;
+                             <http://www.w3id.org/dark-ontology/arrivesInWorld> dark:EvaWorld ;
+                             <http://www.w3id.org/dark-ontology/departsFromWorld> dark:AdamWorld ;
+                             <http://www.w3id.org/dark-ontology/occursInReality> dark:SecondReality ;
+                             dark:arrivesAtTime dark:Year_2019 ;
+                             dark:departsFromTime dark:Year_2020 ;
+                             dark:hasTraveler dark:Jonas_2019 ,
+                                              dark:Martha_2019_EvaWorld ;
+                             dark:usesDevice dark:GoldenSphere ;
+                             dark:isIntentional "false"^^xsd:boolean ;
+                             rdfs:comment "Jonas travels from 2020 to November 2019 as part of Claudia's plan, returning to the night of Mikkel's disappearance in order to ensure that the established sequence of events takes place."@en ;
+                             rdfs:label "Jonas's journey from 2020 to 2019"@en .
+
+
+###  https://w3id.org/dark-ontology/JonasTravel09_2019_2052
+dark:JonasTravel09_2019_2052 rdf:type owl:NamedIndividual ,
+                                      dark:TimeTravelEvent ;
+                             <http://www.w3id.org/dark-ontology/arrivesInWorld> dark:EvaWorld ;
+                             <http://www.w3id.org/dark-ontology/departsFromWorld> dark:EvaWorld ;
+                             <http://www.w3id.org/dark-ontology/occursInReality> dark:SecondReality ;
+                             dark:arrivesAtTime dark:Year_2052 ;
+                             dark:departsFromTime dark:Year_2019 ;
+                             dark:hasTraveler dark:Jonas_2019 ,
+                                              dark:Martha_2019_EvaWorld ;
+                             dark:usesDevice dark:CavePassage_EvaWorld ;
+                             dark:isIntentional "true"^^xsd:boolean ;
+                             rdfs:comment "After taking Mikkel through the cave passage to 1986, Jonas leaves 2019 and returns to the post-apocalyptic future to continue carrying out Claudia's plan."@en ;
+                             rdfs:label "Jonas's journey from 2019 to 2052"@en .
+
+
+###  https://w3id.org/dark-ontology/JonasTravel10_2052_2019
+dark:JonasTravel10_2052_2019 rdf:type owl:NamedIndividual ,
+                                      dark:TimeTravelEvent ;
+                             <http://www.w3id.org/dark-ontology/arrivesInWorld> dark:EvaWorld ;
+                             <http://www.w3id.org/dark-ontology/departsFromWorld> dark:EvaWorld ;
+                             <http://www.w3id.org/dark-ontology/occursInReality> dark:SecondReality ;
+                             dark:arrivesAtTime dark:Year_2019 ;
+                             dark:departsFromTime dark:Year_2052 ;
+                             dark:hasTraveler dark:Jonas_2019 ,
+                                              dark:Martha_2019_EvaWorld ;
+                             dark:usesDevice dark:CavePassage_EvaWorld ;
+                             dark:isIntentional "true"^^xsd:boolean ;
+                             rdfs:comment "Jonas returns from the post-apocalyptic year 2052 to 2019 after completing the actions required by Claudia's plan and before continuing his attempts to prevent the apocalypse."@en ;
+                             rdfs:label "Jonas's journey from 2052 to 2019"@en .
+
+
+###  https://w3id.org/dark-ontology/Jonas_2019
+dark:Jonas_2019 rdf:type owl:NamedIndividual ,
+                         dark:PersonManifestation ;
+                dark:existsDuring dark:Year_2019 ;
+                dark:existsInWorld dark:AdamWorld ;
+                dark:manifestationOf dark:JonasKahnwald ;
+                dark:memberOfFamily dark:KahnwaldFamily ;
+                dark:hasAge "16"^^xsd:nonNegativeInteger ;
+                dark:hasManifestationName "Jonas Kahnwald" ;
+                rdfs:comment "The adolescent manifestation of Jonas Kahnwald living in Adam's world in 2019."@en ;
+                rdfs:label "Jonas Kahnwald"@en .
+
+
+###  https://w3id.org/dark-ontology/KahnwaldFamily
+dark:KahnwaldFamily rdf:type owl:NamedIndividual ,
+                             dark:Family ;
+                    rdfs:label "Kahnwald family"@en .
+
+
+###  https://w3id.org/dark-ontology/Katharina
+dark:Katharina rdf:type owl:NamedIndividual ,
+                        dark:PersonManifestation ;
+               dark:existsInWorld dark:AdamWorld ;
+               dark:manifestationOf dark:KatharinaNielsen ;
+               dark:memberOfFamily dark:NielsenFamily ;
+               dark:hasManifestationName "Katharina Nielsen" ;
+               rdfs:label "Katharina Nielsen"@en .
+
+
+###  https://w3id.org/dark-ontology/KatharinaNielsen
+dark:KatharinaNielsen rdf:type owl:NamedIndividual ,
+                               dark:Person ;
+                      dark:parentOf dark:MagnusNielsen ,
+                                    dark:MarthaNielsen_AdamWorld ,
+                                    dark:MikkelNielsen ;
+                      dark:hasCanonicalName "Katharina Nielsen" ;
+                      rdfs:comment "The persistent personal identity of Katharina Nielsen across her temporal manifestations."@en ;
+                      rdfs:label "Katharina Nielsen"@en .
+
+
+###  https://w3id.org/dark-ontology/KatharinaTravel01_2020_1987
+dark:KatharinaTravel01_2020_1987 rdf:type owl:NamedIndividual ,
+                                          dark:TimeTravelEvent ;
+                                 <http://www.w3id.org/dark-ontology/arrivesInWorld> dark:AdamWorld ;
+                                 <http://www.w3id.org/dark-ontology/departsFromWorld> dark:AdamWorld ;
+                                 <http://www.w3id.org/dark-ontology/occursInReality> dark:FirstReality ;
+                                 dark:arrivesAtPlace dark:WindenCave ;
+                                 dark:arrivesAtTime dark:Year_1987 ;
+                                 dark:departsFromPlace dark:WindenCave ;
+                                 dark:departsFromTime dark:Year_2020 ;
+                                 dark:hasTraveler dark:Katharina ;
+                                 dark:usesDevice dark:CavePassage_AdamWorld ;
+                                 dark:isIntentional "true"^^xsd:boolean ;
+                                 rdfs:comment "An intentional time travel event in which Katharina enters the cave passage during the 2020 apocalypse and travels to 1987 in an attempt to rescue Ulrich and bring Mikkel home."@en ;
+                                 rdfs:label "Katharina's journey from 2020 to 1987"@en .
+
+
+###  https://w3id.org/dark-ontology/Mads
+dark:Mads rdf:type owl:NamedIndividual ,
+                   dark:PersonManifestation ;
+          dark:manifestationOf dark:MadsNielsen ;
+          dark:memberOfFamily dark:NielsenFamily ;
+          dark:hasManifestationName "Mads Nielsen" ;
+          rdfs:label "Mads Nielsen"@en .
+
+
+###  https://w3id.org/dark-ontology/MadsNielsen
+dark:MadsNielsen rdf:type owl:NamedIndividual ,
+                          dark:Person ;
+                 dark:hasCanonicalName "Mads Nielsen" ;
+                 rdfs:comment "The persistent personal identity of Mads Nielsen."@en ;
+                 rdfs:label "Mads Nielsen"@en .
+
+
+###  https://w3id.org/dark-ontology/MadsNielsenDisappearance_1986
+dark:MadsNielsenDisappearance_1986 rdf:type owl:NamedIndividual ,
+                                            dark:DisappearanceEvent ;
+                                   <http://www.w3id.org/dark-ontology/occursInReality> dark:FirstReality ;
+                                   dark:hasParticipant dark:Mads ;
+                                   dark:occursAtTime dark:Year_1986 ;
+                                   dark:occursInWorld dark:AdamWorld ;
+                                   rdfs:comment "A disappearance event in which Mads Nielsen vanishes from Adam's world in 1986 after being abducted and used in the time travel experiments conducted in the Doppler bunker."@en ;
+                                   rdfs:label "Mads Nielsen's disappearance in 1986"@en .
+
+
+###  https://w3id.org/dark-ontology/Magnus
+dark:Magnus rdf:type owl:NamedIndividual ,
+                     dark:PersonManifestation ;
+            dark:existsInWorld dark:AdamWorld ;
+            dark:manifestationOf dark:MagnusNielsen ;
+            dark:memberOfFamily dark:NielsenFamily ;
+            dark:hasManifestationName "Magnus Nielsen" ;
+            rdfs:label "Magnus Nielsen"@en .
+
+
+###  https://w3id.org/dark-ontology/MagnusNielsen
+dark:MagnusNielsen rdf:type owl:NamedIndividual ,
+                            dark:Person ;
+                   dark:hasCanonicalName "Magnus Nielsen" ;
+                   rdfs:comment "The persistent personal identity of Magnus Nielsen across his temporal manifestations."@en ;
+                   rdfs:label "Magnus Nielsen"@en .
+
+
+###  https://w3id.org/dark-ontology/MarthaNielsen_AdamWorld
+dark:MarthaNielsen_AdamWorld rdf:type owl:NamedIndividual ,
+                                      dark:Person ;
+                             owl:differentFrom dark:MarthaNielsen_EvaWorld ;
+                             <http://www.W3id.org/dark-ontology/hasAlternateWorldCounterpart> dark:MarthaNielsen_EvaWorld ;
+                             dark:hasCanonicalName "Martha Nielsen" ;
+                             rdfs:comment "The persistent personal identity of Martha Nielsen originating from Adam's world."@en ;
+                             rdfs:label "Martha Nielsen"@en .
+
+
+###  https://w3id.org/dark-ontology/MarthaNielsen_EvaWorld
+dark:MarthaNielsen_EvaWorld rdf:type owl:NamedIndividual ,
+                                     dark:Person ;
+                            dark:hasCanonicalName "Martha Nielsen" ;
+                            rdfs:comment "The persistent personal identity of Martha Nielsen originating from Eva's world, whose manifestations include young Martha and Eva."@en ;
+                            rdfs:label "Martha Nielsen"@en .
+
+
+###  https://w3id.org/dark-ontology/MarthaTravel01_2019_1888
+dark:MarthaTravel01_2019_1888 rdf:type owl:NamedIndividual ,
+                                       dark:TimeTravelEvent ;
+                              <http://www.w3id.org/dark-ontology/arrivesInWorld> dark:AdamWorld ;
+                              <http://www.w3id.org/dark-ontology/departsFromWorld> dark:EvaWorld ;
+                              <http://www.w3id.org/dark-ontology/occursInReality> dark:FirstReality ;
+                              dark:arrivesAtTime dark:Year_1888 ;
+                              dark:departsFromTime dark:Year_2019 ;
+                              dark:hasTraveler dark:Martha_2019_EvaWorld ;
+                              dark:usesDevice dark:GoldenSphere ;
+                              dark:isIntentional "true"^^xsd:boolean ;
+                              rdfs:comment "An intentional time travel event in which Martha travels from 2019 to 1888."@en ;
+                              rdfs:label "Martha's journey from 2019 to 1888"@en .
+
+
+###  https://w3id.org/dark-ontology/MarthaTravel02_1888_2053
+dark:MarthaTravel02_1888_2053 rdf:type owl:NamedIndividual ,
+                                       dark:TimeTravelEvent ;
+                              <http://www.w3id.org/dark-ontology/arrivesInWorld> dark:AdamWorld ;
+                              <http://www.w3id.org/dark-ontology/departsFromWorld> dark:AdamWorld ;
+                              <http://www.w3id.org/dark-ontology/occursInReality> dark:FirstReality ;
+                              dark:arrivesAtTime dark:Year_2053 ;
+                              dark:departsFromTime dark:Year_1888 ;
+                              dark:hasTraveler dark:Martha_2019_EvaWorld ;
+                              dark:usesDevice dark:GoldenSphere ;
+                              dark:isIntentional "true"^^xsd:boolean ;
+                              rdfs:comment "An intentional time travel event in which Martha travels from 1888 to 2053."@en ;
+                              rdfs:label "Martha's journey from 1888 to 2053"@en .
+
+
+###  https://w3id.org/dark-ontology/Martha_2019_AdamWorld
+dark:Martha_2019_AdamWorld rdf:type owl:NamedIndividual ,
+                                    dark:PersonManifestation ;
+                           dark:existsDuring dark:Year_2019 ;
+                           dark:existsInWorld dark:AdamWorld ;
+                           dark:manifestationOf dark:MarthaNielsen_AdamWorld ;
+                           dark:memberOfFamily dark:NielsenFamily ;
+                           dark:hasManifestationName "Martha Nielsen" ;
+                           rdfs:comment "The adolescent manifestation of Martha Nielsen living in Adam's world in 2019."@en ;
+                           rdfs:label "Martha Nielsen"@en .
+
+
+###  https://w3id.org/dark-ontology/Martha_2019_EvaWorld
+dark:Martha_2019_EvaWorld rdf:type owl:NamedIndividual ,
+                                   dark:PersonManifestation ;
+                          dark:existsDuring dark:Year_2019 ;
+                          dark:existsInWorld dark:EvaWorld ;
+                          dark:manifestationOf dark:MarthaNielsen_EvaWorld ;
+                          dark:memberOfFamily dark:NielsenFamily ;
+                          dark:hasManifestationName "Martha Nielsen" ;
+                          rdfs:comment "The adolescent manifestation of Martha Nielsen originating from Eva's world in 2019."@en ;
+                          rdfs:label "Martha Nielsen"@en .
+
+
+###  https://w3id.org/dark-ontology/Michael_2019
+dark:Michael_2019 rdf:type owl:NamedIndividual ,
+                           dark:PersonManifestation ;
+                  dark:existsDuring dark:Year_2019 ;
+                  dark:existsInWorld dark:AdamWorld ;
+                  dark:manifestationOf dark:MikkelNielsen ;
+                  dark:memberOfFamily dark:KahnwaldFamily ;
+                  dark:hasAge "44"^^xsd:nonNegativeInteger ;
+                  dark:hasManifestationName "Michael Kahnwald" ;
+                  rdfs:comment "The adult manifestation of the persistent person originally known as Mikkel Nielsen."@en ;
+                  rdfs:label "Michael Kahnwald"@en .
+
+
+###  https://w3id.org/dark-ontology/MikkelDisappearance_2019
+dark:MikkelDisappearance_2019 rdf:type owl:NamedIndividual ,
+                                       dark:DisappearanceEvent ;
+                              <http://www.w3id.org/dark-ontology/occursInReality> dark:FirstReality ;
+                              dark:hasParticipant dark:Mikkel_2019 ;
+                              dark:occursAtPlace dark:WindenCave ;
+                              dark:occursAtTime dark:Year_2019 ;
+                              dark:occursInWorld dark:AdamWorld ;
+                              rdfs:comment "A disappearance event representing Mikkel Nielsen's disappearance from his original temporal and narrative context in 2019."@en ;
+                              rdfs:label "Mikkel Nielsen's disappearance in 2019"@en .
+
+
+###  https://w3id.org/dark-ontology/MikkelNielsen
+dark:MikkelNielsen rdf:type owl:NamedIndividual ,
+                            dark:Person ;
+                   dark:siblingOf dark:MagnusNielsen ,
+                                  dark:MarthaNielsen_AdamWorld ;
+                   dark:hasCanonicalName "Mikkel Nielsen / Michael Kahnwald" ;
+                   rdfs:comment "The persistent personal identity shared by the manifestations known as Mikkel Nielsen and Michael Kahnwald."@en ;
+                   rdfs:label "Mikkel Nielsen / Michael Kahnwald"@en .
+
+
+###  https://w3id.org/dark-ontology/MikkelTravel_2019_1986
+dark:MikkelTravel_2019_1986 rdf:type owl:NamedIndividual ,
+                                     dark:TimeTravelEvent ;
+                            dark:arrivesAtPlace dark:WindenCave ;
+                            dark:arrivesAtTime dark:Year_1986 ;
+                            dark:departsFromPlace dark:WindenCave ;
+                            dark:departsFromTime dark:Year_2019 ;
+                            dark:hasTraveler dark:Mikkel_2019 ;
+                            dark:usesDevice dark:CavePassage_AdamWorld ;
+                            dark:isIntentional "false"^^xsd:boolean ;
+                            rdfs:comment "An unintentional time travel event in which Mikkel is transported from 2019 to 1986."@en ;
+                            rdfs:label "Mikkel's journey from 2019 to 1986"@en .
+
+
+###  https://w3id.org/dark-ontology/Mikkel_2019
+dark:Mikkel_2019 rdf:type owl:NamedIndividual ,
+                          dark:PersonManifestation ;
+                 dark:existsDuring dark:Year_2019 ;
+                 dark:existsInWorld dark:AdamWorld ;
+                 dark:manifestationOf dark:MikkelNielsen ;
+                 dark:memberOfFamily dark:NielsenFamily ;
+                 dark:hasAge "11"^^xsd:nonNegativeInteger ;
+                 dark:hasManifestationName "Mikkel Nielsen" ;
+                 rdfs:comment "The childhood manifestation of the persistent person who later lives under the name Michael Kahnwald."@en ;
+                 rdfs:label "Mikkel Nielsen"@en .
+
+
+###  https://w3id.org/dark-ontology/NielsenFamily
+dark:NielsenFamily rdf:type owl:NamedIndividual ,
+                            dark:Family ;
+                   rdfs:label "Nielsen family"@en .
+
+
+###  https://w3id.org/dark-ontology/Noah
+dark:Noah rdf:type owl:NamedIndividual ,
+                   dark:PersonManifestation ;
+          dark:belongsToOrganization dark:SicMundus ;
+          dark:hasRole dark:Priest ;
+          dark:manifestationOf dark:NoahTauber ;
+          dark:hasManifestationName "Noah Tauber" ;
+          rdfs:label "Noah" .
+
+
+###  https://w3id.org/dark-ontology/NoahTauber
+dark:NoahTauber rdf:type owl:NamedIndividual ,
+                         dark:Person ;
+                dark:parentOf dark:CharlotteDoppler ;
+                dark:siblingOf dark:AgnesNielsen ;
+                dark:spouseOf dark:ElisabethDoppler ;
+                dark:hasCanonicalName "Hanno Tauber" ;
+                rdfs:comment "The persistent personal identity of Noah across his temporal manifestations."@en ;
+                rdfs:label "Noah"@en .
+
+
+###  https://w3id.org/dark-ontology/NoahTravel01_2020_1920
+dark:NoahTravel01_2020_1920 rdf:type owl:NamedIndividual ,
+                                     dark:TimeTravelEvent ;
+                            <http://www.w3id.org/dark-ontology/arrivesInWorld> dark:AdamWorld ;
+                            <http://www.w3id.org/dark-ontology/departsFromWorld> dark:AdamWorld ;
+                            dark:arrivesAtTime dark:Year_1920 ;
+                            dark:departsFromTime dark:Year_2020 ;
+                            dark:hasTraveler dark:Noah ;
+                            dark:isIntentional "true"^^xsd:boolean ;
+                            rdfs:comment "After failing to find his daughter Charlotte in the post-apocalyptic world, Noah intentionally travels from 2020 to 1920 to rejoin Adam and Sic Mundus."@en ;
+                            rdfs:label "Noah's journey from 2020 to 1920"@en .
+
+
+###  https://w3id.org/dark-ontology/NuclearPlantDirector
+dark:NuclearPlantDirector rdf:type owl:NamedIndividual ,
+                                   dark:ProfessionalRole ;
+                          rdfs:label "Nuclear plant director"@en .
+
+
+###  https://w3id.org/dark-ontology/OldClaudia
+dark:OldClaudia rdf:type owl:NamedIndividual ,
+                         dark:PersonManifestation ;
+                dark:existsInWorld dark:AdamWorld ;
+                dark:manifestationOf dark:ClaudiaTiedemann ;
+                dark:hasManifestationName "Claudia Tiedemann" ;
+                rdfs:label "Claudia Tiedemann"@en .
+
+
+###  https://w3id.org/dark-ontology/OldClaudiaTravel01_2053_1987
+dark:OldClaudiaTravel01_2053_1987 rdf:type owl:NamedIndividual ,
+                                           dark:TimeTravelEvent ;
+                                  <http://www.w3id.org/dark-ontology/arrivesInWorld> dark:AdamWorld ;
+                                  <http://www.w3id.org/dark-ontology/departsFromWorld> dark:AdamWorld ;
+                                  dark:arrivesAtTime dark:Year_1987 ;
+                                  dark:departsFromTime dark:Year_2053 ;
+                                  dark:hasTraveler dark:OldClaudia ;
+                                  dark:isIntentional "true"^^xsd:boolean ;
+                                  rdfs:comment "Old Claudia intentionally travels from 2053 to 1987 to meet her younger manifestation and provide her with the coordinates of the buried portable time machine."@en ;
+                                  rdfs:label "Old Claudia's journey from 2053 to 1987"@en .
+
+
+###  https://w3id.org/dark-ontology/OldClaudiaTravel02_1987_1954
+dark:OldClaudiaTravel02_1987_1954 rdf:type owl:NamedIndividual ,
+                                           dark:TimeTravelEvent ;
+                                  <http://www.w3id.org/dark-ontology/arrivesInWorld> dark:AdamWorld ;
+                                  <http://www.w3id.org/dark-ontology/departsFromWorld> dark:AdamWorld ;
+                                  dark:arrivesAtTime dark:Year_1954 ;
+                                  dark:departsFromTime dark:Year_1987 ;
+                                  dark:hasTraveler dark:OldClaudia ;
+                                  dark:isIntentional "true"^^xsd:boolean ;
+                                  rdfs:comment "After meeting her younger manifestation, Old Claudia intentionally travels to 1954, where she meets Agnes and Egon before being killed by Noah."@en ;
+                                  rdfs:label "Old Claudia's journey from 1987 to 1954"@en .
+
+
+###  https://w3id.org/dark-ontology/OldHelge
+dark:OldHelge rdf:type owl:NamedIndividual ,
+                       dark:PersonManifestation ;
+              dark:manifestationOf dark:HelgeDoppler ;
+              dark:memberOfFamily dark:DopplerFamily ;
+              dark:hasManifestationName "Helge Doppler" ;
+              rdfs:label "Helge Doppler"@en .
+
+
+###  https://w3id.org/dark-ontology/OldHelgeTravel01_2019_1986
+dark:OldHelgeTravel01_2019_1986 rdf:type owl:NamedIndividual ,
+                                         dark:TimeTravelEvent ;
+                                <http://www.w3id.org/dark-ontology/arrivesInWorld> dark:AdamWorld ;
+                                <http://www.w3id.org/dark-ontology/departsFromWorld> dark:AdamWorld ;
+                                dark:arrivesAtTime dark:Year_1986 ;
+                                dark:departsFromTime dark:Year_2019 ;
+                                dark:hasTraveler dark:OldHelge ;
+                                dark:usesDevice dark:CavePassage_AdamWorld ;
+                                dark:isIntentional "true"^^xsd:boolean ;
+                                rdfs:comment "Old Helge intentionally travels from 2019 to 1986 through the cave passage in an attempt to stop his younger self and prevent the child abductions."@en ;
+                                rdfs:label "Old Helge's journey from 2019 to 1986"@en .
+
+
+###  https://w3id.org/dark-ontology/OriginWorld
+dark:OriginWorld rdf:type owl:NamedIndividual ,
+                          dark:World ;
+                 rdfs:comment "The original world from which Adam's world and Eva's world are generated."@en ;
+                 rdfs:label "Origin world"@en .
+
+
+###  https://w3id.org/dark-ontology/Peter
+dark:Peter rdf:type owl:NamedIndividual ,
+                    dark:PersonManifestation ;
+           dark:manifestationOf dark:PeterDoppler ;
+           dark:memberOfFamily dark:DopplerFamily ;
+           dark:hasManifestationName "Peter Doppler" ;
+           rdfs:label "Peter Doppler"@en .
+
+
+###  https://w3id.org/dark-ontology/PeterDoppler
+dark:PeterDoppler rdf:type owl:NamedIndividual ,
+                           dark:Person ;
+                  dark:parentOf dark:ElisabethDoppler ,
+                                dark:FranziskaDoppler ;
+                  dark:hasCanonicalName "Peter Doppler" ;
+                  rdfs:label "Peter Doppler"@en .
+
+
+###  https://w3id.org/dark-ontology/PoliceOfficer
+dark:PoliceOfficer rdf:type owl:NamedIndividual ,
+                            dark:ProfessionalRole ;
+                   rdfs:label "Police officer"@en .
+
+
+###  https://w3id.org/dark-ontology/PortableTimeMachine
+dark:PortableTimeMachine rdf:type owl:NamedIndividual ,
+                                  dark:TimeTravelDevice ;
+                         rdfs:comment "A portable device used to travel between different temporal periods."@en ;
+                         rdfs:label "Portable time machine"@en .
+
+
+###  https://w3id.org/dark-ontology/Priest
+dark:Priest rdf:type owl:NamedIndividual ,
+                     dark:ProfessionalRole ;
+            rdfs:label "Priest"@en .
+
+
+###  https://w3id.org/dark-ontology/Regina
+dark:Regina rdf:type owl:NamedIndividual ,
+                     dark:PersonManifestation ;
+            dark:manifestationOf dark:ReginaTiedemann ;
+            dark:memberOfFamily dark:TiedemannFamily ;
+            dark:hasManifestationName "Regina Tiedemann" ;
+            rdfs:label "Regina Tiedemann"@en .
+
+
+###  https://w3id.org/dark-ontology/ReginaTiedemann
+dark:ReginaTiedemann rdf:type owl:NamedIndividual ,
+                              dark:Person ;
+                     dark:childOf dark:ClaudiaTiedemann ;
+                     dark:parentOf dark:BartoszTiedemann ;
+                     dark:spouseOf dark:AleksanderTiedemann ;
+                     dark:hasCanonicalName "Regina Tiedemann" ;
+                     rdfs:label "Regina Tiedemann"@en .
+
+
+###  https://w3id.org/dark-ontology/SecondReality
+dark:SecondReality rdf:type owl:NamedIndividual ,
+                            <http://www.w3id.org/dark-ontology/Reality> ;
+                   owl:differentFrom dark:ThirdReality ;
+                   rdfs:comment "The second narrative branch associated with an alternative unfolding of events within the temporal knot."@en ;
+                   rdfs:label "Second reality"@en .
+
+
+###  https://w3id.org/dark-ontology/SicMundus
+dark:SicMundus rdf:type owl:NamedIndividual ,
+                        dark:Organization ;
+               dark:hasDescription "Secret organization led by Adam" ;
+               rdfs:comment "An organization devoted to controlling the temporal cycle and led by Adam."@en ;
+               rdfs:label "Sic Mundus"@en .
+
+
+###  https://w3id.org/dark-ontology/SicMundusHeadquarters
+dark:SicMundusHeadquarters rdf:type owl:NamedIndividual ,
+                                    dark:Place ;
+                           dark:locatedIn dark:Winden ;
+                           rdfs:label "Sic Mundus headquarter"@en .
+
+
+###  https://w3id.org/dark-ontology/SicMundusLeaderRole
+dark:SicMundusLeaderRole rdf:type owl:NamedIndividual ,
+                                  dark:OrganizationRole ;
+                         rdfs:comment "An organizational role representing the leadership of Sic Mundus."@en ;
+                         rdfs:label "Sic Mundus leader role"@en .
+
+
+###  https://w3id.org/dark-ontology/Silja
+dark:Silja rdf:type owl:NamedIndividual ,
+                    dark:PersonManifestation ;
+           dark:manifestationOf dark:SiljaTiedemann ;
+           dark:hasManifestationName "Silja Tiedemann" ;
+           rdfs:label "Silja Tiedemann"@en .
+
+
+###  https://w3id.org/dark-ontology/SiljaTiedemann
+dark:SiljaTiedemann rdf:type owl:NamedIndividual ,
+                             dark:Person ;
+                    dark:parentOf dark:AgnesNielsen ,
+                                  dark:NoahTauber ;
+                    dark:hasCanonicalName "Silja Tiedemann" ;
+                    rdfs:label "Silja Tiedemann"@en .
+
+
+###  https://w3id.org/dark-ontology/StrangerTravel01_2052_2019
+dark:StrangerTravel01_2052_2019 rdf:type owl:NamedIndividual ,
+                                         dark:TimeTravelEvent ;
+                                <http://www.w3id.org/dark-ontology/arrivesInWorld> dark:AdamWorld ;
+                                <http://www.w3id.org/dark-ontology/departsFromWorld> dark:AdamWorld ;
+                                <http://www.w3id.org/dark-ontology/occursInReality> dark:FirstReality ;
+                                dark:arrivesAtTime dark:Year_2019 ;
+                                dark:departsFromTime dark:Year_2052 ;
+                                dark:hasTraveler dark:TheStranger ;
+                                dark:usesDevice dark:GodParticle ;
+                                dark:isIntentional "true"^^xsd:boolean ;
+                                rdfs:comment "The Stranger travels from the post-apocalyptic year 2052 to 2019 in an attempt to prevent the events that will lead to the apocalypse."@en ;
+                                rdfs:label "The Stranger's journey from 2052 to 2019"@en .
+
+
+###  https://w3id.org/dark-ontology/StrangerTravel02_2019_1986
+dark:StrangerTravel02_2019_1986 rdf:type owl:NamedIndividual ,
+                                         dark:TimeTravelEvent ;
+                                <http://www.w3id.org/dark-ontology/arrivesInWorld> dark:AdamWorld ;
+                                <http://www.w3id.org/dark-ontology/departsFromWorld> dark:AdamWorld ;
+                                <http://www.w3id.org/dark-ontology/occursInReality> dark:FirstReality ;
+                                dark:arrivesAtPlace dark:WindenCave ;
+                                dark:arrivesAtTime dark:Year_1986 ;
+                                dark:departsFromPlace dark:WindenCave ;
+                                dark:departsFromTime dark:Year_2019 ;
+                                dark:hasTraveler dark:TheStranger ;
+                                dark:usesDevice dark:CavePassage_AdamWorld ;
+                                dark:isIntentional "true"^^xsd:boolean ;
+                                rdfs:comment "The Stranger travels from 2019 to 1986 in order to investigate the temporal passage and influence the events connected to the time loop."@en ;
+                                rdfs:label "The Stranger's journey from 2019 to 1986"@en .
+
+
+###  https://w3id.org/dark-ontology/StrangerTravel03_1986_2019
+dark:StrangerTravel03_1986_2019 rdf:type owl:NamedIndividual ,
+                                         dark:TimeTravelEvent ;
+                                <http://www.w3id.org/dark-ontology/arrivesInWorld> dark:AdamWorld ;
+                                <http://www.w3id.org/dark-ontology/departsFromWorld> dark:AdamWorld ;
+                                <http://www.w3id.org/dark-ontology/occursInReality> dark:FirstReality ;
+                                dark:arrivesAtTime dark:Year_2019 ;
+                                dark:departsFromTime dark:Year_1986 ;
+                                dark:hasTraveler dark:TheStranger ;
+                                dark:usesDevice dark:PortableTimeMachine ;
+                                dark:isIntentional "true"^^xsd:boolean ;
+                                rdfs:comment "The Stranger returns from 1986 to 2019 after his intervention in the caves and continues his attempt to prevent the temporal cycle."@en ;
+                                rdfs:label "The Stranger's journey from 1986 to 2019"@en .
+
+
+###  https://w3id.org/dark-ontology/StrangerTravel04_2020_1987
+dark:StrangerTravel04_2020_1987 rdf:type owl:NamedIndividual ,
+                                         dark:TimeTravelEvent ;
+                                <http://www.w3id.org/dark-ontology/arrivesInWorld> dark:AdamWorld ;
+                                <http://www.w3id.org/dark-ontology/departsFromWorld> dark:AdamWorld ;
+                                <http://www.w3id.org/dark-ontology/occursInReality> dark:FirstReality ;
+                                dark:arrivesAtTime dark:Year_1987 ;
+                                dark:departsFromTime dark:Year_2020 ;
+                                dark:hasTraveler dark:Hannah ,
+                                                 dark:TheStranger ;
+                                dark:usesDevice dark:PortableTimeMachine ;
+                                rdfs:comment "The Stranger intentionally takes Hannah from 2020 to 1987 to show her that Mikkel is living there as Michael Kahnwald."@en ;
+                                rdfs:label "The Stranger's journey from 2020 to 1987"@en .
+
+
+###  https://w3id.org/dark-ontology/StrangerTravel05_1987_2020
+dark:StrangerTravel05_1987_2020 rdf:type owl:NamedIndividual ,
+                                         dark:TimeTravelEvent ;
+                                <http://www.w3id.org/dark-ontology/arrivesInWorld> dark:AdamWorld ;
+                                <http://www.w3id.org/dark-ontology/departsFromWorld> dark:AdamWorld ;
+                                <http://www.w3id.org/dark-ontology/occursInReality> dark:FirstReality ;
+                                dark:arrivesAtTime dark:Year_2020 ;
+                                dark:departsFromTime dark:Year_1987 ;
+                                dark:hasTraveler dark:Hannah ,
+                                                 dark:TheStranger ;
+                                dark:usesDevice dark:PortableTimeMachine ;
+                                rdfs:comment "The Stranger returns from 1987 to 2020 after taking Hannah into the past and leaves her behind in 1987."@en ;
+                                rdfs:label "The Stranger's journey from 1987 to 2020"@en .
+
+
+###  https://w3id.org/dark-ontology/StrangerTravel06_2020_1888
+dark:StrangerTravel06_2020_1888 rdf:type owl:NamedIndividual ,
+                                         dark:TimeTravelEvent ;
+                                dark:arrivesAtTime dark:Year_1888 ;
+                                dark:departsFromTime dark:Year_2020 ;
+                                dark:hasTraveler dark:Bartosz ,
+                                                 dark:Franziska ,
+                                                 dark:Magnus ,
+                                                 dark:TheStranger ;
+                                dark:usesDevice dark:PortableTimeMachine ;
+                                dark:isIntentional "true"^^xsd:boolean ;
+                                rdfs:comment "During the 2020 apocalypse, the Stranger activates the portable time machine and is unexpectedly transported to 1888 together with Bartosz, Magnus, and Franziska."@en ;
+                                rdfs:label "The Stranger's journey from 2020 to 1888"@en .
+
+
+###  https://w3id.org/dark-ontology/Tannhaus
+dark:Tannhaus rdf:type owl:NamedIndividual ,
+                       dark:PersonManifestation ;
+              dark:built dark:PortableTimeMachine ;
+              dark:hasRole dark:Clockmaker ;
+              dark:manifestationOf dark:HGTannhaus ;
+              dark:hasManifestationName "H. G. Tannhaus" ;
+              rdfs:comment "The manifestation of H. G. Tannhaus who works as a clockmaker and constructs the portable time machine."@en ;
+              rdfs:label "Tannhaus"@en .
+
+
+###  https://w3id.org/dark-ontology/TheStranger
+dark:TheStranger rdf:type owl:NamedIndividual ,
+                          dark:PersonManifestation ;
+                 dark:manifestationOf dark:JonasKahnwald ;
+                 dark:hasManifestationName "The Stranger" ;
+                 rdfs:comment "An adult manifestation of Jonas Kahnwald."@en ;
+                 rdfs:label "The Stranger"@en .
+
+
+###  https://w3id.org/dark-ontology/ThirdReality
+dark:ThirdReality rdf:type owl:NamedIndividual ,
+                           <http://www.w3id.org/dark-ontology/Reality> ;
+                  rdfs:comment "The narrative branch in which Jonas and Martha reach the origin world and prevent the creation of the temporal knot."@en ;
+                  rdfs:label "Third reality"@en .
+
+
+###  https://w3id.org/dark-ontology/TiedemannFamily
+dark:TiedemannFamily rdf:type owl:NamedIndividual ,
+                              dark:Family ;
+                     rdfs:label "Tiedemann family"@en .
+
+
+###  https://w3id.org/dark-ontology/TimeTravelChair
+dark:TimeTravelChair rdf:type owl:NamedIndividual ,
+                              dark:TimeTravelDevice ;
+                     rdfs:comment "Experimental time travel chair."@en ;
+                     rdfs:label "Time Travel Chair"@en .
+
+
+###  https://w3id.org/dark-ontology/TronteNielsen
+dark:TronteNielsen rdf:type owl:NamedIndividual ,
+                            dark:Person ;
+                   dark:parentOf dark:UlrichNielsen ;
+                   dark:hasCanonicalName "Tronte Nielsen" ;
+                   rdfs:comment "The persistent personal identity of Tronte Nielsen across his temporal manifestations."@en ;
+                   rdfs:label "Tronte Nielsen"@en .
+
+
+###  https://w3id.org/dark-ontology/Ulrich
+dark:Ulrich rdf:type owl:NamedIndividual ,
+                     dark:PersonManifestation ;
+            dark:existsInWorld dark:AdamWorld ;
+            dark:hasRole dark:PoliceOfficer ;
+            dark:manifestationOf dark:UlrichNielsen ;
+            dark:memberOfFamily dark:NielsenFamily ;
+            dark:hasManifestationName "Ulrich Nielsen" ;
+            rdfs:label "Ulrich Nielsen"@en .
+
+
+###  https://w3id.org/dark-ontology/UlrichNielsen
+dark:UlrichNielsen rdf:type owl:NamedIndividual ,
+                            dark:Person ;
+                   dark:parentOf dark:MagnusNielsen ,
+                                 dark:MarthaNielsen_AdamWorld ,
+                                 dark:MikkelNielsen ;
+                   dark:siblingOf dark:MadsNielsen ;
+                   dark:spouseOf dark:KatharinaNielsen ;
+                   dark:hasCanonicalName "Ulrich Nielsen" ;
+                   rdfs:comment "The persistent personal identity of Ulrich Nielsen across his temporal manifestations."@en ;
+                   rdfs:label "Ulrich Nielsen"@en .
+
+
+###  https://w3id.org/dark-ontology/UlrichTravel01_2019_1953
+dark:UlrichTravel01_2019_1953 rdf:type owl:NamedIndividual ,
+                                       dark:TimeTravelEvent ;
+                              <http://www.w3id.org/dark-ontology/arrivesInWorld> dark:AdamWorld ;
+                              <http://www.w3id.org/dark-ontology/departsFromWorld> dark:AdamWorld ;
+                              <http://www.w3id.org/dark-ontology/occursInReality> dark:FirstReality ;
+                              dark:arrivesAtPlace dark:WindenCave ;
+                              dark:arrivesAtTime dark:Year_1953 ;
+                              dark:departsFromPlace dark:WindenCave ;
+                              dark:departsFromTime dark:Year_2019 ;
+                              dark:hasTraveler dark:Ulrich ;
+                              dark:usesDevice dark:CavePassage_AdamWorld ;
+                              dark:isIntentional "false"^^xsd:boolean ;
+                              rdfs:comment "An unintentional time travel event in which Ulrich enters the cave passage while searching for Mikkel and is unknowingly transported from 2019 to 1953."@en ;
+                              rdfs:label "Ulrich's journey from 2019 to 1953"@en .
+
+
+###  https://w3id.org/dark-ontology/Winden
+dark:Winden rdf:type owl:NamedIndividual ,
+                     dark:Place ;
+            rdfs:comment "The fictional town in which most events of the narrative take place."@en ;
+            rdfs:label "Winden"@en .
+
+
+###  https://w3id.org/dark-ontology/WindenCave
+dark:WindenCave rdf:type owl:NamedIndividual ,
+                         dark:Place ;
+                dark:locatedIn dark:Winden ;
+                rdfs:comment "The cave system in Winden containing the temporal passage."@en ;
+                rdfs:label "Winden cave"@en .
+
+
+###  https://w3id.org/dark-ontology/WindenNuclearPlant
+dark:WindenNuclearPlant rdf:type owl:NamedIndividual ,
+                                 dark:Place ;
+                        dark:locatedIn dark:Winden ;
+                        rdfs:comment "The nuclear power plant located in Winden and connected to several temporal events."@en ;
+                        rdfs:label "Winden nuclear power plant"@en .
+
+
+###  https://w3id.org/dark-ontology/Yasin
+dark:Yasin rdf:type owl:NamedIndividual ,
+                    dark:PersonManifestation ;
+           dark:manifestationOf dark:YasinFriese ;
+           dark:hasManifestationName "Yasin Friese" ;
+           rdfs:label "Yasin Friese"@en .
+
+
+###  https://w3id.org/dark-ontology/YasinFriese
+dark:YasinFriese rdf:type owl:NamedIndividual ,
+                          dark:Person ;
+                 dark:hasCanonicalName "Yasin Friese" ;
+                 rdfs:label "Yasin Friese"@en .
+
+
+###  https://w3id.org/dark-ontology/YasinFrieseDisappearance_2019
+dark:YasinFrieseDisappearance_2019 rdf:type owl:NamedIndividual ,
+                                            dark:DisappearanceEvent ;
+                                   <http://www.w3id.org/dark-ontology/occursInReality> dark:FirstReality ;
+                                   dark:hasParticipant dark:Yasin ;
+                                   dark:occursAtTime dark:Year_2019 ;
+                                   dark:occursInWorld dark:AdamWorld ;
+                                   rdfs:comment "A disappearance event in which Yasin Friese vanishes from Adam's world in 2019 after being abducted by Noah and Helge."@en ;
+                                   rdfs:label "Yasin Friese's disappearance in 2019"@en .
+
+
+###  https://w3id.org/dark-ontology/Year_1888
+dark:Year_1888 rdf:type owl:NamedIndividual ,
+                        dark:Year ;
+               dark:hasYearValue "1888"^^xsd:gYear ;
+               rdfs:label "1888"^^xsd:gYear .
+
+
+###  https://w3id.org/dark-ontology/Year_1920
+dark:Year_1920 rdf:type owl:NamedIndividual ,
+                        dark:Year ;
+               rdfs:label "1920"^^xsd:gYear .
+
+
+###  https://w3id.org/dark-ontology/Year_1921
+dark:Year_1921 rdf:type owl:NamedIndividual ,
+                        dark:Year ;
+               dark:hasYearValue "1921"^^xsd:gYear ;
+               rdfs:label "1921"^^xsd:gYear .
+
+
+###  https://w3id.org/dark-ontology/Year_1953
+dark:Year_1953 rdf:type owl:NamedIndividual ,
+                        dark:Year ;
+               dark:hasYearValue "1953"^^xsd:gYear ;
+               rdfs:label "1953"^^xsd:gYear .
+
+
+###  https://w3id.org/dark-ontology/Year_1954
+dark:Year_1954 rdf:type owl:NamedIndividual ,
+                        dark:Year ;
+               dark:hasYearValue "1954"^^xsd:gYear ;
+               rdfs:label "1954"^^xsd:gYear .
+
+
+###  https://w3id.org/dark-ontology/Year_1971
+dark:Year_1971 rdf:type owl:NamedIndividual ,
+                        dark:Year ;
+               dark:hasYearValue "1971"^^xsd:gYear ;
+               rdfs:label "1971"^^xsd:gYear .
+
+
+###  https://w3id.org/dark-ontology/Year_1986
+dark:Year_1986 rdf:type owl:NamedIndividual ,
+                        dark:Year ;
+               dark:hasYearValue "1986"^^xsd:gYear ;
+               rdfs:label "1986"^^xsd:gYear .
+
+
+###  https://w3id.org/dark-ontology/Year_1987
+dark:Year_1987 rdf:type owl:NamedIndividual ,
+                        dark:Year ;
+               dark:hasYearValue "1987"^^xsd:gYear ;
+               rdfs:label "1987"^^xsd:gYear .
+
+
+###  https://w3id.org/dark-ontology/Year_1988
+dark:Year_1988 rdf:type owl:NamedIndividual ,
+                        dark:Year ;
+               dark:hasYearValue "1988"^^xsd:gYear ;
+               rdfs:label "1988"^^xsd:gYear .
+
+
+###  https://w3id.org/dark-ontology/Year_2019
+dark:Year_2019 rdf:type owl:NamedIndividual ,
+                        dark:Year ;
+               dark:hasYearValue "2019"^^xsd:gYear ;
+               rdfs:label "2019"^^xsd:gYear .
+
+
+###  https://w3id.org/dark-ontology/Year_2020
+dark:Year_2020 rdf:type owl:NamedIndividual ,
+                        dark:Year ;
+               dark:hasYearValue "2020"^^xsd:gYear ;
+               rdfs:label "2020"^^xsd:gYear .
+
+
+###  https://w3id.org/dark-ontology/Year_2041
+dark:Year_2041 rdf:type owl:NamedIndividual ,
+                        dark:Year ;
+               rdfs:label "2041"^^xsd:gYear .
+
+
+###  https://w3id.org/dark-ontology/Year_2052
+dark:Year_2052 rdf:type owl:NamedIndividual ,
+                        dark:Year ;
+               dark:hasYearValue "2052"^^xsd:gYear ;
+               rdfs:label "2052"^^xsd:gYear .
+
+
+###  https://w3id.org/dark-ontology/Year_2053
+dark:Year_2053 rdf:type owl:NamedIndividual ,
+                        dark:Year ;
+               dark:hasYearValue "2053"^^xsd:gYear ;
+               rdfs:label "2053"^^xsd:gYear .
+
+
+###  https://w3id.org/dark-ontology/YoungClaudia
+dark:YoungClaudia rdf:type owl:NamedIndividual ,
+                           dark:PersonManifestation ;
+                  dark:hasManifestationName "Claudia Tiedemann" ;
+                  rdfs:label "Claudia Tiedemann"@en .
+
+
+###  https://w3id.org/dark-ontology/YoungHelge
+dark:YoungHelge rdf:type owl:NamedIndividual ,
+                         dark:PersonManifestation ;
+                dark:manifestationOf dark:HelgeDoppler ;
+                dark:memberOfFamily dark:DopplerFamily ;
+                dark:hasManifestationName "Helge Doppler" ;
+                rdfs:label "Helge Doppler"@en .
+
+
+###  https://w3id.org/dark-ontology/YoungHelgeTravel01_1953_1986
+dark:YoungHelgeTravel01_1953_1986 rdf:type owl:NamedIndividual ,
+                                           dark:TimeTravelEvent ;
+                                  <http://www.w3id.org/dark-ontology/arrivesInWorld> dark:AdamWorld ;
+                                  <http://www.w3id.org/dark-ontology/departsFromWorld> dark:AdamWorld ;
+                                  dark:arrivesAtTime dark:Year_1986 ;
+                                  dark:departsFromPlace dark:DopplerBunker ;
+                                  dark:departsFromTime dark:Year_1953 ;
+                                  dark:hasTraveler dark:YoungHelge ;
+                                  dark:usesDevice dark:BunkerPortal ;
+                                  dark:isIntentional "false"^^xsd:boolean ;
+                                  rdfs:comment "After being attacked by Ulrich and left in the Doppler bunker, young Helge touches Jonas through the temporal portal and is unintentionally transported from 1953 to 1986."@en ;
+                                  rdfs:label "Young Helge's journey from 1953 to 1986"@en .
+
+
+###  https://w3id.org/dark-ontology/YoungHelgeTravel02_1986_1954
+dark:YoungHelgeTravel02_1986_1954 rdf:type owl:NamedIndividual ,
+                                           dark:TimeTravelEvent ;
+                                  <http://www.w3id.org/dark-ontology/arrivesInWorld> dark:AdamWorld ;
+                                  <http://www.w3id.org/dark-ontology/departsFromWorld> dark:AdamWorld ;
+                                  dark:arrivesAtPlace dark:DopplerBunker ;
+                                  dark:arrivesAtTime dark:Year_1954 ;
+                                  dark:departsFromPlace dark:DopplerBunker ;
+                                  dark:departsFromTime dark:Year_1986 ;
+                                  dark:hasTraveler dark:YoungHelge ;
+                                  dark:usesDevice dark:TimeTravelChair ;
+                                  dark:isIntentional "false"^^xsd:boolean ;
+                                  rdfs:comment "Young Helge is sent from 1986 to 1954 through the experimental time machine in the Doppler bunker, returning to the year following his disappearance."@en ;
+                                  rdfs:label "Young Helge's journey from 1986 to 1954"@en .
+
+
+###  Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi
