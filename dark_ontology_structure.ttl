@@ -1,0 +1,656 @@
+@prefix : <https://w3id.org/dark-ontology/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dark: <https://w3id.org/dark-ontology/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@base <https://w3id.org/dark-ontology/> .
+
+<https://w3id.org/dark-ontology/> rdf:type owl:Ontology ;
+                                   dcterms:description "An OWL ontology designed to distinguish a persistent person from their temporal manifestations and to represent changes in name, age, role, family, world, and temporal location."@en ;
+                                   dcterms:source "Change of Time Varying Entities, EventCore, Participation, AgentRole" ,
+                                                  "https://github.com/odpa/patterns-repository" ;
+                                   dcterms:title "Dark Ontology: identity and temporal manifestations"@en ;
+                                   vann:preferredNamespacePrefix "dark" ;
+                                   vann:preferredNamespaceUri "https://w3id.org/dark-ontology/" ;
+                                   rdfs:comment "Initial project TBox. The patterns are specialized for the narrative domain of Dark and are not imported automatically in order to avoid unstable remote dependencies."@en ;
+                                   owl:versionInfo "0.1.0" .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/terms/description
+dcterms:description rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/source
+dcterms:source rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/title
+dcterms:title rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/vocab/vann/preferredNamespacePrefix
+vann:preferredNamespacePrefix rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/vocab/vann/preferredNamespaceUri
+vann:preferredNamespaceUri rdf:type owl:AnnotationProperty .
+
+
+###  https://w3id.org/dark-ontology/modelingNote
+dark:modelingNote rdf:type owl:AnnotationProperty ;
+                  rdfs:label "modeling note"@en .
+
+
+###  https://w3id.org/dark-ontology/reusesPattern
+dark:reusesPattern rdf:type owl:AnnotationProperty ;
+                   rdfs:label "reuses pattern"@en .
+
+
+###  https://w3id.org/dark-ontology/supportsCompetencyQuestion
+dark:supportsCompetencyQuestion rdf:type owl:AnnotationProperty ;
+                                rdfs:label "supports competency question"@en .
+
+
+#################################################################
+#    Datatypes
+#################################################################
+
+###  http://www.w3.org/2001/XMLSchema#gYear
+xsd:gYear rdf:type rdfs:Datatype .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.W3id.org/dark-ontology/hasAlternateWorldCounterpart
+<http://www.W3id.org/dark-ontology/hasAlternateWorldCounterpart> rdf:type owl:ObjectProperty ,
+                                                                          owl:SymmetricProperty ;
+                                                                 rdfs:domain dark:Person ;
+                                                                 rdfs:comment "Relates a person to a corresponding person in an alternate narrative world."@en ;
+                                                                 rdfs:label "has alternate-world counterpart"@en .
+
+
+###  http://www.w3id.org/dark-ontology/arrivesInWorld
+<http://www.w3id.org/dark-ontology/arrivesInWorld> rdf:type owl:ObjectProperty ;
+                                                   rdfs:domain dark:TimeTravelEvent ;
+                                                   rdfs:range dark:World ;
+                                                   rdfs:comment "Relates a time travel event to the world in which it arrives."@en ;
+                                                   rdfs:label "arrives in world"@en .
+
+
+###  http://www.w3id.org/dark-ontology/departsFromWorld
+<http://www.w3id.org/dark-ontology/departsFromWorld> rdf:type owl:ObjectProperty ;
+                                                     rdfs:domain dark:TimeTravelEvent ;
+                                                     rdfs:range dark:World ;
+                                                     rdfs:comment "Relates a time travel event to the world from which it departs."@en ;
+                                                     rdfs:label "departs from world"@en .
+
+
+###  http://www.w3id.org/dark-ontology/hasOrganizationMember
+<http://www.w3id.org/dark-ontology/hasOrganizationMember> rdf:type owl:ObjectProperty ;
+                                                          owl:inverseOf dark:belongsToOrganization ;
+                                                          rdfs:domain dark:Organization ;
+                                                          rdfs:range dark:PersonManifestation ;
+                                                          rdfs:comment "Relates an organization to a person manifestation that belongs to it."@en ;
+                                                          rdfs:label "has organization member"@en .
+
+
+###  http://www.w3id.org/dark-ontology/occursInReality
+<http://www.w3id.org/dark-ontology/occursInReality> rdf:type owl:ObjectProperty ;
+                                                    rdfs:domain dark:Event ;
+                                                    rdfs:range <http://www.w3id.org/dark-ontology/Reality> ;
+                                                    rdfs:comment "Relates an event to the narrative reality or branch in which it occurs."@en ;
+                                                    rdfs:label "occurs in reality"@en .
+
+
+###  https://w3id.org/dark-ontology/adoptiveChildOf
+dark:adoptiveChildOf rdf:type owl:ObjectProperty ;
+                     owl:inverseOf dark:adoptiveParentOf ;
+                     rdf:type owl:AsymmetricProperty ,
+                              owl:IrreflexiveProperty ;
+                     rdfs:domain dark:Person ;
+                     rdfs:range dark:Person ;
+                     rdfs:comment "Relates a person to their adoptive parent."@en ;
+                     rdfs:label "adoptive child of"@en .
+
+
+###  https://w3id.org/dark-ontology/adoptiveParentOf
+dark:adoptiveParentOf rdf:type owl:ObjectProperty ,
+                               owl:AsymmetricProperty ,
+                               owl:IrreflexiveProperty ;
+                      rdfs:domain dark:Person ;
+                      rdfs:range dark:Person ;
+                      rdfs:comment "Relates a person to their adopted child."@en ;
+                      rdfs:label "adoptive parent of"@en .
+
+
+###  https://w3id.org/dark-ontology/arrivesAtPlace
+dark:arrivesAtPlace rdf:type owl:ObjectProperty ,
+                             owl:FunctionalProperty ;
+                    rdfs:domain dark:TimeTravelEvent ;
+                    rdfs:range dark:Place ;
+                    rdfs:comment "Relates a time travel event to the place at which it arrives."@en ;
+                    rdfs:label "arrives at place"@en .
+
+
+###  https://w3id.org/dark-ontology/arrivesAtTime
+dark:arrivesAtTime rdf:type owl:ObjectProperty ,
+                            owl:FunctionalProperty ;
+                   rdfs:domain dark:TimeTravelEvent ;
+                   rdfs:range dark:TimeInterval ;
+                   rdfs:comment "Relates a time travel event to its temporal destination."@en ;
+                   rdfs:label "arrives at time"@en .
+
+
+###  https://w3id.org/dark-ontology/belongsToOrganization
+dark:belongsToOrganization rdf:type owl:ObjectProperty ;
+                           rdfs:domain dark:PersonManifestation ;
+                           rdfs:range dark:Organization ;
+                           rdfs:comment "Relates a person manifestation to an organization to which it belongs."@en ;
+                           rdfs:label "belongs to organization"@en .
+
+
+###  https://w3id.org/dark-ontology/built
+dark:built rdf:type owl:ObjectProperty ;
+           owl:inverseOf dark:builtBy ;
+           rdfs:domain dark:PersonManifestation ;
+           rdfs:range dark:TimeTravelDevice ;
+           rdfs:comment "Relates a person manifestation to a device that they constructed."@en ;
+           rdfs:label "built"@en .
+
+
+###  https://w3id.org/dark-ontology/builtBy
+dark:builtBy rdf:type owl:ObjectProperty ;
+             rdfs:domain dark:TimeTravelDevice ;
+             rdfs:range dark:PersonManifestation ;
+             rdfs:comment "Relates a device to the person manifestation that constructed it."@en ;
+             rdfs:label "built by"@en .
+
+
+###  https://w3id.org/dark-ontology/childOf
+dark:childOf rdf:type owl:ObjectProperty ;
+             owl:inverseOf dark:parentOf ;
+             rdf:type owl:IrreflexiveProperty ;
+             rdfs:domain dark:Person ;
+             rdfs:range dark:Person ;
+             rdfs:comment "Relates a person to one of their parents."@en ;
+             rdfs:label "child of"@en .
+
+
+###  https://w3id.org/dark-ontology/departsFromPlace
+dark:departsFromPlace rdf:type owl:ObjectProperty ,
+                               owl:FunctionalProperty ;
+                      rdfs:domain dark:TimeTravelEvent ;
+                      rdfs:range dark:Place ;
+                      rdfs:comment "Relates a time travel event to the place from which it departs."@en ;
+                      rdfs:label "departs from place"@en .
+
+
+###  https://w3id.org/dark-ontology/departsFromTime
+dark:departsFromTime rdf:type owl:ObjectProperty ,
+                              owl:FunctionalProperty ;
+                     rdfs:domain dark:TimeTravelEvent ;
+                     rdfs:range dark:TimeInterval ;
+                     rdfs:comment "Relates a time travel event to its temporal point or interval of departure."@en ;
+                     rdfs:label "departs from time"@en .
+
+
+###  https://w3id.org/dark-ontology/existsDuring
+dark:existsDuring rdf:type owl:ObjectProperty ;
+                  rdfs:range dark:TimeInterval ;
+                  rdfs:comment "Relates a person manifestation to the temporal interval during which it exists."@en ;
+                  rdfs:label "exists during"@en .
+
+
+###  https://w3id.org/dark-ontology/existsInWorld
+dark:existsInWorld rdf:type owl:ObjectProperty ;
+                   rdfs:range dark:World ;
+                   rdfs:comment "Relates an entity to the narrative world in which it exists."@en ;
+                   rdfs:label "exists in world"@en .
+
+
+###  https://w3id.org/dark-ontology/hasFamilyMember
+dark:hasFamilyMember rdf:type owl:ObjectProperty ;
+                     owl:inverseOf dark:memberOfFamily ;
+                     rdfs:domain dark:Family ;
+                     rdfs:range dark:PersonManifestation ;
+                     rdfs:comment "Relates a family unit to one of its person manifestations."@en ;
+                     rdfs:label "has family member"@en .
+
+
+###  https://w3id.org/dark-ontology/hasManifestation
+dark:hasManifestation rdf:type owl:ObjectProperty ;
+                      owl:inverseOf dark:manifestationOf ;
+                      rdfs:domain dark:Person ;
+                      rdfs:range dark:PersonManifestation ;
+                      rdfs:comment "Relates a persistent person to one of their contextualized manifestations."@en ;
+                      rdfs:label "has manifestation"@en .
+
+
+###  https://w3id.org/dark-ontology/hasParticipant
+dark:hasParticipant rdf:type owl:ObjectProperty ;
+                    owl:inverseOf dark:participatesIn ;
+                    rdfs:domain dark:Event ;
+                    rdfs:range dark:PersonManifestation ;
+                    rdfs:comment "Relates an event to a person manifestation participating in it."@en ;
+                    rdfs:label "has participant"@en .
+
+
+###  https://w3id.org/dark-ontology/hasRole
+dark:hasRole rdf:type owl:ObjectProperty ;
+             owl:inverseOf dark:isRoleOf ;
+             rdfs:domain dark:PersonManifestation ;
+             rdfs:range dark:Role ;
+             rdfs:comment "Relates a person manifestation to a role held within a specific narrative context."@en ;
+             rdfs:label "has role"@en .
+
+
+###  https://w3id.org/dark-ontology/hasTraveler
+dark:hasTraveler rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf dark:hasParticipant ;
+                 owl:inverseOf dark:isTravelerIn ;
+                 rdfs:domain dark:TimeTravelEvent ;
+                 rdfs:range dark:PersonManifestation ;
+                 rdfs:comment "Relates a time travel event to a person manifestation that travels in it."@en ;
+                 rdfs:label "has traveler"@en .
+
+
+###  https://w3id.org/dark-ontology/isRoleOf
+dark:isRoleOf rdf:type owl:ObjectProperty ;
+              rdfs:domain dark:Role ;
+              rdfs:range dark:PersonManifestation ;
+              rdfs:comment "Relates a role to the person manifestation that holds it."@en ;
+              rdfs:label "is role of"@en .
+
+
+###  https://w3id.org/dark-ontology/isTravelerIn
+dark:isTravelerIn rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf dark:participatesIn ;
+                  rdfs:domain dark:PersonManifestation ;
+                  rdfs:range dark:TimeTravelEvent ;
+                  rdfs:comment "Relates a person manifestation to a time travel event in which it travels."@en ;
+                  rdfs:label "is traveler in"@en .
+
+
+###  https://w3id.org/dark-ontology/isUsedIn
+dark:isUsedIn rdf:type owl:ObjectProperty ;
+              owl:inverseOf dark:usesDevice ;
+              rdfs:domain dark:TimeTravelDevice ;
+              rdfs:range dark:TimeTravelEvent ;
+              rdfs:comment "Relates a time travel device to a time travel event in which it is used."@en ;
+              rdfs:label "is used in"@en .
+
+
+###  https://w3id.org/dark-ontology/locatedIn
+dark:locatedIn rdf:type owl:ObjectProperty ;
+               rdfs:range dark:Place ;
+               rdfs:comment "Relates a place to a broader place in which it is located."@en ;
+               rdfs:label "located in"@en .
+
+
+###  https://w3id.org/dark-ontology/manifestationOf
+dark:manifestationOf rdf:type owl:ObjectProperty ,
+                              owl:FunctionalProperty ;
+                     rdfs:domain dark:PersonManifestation ;
+                     rdfs:range dark:Person ;
+                     rdfs:comment "Relates a contextualized person manifestation to its persistent personal identity."@en ;
+                     rdfs:label "manifestation of"@en .
+
+
+###  https://w3id.org/dark-ontology/memberOfFamily
+dark:memberOfFamily rdf:type owl:ObjectProperty ;
+                    rdfs:domain dark:PersonManifestation ;
+                    rdfs:range dark:Family ;
+                    rdfs:comment "Relates a person manifestation to the family unit to which it belongs."@en ;
+                    rdfs:label "member of family"@en .
+
+
+###  https://w3id.org/dark-ontology/occursAtPlace
+dark:occursAtPlace rdf:type owl:ObjectProperty ;
+                   rdfs:domain dark:Event ;
+                   rdfs:range dark:Place ;
+                   rdfs:comment "Relates an event to a place at which it occurs."@en ;
+                   rdfs:label "occurs at place"@en .
+
+
+###  https://w3id.org/dark-ontology/occursAtTime
+dark:occursAtTime rdf:type owl:ObjectProperty ;
+                  rdfs:domain dark:Event ;
+                  rdfs:range dark:TemporalEntity ;
+                  rdfs:comment "Relates an event to the temporal interval during which it occurs."@en ;
+                  rdfs:label "occurs at time"@en .
+
+
+###  https://w3id.org/dark-ontology/occursInWorld
+dark:occursInWorld rdf:type owl:ObjectProperty ;
+                   rdfs:domain dark:Event ;
+                   rdfs:range dark:World ;
+                   rdfs:comment "Relates an event to the narrative world in which it occurs."@en ;
+                   rdfs:label "occurs in world"@en .
+
+
+###  https://w3id.org/dark-ontology/parentOf
+dark:parentOf rdf:type owl:ObjectProperty ,
+                       owl:IrreflexiveProperty ;
+              rdfs:domain dark:Person ;
+              rdfs:range dark:Person ;
+              rdfs:comment "Relates a person to one of their children."@en ;
+              rdfs:label "parent of"@en .
+
+
+###  https://w3id.org/dark-ontology/participatesIn
+dark:participatesIn rdf:type owl:ObjectProperty ;
+                    rdfs:domain dark:PersonManifestation ;
+                    rdfs:range dark:Event ;
+                    rdfs:comment "Relates a person manifestation to an event in which it participates."@en ;
+                    rdfs:label "participates in"@en .
+
+
+###  https://w3id.org/dark-ontology/passesThroughPlace
+dark:passesThroughPlace rdf:type owl:ObjectProperty ;
+                        rdfs:domain dark:TimeTravelEvent ;
+                        rdfs:range dark:Place ;
+                        rdfs:comment "Relates a time travel event to an intermediate place through which it passes."@en ;
+                        rdfs:label "passes through place"@en .
+
+
+###  https://w3id.org/dark-ontology/siblingOf
+dark:siblingOf rdf:type owl:ObjectProperty ,
+                        owl:SymmetricProperty ,
+                        owl:IrreflexiveProperty ;
+               rdfs:domain dark:Person ;
+               rdfs:range dark:Person ;
+               rdfs:comment "Relates a person to one of their siblings."@en ;
+               rdfs:label "sibling of"@en .
+
+
+###  https://w3id.org/dark-ontology/spouseOf
+dark:spouseOf rdf:type owl:ObjectProperty ,
+                       owl:SymmetricProperty ,
+                       owl:IrreflexiveProperty ;
+              rdfs:domain dark:Person ;
+              rdfs:range dark:Person ;
+              rdfs:comment "Relates a person to their spouse."@en ;
+              rdfs:label "spouse of"@en .
+
+
+###  https://w3id.org/dark-ontology/usesDevice
+dark:usesDevice rdf:type owl:ObjectProperty ;
+                rdfs:domain dark:TimeTravelEvent ;
+                rdfs:range dark:TimeTravelDevice ;
+                rdfs:comment "Relates a time travel event to the device or mechanism used to enable it."@en ;
+                rdfs:label "uses device"@en .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  https://w3id.org/dark-ontology/hasAge
+dark:hasAge rdf:type owl:DatatypeProperty ,
+                     owl:FunctionalProperty ;
+            rdfs:domain dark:PersonManifestation ;
+            rdfs:range xsd:nonNegativeInteger ;
+            rdfs:comment "Relates a person manifestation to its age within a specific narrative context."@en ;
+            rdfs:label "has age"@en .
+
+
+###  https://w3id.org/dark-ontology/hasCanonicalName
+dark:hasCanonicalName rdf:type owl:DatatypeProperty ,
+                               owl:FunctionalProperty ;
+                      rdfs:domain dark:Person ;
+                      rdfs:range xsd:string ;
+                      rdfs:comment "Relates a persistent person to the canonical name used to identify them in the ontology."@en ;
+                      rdfs:label "has canonical name"@en .
+
+
+###  https://w3id.org/dark-ontology/hasDescription
+dark:hasDescription rdf:type owl:DatatypeProperty ;
+                    rdfs:range xsd:string ;
+                    rdfs:comment "Provides a textual description of an entity."@en ;
+                    rdfs:label "has description"@en .
+
+
+###  https://w3id.org/dark-ontology/hasManifestationName
+dark:hasManifestationName rdf:type owl:DatatypeProperty ,
+                                   owl:FunctionalProperty ;
+                          rdfs:domain dark:PersonManifestation ;
+                          rdfs:range xsd:string ;
+                          rdfs:comment "Relates a person manifestation to the name or alias used in that specific narrative context."@en ;
+                          rdfs:label "has manifestation name"@en .
+
+
+###  https://w3id.org/dark-ontology/hasSourceReference
+dark:hasSourceReference rdf:type owl:DatatypeProperty ;
+                        rdfs:range xsd:anyURI ;
+                        rdfs:comment "Provides a textual reference to a source supporting the modeled information."@en ;
+                        rdfs:label "has source reference"@en .
+
+
+###  https://w3id.org/dark-ontology/hasYearValue
+dark:hasYearValue rdf:type owl:DatatypeProperty ,
+                           owl:FunctionalProperty ;
+                  rdfs:domain dark:Year ;
+                  rdfs:range xsd:gYear ;
+                  rdfs:comment "Relates a year individual to its numerical calendar value.e"@en ;
+                  rdfs:label "has year value"@en .
+
+
+###  https://w3id.org/dark-ontology/isIntentional
+dark:isIntentional rdf:type owl:DatatypeProperty ,
+                            owl:FunctionalProperty ;
+                   rdfs:domain dark:TimeTravelEvent ;
+                   rdfs:range xsd:boolean ;
+                   rdfs:comment "Indicates whether the time travel event was intentionally initiated by the traveler."@en ;
+                   rdfs:label "is intentional"@en .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.co-ode.org/ontologies/ont.owl#CavePassage
+<http://www.co-ode.org/ontologies/ont.owl#CavePassage> rdf:type owl:Class ;
+                                                       rdfs:subClassOf dark:TimeTravelDevice ;
+                                                       rdfs:comment "A passage through the Winden caves that functions as a time travel mechanism within a specific world."@en ;
+                                                       rdfs:label "Cave passage"@en .
+
+
+###  http://www.co-ode.org/ontologies/ont.owl#InterworldSpace
+<http://www.co-ode.org/ontologies/ont.owl#InterworldSpace> rdf:type owl:Class ;
+                                                           rdfs:subClassOf dark:Place .
+
+
+###  http://www.w3id.org/dark-ontology/Reality
+<http://www.w3id.org/dark-ontology/Reality> rdf:type owl:Class ;
+                                            rdfs:comment "A reality is a distinct narrative branch in which events may unfold differently while involving the same worlds, persons, or temporal locations." ;
+                                            rdfs:label "Reality"@en .
+
+
+###  https://w3id.org/dark-ontology/ApocalypseEvent
+dark:ApocalypseEvent rdf:type owl:Class ;
+                     rdfs:subClassOf dark:Event ;
+                     rdfs:comment "An event representing an apocalypse occurring in a specific world and temporal context."@en ;
+                     rdfs:label "Apocalypse event"@en .
+
+
+###  https://w3id.org/dark-ontology/DisappearanceEvent
+dark:DisappearanceEvent rdf:type owl:Class ;
+                        rdfs:subClassOf dark:Event ;
+                        rdfs:comment "An event representing the disappearance of a person from a specific temporal and narrative context."@en ;
+                        rdfs:label "Disappearance Event"@en .
+
+
+###  https://w3id.org/dark-ontology/Event
+dark:Event rdf:type owl:Class ;
+           owl:disjointWith dark:Person ,
+                            dark:PersonManifestation ;
+           rdfs:comment "A narrative occurrence involving participants and contextual information such as time, place, world, and reality."@en ;
+           rdfs:label "Event"@en ;
+           dark:reusesPattern "EventCore" .
+
+
+###  https://w3id.org/dark-ontology/Family
+dark:Family rdf:type owl:Class ;
+            owl:disjointWith dark:Role ;
+            rdfs:comment "A family unit whose members are represented through specific person manifestations."@en ;
+            rdfs:label "Family"@en .
+
+
+###  https://w3id.org/dark-ontology/MeetingEvent
+dark:MeetingEvent rdf:type owl:Class ;
+                  rdfs:subClassOf dark:Event ;
+                  rdfs:comment "An event representing a meeting between two or more person manifestations in a specific temporal and narrative context."@en ;
+                  rdfs:label "Meeting Event"@en .
+
+
+###  https://w3id.org/dark-ontology/Organization
+dark:Organization rdf:type owl:Class ;
+                  rdfs:comment "A structured group to which person manifestations may belong and within which they may hold specific roles."@en ;
+                  rdfs:label "Organization"@en .
+
+
+###  https://w3id.org/dark-ontology/OrganizationRole
+dark:OrganizationRole rdf:type owl:Class ;
+                      rdfs:subClassOf dark:Role ;
+                      rdfs:comment "A role held by a person manifestation within an organization."@en ;
+                      rdfs:label "Organization role"@en ;
+                      dark:reusesPattern "AgentRole" .
+
+
+###  https://w3id.org/dark-ontology/Person
+dark:Person rdf:type owl:Class ;
+            owl:disjointWith dark:PersonManifestation ;
+            rdfs:comment "A persistent personal identity, distinct from its contextualized temporal manifestations."@en ;
+            rdfs:label "Person"@en ;
+            dark:reusesPattern "Change of Time Varying Entities" ;
+            dark:supportsCompetencyQuestion "CQ1: Which temporal manifestations belong to the same person?"@en ,
+                                            "CQ4: Which persons assume different names across their temporal manifestations?"@en .
+
+
+###  https://w3id.org/dark-ontology/PersonManifestation
+dark:PersonManifestation rdf:type owl:Class ;
+                         rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                           owl:onProperty dark:manifestationOf ;
+                                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                           owl:onClass dark:Person
+                                         ] ;
+                         rdfs:comment "A manifestation of a person within a specific temporal and narrative context."@en ;
+                         rdfs:label "Person manifestation"@en ;
+                         dark:reusesPattern "Change of Time Varying Entities" ;
+                         dark:supportsCompetencyQuestion "CQ2: Which names, ages, roles, family memberships, and temporal locations are associated with different person manifestations?"@en ,
+                                                         "CQ3: Which manifestations of the same person are present during the same temporal period?"@en .
+
+
+###  https://w3id.org/dark-ontology/Place
+dark:Place rdf:type owl:Class ;
+           owl:disjointWith dark:TimeInterval ,
+                            dark:World ;
+           rdfs:comment "A spatial entity in which events may occur or from which time travel events may depart or arrive."@en ;
+           rdfs:label "Place"@en .
+
+
+###  https://w3id.org/dark-ontology/ProfessionalRole
+dark:ProfessionalRole rdf:type owl:Class ;
+                      rdfs:subClassOf dark:Role ;
+                      rdfs:comment "A role representing a profession or occupational function held by a person manifestation."@en ;
+                      rdfs:label "Professional role"@en ;
+                      dark:reusesPattern "AgentRole" .
+
+
+###  https://w3id.org/dark-ontology/Role
+dark:Role rdf:type owl:Class ;
+          rdfs:comment "A function, position, or social capacity held by a person manifestation within a specific narrative context.\""@en ;
+          rdfs:label "Role"@en ;
+          dark:reusesPattern "AgentRole" .
+
+
+###  https://w3id.org/dark-ontology/TemporalEntity
+dark:TemporalEntity rdf:type owl:Class ;
+                    rdfs:comment "An entity representing a temporal dimension, such as an interval or a specific year."@en ;
+                    rdfs:label "Temporal entity"@en .
+
+
+###  https://w3id.org/dark-ontology/TimeInterval
+dark:TimeInterval rdf:type owl:Class ;
+                  rdfs:subClassOf dark:TemporalEntity ;
+                  rdfs:comment "A temporal period used to represent when an event occurs or when a person manifestation exists."@en ;
+                  rdfs:label "Time interval"@en .
+
+
+###  https://w3id.org/dark-ontology/TimeTravelDevice
+dark:TimeTravelDevice rdf:type owl:Class ;
+                      rdfs:comment "A device or mechanism used to enable a time travel event."@en ;
+                      rdfs:label "Time travel device"@en .
+
+
+###  https://w3id.org/dark-ontology/TimeTravelEvent
+dark:TimeTravelEvent rdf:type owl:Class ;
+                     rdfs:subClassOf dark:Event ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty dark:hasTraveler ;
+                                       owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                       owl:onClass dark:PersonManifestation
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty dark:arrivesAtTime ;
+                                       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                       owl:onClass dark:TimeInterval
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty dark:departsFromTime ;
+                                       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                       owl:onClass dark:TimeInterval
+                                     ] ;
+                     rdfs:comment "An event connecting a departure time with an arrival time."@en ;
+                     rdfs:label "Time travel event"@en ;
+                     dark:reusesPattern "EventCore" ;
+                     dark:supportsCompetencyQuestion "CQ11: Which events connect different temporal periods?"@en ,
+                                                     "CQ7: Which persons have a manifestation participating as a traveler in a time travel event?"@en ,
+                                                     "CQ8: Which time travel events use a specific place or device?"@en .
+
+
+###  https://w3id.org/dark-ontology/TimeTraveler
+dark:TimeTraveler rdf:type owl:Class ;
+                  owl:equivalentClass [ owl:intersectionOf ( dark:Person
+                                                             [ rdf:type owl:Restriction ;
+                                                               owl:onProperty dark:hasManifestation ;
+                                                               owl:someValuesFrom [ owl:intersectionOf ( dark:PersonManifestation
+                                                                                                         [ rdf:type owl:Restriction ;
+                                                                                                           owl:onProperty dark:isTravelerIn ;
+                                                                                                           owl:someValuesFrom dark:TimeTravelEvent
+                                                                                                         ]
+                                                                                                       ) ;
+                                                                                    rdf:type owl:Class
+                                                                                  ]
+                                                             ]
+                                                           ) ;
+                                        rdf:type owl:Class
+                                      ] ;
+                  rdfs:comment "A person inferred as a time traveler when at least one of their manifestations is related through isTravelerIn to a time travel event."@en ;
+                  rdfs:label "Time traveler"@en ;
+                  dark:supportsCompetencyQuestion "CQ12: Which persons can be automatically classified as time travelers?"@en .
+
+
+###  https://w3id.org/dark-ontology/World
+dark:World rdf:type owl:Class ;
+           rdfs:comment "A narrative world in which persons, manifestations, places, and events may exist or occur."@en ;
+           rdfs:label "World"@en .
+
+
+###  https://w3id.org/dark-ontology/Year
+dark:Year rdf:type owl:Class ;
+          rdfs:subClassOf dark:TimeInterval ;
+          rdfs:comment "A narrative year represented as an individual."@en ;
+          rdfs:label "Year"@en .
+
+
+###  Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi
