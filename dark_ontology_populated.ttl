@@ -734,6 +734,8 @@ dark:AdamWorld rdf:type owl:NamedIndividual ,
 ###  https://w3id.org/dark-ontology/AdultElisabeth
 dark:AdultElisabeth rdf:type owl:NamedIndividual ,
                              dark:PersonManifestation ;
+                    dark:manifestationOf dark:ElisabethDoppler ;
+                    dark:hasManifestationName "Elisabeth Doppler" ;
                     rdfs:label "Elisabeth Doppler"@en .
 
 
@@ -907,6 +909,7 @@ dark:Claudia rdf:type owl:NamedIndividual ,
                       dark:PersonManifestation ;
              dark:hasRole dark:NuclearPlantDirector ;
              dark:hasManifestationName "Claudia Tiedemann" ;
+             dark:manifestationOf dark:ClaudiaTiedemann ;
              rdfs:label "Claudia Tiedemann"@en .
 
 
@@ -2220,6 +2223,7 @@ dark:Year_2053 rdf:type owl:NamedIndividual ,
 dark:YoungClaudia rdf:type owl:NamedIndividual ,
                            dark:PersonManifestation ;
                   dark:hasManifestationName "Claudia Tiedemann" ;
+                  dark:manifestationOf dark:ClaudiaTiedemann ;
                   rdfs:label "Claudia Tiedemann"@en .
 
 
