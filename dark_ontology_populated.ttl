@@ -1964,8 +1964,7 @@ dark:StrangerTravel05_1987_2020 rdf:type owl:NamedIndividual ,
                                 <http://www.w3id.org/dark-ontology/occursInReality> dark:FirstReality ;
                                 dark:arrivesAtTime dark:Year_2020 ;
                                 dark:departsFromTime dark:Year_1987 ;
-                                dark:hasTraveler dark:Hannah ,
-                                                 dark:TheStranger ;
+                                dark:hasTraveler dark:TheStranger ;
                                 dark:usesDevice dark:PortableTimeMachine ;
                                 dark:isIntentional "true"^^xsd:boolean ;
                                 rdfs:comment "The Stranger returns from 1987 to 2020 after taking Hannah into the past and leaves her behind in 1987."@en ;
