@@ -718,6 +718,7 @@ dark:AdamTravel04_2019_2052 rdf:type owl:NamedIndividual ,
                             dark:departsFromTime dark:Year_2019 ;
                             dark:hasTraveler dark:Adam ;
                             dark:usesDevice dark:CavePassage_EvaWorld ;
+                            dark:isIntentional "true"^^xsd:boolean ;
                             rdfs:comment "After entrusting Jonas with the mission of reaching the origin world and breaking the temporal knot, Adam travels from Eva's world in 2019 to 2052 to meet Eva."@en ;
                             rdfs:label "Adam's journey from 2019 to 2052"@en .
 
@@ -1950,6 +1951,7 @@ dark:StrangerTravel04_2020_1987 rdf:type owl:NamedIndividual ,
                                 dark:hasTraveler dark:Hannah ,
                                                  dark:TheStranger ;
                                 dark:usesDevice dark:PortableTimeMachine ;
+                                dark:isIntentional "true"^^xsd:boolean ;
                                 rdfs:comment "The Stranger intentionally takes Hannah from 2020 to 1987 to show her that Mikkel is living there as Michael Kahnwald."@en ;
                                 rdfs:label "The Stranger's journey from 2020 to 1987"@en .
 
@@ -1965,6 +1967,7 @@ dark:StrangerTravel05_1987_2020 rdf:type owl:NamedIndividual ,
                                 dark:hasTraveler dark:Hannah ,
                                                  dark:TheStranger ;
                                 dark:usesDevice dark:PortableTimeMachine ;
+                                dark:isIntentional "true"^^xsd:boolean ;
                                 rdfs:comment "The Stranger returns from 1987 to 2020 after taking Hannah into the past and leaves her behind in 1987."@en ;
                                 rdfs:label "The Stranger's journey from 1987 to 2020"@en .
 
