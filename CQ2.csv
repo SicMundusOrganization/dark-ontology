@@ -1,0 +1,42 @@
+event,isIntentional,travelers
+https://w3id.org/dark-ontology/AdamTravel01_1921_2020,true,Adam
+https://w3id.org/dark-ontology/AdamTravel02_2053_2020,true,Adam
+https://w3id.org/dark-ontology/AdamTravel03_2020_2019,true,"Adam, Jonas_2019"
+https://w3id.org/dark-ontology/AdamTravel04_2019_2052,true,Adam
+https://w3id.org/dark-ontology/BartoszTravel01_2020_1987,true,"Bartosz, Elisabeth, Franziska, Magnus, Martha_2019_AdamWorld"
+https://w3id.org/dark-ontology/BartoszTravel02_1987_2020,true,"Bartosz, Elisabeth, Franziska, Magnus, Martha_2019_AdamWorld"
+https://w3id.org/dark-ontology/ClaudiaTravel01_1987_2020,true,Claudia
+https://w3id.org/dark-ontology/ClaudiaTravel02_2020_1987,true,Claudia
+https://w3id.org/dark-ontology/ElisabethAndCharlotteTravel01_2053_2041,true,"AdultElisabeth, Charlotte"
+https://w3id.org/dark-ontology/ElisabethAndCharlotteTravel02_2041_1971,true,"AdultElisabeth, Charlotte, InfantCharlotte"
+https://w3id.org/dark-ontology/HannahTravel01_2020_1954,true,Hannah
+https://w3id.org/dark-ontology/JonasFinalTravel01_2019_1986,true,"Jonas_2019, Martha_2019_EvaWorld"
+https://w3id.org/dark-ontology/JonasFinalTravel02_1986_1971,true,"Jonas_2019, Martha_2019_EvaWorld"
+https://w3id.org/dark-ontology/JonasTravel02_1986_2019,true,Jonas_2019
+https://w3id.org/dark-ontology/JonasTravel03_2019_1986,true,Jonas_2019
+https://w3id.org/dark-ontology/JonasTravel05_2053_1921,true,Jonas_2019
+https://w3id.org/dark-ontology/JonasTravel06_1921_2019,true,Jonas_2019
+https://w3id.org/dark-ontology/JonasTravel07_1987_2020,true,"Jonas_2019, Claudia"
+https://w3id.org/dark-ontology/JonasTravel09_2019_2052,true,"Jonas_2019, Martha_2019_EvaWorld"
+https://w3id.org/dark-ontology/JonasTravel10_2052_2019,true,"Jonas_2019, Martha_2019_EvaWorld"
+https://w3id.org/dark-ontology/KatharinaTravel01_2020_1987,true,Katharina
+https://w3id.org/dark-ontology/MarthaTravel01_2019_1888,true,Martha_2019_EvaWorld
+https://w3id.org/dark-ontology/MarthaTravel02_1888_2053,true,Martha_2019_EvaWorld
+https://w3id.org/dark-ontology/NoahTravel01_2020_1920,true,Noah
+https://w3id.org/dark-ontology/OldClaudiaTravel01_2053_1987,true,OldClaudia
+https://w3id.org/dark-ontology/OldClaudiaTravel02_1987_1954,true,OldClaudia
+https://w3id.org/dark-ontology/OldHelgeTravel01_2019_1986,true,OldHelge
+https://w3id.org/dark-ontology/StrangerTravel01_2052_2019,true,TheStranger
+https://w3id.org/dark-ontology/StrangerTravel02_2019_1986,true,TheStranger
+https://w3id.org/dark-ontology/StrangerTravel03_1986_2019,true,TheStranger
+https://w3id.org/dark-ontology/StrangerTravel04_2020_1987,true,"Hannah, TheStranger"
+https://w3id.org/dark-ontology/StrangerTravel05_1987_2020,true,"Hannah, TheStranger"
+https://w3id.org/dark-ontology/StrangerTravel06_2020_1888,true,"Bartosz, Franziska, Magnus, TheStranger"
+https://w3id.org/dark-ontology/CharlotteTravel01_2020_2053,false,Charlotte
+https://w3id.org/dark-ontology/JonasTravel01_2019_1986,false,Jonas_2019
+https://w3id.org/dark-ontology/JonasTravel04_1986_2052,false,Jonas_2019
+https://w3id.org/dark-ontology/JonasTravel08_2020_2019,false,"Jonas_2019, Martha_2019_EvaWorld"
+https://w3id.org/dark-ontology/MikkelTravel_2019_1986,false,Mikkel_2019
+https://w3id.org/dark-ontology/UlrichTravel01_2019_1953,false,Ulrich
+https://w3id.org/dark-ontology/YoungHelgeTravel01_1953_1986,false,YoungHelge
+https://w3id.org/dark-ontology/YoungHelgeTravel02_1986_1954,false,YoungHelge
