@@ -1561,7 +1561,7 @@ dark:Magnus rdf:type owl:NamedIndividual ,
 dark:MagnusNielsen rdf:type owl:NamedIndividual ,
                             dark:Person ;
                    dark:hasCanonicalName "Magnus Nielsen" ;
-                   dark:siblingOf dark:Martha_2019_AdamWorld ;
+                   dark:siblingOf dark:MarthaNielsen_AdamWorld ;
                    rdfs:comment "The persistent personal identity of Magnus Nielsen across his temporal manifestations."@en ;
                    rdfs:label "Magnus Nielsen"@en .
 
