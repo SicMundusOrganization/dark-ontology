@@ -1,0 +1,2385 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1"
+    />
+    <meta
+      name="description"
+      content="Sic Mundus — an OWL ontology representing characters, temporal identities, worlds, and time travel in Dark."
+    />
+    <title>Sic Mundus · Dark Ontology</title>
+    <link
+      rel="stylesheet"
+      href="assets/css/main.css"
+    />
+    <link
+    rel="icon"
+    type="image/png"
+    href="assets/img/favicon.png"
+    />
+  </head>
+  <body>
+    <header class="site-header">
+      <a
+        class="wordmark navbar-wordmark"
+        href="#home"
+        >
+        <span class="navbar-logo">
+            <img
+            src="assets/img/Triquetra.png"
+            alt=""
+            />
+        </span>
+
+        <span>
+            SIC MUNDUS
+        </span>
+        </a>
+      <nav>
+        <a href="#home">Home</a>
+        <i>•</i>
+        <a href="#ontology">Ontology</a>
+        <i>•</i>
+        <a href="#queries">Queries</a>
+        <i>•</i>
+        <a href="#about">About us</a>
+      </nav>
+    </header>
+    <main>
+      <section
+        class="hero"
+        id="home"
+      >
+        <div class="hero-noise"></div>
+        <div class="case-meta">
+          Dossier 001
+          <br />
+          Ontological Record
+          <br />
+          <br />
+          001–1921–2020
+        </div>
+        <div class="hero-copy">
+          <p class="eyebrow">A Dark ontology</p>
+          <h1>
+            Sic Mundus
+            <br />
+            creatus est
+          </h1>
+          <span class="short-rule"></span>
+          <p class="lede">
+            An OWL ontology representing characters, temporal
+            identities, worlds, and time travel in
+            <em>Dark</em>.
+          </p>
+          <div class="actions">
+            <a
+              class="button primary"
+              href="#ontology"
+            >
+              Explore the ontology
+              <span>→</span>
+            </a>
+            <a
+              class="button secondary"
+              href="https://github.com/SicMundusOrganization/dark-ontology"
+            >
+              View GitHub page
+            </a>
+          </div>
+        </div>
+        <article
+          class="dossier"
+          id="characters"
+        >
+          <div class="paperclip"></div>
+          <div class="dossier-head">
+            <span>
+              Ontology diagram
+              <br />
+              <b>Entity relationships</b>
+            </span>
+            <span>
+              Ref: SM–001
+              <br />
+              Status: Verified
+            </span>
+          </div>
+          <div class="world-key">
+            <span>AdamWorld</span>
+            <span>EvaWorld</span>
+          </div>
+          <div class="identity-map">
+            <div class="node person">Jonas Kahnwald</div>
+            <div class="trunk"></div>
+            <div class="branch-line"></div>
+            <div class="manifestations">
+              <div class="manifestation">
+                <div class="node identity">Adam</div>
+                <div class="connector"></div>
+                <div class="node year">1921</div>
+              </div>
+              <div class="manifestation">
+                <div class="node identity center">Jonas</div>
+                <div class="connector"></div>
+                <div class="node year">2019</div>
+              </div>
+              <div class="manifestation">
+                <div class="node identity">The Stranger</div>
+                <div class="connector"></div>
+                <div class="node year">2052</div>
+              </div>
+            </div>
+          </div>
+          <p class="figure-caption">
+            Fig. 1 — Identity branching across time.
+          </p>
+          <div class="archive-stamp">
+            S · M
+            <br />
+            <small>33</small>
+          </div>
+        </article>
+      </section>
+      <section
+        class="intro section"
+        id="ontology"
+      >
+        <div class="section-index">01 / THE QUESTION</div>
+        <div class="intro-content">
+          <p class="eyebrow">The research question</p>
+          <h2>
+            One person.
+            <br />
+            Many temporal selves.
+          </h2>
+          <p>
+            How can a person be distinguished from their different
+            temporal manifestations while preserving a common identity
+            and representing changes in name, age, role, family,
+            world, and time?
+          </p>
+          <a
+            class="button intro-button"
+            href="#classes"
+            >
+            See ontology architecture
+
+            <span>↓</span>
+          </a>
+        </div>
+        <aside class="quote-card">
+          <span>“</span>
+          <p>
+            All things recur eternally,
+            and we ourselves with them.
+          </p>
+          <small>FRIEDRICH NIETZSCHE · THUS SPOKE ZARATHUSTRA</small>
+        </aside>
+      </section>
+      <section
+        class="classes section"
+        id="classes"
+      >
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Ontology architecture</p>
+            <h2>Core classes</h2>
+          </div>
+          <p>
+            The ontology adapts four Ontology Design Patterns:
+            <strong>Change of Time Varying Entities</strong>,
+            <strong>EventCore</strong>, <strong>Participation</strong>,
+            and <strong>AgentRole</strong>.
+          </p>
+        </div>
+        <div class="class-grid">
+            <button
+                class="class-card class-card-button ontology-card person-card"
+                type="button"
+                data-modal-id="person-modal"
+                aria-haspopup="dialog"
+                aria-controls="person-modal"
+                >
+                <span>01</span>
+                <h3>Person</h3>
+                <p>Persistent identity across time and worlds</p>
+                <b>↗</b>
+            </button>
+            <button
+                class="class-card class-card-button ontology-card manifestation-card"
+                type="button"
+                data-modal-id="manifestation-modal"
+                aria-haspopup="dialog"
+                aria-controls="manifestation-modal"
+                >
+                <span>02</span>
+                <h3>Person Manifestation</h3>
+                <p>A person as they exist at a specific time</p>
+                <b>↗</b>
+            </button>
+            <button
+                class="class-card class-card-button ontology-card family-card"
+                type="button"
+                data-modal-id="family-modal"
+                aria-haspopup="dialog"
+                aria-controls="family-modal">
+                <span>03</span>
+                <h3>Family</h3>
+                <p>Kinship groups connecting persistent identities</p>
+                <b>↗</b>
+            </button>
+            <button
+                class="class-card class-card-button ontology-card reality-card"
+                type="button"
+                data-modal-id="reality-modal"
+                aria-haspopup="dialog"
+                aria-controls="reality-modal"
+                >
+                <span>04</span>
+                <h3>Reality</h3>
+                <p>The realities in which worlds and events occur</p>
+                <b>↗</b>
+            </button>
+            <button
+                class="class-card class-card-button ontology-card world-card"
+                type="button"
+                data-modal-id="world-modal"
+                aria-haspopup="dialog"
+                aria-controls="world-modal"
+                >
+                <span>05</span>
+                <h3>World</h3>
+                <p>A distinct world with its own characters and events</p>
+                <b>↗</b>
+            </button>
+            <button
+                class="class-card class-card-button ontology-card place-card"
+                type="button"
+                data-modal-id="place-modal"
+                aria-haspopup="dialog"
+                aria-controls="place-modal"
+                >
+                <span>06</span>
+                <h3>Place</h3>
+                <p>Locations in which characters and events exist</p>
+                <b>↗</b>
+            </button>
+            <button
+                class="class-card class-card-button ontology-card temporal-card"
+                type="button"
+                data-modal-id="temporal-modal"
+                aria-haspopup="dialog"
+                aria-controls="temporal-modal"
+                >
+                <span>07</span>
+                <h3>Temporal Entity</h3>
+                <p>
+                    A temporal dimension used to locate identities and events
+                </p>
+                <b>↗</b>
+            </button>
+            <button
+                class="class-card class-card-button ontology-card event-card"
+                type="button"
+                data-modal-id="event-modal"
+                aria-haspopup="dialog"
+                aria-controls="event-modal"
+                >
+                <span>08</span>
+                <h3>Event</h3>
+                <p>
+                Time travel, apocalypse, disappearance, and meeting events
+                </p>
+                <b>↗</b>
+            </button>
+            <button
+                class="class-card class-card-button ontology-card device-card"
+                type="button"
+                data-modal-id="device-modal"
+                aria-haspopup="dialog"
+                aria-controls="device-modal"
+                >
+                <span>09</span>
+                <h3>Time Travel Device</h3>
+                <p>
+                    Objects that enable temporal movement
+                </p>
+                <b>↗</b>
+            </button>
+        </div>
+        <div class="classes-continue">
+            <a
+                class="continue-button"
+                href="#identity-case"
+            >
+                <span>
+                Continue exploring
+                </span>
+
+                <b aria-hidden="true">
+                ↓
+                </b>
+            </a>
+            </div>
+      </section>
+
+      <dialog
+        class="ontology-modal"
+        id="person-modal"
+      >
+        <div class="modal-header">
+          <div>
+            <p class="modal-label">
+              CLASS RECORD · 01
+            </p>
+
+            <h2>
+              Person
+            </h2>
+
+            <p class="modal-description">
+              Direct individuals of the Person class
+            </p>
+          </div>
+
+          <button
+            class="modal-close"
+            type="button"
+            aria-label="Close"
+          >
+            ×
+          </button>
+        </div>
+
+        <div class="modal-counter">
+          <span>
+            INDIVIDUALS
+          </span>
+
+          <span>
+            27 RECORDS
+          </span>
+        </div>
+
+        <div class="individuals-scroll">
+          <ol class="individuals-list">
+            <li>Agnes Nielsen</li>
+
+            <li>Aleksander Tiedemann</li>
+
+            <li>Bartosz Tiedemann</li>
+
+            <li>Charlotte Doppler</li>
+
+            <li>Claudia Tiedemann</li>
+
+            <li>Egon Tiedemann</li>
+
+            <li>Elisabeth Doppler</li>
+
+            <li>Erik Obendorf</li>
+
+            <li>Franziska Doppler</li>
+
+            <li>Hannah Kahnwald</li>
+
+            <li>Helge Doppler</li>
+
+            <li>H.G. Tannhaus</li>
+
+            <li>Ines Kahnwald</li>
+
+            <li>Jonas Kahnwald</li>
+
+            <li>Katharina Nielsen</li>
+
+            <li>Mads Nielsen</li>
+
+            <li>Magnus Nielsen</li>
+
+            <li>Martha Nielsen_AdamWorld</li>
+
+            <li>Martha Nielsen_EvaWorld</li>
+
+            <li>Mikkel Nielsen</li>
+
+            <li>Noah Tauber</li>
+
+            <li>Peter Doppler</li>
+
+            <li>Regina Tiedemann</li>
+
+            <li>Silja Tiedemann</li>
+
+            <li>Tronte Nielsen</li>
+
+            <li>Ulrich Nielsen</li>
+
+            <li>Yasin Friese</li>
+          </ol>
+        </div>
+        <div class="modal-footer">
+          SIC MUNDUS · ONTOLOGY ARCHIVE
+        </div>
+      </dialog>
+
+
+       <dialog
+            class="ontology-modal manifestation-modal"
+            id="manifestation-modal"
+            aria-labelledby="manifestation-modal-title"
+            >
+            <div class="modal-header">
+                <div>
+                <p class="modal-label">
+                    CLASS RECORD · 02
+                </p>
+
+                <h2 id="manifestation-modal-title">
+                    Person Manifestation
+                </h2>
+
+                <p class="modal-description">
+                    Temporal manifestations grouped by their persistent person
+                </p>
+                </div>
+
+                <button
+                class="modal-close"
+                type="button"
+                aria-label="Close"
+                >
+                ×
+                </button>
+            </div>
+
+            <div class="modal-counter">
+                <span>
+                    Identity branches
+                </span>
+
+                <span class="manifestation-counts">
+                    <span>
+                    <b id="manifestation-record-count">
+                        35
+                    </b>
+                    manifestations
+                    </span>
+
+                    <span
+                    class="count-separator"
+                    aria-hidden="true"
+                    >
+                    ·
+                    </span>
+
+                    <span>
+                    <b id="manifestation-person-count">
+                        25
+                    </b>
+                    persons
+                    </span>
+                </span>
+            </div>
+
+            <div class="individuals-scroll manifestation-scroll">
+                <div
+                class="manifestation-groups"
+                id="manifestation-groups"
+                ></div>
+            </div>
+
+            <div class="modal-footer">
+                SIC MUNDUS · IDENTITY ARCHIVE
+            </div>
+        </dialog>
+
+        <dialog
+            class="ontology-modal"
+            id="family-modal"
+            >
+            <div class="modal-header">
+                <div>
+                <p class="modal-label">
+                    CLASS RECORD · 03
+                </p>
+
+                <h2>
+                    Family
+                </h2>
+
+                <p class="modal-description">
+                    Direct individuals of the Family class
+                </p>
+                </div>
+
+                <button
+                class="modal-close"
+                type="button"
+                aria-label="Close"
+                >
+                ×
+                </button>
+            </div>
+
+            <div class="modal-counter">
+                <span>
+                INDIVIDUALS
+                </span>
+
+                <span>
+                4 RECORDS
+                </span>
+            </div>
+
+            <div class="individuals-scroll">
+                <ol class="individuals-list">
+                <li>
+                    Doppler Family
+                </li>
+
+                <li>
+                    Kahnwald Family
+                </li>
+
+                <li>
+                    Nielsen Family
+                </li>
+
+                <li>
+                    Tiedemann Family
+                </li>
+                </ol>
+            </div>
+
+            <div class="modal-footer">
+                SIC MUNDUS · ONTOLOGY ARCHIVE
+            </div>
+            </dialog>
+
+
+
+      <dialog
+        class="ontology-modal"
+        id="reality-modal"
+        >
+        <div class="modal-header">
+            <div>
+            <p class="modal-label">
+                CLASS RECORD · 04
+            </p>
+
+            <h2>
+                Reality
+            </h2>
+
+            <p class="modal-description">
+                Direct individuals of the Reality class
+            </p>
+            </div>
+
+            <button
+            class="modal-close"
+            type="button"
+            aria-label="Close"
+            >
+            ×
+            </button>
+        </div>
+
+        <div class="modal-counter">
+            <span>
+            INDIVIDUALS
+            </span>
+
+            <span>
+            3 RECORDS
+            </span>
+        </div>
+
+        <div class="individuals-scroll">
+            <ol class="individuals-list">
+            <li>
+                First Reality
+            </li>
+
+            <li>
+                Second Reality
+            </li>
+
+            <li>
+                Third Reality
+            </li>
+            </ol>
+        </div>
+
+        <div class="modal-footer">
+            SIC MUNDUS · ONTOLOGY ARCHIVE
+        </div>
+        </dialog>
+
+
+        <dialog
+            class="ontology-modal"
+            id="world-modal"
+            >
+            <div class="modal-header">
+                <div>
+                <p class="modal-label">
+                    CLASS RECORD · 05
+                </p>
+
+                <h2>
+                    World
+                </h2>
+
+                <p class="modal-description">
+                    Direct individuals of the World class
+                </p>
+                </div>
+
+                <button
+                class="modal-close"
+                type="button"
+                aria-label="Close"
+                >
+                ×
+                </button>
+            </div>
+
+            <div class="modal-counter">
+                <span>
+                INDIVIDUALS
+                </span>
+
+                <span>
+                3 RECORDS
+                </span>
+            </div>
+
+            <div class="individuals-scroll">
+                <ol class="individuals-list">
+                <li>
+                    Adam World
+                </li>
+
+                <li>
+                    Eva World
+                </li>
+
+                <li>
+                    Origin World
+                </li>
+                </ol>
+            </div>
+
+            <div class="modal-footer">
+                SIC MUNDUS · ONTOLOGY ARCHIVE
+            </div>
+        </dialog>
+
+        <dialog
+            class="ontology-modal place-modal"
+            id="place-modal"
+            >
+            <div class="modal-header">
+                <div>
+                <p class="modal-label">
+                    CLASS RECORD · 06
+                </p>
+
+                <h2>
+                    Place
+                </h2>
+
+                <p class="modal-description">
+                    Select a category to view its individuals
+                </p>
+                </div>
+
+                <button
+                class="modal-close"
+                type="button"
+                aria-label="Close"
+                >
+                ×
+                </button>
+            </div>
+
+            <div
+                class="place-categories"
+                role="tablist"
+                aria-label="Place categories"
+            >
+                <button
+                class="place-category-button is-active"
+                type="button"
+                role="tab"
+                data-place-type="direct"
+                aria-selected="true"
+                >
+                Direct Places
+                </button>
+
+                <button
+                class="place-category-button"
+                type="button"
+                role="tab"
+                data-place-type="interworld"
+                aria-selected="false"
+                >
+                Interworld Space
+                </button>
+            </div>
+
+            <div class="place-list-heading">
+                <div>
+                <p>
+                    SELECTED CATEGORY
+                </p>
+
+                <h3 id="place-category-title">
+                    Direct Places
+                </h3>
+                </div>
+
+                <span id="place-record-count">
+                5 RECORDS
+                </span>
+            </div>
+
+            <div class="individuals-scroll">
+                <ol
+                class="individuals-list"
+                id="place-individuals-list"
+                ></ol>
+            </div>
+
+            <div class="modal-footer">
+                SIC MUNDUS · PLACE ARCHIVE
+            </div>
+            </dialog>
+
+        <dialog
+            class="ontology-modal temporal-modal"
+            id="temporal-modal"
+            >
+            <div class="modal-header">
+                <div>
+                <p class="modal-label">
+                    CLASS RECORD · 07
+                </p>
+
+                <h2>
+                    Temporal Entity
+                </h2>
+
+                <p class="modal-description">
+                    Temporal classes and their associated individuals
+                </p>
+                </div>
+
+                <button
+                class="modal-close"
+                type="button"
+                aria-label="Close"
+                >
+                ×
+                </button>
+            </div>
+
+            <div
+                class="temporal-hierarchy"
+                aria-label="Temporal class hierarchy"
+            >
+                <div class="temporal-level">
+                <span>
+                    01
+                </span>
+
+                <strong>
+                    Temporal Entity
+                </strong>
+                </div>
+
+                <div class="temporal-hierarchy-line">
+                <span></span>
+                <b>↓</b>
+                <span></span>
+                </div>
+
+                <div class="temporal-level">
+                <span>
+                    02
+                </span>
+
+                <strong>
+                    Time Interval
+                </strong>
+                </div>
+
+                <div class="temporal-hierarchy-line">
+                <span></span>
+                <b>↓</b>
+                <span></span>
+                </div>
+
+                <div class="temporal-level temporal-level-selected">
+                <span>
+                    03
+                </span>
+
+                <strong>
+                    Year
+                </strong>
+                </div>
+            </div>
+
+            <div class="modal-counter">
+                <span>
+                YEAR INDIVIDUALS
+                </span>
+
+                <span>
+                14 RECORDS
+                </span>
+            </div>
+
+            <div class="individuals-scroll">
+                <ol class="individuals-list temporal-individuals-list">
+                <li>
+                    1888
+                </li>
+
+                <li>
+                    1920
+                </li>
+
+                <li>
+                    1921
+                </li>
+
+                <li>
+                    1953
+                </li>
+
+                <li>
+                    1954
+                </li>
+
+                <li>
+                    1971
+                </li>
+
+                <li>
+                    1986
+                </li>
+
+                <li>
+                    1987
+                </li>
+
+                <li>
+                    1988
+                </li>
+
+                <li>
+                    2019
+                </li>
+
+                <li>
+                    2020
+                </li>
+
+                <li>
+                    2041
+                </li>
+
+                <li>
+                    2052
+                </li>
+
+                <li>
+                    2053
+                </li>
+                </ol>
+            </div>
+
+            <div class="modal-footer">
+                SIC MUNDUS · TEMPORAL ARCHIVE
+            </div>
+        </dialog>
+
+        <dialog
+            class="ontology-modal event-modal"
+            id="event-modal"
+            >
+            <div class="modal-header">
+                <div>
+                <p class="modal-label">
+                    CLASS RECORD · 08
+                </p>
+
+                <h2>
+                    Event
+                </h2>
+
+                <p class="modal-description">
+                    Select an event subclass to view its individuals
+                </p>
+                </div>
+
+                <button
+                class="modal-close"
+                type="button"
+                aria-label="Close"
+                >
+                ×
+                </button>
+            </div>
+
+            <div
+                class="event-subclasses"
+                role="tablist"
+                aria-label="Event subclasses"
+            >
+                <button
+                class="event-subclass-button is-active"
+                type="button"
+                role="tab"
+                data-event-type="apocalypse"
+                aria-selected="true"
+                >
+                Apocalypse
+                </button>
+
+                <button
+                class="event-subclass-button"
+                type="button"
+                role="tab"
+                data-event-type="disappearance"
+                aria-selected="false"
+                >
+                Disappearance
+                </button>
+
+                <button
+                class="event-subclass-button"
+                type="button"
+                role="tab"
+                data-event-type="meeting"
+                aria-selected="false"
+                >
+                Meeting
+                </button>
+
+                <button
+                class="event-subclass-button"
+                type="button"
+                role="tab"
+                data-event-type="timeTravel"
+                aria-selected="false"
+                >
+                Time Travel
+                </button>
+            </div>
+
+            <div class="event-list-heading">
+                <div>
+                <p>
+                    SELECTED SUBCLASS
+                </p>
+
+                <h3 id="event-subclass-title">
+                    Apocalypse Event
+                </h3>
+                </div>
+
+                <span id="event-record-count">
+                2 RECORDS
+                </span>
+            </div>
+
+            <div class="individuals-scroll">
+                <ol
+                class="individuals-list"
+                id="event-individuals-list"
+                ></ol>
+            </div>
+
+            <div class="modal-footer">
+                SIC MUNDUS · EVENT ARCHIVE
+            </div>
+            </dialog>
+
+
+        <dialog
+            class="ontology-modal"
+            id="device-modal"
+            >
+            <div class="modal-header">
+                <div>
+                <p class="modal-label">
+                    CLASS RECORD · 09
+                </p>
+
+                <h2>
+                    Time Travel Device
+                </h2>
+
+                <p class="modal-description">
+                    Direct individuals of the Time Travel Device class
+                </p>
+                </div>
+
+                <button
+                class="modal-close"
+                type="button"
+                aria-label="Close"
+                >
+                ×
+                </button>
+            </div>
+
+            <div class="modal-counter">
+                <span>
+                INDIVIDUALS
+                </span>
+
+                <span>
+                5 RECORDS
+                </span>
+            </div>
+
+            <div class="individuals-scroll">
+                <ol class="individuals-list">
+                <li>
+                    Bunker Portal
+                </li>
+
+                <li>
+                    God Particle
+                </li>
+
+                <li>
+                    Golden Sphere
+                </li>
+
+                <li>
+                    Portable Time Machine
+                </li>
+
+                <li>
+                    Time Travel Chair
+                </li>
+                </ol>
+            </div>
+
+            <div class="modal-footer">
+                SIC MUNDUS · ONTOLOGY ARCHIVE
+            </div>
+            </dialog>
+
+
+        <div
+            class="case-studies-carousel"
+            id="case-studies"
+        >
+            <div class="case-studies-track">
+        <section
+            class="identity-case section case-study-slide"
+            id="identity-case"
+            >
+            <div class="identity-case-heading">
+                <div>
+                <p class="eyebrow">
+                    Case study 01
+                </p>
+
+                <h2>
+                    Two manifestations.
+                    <br />
+                    One persistent person.
+                </h2>
+                </div>
+
+                <p class="identity-case-introduction">
+                The ontology represents Mikkel Nielsen and Michael Kahnwald
+                as two temporal manifestations of the same persistent person.
+                </p>
+            </div>
+
+            <div class="identity-model">
+                <div class="model-column-label manifestations-label">
+                Person manifestations
+                </div>
+
+                <div class="model-column-label property-label">
+                Object property
+                </div>
+
+                <div class="model-column-label person-label">
+                Persistent person
+                </div>
+
+                <article class="identity-record manifestation-record">
+                <div class="record-heading">
+                    <span>01</span>
+
+                    <small>
+                    PersonManifestation
+                    </small>
+                </div>
+
+                <h3>
+                    Mikkel_2019
+                </h3>
+
+                <dl class="assertion-list">
+                    <div>
+                    <dt>Label</dt>
+
+                    <dd>Mikkel Nielsen</dd>
+                    </div>
+
+                    <div>
+                    <dt>Age</dt>
+
+                    <dd>11</dd>
+                    </div>
+
+                    <div>
+                    <dt>Family</dt>
+
+                    <dd>NielsenFamily</dd>
+                    </div>
+
+                    <div>
+                    <dt>World</dt>
+
+                    <dd>AdamWorld</dd>
+                    </div>
+
+                    <div>
+                    <dt>Year</dt>
+
+                    <dd>Year_2019</dd>
+                    </div>
+                </dl>
+                </article>
+
+                <div class="identity-relation">
+                <span>
+                    manifestationOf
+                </span>
+
+                <div class="relation-line">
+                    <i></i>
+
+                    <b>→</b>
+                </div>
+                </div>
+
+                <article class="identity-record persistent-record">
+                <div class="record-heading">
+                    <span>P</span>
+
+                    <small>
+                    Person
+                    </small>
+                </div>
+
+                <h3>
+                    MikkelNielsen
+                </h3>
+
+                <p>
+                    The persistent personal identity shared by the
+                    manifestations known as Mikkel Nielsen and
+                    Michael Kahnwald.
+                </p>
+
+                <div class="canonical-name">
+                    <small>
+                    hasCanonicalName
+                    </small>
+
+                    <strong>
+                    Mikkel Nielsen /
+                    <br />
+                    Michael Kahnwald
+                    </strong>
+                </div>
+                </article>
+
+                <article class="identity-record manifestation-record">
+                <div class="record-heading">
+                    <span>02</span>
+
+                    <small>
+                    PersonManifestation
+                    </small>
+                </div>
+
+                <h3>
+                    Michael_2019
+                </h3>
+
+                <dl class="assertion-list">
+                    <div>
+                    <dt>Label</dt>
+
+                    <dd>Michael Kahnwald</dd>
+                    </div>
+
+                    <div>
+                    <dt>Age</dt>
+
+                    <dd>44</dd>
+                    </div>
+
+                    <div>
+                    <dt>Family</dt>
+
+                    <dd>KahnwaldFamily</dd>
+                    </div>
+
+                    <div>
+                    <dt>World</dt>
+
+                    <dd>AdamWorld</dd>
+                    </div>
+
+                    <div>
+                    <dt>Year</dt>
+
+                    <dd>Year_2019</dd>
+                    </div>
+                </dl>
+                </article>
+
+                <div class="identity-relation">
+                <span>
+                    manifestationOf
+                </span>
+
+                <div class="relation-line">
+                    <i></i>
+
+                    <b>→</b>
+                </div>
+                </div>
+            </div>
+
+            <div class="identity-takeaway">
+                <span>
+                Modelling result
+                </span>
+
+                <p>
+                Mikkel and Michael coexist in
+                <strong>Year_2019</strong>
+                with different names, ages, and families, while remaining
+                manifestations of the same persistent person.
+                </p>
+            </div>
+            <div class="identity-case-navigation">
+                <span class="case-position">
+                01 / 02
+                </span>
+
+                <button
+                class="case-navigation-button next-case"
+                type="button"
+                data-case-next
+                aria-label="Go to case study 02"
+                >
+                <span>
+                    Case study 02
+                </span>
+
+                <b aria-hidden="true">
+                    →
+                </b>
+                </button>
+            </div>
+        </section>
+
+            <section
+                class="identity-case family-case section case-study-slide"
+                id="family-case"
+                data-case-study="1"
+                aria-hidden="true"
+                >
+                <div class="identity-case-heading">
+                    <div>
+                    <p class="eyebrow">
+                        Case study 02
+                    </p>
+
+                    <h2>
+                        Her daughter
+                        <br />
+                        is also her mother.
+                    </h2>
+                    </div>
+
+                    <p class="identity-case-introduction">
+                    The temporal loop creates a reciprocal parenthood relation:
+                    Charlotte is Elisabeth’s mother, while Elisabeth is also
+                    Charlotte’s mother.
+                    </p>
+                </div>
+
+                <div class="family-cycle-model">
+                    <article class="family-person-record">
+                    <small>
+                        Person
+                    </small>
+
+                    <h3>
+                        CharlotteDoppler
+                    </h3>
+
+                    <div class="manifestation-summary">
+                        <span>
+                        hasManifestation
+                        </span>
+
+                        <p>
+                        Charlotte · InfantCharlotte
+                        </p>
+                    </div>
+                    </article>
+
+                    <div class="family-relations">
+                    <div class="family-relation forward-relation">
+                        <span>
+                        parentOf
+                        </span>
+
+                        <i></i>
+                    </div>
+
+                    <div class="family-relation backward-relation">
+                        <span>
+                        parentOf
+                        </span>
+
+                        <i></i>
+                    </div>
+                    </div>
+
+                    <article class="family-person-record">
+                    <small>
+                        Person
+                    </small>
+
+                    <h3>
+                        ElisabethDoppler
+                    </h3>
+
+                    <div class="manifestation-summary">
+                        <span>
+                        hasManifestation
+                        </span>
+
+                        <p>
+                        Elisabeth · AdultElisabeth
+                        </p>
+                    </div>
+                    </article>
+                </div>
+
+                <div class="identity-takeaway">
+                    <span>
+                    Modelling result
+                    </span>
+
+                    <p>
+                    <strong>parentOf</strong>
+                    cannot be declared asymmetric: Charlotte is a parent of
+                    Elisabeth, while Elisabeth is also a parent of Charlotte.
+                    However, the property remains irreflexive because neither
+                    person is a parent of herself.
+                    </p>
+                </div>
+
+                <div class="identity-case-navigation">
+                    <button
+                        class="case-navigation-button previous-case"
+                        type="button"
+                        data-case-previous
+                        aria-label="Return to case study 01"
+                    >
+                        <b aria-hidden="true">
+                        ←
+                        </b>
+
+                        <span>
+                        Case study 01
+                        </span>
+                    </button>
+
+                    <a
+                        class="case-navigation-button ontology-reference-link"
+                        href="#ontology-reference"
+                    >
+                        <span>
+                        Ontology reference
+                        </span>
+
+                        <b aria-hidden="true">
+                        ↓
+                        </b>
+                    </a>
+
+                    <span class="case-position">
+                        02 / 02
+                    </span>
+                </div>
+            </section>
+            </div>
+            </div>
+        
+
+        <section
+            class="ontology-reference section"
+            id="ontology-reference"
+            >
+            <header class="reference-header">
+                <div>
+                <p class="eyebrow">
+                    Ontology documentation
+                </p>
+
+                <h2>
+                    Ontology reference
+                </h2>
+                </div>
+
+                <p class="reference-introduction">
+                A structured overview of the classes, subclasses,
+                object properties, and data properties used to model
+                identities, worlds, events, places, and temporal
+                relationships in the ontology.
+                </p>
+            </header>
+
+            <div class="reference-groups">
+                <article class="reference-group">
+                <header class="reference-group-header">
+                    <div>
+                    <span>01</span>
+
+                    <h3>
+                        Classes and subclasses
+                    </h3>
+                    </div>
+
+                    <small>
+                    Class hierarchy
+                    </small>
+                </header>
+
+                <div class="class-lists">
+                    <ul class="ontology-list class-list">
+                    <li>
+                        <strong>Event</strong>
+
+                        <p>
+                        An occurrence situated in time, place,
+                        world, and reality.
+                        </p>
+
+                        <ul class="subclass-list">
+                        <li>
+                            <strong>Apocalypse Event</strong>
+
+                            <span>
+                            A catastrophic event that destroys or
+                            transforms a world.
+                            </span>
+                        </li>
+
+                        <li>
+                            <strong>Disappearance Event</strong>
+
+                            <span>
+                            An event recording the disappearance of
+                            a person.
+                            </span>
+                        </li>
+
+                        <li>
+                            <strong>Meeting Event</strong>
+
+                            <span>
+                            An event in which two or more manifestations
+                            meet.
+                            </span>
+                        </li>
+
+                        <li>
+                            <strong>Time Travel Event</strong>
+
+                            <span>
+                            A journey between different temporal,
+                            spatial, or world coordinates.
+                            </span>
+                        </li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <strong>Family</strong>
+
+                        <p>
+                        A kinship group connecting persistent
+                        personal identities.
+                        </p>
+                    </li>
+
+                    <li>
+                        <strong>Organization</strong>
+
+                        <p>
+                        A structured group of people sharing a
+                        common purpose.
+                        </p>
+                    </li>
+
+                    <li>
+                        <strong>Person</strong>
+
+                        <p>
+                        A persistent personal identity shared by
+                        one or more temporal manifestations.
+                        </p>
+
+                        <ul class="subclass-list">
+                        <li>
+                            <strong>Time Traveler</strong>
+
+                            <span>
+                            A person inferred to participate in at
+                            least one time travel event.
+                            </span>
+                        </li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <strong>Person Manifestation</strong>
+
+                        <p>
+                        A person as they exist at a particular time,
+                        age, name, family, and world.
+                        </p>
+                    </li>
+
+                    <li>
+                        <strong>Place</strong>
+
+                        <p>
+                        A spatial location in which people or events
+                        may exist.
+                        </p>
+
+                        <ul class="subclass-list">
+                        <li>
+                            <strong>Interworld Space</strong>
+
+                            <span>
+                            A location situated between otherwise
+                            distinct worlds.
+                            </span>
+                        </li>
+                        </ul>
+                    </li>
+                    </ul>
+
+                    <ul class="ontology-list class-list">
+                    <li>
+                        <strong>Reality</strong>
+
+                        <p>
+                        A level of existence containing one or more
+                        worlds and their events.
+                        </p>
+                    </li>
+
+                    <li>
+                        <strong>Role</strong>
+
+                        <p>
+                        A social, professional, or organizational
+                        function held by a person.
+                        </p>
+
+                        <ul class="subclass-list">
+                        <li>
+                            <strong>Organization Role</strong>
+
+                            <span>
+                            A function held by a person within an
+                            organization.
+                            </span>
+                        </li>
+
+                        <li>
+                            <strong>Professional Role</strong>
+
+                            <span>
+                            A professional function associated with
+                            a person.
+                            </span>
+                        </li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <strong>Temporal Entity</strong>
+
+                        <p>
+                        A temporal dimension used to locate identities
+                        and events.
+                        </p>
+
+                        <ul class="subclass-list">
+                        <li>
+                            <strong>Time Interval</strong>
+
+                            <span>
+                            A temporal extent with a duration.
+                            </span>
+
+                            <ul class="subclass-list nested-subclass-list">
+                            <li>
+                                <strong>Year</strong>
+
+                                <span>
+                                A calendar year used as a temporal
+                                coordinate.
+                                </span>
+                            </li>
+                            </ul>
+                        </li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <strong>Time Travel Device</strong>
+
+                        <p>
+                        A device or mechanism capable of enabling
+                        temporal movement.
+                        </p>
+
+                        <ul class="subclass-list">
+                        <li>
+                            <strong>Cave Passage</strong>
+
+                            <span>
+                            A passage through the Winden caves that
+                            connects different years.
+                            </span>
+                        </li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <strong>World</strong>
+
+                        <p>
+                        A distinct world with its own people, places,
+                        events, and causal history.
+                        </p>
+                    </li>
+                    </ul>
+                </div>
+                </article>
+
+                <article class="reference-group">
+                <header class="reference-group-header">
+                    <div>
+                    <span>02</span>
+
+                    <h3>
+                        Object properties
+                    </h3>
+                    </div>
+
+                    <small>
+                    37 properties
+                    </small>
+                </header>
+
+                <div class="property-lists">
+                    <section class="property-family">
+                    <h4>
+                        Identity and worlds
+                    </h4>
+
+                    <ul class="ontology-list property-list">
+                        <li>
+                        <code>existsDuring</code>
+
+                        <span>
+                            Connects an entity to its temporal entity.
+                        </span>
+                        </li>
+
+                        <li>
+                        <code>existsInWorld</code>
+
+                        <span>
+                            Connects an entity to the world in which
+                            it exists.
+                        </span>
+                        </li>
+
+                        <li>
+                        <code>hasAlternateWorldCounterpart</code>
+
+                        <span>
+                            Connects corresponding entities in different
+                            worlds.
+                        </span>
+                        </li>
+
+                        <li>
+                        <code>hasManifestation</code>
+
+                        <span>
+                            Connects a persistent person to one of
+                            their manifestations.
+                        </span>
+                        </li>
+
+                        <li>
+                        <code>manifestationOf</code>
+
+                        <span>
+                            Connects a manifestation to its persistent
+                            person.
+                        </span>
+                        </li>
+
+                        <li>
+                        <code>locatedIn</code>
+
+                        <span>
+                            Connects an entity to its spatial location.
+                        </span>
+                        </li>
+                    </ul>
+                    </section>
+
+                    <section class="property-family">
+                    <h4>
+                        Families and relationships
+                    </h4>
+
+                    <ul class="ontology-list property-list">
+                        <li>
+                        <code>adoptiveChildOf</code>
+
+                        <span>
+                            Connects an adopted child to an adoptive
+                            parent.
+                        </span>
+                        </li>
+
+                        <li>
+                        <code>adoptiveParentOf</code>
+
+                        <span>
+                            Connects an adoptive parent to an adopted
+                            child.
+                        </span>
+                        </li>
+
+                        <li>
+                        <code>childOf</code>
+
+                        <span>
+                            Connects a person to one of their parents.
+                        </span>
+                        </li>
+
+                        <li>
+                        <code>parentOf</code>
+
+                        <span>
+                            Connects a person to one of their children.
+                        </span>
+                        </li>
+
+                        <li>
+                        <code>siblingOf</code>
+
+                        <span>
+                            Connects two people who are siblings.
+                        </span>
+                        </li>
+
+                        <li>
+                        <code>spouseOf</code>
+
+                        <span>
+                            Connects two people who are spouses.
+                        </span>
+                        </li>
+
+                        <li>
+                        <code>memberOfFamily</code>
+
+                        <span>
+                            Connects a manifestation to a family.
+                        </span>
+                        </li>
+
+                        <li>
+                        <code>hasFamilyMember</code>
+
+                        <span>
+                            Connects a family to one of its members.
+                        </span>
+                        </li>
+                    </ul>
+                    </section>
+
+                    <section class="property-family">
+                    <h4>
+                        Events and participation
+                    </h4>
+
+                    <ul class="ontology-list property-list">
+                        <li>
+                        <code>hasParticipant</code>
+
+                        <span>
+                            Connects an event to one of its participants.
+                        </span>
+                        </li>
+
+                        <li class="subproperty">
+                        <code>hasTraveler</code>
+
+                        <span>
+                            A subproperty of
+                            <code>hasParticipant</code>
+                            connecting a travel event to its traveler.
+                        </span>
+                        </li>
+
+                        <li>
+                        <code>participatesIn</code>
+
+                        <span>
+                            Connects an entity to an event in which
+                            it participates.
+                        </span>
+                        </li>
+
+                        <li class="subproperty">
+                        <code>isTravelerIn</code>
+
+                        <span>
+                            A subproperty of
+                            <code>participatesIn</code>
+                            connecting a traveler to a travel event.
+                        </span>
+                        </li>
+
+                        <li>
+                        <code>occursAtPlace</code>
+
+                        <span>
+                            Connects an event to the place where it
+                            occurs.
+                        </span>
+                        </li>
+
+                        <li>
+                        <code>occursAtTime</code>
+
+                        <span>
+                            Connects an event to its temporal coordinate.
+                        </span>
+                        </li>
+
+                        <li>
+                        <code>occursInReality</code>
+
+                        <span>
+                            Connects an event to the reality in which
+                            it occurs.
+                        </span>
+                        </li>
+
+                        <li>
+                        <code>occursInWorld</code>
+
+                        <span>
+                            Connects an event to the world in which
+                            it occurs.
+                        </span>
+                        </li>
+                    </ul>
+                    </section>
+
+                    <section class="property-family">
+                    <h4>
+                        Time travel
+                    </h4>
+
+                    <ul class="ontology-list property-list">
+                        <li>
+                        <code>departsFromPlace</code>
+
+                        <span>
+                            Identifies the departure place of a journey.
+                        </span>
+                        </li>
+
+                        <li>
+                        <code>departsFromTime</code>
+
+                        <span>
+                            Identifies the departure time of a journey.
+                        </span>
+                        </li>
+
+                        <li>
+                        <code>departsFromWorld</code>
+
+                        <span>
+                            Identifies the departure world of a journey.
+                        </span>
+                        </li>
+
+                        <li>
+                        <code>arrivesAtPlace</code>
+
+                        <span>
+                            Identifies the arrival place of a journey.
+                        </span>
+                        </li>
+
+                        <li>
+                        <code>arrivesAtTime</code>
+
+                        <span>
+                            Identifies the arrival time of a journey.
+                        </span>
+                        </li>
+
+                        <li>
+                        <code>arrivesInWorld</code>
+
+                        <span>
+                            Identifies the arrival world of a journey.
+                        </span>
+                        </li>
+
+                        <li>
+                        <code>passesThroughPlace</code>
+
+                        <span>
+                            Connects a journey to a place traversed
+                            during travel.
+                        </span>
+                        </li>
+
+                        <li>
+                        <code>usesDevice</code>
+
+                        <span>
+                            Connects a travel event to the device used.
+                        </span>
+                        </li>
+
+                        <li>
+                        <code>isUsedIn</code>
+
+                        <span>
+                            Connects a device to an event in which
+                            it is used.
+                        </span>
+                        </li>
+                    </ul>
+                    </section>
+
+                    <section class="property-family">
+                    <h4>
+                        Organizations and roles
+                    </h4>
+
+                    <ul class="ontology-list property-list">
+                        <li>
+                        <code>belongsToOrganization</code>
+
+                        <span>
+                            Connects a person to an organization.
+                        </span>
+                        </li>
+
+                        <li>
+                        <code>hasOrganizationMember</code>
+
+                        <span>
+                            Connects an organization to one of its
+                            members.
+                        </span>
+                        </li>
+
+                        <li>
+                        <code>hasRole</code>
+
+                        <span>
+                            Connects a person to a role they hold.
+                        </span>
+                        </li>
+
+                        <li>
+                        <code>isRoleOf</code>
+
+                        <span>
+                            Connects a role to the person who holds it.
+                        </span>
+                        </li>
+                    </ul>
+                    </section>
+
+                    <section class="property-family">
+                    <h4>
+                        Construction
+                    </h4>
+
+                    <ul class="ontology-list property-list">
+                        <li>
+                        <code>built</code>
+
+                        <span>
+                            Connects a builder to the entity they built.
+                        </span>
+                        </li>
+
+                        <li>
+                        <code>builtBy</code>
+
+                        <span>
+                            Connects a constructed entity to its builder.
+                        </span>
+                        </li>
+                    </ul>
+                    </section>
+                </div>
+                </article>
+
+                <article class="reference-group">
+                <header class="reference-group-header">
+                    <div>
+                    <span>03</span>
+
+                    <h3>
+                        Data properties
+                    </h3>
+                    </div>
+
+                    <small>
+                    7 properties
+                    </small>
+                </header>
+
+                <ul class="ontology-list data-property-list">
+                    <li>
+                    <code>hasAge</code>
+
+                    <span>
+                        Records the age associated with a person
+                        manifestation.
+                    </span>
+                    </li>
+
+                    <li>
+                    <code>hasCanonicalName</code>
+
+                    <span>
+                        Records the canonical name of a persistent
+                        entity.
+                    </span>
+                    </li>
+
+                    <li>
+                    <code>hasDescription</code>
+
+                    <span>
+                        Provides a textual description of an entity.
+                    </span>
+                    </li>
+
+                    <li>
+                    <code>hasManifestationName</code>
+
+                    <span>
+                        Records the name used by a specific person
+                        manifestation.
+                    </span>
+                    </li>
+
+                    <li>
+                    <code>hasSourceReference</code>
+
+                    <span>
+                        Records the source used to support an
+                        ontological assertion.
+                    </span>
+                    </li>
+
+                    <li>
+                    <code>hasYearValue</code>
+
+                    <span>
+                        Records the numeric value associated with a
+                        Year individual.
+                    </span>
+                    </li>
+
+                    <li>
+                    <code>isIntentional</code>
+
+                    <span>
+                        Indicates whether an event was performed
+                        intentionally.
+                    </span>
+                    </li>
+                </ul>
+                </article>
+
+                <article class="reference-group ttl-reference">
+                <header class="reference-group-header">
+                    <div>
+                    <span>04</span>
+
+                    <h3>
+                        Turtle serialization
+                    </h3>
+                    </div>
+
+                    <a
+                    class="ttl-download"
+                    href="../dark_ontology_populated.ttl"
+                    download
+                    >
+                    Download .ttl
+                    <span aria-hidden="true">↓</span>
+                    </a>
+                </header>
+
+                <p class="ttl-introduction">
+                    The complete ontology is available in Turtle format.
+                    The source can be inspected below or downloaded as a
+                    standalone file.
+                </p>
+
+                <div class="ttl-code-container">
+                    <div class="ttl-code-header">
+                    <span>
+                        dark_ontology.ttl
+                    </span>
+
+                    <small>
+                        RDF · OWL · TURTLE
+                    </small>
+                    </div>
+
+                    <pre
+                    class="ttl-code"
+                    id="ttl-code"
+                    ><code>Loading ontology source…</code></pre>
+                </div>
+                </article>
+            </div>
+        </section>
+
+
+
+
+
+
+
+
+      <!--About us-->
+      <section
+        class="about section"
+        id="about"
+        >
+        <header class="about-heading">
+            <p class="eyebrow">
+            Sic Mundus archive
+            </p>
+
+            <h2>
+            About us
+            </h2>
+
+            <span class="about-rule"></span>
+        </header>
+
+        <div class="evidence-wall">
+            <svg
+            class="red-thread"
+            viewBox="0 0 1000 360"
+            preserveAspectRatio="none"
+            aria-hidden="true"
+            >
+            <path
+                d="
+                M 260 160
+                C 380 70, 435 265, 515 175
+                C 600 80, 650 245, 745 155
+                "
+            ></path>
+
+            <path
+                d="
+                M 350 210
+                C 470 260, 590 55, 690 205
+                "
+            ></path>
+            </svg>
+
+            <article class="evidence-card evidence-card-maria">
+            <div class="evidence-pin"></div>
+
+            <span class="evidence-code">
+                SM–A01
+            </span>
+
+            <div class="evidence-photo">
+                <img
+                src="assets/img/maria.jpg"
+                alt="Maria Concetta De Matteis"
+                />
+            </div>
+
+            <div class="evidence-info">
+                <h3>
+                Maria Concetta De Matteis
+                </h3>
+
+                <a
+                href="https://github.com/maridematteis"
+                target="_blank"
+                rel="noopener noreferrer"
+                >
+                GitHub ↗
+                </a>
+            </div>
+            </article>
+
+            <article class="evidence-card evidence-card-silvia">
+            <div class="evidence-pin"></div>
+
+            <span class="evidence-code">
+                SM–A02
+            </span>
+
+            <div class="evidence-photo">
+                <img
+                src="assets/img/silvia.jpg"
+                alt="Silvia Antonella Pellicano"
+                />
+            </div>
+
+            <div class="evidence-info">
+                <h3>
+                Silvia Antonella Pellicano
+                </h3>
+
+                <a
+                href="https://github.com/silviapellicano30"
+                target="_blank"
+                rel="noopener noreferrer"
+                >
+                GitHub ↗
+                </a>
+            </div>
+            </article>
+        </div>
+        </section>
+
+    </main>
+
+    <!--Footer-->
+    <footer class="site-footer">
+        <div class="footer-project">
+            <p>
+                <a href="#home">Sic Mundus</a>
+                is an ontology project developed by
+                <a
+                    class="footer-author"
+                    href="https://github.com/maridematteis"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >Maria Concetta De Matteis</a>
+                and
+                <a
+                    class="footer-author"
+                    href="https://github.com/silviapellicano30"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >Silvia Antonella Pellicano</a>
+                for the
+                <a
+                href="https://www.unibo.it/it/studiare/insegnamenti-competenze-trasversali-moocs/insegnamenti/insegnamento/2024/490896"
+                target="_blank"
+                rel="noopener noreferrer"
+                ><abbr title="Knowledge Representation and Extraction">KRKE</abbr></a>
+                course taught by
+                <a
+                class="footer-nowrap"
+                href="https://www.unibo.it/sitoweb/aldo.gangemi/en"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Aldo Gangemi</a>
+                as part of the
+                <a
+                href="https://corsi.unibo.it/2cycle/DigitalHumanitiesKnowledge"
+                target="_blank"
+                rel="noopener noreferrer"
+                ><abbr title="Digital Humanities and Digital Knowledge">DHDK</abbr></a>
+                Master's Degree at the University of Bologna.
+            </p>
+        </div>
+
+        <div class="footer-bottom">
+            <p>
+            © 2026
+
+            <strong>
+                Sic Mundus
+            </strong>
+
+            · All rights reserved
+            </p>
+        </div>
+
+        <a
+            class="back-to-top"
+            href="#home"
+            aria-label="Back to the top"
+        >
+            ↑
+        </a>
+    </footer>
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>
