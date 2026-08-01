@@ -243,6 +243,14 @@ dark:hasParticipant rdf:type owl:ObjectProperty ;
                     rdfs:comment "Relates an event to a person manifestation participating in it."@en ;
                     rdfs:label "has participant"@en .
 
+###  https://w3id.org/dark-ontology/hasRelationshipWith
+dark:hasRelationshipWith rdf:type owl:ObjectProperty ,
+                                  owl:SymmetricProperty ;  
+                         rdfs:domain dark:Person ;
+                         rdfs:range dark:Person ;
+                         rdfs:comment "Relates a person to another person with whom they have a significant romantic relationship."@en ;
+                         rdfs:label "has relationship with"@en .
+
 
 ###  https://w3id.org/dark-ontology/hasRole
 dark:hasRole rdf:type owl:ObjectProperty ;
@@ -986,6 +994,7 @@ dark:Egon rdf:type owl:NamedIndividual ,
 dark:EgonTiedemann rdf:type owl:NamedIndividual ,
                             dark:Person ;
                    dark:parentOf dark:SiljaTiedemann ;
+                   dark:parentOf dark:ClaudiaTiedemann ;
                    dark:hasCanonicalName "Egon Tiedemann" ;
                    rdfs:label "Egon Tiedemann"@en .
 
@@ -1164,6 +1173,8 @@ dark:HannahKahnwald rdf:type owl:NamedIndividual ,
                     dark:parentOf dark:JonasKahnwald ,
                                   dark:SiljaTiedemann ;
                     dark:spouseOf dark:MikkelNielsen ;
+                    dark:hasRelationshipWith dark:UlrichNielsen ;
+                    dark:hasRelationshipWith dark:EgonTiedemann ;
                     dark:hasCanonicalName "Hannah Kahnwald" ;
                     rdfs:comment "The persistent personal identity of Hannah Kahnwald across her temporal manifestations."@en ;
                     rdfs:label "Hannah Kahnwald"@en .
@@ -1265,6 +1276,8 @@ dark:JonasFinalTravel02_1986_1971 rdf:type owl:NamedIndividual ,
 dark:JonasKahnwald rdf:type owl:NamedIndividual ,
                             dark:Person ;
                    dark:childOf dark:MikkelNielsen ;
+                   dark:parentOf dark:Unknown ;
+                   dark:hasRelationshipWith dark:MarthaNielsen_EvaWorld ;
                    dark:hasCanonicalName "Jonas Kahnwald" ;
                    rdfs:comment "The persistent personal identity shared by Jonas's different temporal manifestations, including Jonas in 2019, the Stranger, and Adam."@en ;
                    rdfs:label "Jonas Kahnwald"@en .
@@ -1566,6 +1579,7 @@ dark:MarthaNielsen_AdamWorld rdf:type owl:NamedIndividual ,
 dark:MarthaNielsen_EvaWorld rdf:type owl:NamedIndividual ,
                                      dark:Person ;
                             dark:hasCanonicalName "Martha Nielsen" ;
+                            dark:parentOf dark:Unknown ;
                             rdfs:comment "The persistent personal identity of Martha Nielsen originating from Eva's world, whose manifestations include young Martha and Eva."@en ;
                             rdfs:label "Martha Nielsen"@en .
 
@@ -2040,9 +2054,21 @@ dark:TimeTravelChair rdf:type owl:NamedIndividual ,
 dark:TronteNielsen rdf:type owl:NamedIndividual ,
                             dark:Person ;
                    dark:parentOf dark:UlrichNielsen ;
+                   dark:parentOf dark:MadsNielsen ;
+                   dark:childOf dark:AgnesNielsen ;
                    dark:hasCanonicalName "Tronte Nielsen" ;
                    rdfs:comment "The persistent personal identity of Tronte Nielsen across his temporal manifestations."@en ;
                    rdfs:label "Tronte Nielsen"@en .
+
+
+###  https://w3id.org/dark-ontology/Unknown
+dark:Unknown rdf:type owl:NamedIndividual ,
+                      dark:Person ;
+             dark:parentOf dark:TronteNielsen ;
+             dark:spouseOf dark:AgnesNielsen ;
+             dark:hasCanonicalName "The Unknown" ;
+             rdfs:comment "The mysterious figure who is the son of Jonas Kahnwald and Martha Nielsen from Eva's world, husband of Agnes Nielsen, and father of Tronte Nielsen."@en ;
+             rdfs:label "The Unknown"@en .
 
 
 ###  https://w3id.org/dark-ontology/Ulrich
@@ -2239,6 +2265,16 @@ dark:YoungClaudia rdf:type owl:NamedIndividual ,
                   dark:hasManifestationName "Claudia Tiedemann" ;
                   dark:manifestationOf dark:ClaudiaTiedemann ;
                   rdfs:label "Claudia Tiedemann"@en .
+
+
+###  https://w3id.org/dark-ontology/TheUnknown
+dark:TheUnknown rdf:type owl:NamedIndividual ,
+                         dark:PersonManifestation ;
+                dark:existsInWorld dark:EvaWorld ;
+                dark:manifestationOf dark:Unknown ;
+                dark:hasManifestationName "The Unknown" ;
+                rdfs:comment "The manifestation of The Unknown who operates in Eva's world."@en ;
+                rdfs:label "The Unknown"@en .
 
 
 ###  https://w3id.org/dark-ontology/YoungHelge

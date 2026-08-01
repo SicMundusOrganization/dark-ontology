@@ -243,6 +243,13 @@ dark:hasParticipant rdf:type owl:ObjectProperty ;
                     rdfs:comment "Relates an event to a person manifestation participating in it."@en ;
                     rdfs:label "has participant"@en .
 
+###  https://w3id.org/dark-ontology/hasRelationshipWith
+dark:hasRelationshipWith rdf:type owl:ObjectProperty ,
+                                  owl:SymmetricProperty ;  
+                         rdfs:domain dark:Person ;
+                         rdfs:range dark:Person ;
+                         rdfs:comment "Relates a person to another person with whom they have a significant romantic relationship."@en ;
+                         rdfs:label "has relationship with"@en .
 
 ###  https://w3id.org/dark-ontology/hasRole
 dark:hasRole rdf:type owl:ObjectProperty ;
