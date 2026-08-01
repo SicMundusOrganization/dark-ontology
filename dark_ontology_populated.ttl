@@ -2145,6 +2145,7 @@ dark:Year_1888 rdf:type owl:NamedIndividual ,
 ###  https://w3id.org/dark-ontology/Year_1920
 dark:Year_1920 rdf:type owl:NamedIndividual ,
                         dark:Year ;
+               dark:hasYearValue "1920"^^xsd:gYear ;
                rdfs:label "1920"^^xsd:gYear .
 
 
@@ -2214,6 +2215,7 @@ dark:Year_2020 rdf:type owl:NamedIndividual ,
 ###  https://w3id.org/dark-ontology/Year_2041
 dark:Year_2041 rdf:type owl:NamedIndividual ,
                         dark:Year ;
+               dark:hasYearValue "2041"^^xsd:gYear ;
                rdfs:label "2041"^^xsd:gYear .
 
 
