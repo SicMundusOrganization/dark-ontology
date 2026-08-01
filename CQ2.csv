@@ -1,42 +1,42 @@
-event,isIntentional,travelers
-https://w3id.org/dark-ontology/AdamTravel01_1921_2020,true,Adam
-https://w3id.org/dark-ontology/AdamTravel02_2053_2020,true,Adam
-https://w3id.org/dark-ontology/AdamTravel03_2020_2019,true,"Adam, Jonas_2019"
-https://w3id.org/dark-ontology/AdamTravel04_2019_2052,true,Adam
-https://w3id.org/dark-ontology/BartoszTravel01_2020_1987,true,"Bartosz, Elisabeth, Franziska, Magnus, Martha_2019_AdamWorld"
-https://w3id.org/dark-ontology/BartoszTravel02_1987_2020,true,"Bartosz, Elisabeth, Franziska, Magnus, Martha_2019_AdamWorld"
-https://w3id.org/dark-ontology/ClaudiaTravel01_1987_2020,true,Claudia
-https://w3id.org/dark-ontology/ClaudiaTravel02_2020_1987,true,Claudia
-https://w3id.org/dark-ontology/ElisabethAndCharlotteTravel01_2053_2041,true,"AdultElisabeth, Charlotte"
-https://w3id.org/dark-ontology/ElisabethAndCharlotteTravel02_2041_1971,true,"AdultElisabeth, Charlotte, InfantCharlotte"
-https://w3id.org/dark-ontology/HannahTravel01_2020_1954,true,Hannah
-https://w3id.org/dark-ontology/JonasFinalTravel01_2019_1986,true,"Jonas_2019, Martha_2019_EvaWorld"
-https://w3id.org/dark-ontology/JonasFinalTravel02_1986_1971,true,"Jonas_2019, Martha_2019_EvaWorld"
-https://w3id.org/dark-ontology/JonasTravel02_1986_2019,true,Jonas_2019
-https://w3id.org/dark-ontology/JonasTravel03_2019_1986,true,Jonas_2019
-https://w3id.org/dark-ontology/JonasTravel05_2053_1921,true,Jonas_2019
-https://w3id.org/dark-ontology/JonasTravel06_1921_2019,true,Jonas_2019
-https://w3id.org/dark-ontology/JonasTravel07_1987_2020,true,"Jonas_2019, Claudia"
-https://w3id.org/dark-ontology/JonasTravel09_2019_2052,true,"Jonas_2019, Martha_2019_EvaWorld"
-https://w3id.org/dark-ontology/JonasTravel10_2052_2019,true,"Jonas_2019, Martha_2019_EvaWorld"
-https://w3id.org/dark-ontology/KatharinaTravel01_2020_1987,true,Katharina
-https://w3id.org/dark-ontology/MarthaTravel01_2019_1888,true,Martha_2019_EvaWorld
-https://w3id.org/dark-ontology/MarthaTravel02_1888_2053,true,Martha_2019_EvaWorld
-https://w3id.org/dark-ontology/NoahTravel01_2020_1920,true,Noah
-https://w3id.org/dark-ontology/OldClaudiaTravel01_2053_1987,true,OldClaudia
-https://w3id.org/dark-ontology/OldClaudiaTravel02_1987_1954,true,OldClaudia
-https://w3id.org/dark-ontology/OldHelgeTravel01_2019_1986,true,OldHelge
-https://w3id.org/dark-ontology/StrangerTravel01_2052_2019,true,TheStranger
-https://w3id.org/dark-ontology/StrangerTravel02_2019_1986,true,TheStranger
-https://w3id.org/dark-ontology/StrangerTravel03_1986_2019,true,TheStranger
-https://w3id.org/dark-ontology/StrangerTravel04_2020_1987,true,"Hannah, TheStranger"
-https://w3id.org/dark-ontology/StrangerTravel05_1987_2020,true,"Hannah, TheStranger"
-https://w3id.org/dark-ontology/StrangerTravel06_2020_1888,true,"Bartosz, Franziska, Magnus, TheStranger"
-https://w3id.org/dark-ontology/CharlotteTravel01_2020_2053,false,Charlotte
-https://w3id.org/dark-ontology/JonasTravel01_2019_1986,false,Jonas_2019
-https://w3id.org/dark-ontology/JonasTravel04_1986_2052,false,Jonas_2019
-https://w3id.org/dark-ontology/JonasTravel08_2020_2019,false,"Jonas_2019, Martha_2019_EvaWorld"
-https://w3id.org/dark-ontology/MikkelTravel_2019_1986,false,Mikkel_2019
-https://w3id.org/dark-ontology/UlrichTravel01_2019_1953,false,Ulrich
-https://w3id.org/dark-ontology/YoungHelgeTravel01_1953_1986,false,YoungHelge
-https://w3id.org/dark-ontology/YoungHelgeTravel02_1986_1954,false,YoungHelge
+eventLabel,isIntentional,travelers,devices,departureYear,arrivalYear
+MarthaTravel02_1888_2053,true,Martha_2019_EvaWorld,GoldenSphere,1888,2053
+AdamTravel01_1921_2020,true,Adam,GodParticle,1921,2020
+JonasTravel06_1921_2019,true,Jonas_2019,GodParticle,1921,2019
+JonasTravel02_1986_2019,true,Jonas_2019,CavePassage_AdamWorld,1986,2019
+StrangerTravel03_1986_2019,true,TheStranger,PortableTimeMachine,1986,2019
+JonasFinalTravel02_1986_1971,true,"Jonas_2019, Martha_2019_EvaWorld",GoldenSphere,1986,1971
+BartoszTravel02_1987_2020,true,"Bartosz, Elisabeth, Franziska, Magnus, Martha_2019_AdamWorld",PortableTimeMachine,1987,2020
+ClaudiaTravel01_1987_2020,true,Claudia,PortableTimeMachine,1987,2020
+JonasTravel07_1987_2020,true,"Jonas_2019, Claudia",CavePassage_AdamWorld,1987,2020
+StrangerTravel05_1987_2020,true,"Hannah, TheStranger",PortableTimeMachine,1987,2020
+OldClaudiaTravel02_1987_1954,true,OldClaudia,PortableTimeMachine,1987,1954
+AdamTravel04_2019_2052,true,Adam,CavePassage_EvaWorld,2019,2052
+JonasTravel09_2019_2052,true,"Jonas_2019, Martha_2019_EvaWorld",CavePassage_EvaWorld,2019,2052
+JonasFinalTravel01_2019_1986,true,"Jonas_2019, Martha_2019_EvaWorld",GoldenSphere,2019,1986
+JonasTravel03_2019_1986,true,Jonas_2019,CavePassage_AdamWorld,2019,1986
+OldHelgeTravel01_2019_1986,true,OldHelge,CavePassage_AdamWorld,2019,1986
+StrangerTravel02_2019_1986,true,TheStranger,CavePassage_AdamWorld,2019,1986
+MarthaTravel01_2019_1888,true,Martha_2019_EvaWorld,GoldenSphere,2019,1888
+AdamTravel03_2020_2019,true,"Adam, Jonas_2019",GoldenSphere,2020,2019
+BartoszTravel01_2020_1987,true,"Bartosz, Elisabeth, Franziska, Magnus, Martha_2019_AdamWorld",PortableTimeMachine,2020,1987
+ClaudiaTravel02_2020_1987,true,Claudia,PortableTimeMachine,2020,1987
+KatharinaTravel01_2020_1987,true,Katharina,CavePassage_AdamWorld,2020,1987
+StrangerTravel04_2020_1987,true,"Hannah, TheStranger",PortableTimeMachine,2020,1987
+HannahTravel01_2020_1954,true,Hannah,PortableTimeMachine,2020,1954
+StrangerTravel06_2020_1888,true,"Bartosz, Franziska, Magnus, TheStranger",PortableTimeMachine,2020,1888
+NoahTravel01_2020_1920,true,Noah,GodParticle,2020,1920
+ElisabethAndCharlotteTravel02_2041_1971,true,"AdultElisabeth, Charlotte, InfantCharlotte",GodParticle,2041,1971
+JonasTravel10_2052_2019,true,"Jonas_2019, Martha_2019_EvaWorld",CavePassage_EvaWorld,2052,2019
+StrangerTravel01_2052_2019,true,TheStranger,GodParticle,2052,2019
+AdamTravel02_2053_2020,true,Adam,GodParticle,2053,2020
+JonasTravel05_2053_1921,true,Jonas_2019,GodParticle,2053,1921
+OldClaudiaTravel01_2053_1987,true,OldClaudia,PortableTimeMachine,2053,1987
+ElisabethAndCharlotteTravel01_2053_2041,true,"AdultElisabeth, Charlotte",GodParticle,2053,2041
+YoungHelgeTravel01_1953_1986,false,YoungHelge,BunkerPortal,1953,1986
+JonasTravel04_1986_2052,false,Jonas_2019,BunkerPortal,1986,2052
+YoungHelgeTravel02_1986_1954,false,YoungHelge,TimeTravelChair,1986,1954
+JonasTravel01_2019_1986,false,Jonas_2019,CavePassage_AdamWorld,2019,1986
+MikkelTravel_2019_1986,false,Mikkel_2019,CavePassage_AdamWorld,2019,1986
+UlrichTravel01_2019_1953,false,Ulrich,CavePassage_AdamWorld,2019,1953
+CharlotteTravel01_2020_2053,false,Charlotte,GodParticle,2020,2053
+JonasTravel08_2020_2019,false,"Jonas_2019, Martha_2019_EvaWorld",GoldenSphere,2020,2019
