@@ -688,6 +688,7 @@ dark:AdamTravel02_2053_2020 rdf:type owl:NamedIndividual ,
                             dark:departsFromTime dark:Year_2053 ;
                             dark:hasTraveler dark:Adam ;
                             dark:isIntentional "true"^^xsd:boolean ;
+                            dark:usesDevice dark:GodParticle ;
                             rdfs:comment "After Claudia reveals the existence of the origin world, Adam travels from 2053 to the moment of the 2020 apocalypse and saves Jonas so that he can break the temporal knot."@en ;
                             rdfs:label "Adam's journey from 2053 to 2020"@en .
 
@@ -822,6 +823,8 @@ dark:BartoszTravel01_2020_1987 rdf:type owl:NamedIndividual ,
                                                 dark:Magnus ,
                                                 dark:Martha_2019_AdamWorld ;
                                dark:usesDevice dark:PortableTimeMachine ;
+                               dark:arrivesAtTime dark:Year_1987 ;
+                               dark:departsFromTime dark:Year_2020 ;
                                dark:isIntentional "true"^^xsd:boolean ;
                                rdfs:comment "An intentional time travel event in which Bartosz uses the portable time machine to take Martha, Magnus, Franziska, and Elisabeth from 2020 to 1987 and demonstrate that time travel is real."@en ;
                                rdfs:label "Bartosz, Martha, Magnus, Franziska, and Elisabeth's journey from 2020 to 1987"@en .
@@ -836,6 +839,8 @@ dark:BartoszTravel02_1987_2020 rdf:type owl:NamedIndividual ,
                                                 dark:Magnus ,
                                                 dark:Martha_2019_AdamWorld ;
                                dark:usesDevice dark:PortableTimeMachine ;
+                               dark:arrivesAtTime dark:Year_2020 ;
+                               dark:departsFromTime dark:Year_1987 ;
                                dark:isIntentional "true"^^xsd:boolean ;
                                rdfs:comment "An intentional time travel event in which Bartosz, Martha, Magnus, Franziska, and Elisabeth return from 1987 to 2020 using the portable time machine."@en ;
                                rdfs:label "Bartosz, Martha, Magnus, Franziska, and Elisabeth's return journey from 1987 to 2020"@en .
@@ -941,6 +946,7 @@ dark:ClaudiaTravel02_2020_1987 rdf:type owl:NamedIndividual ,
                                <http://www.w3id.org/dark-ontology/arrivesInWorld> dark:AdamWorld ;
                                <http://www.w3id.org/dark-ontology/departsFromWorld> dark:AdamWorld ;
                                dark:departsFromTime dark:Year_2020 ;
+                               dark:arrivesAtTime dark:Year_1987 ;
                                dark:hasTraveler dark:Claudia ;
                                dark:usesDevice dark:PortableTimeMachine ;
                                dark:isIntentional "true"^^xsd:boolean ;
@@ -1018,6 +1024,7 @@ dark:ElisabethAndCharlotteTravel02_2041_1971 rdf:type owl:NamedIndividual ,
                                                               dark:Charlotte ,
                                                               dark:InfantCharlotte ;
                                              dark:isIntentional "true"^^xsd:boolean ;
+                                             dark:usesDevice dark:GodParticle ;
                                              rdfs:comment "An intentional time travel event in which adult Elisabeth and Charlotte take the infant Charlotte from 2041 to 1971 and leave her with H. G. Tannhaus."@en ;
                                              rdfs:label "Elisabeth and Charlotte's journey from 2041 to 1971"@en .
 
@@ -1715,6 +1722,7 @@ dark:NoahTravel01_2020_1920 rdf:type owl:NamedIndividual ,
                             dark:departsFromTime dark:Year_2020 ;
                             dark:hasTraveler dark:Noah ;
                             dark:isIntentional "true"^^xsd:boolean ;
+                            dark:usesDevice dark:GodParticle ;
                             rdfs:comment "After failing to find his daughter Charlotte in the post-apocalyptic world, Noah intentionally travels from 2020 to 1920 to rejoin Adam and Sic Mundus."@en ;
                             rdfs:label "Noah's journey from 2020 to 1920"@en .
 
@@ -1743,6 +1751,7 @@ dark:OldClaudiaTravel01_2053_1987 rdf:type owl:NamedIndividual ,
                                   dark:departsFromTime dark:Year_2053 ;
                                   dark:hasTraveler dark:OldClaudia ;
                                   dark:isIntentional "true"^^xsd:boolean ;
+                                  dark:usesDevice dark:PortableTimeMachine ;
                                   rdfs:comment "Old Claudia intentionally travels from 2053 to 1987 to meet her younger manifestation and provide her with the coordinates of the buried portable time machine."@en ;
                                   rdfs:label "Old Claudia's journey from 2053 to 1987"@en .
 
@@ -1756,6 +1765,7 @@ dark:OldClaudiaTravel02_1987_1954 rdf:type owl:NamedIndividual ,
                                   dark:departsFromTime dark:Year_1987 ;
                                   dark:hasTraveler dark:OldClaudia ;
                                   dark:isIntentional "true"^^xsd:boolean ;
+                                  dark:usesDevice dark:PortableTimeMachine ;
                                   rdfs:comment "After meeting her younger manifestation, Old Claudia intentionally travels to 1954, where she meets Agnes and Egon before being killed by Noah."@en ;
                                   rdfs:label "Old Claudia's journey from 1987 to 1954"@en .
 
