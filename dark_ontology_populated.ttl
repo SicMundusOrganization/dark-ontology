@@ -754,6 +754,7 @@ dark:Agnes rdf:type owl:NamedIndividual ,
                     dark:PersonManifestation ;
            dark:memberOfFamily dark:NielsenFamily ;
            dark:hasManifestationName "Agnes Nielsen" ;
+           dark:manifestationOf dark:AgnesNielsen ;
            rdfs:comment "A manifestation of Agnes Nielsen, daughter of Bartosz Tiedemann and Silja Tiedemann."@en ;
            rdfs:label "Agnes Nielsen"@en .
 
@@ -766,8 +767,10 @@ dark:AgnesNielsen rdf:type owl:NamedIndividual ,
 
 
 ###  https://w3id.org/dark-ontology/Aleksander
-dark:Aleksander rdf:type owl:NamedIndividual ;
+dark:Aleksander rdf:type owl:NamedIndividual ,
+                         dark:PersonManifestation ;
                 dark:hasRole dark:NuclearPlantDirector ;
+                dark:memberOfFamily dark:TiedemannFamily ;
                 dark:manifestationOf dark:AleksanderTiedemann ;
                 dark:hasManifestationName "Aleksander Tiedemann" ;
                 rdfs:label "Aleksander Tiedemann"@en .
@@ -888,6 +891,7 @@ dark:CavePassage_EvaWorld rdf:type owl:NamedIndividual ,
 dark:Charlotte rdf:type owl:NamedIndividual ,
                         dark:PersonManifestation ;
                dark:hasRole dark:PoliceOfficer ;
+               dark:memberOfFamily dark:DopplerFamily ;
                dark:manifestationOf dark:CharlotteDoppler ;
                dark:hasManifestationName "Charlotte Doppler" ;
                rdfs:label "Charlotte Doppler"@en .
@@ -924,6 +928,7 @@ dark:Claudia rdf:type owl:NamedIndividual ,
              dark:hasRole dark:NuclearPlantDirector ;
              dark:hasManifestationName "Claudia Tiedemann" ;
              dark:manifestationOf dark:ClaudiaTiedemann ;
+             dark:memberOfFamily dark:TiedemannFamily ;
              rdfs:label "Claudia Tiedemann"@en .
 
 
@@ -987,6 +992,7 @@ dark:Egon rdf:type owl:NamedIndividual ,
                    dark:PersonManifestation ;
           dark:manifestationOf dark:EgonTiedemann ;
           dark:hasManifestationName "Egon Tiedemann" ;
+          dark:memberOfFamily dark:TiedemannFamily ;
           rdfs:label "Egon Tiedemann"@en .
 
 
@@ -1003,6 +1009,7 @@ dark:EgonTiedemann rdf:type owl:NamedIndividual ,
 dark:Elisabeth rdf:type owl:NamedIndividual ,
                         dark:PersonManifestation ;
                dark:manifestationOf dark:ElisabethDoppler ;
+               dark:memberOfFamily dark:DopplerFamily ;
                dark:hasManifestationName "Elisabeth Doppler" ;
                rdfs:label "Elisabeth Doppler"@en .
 
@@ -2061,6 +2068,16 @@ dark:TronteNielsen rdf:type owl:NamedIndividual ,
                    rdfs:comment "The persistent personal identity of Tronte Nielsen across his temporal manifestations."@en ;
                    rdfs:label "Tronte Nielsen"@en .
 
+###  https://w3id.org/dark-ontology/Tronte
+dark:Tronte rdf:type owl:NamedIndividual ,
+                     dark:PersonManifestation ;
+            dark:existsInWorld dark:AdamWorld ;
+            dark:manifestationOf dark:TronteNielsen ;
+            dark:memberOfFamily dark:NielsenFamily ;
+            dark:hasManifestationName "Tronte Nielsen" ;
+            rdfs:comment "The adult manifestation of Tronte Nielsen in Adam's world."@en ;
+            rdfs:label "Tronte Nielsen"@en .
+            
 
 ###  https://w3id.org/dark-ontology/Unknown
 dark:Unknown rdf:type owl:NamedIndividual ,
