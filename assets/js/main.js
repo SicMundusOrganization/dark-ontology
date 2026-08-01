@@ -889,7 +889,7 @@ if (caseStudiesCarousel) {
     }
   );
 
-  previousCaseButtons.forEach(
+    previousCaseButtons.forEach(
     function (button) {
       button.addEventListener(
         "click",
@@ -902,9 +902,51 @@ if (caseStudiesCarousel) {
     }
   );
 
-  showCaseStudy(
-    0
-  );
+  function resetCaseStudiesCarousel() {
+    showCaseStudy(
+      0
+    );
+  }
+
+  resetCaseStudiesCarousel();
+
+    window.addEventListener(
+    "pageshow",
+    function () {
+        requestAnimationFrame(
+        resetCaseStudiesCarousel
+        );
+    }
+    );
+
+    let carouselWasVisible =
+    false;
+
+    const caseStudiesObserver =
+    new IntersectionObserver(
+        function (entries) {
+        const carouselEntry =
+            entries[0];
+
+        if (
+            carouselWasVisible &&
+            !carouselEntry.isIntersecting
+        ) {
+            resetCaseStudiesCarousel();
+        }
+
+        carouselWasVisible =
+            carouselEntry.isIntersecting;
+        },
+        {
+        threshold: 0.05
+        }
+    );
+
+    caseStudiesObserver.observe(
+    caseStudiesCarousel
+    );
+
 }
 
 /* Caricamento ttl */
