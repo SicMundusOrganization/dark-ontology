@@ -1,0 +1,29 @@
+person,personName,parents,children,siblings,spouses,adoptiveParents,adoptiveChildren,relationships,families
+https://w3id.org/dark-ontology/AgnesNielsen,Agnes Nielsen,"Bartosz Tiedemann, Silja Tiedemann",Tronte Nielsen,Hanno Tauber,The Unknown,,,,Nielsen family
+https://w3id.org/dark-ontology/AleksanderTiedemann,Aleksander Tiedemann,,Bartosz Tiedemann,,Regina Tiedemann,,,,Tiedemann family
+https://w3id.org/dark-ontology/BartoszTiedemann,Bartosz Tiedemann,"Aleksander Tiedemann, Regina Tiedemann","Agnes Nielsen, Hanno Tauber",,Silja Tiedemann,,,,Tiedemann family
+https://w3id.org/dark-ontology/CharlotteDoppler,Charlotte Doppler,"Hanno Tauber, Elisabeth Doppler","Elisabeth Doppler, Franziska Doppler",,Peter Doppler,H. G. Tannhaus,,,Doppler family
+https://w3id.org/dark-ontology/ClaudiaTiedemann,Claudia Tiedemann,Egon Tiedemann,Regina Tiedemann,,,,,,Tiedemann family
+https://w3id.org/dark-ontology/EgonTiedemann,Egon Tiedemann,,"Silja Tiedemann, Claudia Tiedemann",,,,,Hannah Kahnwald,Tiedemann family
+https://w3id.org/dark-ontology/ElisabethDoppler,Elisabeth Doppler,"Charlotte Doppler, Peter Doppler",Charlotte Doppler,Franziska Doppler,Hanno Tauber,,,,Doppler family
+https://w3id.org/dark-ontology/ErikObendorf,Erik Obendorf,,,,,,,,
+https://w3id.org/dark-ontology/FranziskaDoppler,Franziska Doppler,"Charlotte Doppler, Peter Doppler",,Elisabeth Doppler,,,,,Doppler family
+https://w3id.org/dark-ontology/HGTannhaus,H. G. Tannhaus,,,,,,Charlotte Doppler,,
+https://w3id.org/dark-ontology/HannahKahnwald,Hannah Kahnwald,,"Jonas Kahnwald, Silja Tiedemann",,Mikkel Nielsen / Michael Kahnwald,,,"Egon Tiedemann, Ulrich Nielsen",Kahnwald family
+https://w3id.org/dark-ontology/NoahTauber,Hanno Tauber,"Bartosz Tiedemann, Silja Tiedemann",Charlotte Doppler,Agnes Nielsen,Elisabeth Doppler,,,,
+https://w3id.org/dark-ontology/HelgeDoppler,Helge Doppler,,Peter Doppler,,,,,,Doppler family
+https://w3id.org/dark-ontology/InesKahnwald,Ines Kahnwald,,,,,,Mikkel Nielsen / Michael Kahnwald,,Kahnwald family
+https://w3id.org/dark-ontology/JonasKahnwald,Jonas Kahnwald,"Hannah Kahnwald, Mikkel Nielsen / Michael Kahnwald",The Unknown,,,,,Martha Nielsen,Kahnwald family
+https://w3id.org/dark-ontology/KatharinaNielsen,Katharina Nielsen,,"Mikkel Nielsen / Michael Kahnwald, Magnus Nielsen, Martha Nielsen",,Ulrich Nielsen,,,,Nielsen family
+https://w3id.org/dark-ontology/MadsNielsen,Mads Nielsen,Tronte Nielsen,,Ulrich Nielsen,,,,,Nielsen family
+https://w3id.org/dark-ontology/MagnusNielsen,Magnus Nielsen,"Katharina Nielsen, Ulrich Nielsen",,"Mikkel Nielsen / Michael Kahnwald, Martha Nielsen",,,,,Nielsen family
+https://w3id.org/dark-ontology/MarthaNielsen_EvaWorld,Martha Nielsen,,The Unknown,,,,,Jonas Kahnwald,Nielsen family
+https://w3id.org/dark-ontology/MarthaNielsen_AdamWorld,Martha Nielsen,"Katharina Nielsen, Ulrich Nielsen",,"Mikkel Nielsen / Michael Kahnwald, Magnus Nielsen",,,,,Nielsen family
+https://w3id.org/dark-ontology/MikkelNielsen,Mikkel Nielsen / Michael Kahnwald,"Katharina Nielsen, Ulrich Nielsen",Jonas Kahnwald,"Magnus Nielsen, Martha Nielsen",Hannah Kahnwald,Ines Kahnwald,,,"Kahnwald family, Nielsen family"
+https://w3id.org/dark-ontology/PeterDoppler,Peter Doppler,Helge Doppler,"Elisabeth Doppler, Franziska Doppler",,Charlotte Doppler,,,,Doppler family
+https://w3id.org/dark-ontology/ReginaTiedemann,Regina Tiedemann,Claudia Tiedemann,Bartosz Tiedemann,,Aleksander Tiedemann,,,,Tiedemann family
+https://w3id.org/dark-ontology/SiljaTiedemann,Silja Tiedemann,"Egon Tiedemann, Hannah Kahnwald","Agnes Nielsen, Hanno Tauber",,Bartosz Tiedemann,,,,
+https://w3id.org/dark-ontology/Unknown,The Unknown,"Jonas Kahnwald, Martha Nielsen",Tronte Nielsen,,Agnes Nielsen,,,,
+https://w3id.org/dark-ontology/TronteNielsen,Tronte Nielsen,"Agnes Nielsen, The Unknown","Mads Nielsen, Ulrich Nielsen",,,,,,Nielsen family
+https://w3id.org/dark-ontology/UlrichNielsen,Ulrich Nielsen,Tronte Nielsen,"Mikkel Nielsen / Michael Kahnwald, Magnus Nielsen, Martha Nielsen",Mads Nielsen,Katharina Nielsen,,,Hannah Kahnwald,Nielsen family
+https://w3id.org/dark-ontology/YasinFriese,Yasin Friese,,,,,,,,
