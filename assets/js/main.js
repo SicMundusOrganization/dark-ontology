@@ -53,6 +53,12 @@ function openOntologyModal(card) {
     );
   }
 
+  if (modal.id === "device-modal") {
+  showDeviceCategory(
+    "direct"
+  );
+}
+
   requestAnimationFrame(
     function () {
       if (individualsScroll) {
@@ -718,7 +724,7 @@ const placeIndividuals = {
 
 const placeCategoryButtons =
   document.querySelectorAll(
-    ".place-category-button"
+    "#place-modal .place-category-button"
   );
 
 const placeCategoryTitle =
@@ -807,6 +813,130 @@ placeCategoryButtons.forEach(
 );
 
 showPlaceCategory(
+  "direct"
+);
+
+
+/* Time Travel Device categories */
+
+const deviceIndividuals = {
+  direct: {
+    title: "Direct devices",
+
+    individuals: [
+      "Bunker Portal",
+      "God Particle",
+      "Golden Sphere",
+      "Portable Time Machine",
+      "Time Travel Chair"
+    ]
+  },
+
+  cavePassage: {
+    title: "Cave Passage",
+
+    individuals: [
+      "Cave Passage · Adam World",
+      "Cave Passage · Eva World"
+    ]
+  }
+};
+
+const deviceCategoryButtons =
+  document.querySelectorAll(
+    "#device-modal .device-category-button"
+  );
+
+const deviceCategoryTitle =
+  document.querySelector(
+    "#device-category-title"
+  );
+
+const deviceRecordCount =
+  document.querySelector(
+    "#device-record-count"
+  );
+
+const deviceIndividualsList =
+  document.querySelector(
+    "#device-individuals-list"
+  );
+
+const deviceIndividualsScroll =
+  document.querySelector(
+    "#device-modal .individuals-scroll"
+  );
+
+function showDeviceCategory(deviceType) {
+  const selectedCategory =
+    deviceIndividuals[deviceType];
+
+  if (!selectedCategory) {
+    return;
+  }
+
+  deviceCategoryTitle.textContent =
+    selectedCategory.title;
+
+  const recordWord =
+    selectedCategory.individuals.length === 1
+      ? "RECORD"
+      : "RECORDS";
+
+  deviceRecordCount.textContent =
+    `${selectedCategory.individuals.length} ${recordWord}`;
+
+  deviceIndividualsList.replaceChildren();
+
+  selectedCategory.individuals.forEach(
+    function (individualName) {
+      const listItem =
+        document.createElement("li");
+
+      listItem.textContent =
+        individualName;
+
+      deviceIndividualsList.appendChild(
+        listItem
+      );
+    }
+  );
+
+  deviceIndividualsScroll.scrollTop =
+    0;
+
+  deviceCategoryButtons.forEach(
+    function (button) {
+      const isSelected =
+        button.dataset.deviceType === deviceType;
+
+      button.classList.toggle(
+        "is-active",
+        isSelected
+      );
+
+      button.setAttribute(
+        "aria-selected",
+        String(isSelected)
+      );
+    }
+  );
+}
+
+deviceCategoryButtons.forEach(
+  function (button) {
+    button.addEventListener(
+      "click",
+      function () {
+        showDeviceCategory(
+          button.dataset.deviceType
+        );
+      }
+    );
+  }
+);
+
+showDeviceCategory(
   "direct"
 );
 

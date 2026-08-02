@@ -1018,71 +1018,86 @@
 
 
         <dialog
-            class="ontology-modal"
+            class="ontology-modal place-modal"
             id="device-modal"
-            >
+        >
             <div class="modal-header">
                 <div>
-                <p class="modal-label">
-                    CLASS RECORD · 09
-                </p>
+                    <p class="modal-label">
+                        CLASS RECORD · 09
+                    </p>
 
-                <h2>
-                    Time Travel Device
-                </h2>
+                    <h2>
+                        Time Travel Device
+                    </h2>
 
-                <p class="modal-description">
-                    Direct individuals of the Time Travel Device class
-                </p>
+                    <p class="modal-description">
+                        Select a category to view its individuals
+                    </p>
                 </div>
 
                 <button
-                class="modal-close"
-                type="button"
-                aria-label="Close"
+                    class="modal-close"
+                    type="button"
+                    aria-label="Close"
                 >
-                ×
+                    ×
                 </button>
             </div>
 
-            <div class="modal-counter">
-                <span>
-                INDIVIDUALS
-                </span>
+            <div
+                class="place-categories"
+                role="tablist"
+                aria-label="Time Travel Device categories"
+            >
+                <button
+                    class="place-category-button device-category-button is-active"
+                    type="button"
+                    role="tab"
+                    data-device-type="direct"
+                    aria-selected="true"
+                >
+                    Direct devices
+                </button>
 
-                <span>
-                5 RECORDS
+                <button
+                    class="place-category-button device-category-button"
+                    type="button"
+                    role="tab"
+                    data-device-type="cavePassage"
+                    aria-selected="false"
+                >
+                    Cave Passage
+                </button>
+            </div>
+
+            <div class="place-list-heading">
+                <div>
+                    <p>
+                        SELECTED CATEGORY
+                    </p>
+
+                    <h3 id="device-category-title">
+                        Direct devices
+                    </h3>
+                </div>
+
+                <span id="device-record-count">
+                    5 RECORDS
                 </span>
             </div>
 
             <div class="individuals-scroll">
-                <ol class="individuals-list">
-                <li>
-                    Bunker Portal
-                </li>
-
-                <li>
-                    God Particle
-                </li>
-
-                <li>
-                    Golden Sphere
-                </li>
-
-                <li>
-                    Portable Time Machine
-                </li>
-
-                <li>
-                    Time Travel Chair
-                </li>
-                </ol>
+                <ol
+                    class="individuals-list"
+                    id="device-individuals-list"
+                ></ol>
             </div>
 
             <div class="modal-footer">
-                SIC MUNDUS · ONTOLOGY ARCHIVE
+                SIC MUNDUS · DEVICE ARCHIVE
             </div>
-            </dialog>
+        </dialog>
 
 
         <div
