@@ -1092,7 +1092,7 @@ body.modal-open {
   hyphens: none;
 }
 
-/* isManifestationOf relationship */
+/* manifestationOf relationship */
 
 .manifestation-relationship {
   display: flex;

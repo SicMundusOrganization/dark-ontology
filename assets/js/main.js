@@ -442,7 +442,7 @@ function renderManifestationGroups() {
 
       relationship.innerHTML = `
         <span>
-            isManifestationOf
+            manifestationOf
         </span>
 
         <i aria-hidden="true"></i>
