@@ -789,6 +789,7 @@ dark:Apocalypse_2019_EvaWorld rdf:type owl:NamedIndividual ,
                                        dark:ApocalypseEvent ;
                               <http://www.w3id.org/dark-ontology/occursInReality> dark:FirstReality ;
                               dark:occursAtTime dark:Year_2019 ;
+                              dark:occursAtPlace dark:Winden ;
                               dark:occursInWorld dark:EvaWorld ;
                               rdfs:comment "An apocalypse event occurring in Eva's world in 2019."@en ;
                               rdfs:label "The 2019 apocalypse in Eva's world"@en .
@@ -799,6 +800,7 @@ dark:Apocalypse_2020_AdamWorld rdf:type owl:NamedIndividual ,
                                         dark:ApocalypseEvent ;
                                <http://www.w3id.org/dark-ontology/occursInReality> dark:FirstReality ;
                                dark:occursAtTime dark:Year_2020 ;
+                               dark:occursAtPlace dark:Winden ;
                                dark:occursInWorld dark:AdamWorld ;
                                rdfs:comment "An apocalypse event occurring in Adam's world in 2020."@en ;
                                rdfs:label "The 2020 apocalypse in Adam's world"@en .
@@ -1073,6 +1075,9 @@ dark:ErikObendorfDisappearance_2019 rdf:type owl:NamedIndividual ,
                                              dark:DisappearanceEvent ;
                                     <http://www.w3id.org/dark-ontology/occursInReality> dark:FirstReality ;
                                     dark:hasParticipant dark:Erik ;
+                                    dark:hasParticipant dark:Noah ;
+                                    dark:hasParticipant dark:Helge ;
+                                    dark:occursAtPlace dark:DopplerBunker ;
                                     dark:occursAtTime dark:Year_2019 ;
                                     dark:occursInWorld dark:AdamWorld ;
                                     rdfs:comment "A disappearance event in which Erik Obendorf vanishes from Adam's world in 2019 after being abducted and taken to the Doppler bunker."@en ;
@@ -1111,6 +1116,20 @@ dark:EvaWorld rdf:type owl:NamedIndividual ,
               owl:differentFrom dark:OriginWorld ;
               rdfs:comment "The alternate narrative world associated with Eva and the alternate Martha Nielsen."@en ;
               rdfs:label "Eva's world"@en .
+
+
+###  https://w3id.org/dark-ontology/FinalDinner_2019
+dark:FinalDinner_2019 rdf:type owl:NamedIndividual ,
+                               dark:MeetingEvent ;
+                         dark:hasParticipant dark:Regina ,
+                                             dark:Katharina ,
+                                             dark:Hannah ,
+                                             dark:Peter ;
+                         dark:occursAtPlace dark:Winden ;
+                         dark:occursAtTime dark:Year_2019 ;
+                         dark:occursInWorld dark:OriginWorld ;
+                         rdfs:comment "A dinner meeting in the origin world after the disappearance of Adam's and Eva's worlds."@en ;
+                         rdfs:label "Final dinner meeting in the origin world"@en .
 
 
 ###  https://w3id.org/dark-ontology/FirstReality
@@ -1301,6 +1320,32 @@ dark:JonasMeetsAdam_1921 rdf:type owl:NamedIndividual ,
                          dark:occursInWorld dark:AdamWorld ;
                          rdfs:comment "A meeting event in which Jonas encounters Adam, an older manifestation of his own persistent identity, in 1921."@en ;
                          rdfs:label "Jonas meets Adam in 1921"@en .
+
+
+###  https://w3id.org/dark-ontology/JonasMeetsMartha_1986
+dark:JonasMeetsMartha_1986 rdf:type owl:NamedIndividual ,
+                                    dark:MeetingEvent ;
+                         <http://www.w3id.org/dark-ontology/occursInReality> dark:ThirdReality ;
+                         dark:hasParticipant dark:Martha_2019_AdamWorld ,
+                                             dark:Jonas_2019 ;
+                         dark:occursAtPlace dark:InterworldSpace ;
+                         dark:occursAtTime dark:Year_1986 ;
+                         dark:occursInWorld dark:AdamWorld ;
+                         dark:occursInWorld dark:EvaWorld ;
+                         rdfs:comment "Jonas and Martha meet in the interworld space between Adam's world and Eva's world before preventing the origin event."@en ;
+                         rdfs:label "Jonas and Martha meeting in interworld space"@en .
+
+###  https://w3id.org/dark-ontology/JonasMeetsMichael_2019
+dark:JonasMeetsMichael_2019 rdf:type owl:NamedIndividual ,
+                                     dark:MeetingEvent ;
+                              <http://www.w3id.org/dark-ontology/occursInReality> dark:FirstReality ;
+                              dark:occursInWorld dark:AdamWorld ;
+                              dark:occursAtTime dark:Year_2019 ;
+                              dark:occursAtPlace dark:Winden ;
+                              dark:hasParticipant dark:Jonas_2019 ,
+                                                  dark:Michael_2019 ;
+                              rdfs:comment "Jonas meets his father Michael shortly before Michael's suicide."@en ;
+                              rdfs:label "Jonas and Michael meeting in 2019"@en .
 
 
 ###  https://w3id.org/dark-ontology/JonasTravel01_2019_1986
@@ -1548,6 +1593,9 @@ dark:MadsNielsenDisappearance_1986 rdf:type owl:NamedIndividual ,
                                             dark:DisappearanceEvent ;
                                    <http://www.w3id.org/dark-ontology/occursInReality> dark:FirstReality ;
                                    dark:hasParticipant dark:Mads ;
+                                   dark:hasParticipant dark:Noah ;
+                                   dark:hasParticipant dark:Helge ;
+                                   dark:occursAtPlace dark:DopplerBunker ;
                                    dark:occursAtTime dark:Year_1986 ;
                                    dark:occursInWorld dark:AdamWorld ;
                                    rdfs:comment "A disappearance event in which Mads Nielsen vanishes from Adam's world in 1986 after being abducted and used in the time travel experiments conducted in the Doppler bunker."@en ;
@@ -2173,6 +2221,9 @@ dark:YasinFrieseDisappearance_2019 rdf:type owl:NamedIndividual ,
                                             dark:DisappearanceEvent ;
                                    <http://www.w3id.org/dark-ontology/occursInReality> dark:FirstReality ;
                                    dark:hasParticipant dark:Yasin ;
+                                   dark:hasParticipant dark:Noah ;
+                                   dark:hasParticipant dark:Helge ;
+                                   dark:occursAtPlace dark:DopplerBunker ;
                                    dark:occursAtTime dark:Year_2019 ;
                                    dark:occursInWorld dark:AdamWorld ;
                                    rdfs:comment "A disappearance event in which Yasin Friese vanishes from Adam's world in 2019 after being abducted by Noah and Helge."@en ;
