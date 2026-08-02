@@ -1,8 +1,8 @@
-person,canonicalName,manifestations,numManifestations
-https://w3id.org/dark-ontology/ClaudiaTiedemann,Claudia Tiedemann,"Claudia, OldClaudia, YoungClaudia",3
-https://w3id.org/dark-ontology/HelgeDoppler,Helge Doppler,"Helge, OldHelge, YoungHelge",3
-https://w3id.org/dark-ontology/JonasKahnwald,Jonas Kahnwald,"Adam, Jonas_2019, TheStranger",3
-https://w3id.org/dark-ontology/CharlotteDoppler,Charlotte Doppler,"Charlotte, InfantCharlotte",2
-https://w3id.org/dark-ontology/ElisabethDoppler,Elisabeth Doppler,"AdultElisabeth, Elisabeth",2
-https://w3id.org/dark-ontology/MarthaNielsen_EvaWorld,Martha Nielsen,"Eva, Martha_2019_EvaWorld",2
-https://w3id.org/dark-ontology/MikkelNielsen,Mikkel Nielsen / Michael Kahnwald,"Michael_2019, Mikkel_2019",2
+personName,manifestations,numManifestations
+Claudia Tiedemann,"Claudia, OldClaudia, YoungClaudia",3
+Helge Doppler,"Helge, OldHelge, YoungHelge",3
+Jonas Kahnwald,"Adam, Jonas_2019, TheStranger",3
+Charlotte Doppler,"Charlotte, InfantCharlotte",2
+Elisabeth Doppler,"AdultElisabeth, Elisabeth",2
+Martha Nielsen,"Eva, Martha_2019_EvaWorld",2
+Mikkel Nielsen / Michael Kahnwald,"Michael_2019, Mikkel_2019",2
