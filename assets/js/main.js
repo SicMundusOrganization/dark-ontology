@@ -534,7 +534,10 @@ const eventIndividuals = {
     title: "Meeting Event",
 
     individuals: [
-      "Jonas Meets Adam · 1921"
+        "Final Dinner · 2019",
+      "Jonas Meets Adam · 1921",
+      "Jonas Meets Martha · 1986",
+      "Jonas Meets Michael · 2019"
     ]
   },
 
