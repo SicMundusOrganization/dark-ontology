@@ -361,6 +361,14 @@ const manifestationData = [
   },
 
   {
+    person: "Unknown",
+
+    manifestations: [
+      "The Unknown"
+    ]
+  },
+
+  {
     person: "Yasin Friese",
 
     manifestations: [
@@ -534,10 +542,15 @@ const eventIndividuals = {
     title: "Meeting Event",
 
     individuals: [
-        "Final Dinner · 2019",
+      "Charlotte Meets Infant Charlotte · 1971",
+      "Claudia Meets Old Claudia · 1987",
+      "Final Dinner · 2019",
+      "Helge Meets Old Helge · 1986",
+      "Helge Meets Young Helge · 1986",
       "Jonas Meets Adam · 1921",
       "Jonas Meets Martha · 1986",
-      "Jonas Meets Michael · 2019"
+      "Jonas Meets Michael · 2019",
+      "Martha Meets Eva · 2019"
     ]
   },
 

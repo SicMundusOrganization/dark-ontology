@@ -907,7 +907,7 @@ dark:CharlotteDoppler rdf:type owl:NamedIndividual ,
                       dark:spouseOf dark:PeterDoppler ;
                       dark:hasCanonicalName "Charlotte Doppler" ;
                       rdfs:label "Charlotte Doppler"@en .
-                      
+
 
 ###  https://w3id.org/dark-ontology/CharlotteMeetsInfantCharlotte_1971
 dark:CharlotteMeetsInfantCharlotte_1971 rdf:type owl:NamedIndividual ,
