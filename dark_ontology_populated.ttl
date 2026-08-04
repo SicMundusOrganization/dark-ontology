@@ -907,6 +907,19 @@ dark:CharlotteDoppler rdf:type owl:NamedIndividual ,
                       dark:spouseOf dark:PeterDoppler ;
                       dark:hasCanonicalName "Charlotte Doppler" ;
                       rdfs:label "Charlotte Doppler"@en .
+                      
+
+###  https://w3id.org/dark-ontology/CharlotteMeetsInfantCharlotte_1971
+dark:CharlotteMeetsInfantCharlotte_1971 rdf:type owl:NamedIndividual ,
+                                                 dark:MeetingEvent ;
+                                        <http://www.w3id.org/dark-ontology/occursInReality> dark:FirstReality ;
+                                        dark:hasParticipant dark:Charlotte ,
+                                                            dark:InfantCharlotte ;
+                                        dark:occursAtPlace dark:Winden ;
+                                        dark:occursAtTime dark:Year_1971 ;
+                                        dark:occursInWorld dark:AdamWorld ;
+                                        rdfs:comment "A meeting event in which adult Charlotte holds her infant self in 1971 before leaving her with H. G. Tannhaus."@en ;
+                                        rdfs:label "Adult Charlotte meets infant Charlotte in 1971"@en .
 
 
 ###  https://w3id.org/dark-ontology/CharlotteTravel01_2020_2053
@@ -932,6 +945,19 @@ dark:Claudia rdf:type owl:NamedIndividual ,
              dark:manifestationOf dark:ClaudiaTiedemann ;
              dark:memberOfFamily dark:TiedemannFamily ;
              rdfs:label "Claudia Tiedemann"@en .
+
+
+###  https://w3id.org/dark-ontology/ClaudiaMeetsOldClaudia_1987
+dark:ClaudiaMeetsOldClaudia_1987 rdf:type owl:NamedIndividual ,
+                                          dark:MeetingEvent ;
+                                 <http://www.w3id.org/dark-ontology/occursInReality> dark:FirstReality ;
+                                 dark:hasParticipant dark:Claudia ,
+                                                     dark:OldClaudia ;
+                                 dark:occursAtPlace dark:Winden ;
+                                 dark:occursAtTime dark:Year_1987 ;
+                                 dark:occursInWorld dark:AdamWorld ;
+                                 rdfs:comment "A meeting event in which adult Claudia meets her elderly self (Old Claudia) in 1987 and receives instructions about time travels."@en ;
+                                 rdfs:label "Claudia meets Old Claudia in 1987"@en .
 
 
 ###  https://w3id.org/dark-ontology/ClaudiaTiedemann
@@ -1091,6 +1117,14 @@ dark:EritLux rdf:type owl:NamedIndividual ,
              rdfs:label "Erit Lux"@en .
 
 
+###  https://w3id.org/dark-ontology/EritLuxHeadquarters
+dark:EritLuxHeadquarters rdf:type owl:NamedIndividual ,
+                                  dark:Place ;
+                         dark:locatedIn dark:Winden ;
+                         rdfs:comment "The headquarters of Erit Lux in Eva's world."@en ;
+                         rdfs:label "Erit Lux headquarters"@en .
+
+
 ###  https://w3id.org/dark-ontology/EritLuxLeaderRole
 dark:EritLuxLeaderRole rdf:type owl:NamedIndividual ,
                                 dark:OrganizationRole ;
@@ -1237,6 +1271,31 @@ dark:HelgeDoppler rdf:type owl:NamedIndividual ,
                   dark:hasCanonicalName "Helge Doppler" ;
                   rdfs:label "Helge Doppler"@en .
 
+###  https://w3id.org/dark-ontology/HelgeMeetsOldHelge_1986
+dark:HelgeMeetsOldHelge_1986 rdf:type owl:NamedIndividual ,
+                                      dark:MeetingEvent ;
+                             <http://www.w3id.org/dark-ontology/occursInReality> dark:FirstReality ;
+                             dark:hasParticipant dark:Helge ,
+                                                 dark:OldHelge ;
+                             dark:occursAtPlace dark:Winden ;
+                             dark:occursAtTime dark:Year_1986 ;
+                             dark:occursInWorld dark:AdamWorld ;
+                             rdfs:comment "A meeting event in which Adult Helge collides with the car driven by Old Helge, who is attempting to kill his younger self in order to stop Noah."@en ;
+                             rdfs:label "Adult Helge meets Old Helge in 1986"@en .
+
+
+###  https://w3id.org/dark-ontology/HelgeMeetsYoungHelge_1986
+dark:HelgeMeetsYoungHelge_1986 rdf:type owl:NamedIndividual ,
+                                        dark:MeetingEvent ;
+                               <http://www.w3id.org/dark-ontology/occursInReality> dark:FirstReality ;
+                               dark:hasParticipant dark:Helge ,
+                                                   dark:YoungHelge ;
+                               dark:occursAtPlace dark:DopplerBunker ;
+                               dark:occursAtTime dark:Year_1986 ;
+                               dark:occursInWorld dark:AdamWorld ;
+                               rdfs:comment "A meeting event in which adult Helge encounters his young child self inside the Doppler bunker in 1986."@en ;
+                               rdfs:label "Adult Helge meets young Helge in 1986"@en .
+
 
 ###  https://w3id.org/dark-ontology/Ines
 dark:Ines rdf:type owl:NamedIndividual ,
@@ -1328,12 +1387,13 @@ dark:JonasMeetsMartha_1986 rdf:type owl:NamedIndividual ,
                          <http://www.w3id.org/dark-ontology/occursInReality> dark:ThirdReality ;
                          dark:hasParticipant dark:Martha_2019_AdamWorld ,
                                              dark:Jonas_2019 ;
-                         dark:occursAtPlace dark:InterworldSpace ;
+                         dark:occursAtPlace dark:BetweenWorlds ;
                          dark:occursAtTime dark:Year_1986 ;
                          dark:occursInWorld dark:AdamWorld ;
                          dark:occursInWorld dark:EvaWorld ;
                          rdfs:comment "Jonas and Martha meet in the interworld space between Adam's world and Eva's world before preventing the origin event."@en ;
                          rdfs:label "Jonas and Martha meeting in interworld space"@en .
+
 
 ###  https://w3id.org/dark-ontology/JonasMeetsMichael_2019
 dark:JonasMeetsMichael_2019 rdf:type owl:NamedIndividual ,
@@ -1346,6 +1406,19 @@ dark:JonasMeetsMichael_2019 rdf:type owl:NamedIndividual ,
                                                   dark:Michael_2019 ;
                               rdfs:comment "Jonas meets his father Michael shortly before Michael's suicide."@en ;
                               rdfs:label "Jonas and Michael meeting in 2019"@en .
+
+
+###  https://w3id.org/dark-ontology/JonasMeetsStranger_1986
+dark:JonasMeetsStranger_1986 rdf:type owl:NamedIndividual ,
+                                      dark:MeetingEvent ;
+                             <http://www.w3id.org/dark-ontology/occursInReality> dark:FirstReality ;
+                             dark:hasParticipant dark:Jonas_2019 ,
+                                                 dark:TheStranger ;
+                             dark:occursAtPlace dark:DopplerBunker ;
+                             dark:occursAtTime dark:Year_1986 ;
+                             dark:occursInWorld dark:AdamWorld ;
+                             rdfs:comment "A meeting event in which young Jonas encounters his adult self (The Stranger) while locked in the bunker in 1986."@en ;
+                             rdfs:label "Jonas meets The Stranger in 1986"@en .
 
 
 ###  https://w3id.org/dark-ontology/JonasTravel01_2019_1986
@@ -1610,6 +1683,19 @@ dark:Magnus rdf:type owl:NamedIndividual ,
             dark:memberOfFamily dark:NielsenFamily ;
             dark:hasManifestationName "Magnus Nielsen" ;
             rdfs:label "Magnus Nielsen"@en .
+
+
+###  https://w3id.org/dark-ontology/MarthaMeetsEva_2019
+dark:MarthaMeetsEva_2019 rdf:type owl:NamedIndividual ,
+                                  dark:MeetingEvent ;
+                         <http://www.w3id.org/dark-ontology/occursInReality> dark:FirstReality ;
+                         dark:hasParticipant dark:Eva ,
+                                             dark:Martha_2019_EvaWorld ;
+                         dark:occursAtPlace dark:EritLuxHeadquarters ;
+                         dark:occursAtTime dark:Year_2019 ;
+                         dark:occursInWorld dark:EvaWorld ;
+                         rdfs:comment "A meeting event in which young Martha encounters Eva, the elderly manifestation of her own persistent identity, in Erit Lux headquarters."@en ;
+                         rdfs:label "Martha meets Eva in 2019"@en .
 
 
 ###  https://w3id.org/dark-ontology/MagnusNielsen
