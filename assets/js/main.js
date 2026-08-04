@@ -550,6 +550,7 @@ const eventIndividuals = {
       "Jonas Meets Adam · 1921",
       "Jonas Meets Martha · 1986",
       "Jonas Meets Michael · 2019",
+      "Jonas Meets The Stranger · 1986",
       "Martha Meets Eva · 2019"
     ]
   },
