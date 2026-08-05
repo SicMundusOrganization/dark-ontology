@@ -1,0 +1,17 @@
+PREFIX dark: <https://w3id.org/dark-ontology/>
+
+SELECT
+    ?personName
+    (GROUP_CONCAT(DISTINCT ?manifestationLabel; SEPARATOR=", ") AS ?travelingManifestations)
+    (GROUP_CONCAT(DISTINCT ?eventLabel; SEPARATOR=", ") AS ?timeTravelEvents)
+WHERE {
+    ?person a dark:Person ;
+            dark:hasCanonicalName ?personName .
+    ?manifestation dark:manifestationOf ?person .
+    ?event a dark:TimeTravelEvent ;
+           dark:hasTraveler ?manifestation .
+    BIND(REPLACE(STR(?manifestation), "https://w3id.org/dark-ontology/", "") AS ?manifestationLabel)
+    BIND(REPLACE(STR(?event), "https://w3id.org/dark-ontology/", "") AS ?eventLabel)
+}
+GROUP BY ?person ?personName
+ORDER BY ?personName

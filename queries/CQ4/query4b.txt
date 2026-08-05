@@ -1,0 +1,42 @@
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX dark: <https://w3id.org/dark-ontology/>
+
+SELECT
+    ?eventLabel
+    (GROUP_CONCAT(DISTINCT ?worldLabel; SEPARATOR=", ") AS ?worlds)
+    (GROUP_CONCAT(DISTINCT ?participantLabel; SEPARATOR=", ") AS ?participants)
+    ?samePerson
+    ?year
+    ?placeLabel
+    ?description
+WHERE {
+    ?event a dark:MeetingEvent ;
+           rdfs:comment ?description ;
+           dark:hasParticipant ?participant1 ,
+                              ?participant2 .
+    
+    FILTER(?participant1 != ?participant2)
+    
+    ?participant1 dark:manifestationOf ?person .
+    ?participant2 dark:manifestationOf ?person .
+    
+    ?person dark:hasCanonicalName ?samePerson .
+    
+    BIND(REPLACE(STR(?event), "https://w3id.org/dark-ontology/", "") AS ?eventLabel)
+    
+    ?event dark:occursInWorld ?world .
+    BIND(REPLACE(STR(?world), "https://w3id.org/dark-ontology/", "") AS ?worldLabel)
+    
+    ?event dark:occursAtTime ?time .
+    ?time dark:hasYearValue ?year .
+    
+    ?event dark:occursAtPlace ?place .
+    BIND(REPLACE(STR(?place), "https://w3id.org/dark-ontology/", "") AS ?placeLabel)
+    
+    OPTIONAL {
+        ?event dark:hasParticipant ?participant .
+        BIND(REPLACE(STR(?participant), "https://w3id.org/dark-ontology/", "") AS ?participantLabel)
+    }
+}
+GROUP BY ?event ?eventLabel ?samePerson ?year ?placeLabel ?description
+ORDER BY ?year
