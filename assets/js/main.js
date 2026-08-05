@@ -1126,3 +1126,361 @@ fetch("../dark_ontology_populated.ttl")
       console.error(error);
     }
   );
+
+
+
+
+
+
+// ========================================
+// QUERY CAROUSEL - COMPLETO
+// ========================================
+
+const QUERIES_CONFIG = [
+  {
+    id: 'CQ1',
+    title: 'Multiple Temporal Manifestations',
+    competency: 'Retrieve all people with more than one manifestation.',
+    queryFile: 'query1.txt',
+    resultsFile: 'results1.csv'
+  },
+  {
+    id: 'CQ2',
+    title: 'Time Travel Events',
+    competency: 'Retrieve every time travel event together with travelers, device, years and description.',
+    queryFile: 'query2.txt',
+    resultsFile: 'results2.csv'
+  },
+  {
+    id: 'CQ3',
+    title: 'Family Relationships',
+    competency: 'Retrieve the family network of every persistent person.',
+    queryFile: 'query3.txt',
+    resultsFile: 'results3.csv'
+  },
+  {
+    id: 'CQ4',
+    title: 'Events Across Worlds',
+    competency: 'Retrieve all non-time-travel events with worlds, participants and places.',
+    queryFile: 'query4a.txt',
+    resultsFile: 'results4a.csv'
+  },
+  {
+    id: 'CQ4',
+    title: 'Meetings with oneself',
+    competency: 'Retrieve all meeting events where two different manifestations of the same person meet each other.',
+    queryFile: 'query4b.txt',
+    resultsFile: 'results4b.csv'
+  },
+  {
+    id: 'CQ5',
+    title: 'Time Travellers',
+    competency: 'Retrieve every person together with their travelling manifestations and time travel events.',
+    queryFile: 'query5.txt',
+    resultsFile: 'results5.csv'
+  }
+];
+
+const GITHUB_BASE_QUERIES = 'https://raw.githubusercontent.com/SicMundusOrganization/dark-ontology/main/queries/';
+
+let currentQueryIndex = 0;
+let isQueryLoading = false;
+
+// ========================================
+// INIZIALIZZAZIONE
+// ========================================
+
+async function initQueryCarousel() {
+  const track = document.getElementById('queries-track');
+  const dotsContainer = document.getElementById('queries-dots');
+  
+  if (!track || !dotsContainer) {
+    console.warn('Query carousel elements not found');
+    return;
+  }
+
+  // Crea i dots
+  QUERIES_CONFIG.forEach((_, index) => {
+    const dot = document.createElement('button');
+    dot.className = 'queries-dot';
+    dot.dataset.index = index;
+    dot.setAttribute('aria-label', `Vai alla query ${index + 1}`);
+    dot.addEventListener('click', () => goToQuery(index));
+    dotsContainer.appendChild(dot);
+  });
+
+  // Carica la prima query - SENZA SCROLL AUTOMATICO
+  await loadQuery(0, false);
+  updateDots(0);
+}
+
+// ========================================
+// EVENT LISTENER PER I PULSANTI INLINE
+// ========================================
+
+// Delegazione eventi per i pulsanti inline (che vengono ricreati ad ogni cambio query)
+// Alla fine della funzione initQueryCarousel(), aggiungi:
+
+// Delegazione eventi per i pulsanti inline
+document.addEventListener('click', function(e) {
+  const prevBtn = e.target.closest('#queries-prev-inline');
+  if (prevBtn) {
+    e.preventDefault();
+    if (currentQueryIndex > 0) {
+      goToQuery(currentQueryIndex - 1);
+    }
+    return;
+  }
+  
+  const nextBtn = e.target.closest('#queries-next-inline');
+  if (nextBtn) {
+    e.preventDefault();
+    if (currentQueryIndex < QUERIES_CONFIG.length - 1) {
+      goToQuery(currentQueryIndex + 1);
+    }
+    return;
+  }
+});
+
+// ========================================
+// CARICAMENTO QUERY
+// ========================================
+
+async function loadQuery(index, shouldScroll = true) {
+  if (isQueryLoading) return;
+  isQueryLoading = true;
+
+  const config = QUERIES_CONFIG[index];
+  const track = document.getElementById('queries-track');
+  
+  if (!track) {
+    isQueryLoading = false;
+    return;
+  }
+
+  // Mostra loading
+  track.innerHTML = `
+    <div class="query-slide active" data-query-index="${index}">
+      <div class="query-loading">Loading query ${config.id}...</div>
+    </div>
+  `;
+
+  try {
+    // Carica entrambi i file in parallelo
+    const [queryText, resultsCSV] = await Promise.all([
+      fetchFile(`${GITHUB_BASE_QUERIES}${config.id}/${config.queryFile}`),
+      fetchFile(`${GITHUB_BASE_QUERIES}${config.id}/${config.resultsFile}`)
+    ]);
+
+    // Renderizza la query
+    track.innerHTML = renderQueryCard(config, queryText, resultsCSV, index);
+    
+    // Scroll all'inizio della query SOLO se shouldScroll è true
+    if (shouldScroll) {
+      requestAnimationFrame(() => {
+        const slide = track.querySelector('.query-slide.active');
+        if (slide) {
+          const headerHeight = 68;
+          const slideRect = slide.getBoundingClientRect();
+          const scrollTarget = window.scrollY + slideRect.top - headerHeight - 20;
+          
+          window.scrollTo({
+            top: Math.max(0, scrollTarget),
+            behavior: 'smooth'
+          });
+        }
+      });
+    }
+    
+  } catch (error) {
+    console.error('Error loading query:', error);
+    track.innerHTML = `
+      <div class="query-slide active" data-query-index="${index}">
+        <div class="query-error">
+          Error loading query ${config.id}.<br>
+          <small style="color: #8f887b; margin-top: 8px; display: block;">${escapeHtml(error.message)}</small>
+        </div>
+      </div>
+    `;
+  } finally {
+    isQueryLoading = false;
+  }
+}
+
+async function fetchFile(url) {
+  const response = await fetch(url);
+  if (!response.ok) {
+    throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+  }
+  return await response.text();
+}
+
+// ========================================
+// RENDERIZZAZIONE
+// ========================================
+
+function renderQueryCard(config, queryText, resultsCSV, index) {
+  const resultsHTML = parseCSVToTable(resultsCSV);
+  const totalQueries = QUERIES_CONFIG.length;
+  
+  return `
+    <div class="query-slide active" data-query-index="${index}">
+      <div class="dossier-head">
+        <span>
+          SPARQL QUERY
+          <br>
+          <b>${config.id}</b>
+        </span>
+        <span>
+          Ref: ${config.id}
+          <br>
+          Status: Executed
+        </span>
+      </div>
+
+      <!-- TITOLO SINGOLO (eliminato il duplicato) -->
+      <h3 style="margin: 18px 0 0 0; font-family: var(--serif); font-size: clamp(24px, 2.5vw, 36px); font-weight: 400; color: var(--paper);">
+        ${escapeHtml(config.title)}
+      </h3>
+
+      <!-- COMPETENCY QUESTION CON PULSANTI -->
+      <div class="query-competency-with-nav">
+        <div class="query-competency">
+          <h4>Competency Question</h4>
+          <p>${escapeHtml(config.competency)}</p>
+        </div>
+        
+        <!-- PULSANTI DI NAVIGAZIONE -->
+        <div class="query-nav-controls">
+          <button class="queries-arrow queries-prev-inline" id="queries-prev-inline" aria-label="Previous query" ${index === 0 ? 'disabled' : ''}>
+            ←
+          </button>
+          <span class="query-counter">${index + 1}/${totalQueries}</span>
+          <button class="queries-arrow queries-next-inline" id="queries-next-inline" aria-label="Next query" ${index === totalQueries - 1 ? 'disabled' : ''}>
+            →
+          </button>
+        </div>
+      </div>
+
+      <!-- CODICE SPARQL -->
+      <div class="query-code-wrapper">
+        <pre class="query-code"><code>${escapeHtml(queryText)}</code></pre>
+      </div>
+
+      <!-- RISULTATI -->
+      <div class="query-results-wrapper">
+        <h4>Results</h4>
+        <div class="query-results">
+          ${resultsHTML}
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+// ========================================
+// PARSING CSV IN TABELLA
+// ========================================
+
+function parseCSVToTable(csv) {
+  if (!csv || csv.trim() === '') {
+    return '<div style="padding: 20px; color: #8f887b; text-align: center;">No results available.</div>';
+  }
+
+  const lines = csv.trim().split('\n');
+  if (lines.length === 0) {
+    return '<div style="padding: 20px; color: #8f887b; text-align: center;">No results available.</div>';
+  }
+
+  // Parsing CSV rispettando le virgolette
+  const parseRow = (line) => {
+    const result = [];
+    let current = '';
+    let inQuotes = false;
+    
+    for (let i = 0; i < line.length; i++) {
+      const char = line[i];
+      if (char === '"') {
+        inQuotes = !inQuotes;
+      } else if (char === ',' && !inQuotes) {
+        result.push(current.trim());
+        current = '';
+      } else {
+        current += char;
+      }
+    }
+    result.push(current.trim());
+    return result;
+  };
+
+  const headers = parseRow(lines[0]);
+  const rows = lines.slice(1).map(parseRow);
+
+  // Costruisce la tabella
+  let table = '<div class="query-results-scroll">'; // Wrapper per lo scroll
+  table += '<table><thead><tr>';
+  headers.forEach(header => {
+    table += `<th>${escapeHtml(header)}</th>`;
+  });
+  table += '</tr></thead><tbody>';
+
+  if (rows.length === 0) {
+    table += '<tr><td colspan="' + headers.length + '" style="text-align: center; color: #8f887b; padding: 20px;">No data rows</td></tr>';
+  } else {
+    rows.forEach(row => {
+      table += '<tr>';
+      headers.forEach((_, index) => {
+        const value = row[index] || '';
+        table += `<td>${escapeHtml(value)}</td>`;
+      });
+      table += '</tr>';
+    });
+  }
+
+  table += '</tbody></table>';
+  table += '</div>'; // Chiusura wrapper
+  
+  return table;
+}
+
+// ========================================
+// UTILITY
+// ========================================
+
+function escapeHtml(text) {
+  if (!text) return '';
+  const div = document.createElement('div');
+  div.textContent = text;
+  return div.innerHTML;
+}
+
+// ========================================
+// NAVIGAZIONE
+// ========================================
+
+function goToQuery(index) {
+  if (index === currentQueryIndex || isQueryLoading) return;
+  if (index < 0 || index >= QUERIES_CONFIG.length) return;
+  
+  currentQueryIndex = index;
+  loadQuery(index, true);
+  updateDots(index);
+}
+
+function updateDots(index) {
+  document.querySelectorAll('.queries-dot').forEach((dot, i) => {
+    dot.classList.toggle('active', i === index);
+  });
+}
+
+// ========================================
+// AVVIA ALL'AVVIO
+// ========================================
+
+// Inizializza quando il DOM è pronto
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initQueryCarousel);
+} else {
+  // DOM già pronto
+  initQueryCarousel();
+}
