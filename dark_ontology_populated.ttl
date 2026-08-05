@@ -2046,6 +2046,7 @@ dark:SicMundusLeaderRole rdf:type owl:NamedIndividual ,
 dark:Silja rdf:type owl:NamedIndividual ,
                     dark:PersonManifestation ;
            dark:manifestationOf dark:SiljaTiedemann ;
+           dark:memberOfFamily dark:TiedemannFamily ;
            dark:hasManifestationName "Silja Tiedemann" ;
            rdfs:label "Silja Tiedemann"@en .
 

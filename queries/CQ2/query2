@@ -1,0 +1,26 @@
+PREFIX dark: <https://w3id.org/dark-ontology/>
+
+SELECT
+    ?eventLabel
+    ?isIntentional
+    (GROUP_CONCAT(DISTINCT ?travelerLabel; SEPARATOR=", ") AS ?travelers)
+    ?deviceLabel
+    ?departureYear
+    ?arrivalYear
+    ?description
+WHERE {
+    ?event a dark:TimeTravelEvent ;
+           dark:hasTraveler ?traveler ;
+           dark:isIntentional ?isIntentional ;
+           dark:usesDevice ?device ;
+           dark:departsFromTime ?departureTime ;
+           dark:arrivesAtTime ?arrivalTime ;
+           rdfs:comment ?description .
+    ?departureTime dark:hasYearValue ?departureYear .
+    ?arrivalTime dark:hasYearValue ?arrivalYear .
+    BIND(REPLACE(STR(?event), "https://w3id.org/dark-ontology/", "") AS ?eventLabel)
+    BIND(REPLACE(STR(?traveler), "https://w3id.org/dark-ontology/", "") AS ?travelerLabel)
+    BIND(REPLACE(STR(?device), "https://w3id.org/dark-ontology/", "") AS ?deviceLabel)
+}
+GROUP BY ?event ?eventLabel ?isIntentional ?deviceLabel ?departureYear ?arrivalYear ?description
+ORDER BY DESC(?isIntentional) ?departureYear

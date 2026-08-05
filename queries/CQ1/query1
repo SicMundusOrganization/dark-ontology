@@ -1,0 +1,16 @@
+PREFIX dark: <https://w3id.org/dark-ontology/>
+
+SELECT
+    ?personName
+    (GROUP_CONCAT(DISTINCT ?manifestationLabel; SEPARATOR=", ") AS ?manifestations)
+    (COUNT(DISTINCT ?manifestation) AS ?numManifestations)
+WHERE {
+    ?person a dark:Person ;
+            dark:hasCanonicalName ?personName .
+    ?manifestation a dark:PersonManifestation ;
+                   dark:manifestationOf ?person .
+    BIND(REPLACE(STR(?manifestation), "https://w3id.org/dark-ontology/", "") AS ?manifestationLabel)
+}
+GROUP BY ?person ?personName
+HAVING (COUNT(DISTINCT ?manifestation) > 1)
+ORDER BY DESC(?numManifestations) ?personName

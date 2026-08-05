@@ -1,0 +1,30 @@
+PREFIX dark: <https://w3id.org/dark-ontology/>
+
+SELECT
+    ?personName
+    (GROUP_CONCAT(DISTINCT ?parentName; SEPARATOR=", ") AS ?parents)
+    (GROUP_CONCAT(DISTINCT ?childName; SEPARATOR=", ") AS ?children)
+    (GROUP_CONCAT(DISTINCT ?siblingName; SEPARATOR=", ") AS ?siblings)
+    ?spouseName
+    ?adoptiveParentName
+    ?adoptiveChildName
+    (GROUP_CONCAT(DISTINCT ?relationshipName; SEPARATOR=", ") AS ?relationships)
+    (GROUP_CONCAT(DISTINCT ?familyLabel; SEPARATOR=", ") AS ?families)
+WHERE {
+    ?person a dark:Person ;
+            dark:hasCanonicalName ?personName .
+    OPTIONAL { ?person dark:childOf ?parent . ?parent dark:hasCanonicalName ?parentName . }
+    OPTIONAL { ?person dark:parentOf ?child . ?child dark:hasCanonicalName ?childName . }
+    OPTIONAL { ?person dark:siblingOf ?sibling . ?sibling dark:hasCanonicalName ?siblingName . }
+    OPTIONAL { ?person dark:spouseOf ?spouse . ?spouse dark:hasCanonicalName ?spouseName . }
+    OPTIONAL { ?person dark:adoptiveChildOf ?adoptiveParent . ?adoptiveParent dark:hasCanonicalName ?adoptiveParentName . }
+    OPTIONAL { ?person dark:adoptiveParentOf ?adoptiveChild . ?adoptiveChild dark:hasCanonicalName ?adoptiveChildName . }
+    OPTIONAL { ?person dark:hasRelationshipWith ?relationship . ?relationship dark:hasCanonicalName ?relationshipName . }
+    OPTIONAL {
+        ?manifestation dark:manifestationOf ?person ;
+                       dark:memberOfFamily ?family .
+        BIND(REPLACE(STR(?family), "https://w3id.org/dark-ontology/", "") AS ?familyLabel)
+    }
+}
+GROUP BY ?person ?personName ?spouseName ?adoptiveParentName ?adoptiveChildName
+ORDER BY ?personName
