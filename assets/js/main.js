@@ -1140,14 +1140,14 @@ const QUERIES_CONFIG = [
   {
     id: 'CQ1',
     title: 'Multiple Temporal Manifestations',
-    competency: 'Retrieve all people with more than one manifestation.',
+    competency: 'Which persons have multiple temporal manifestations, and what are those manifestations?',
     queryFile: 'query1.txt',
     resultsFile: 'results1.csv'
   },
   {
     id: 'CQ2',
     title: 'Time Travel Events',
-    competency: 'Retrieve every time travel event together with travelers, device, years and description.',
+    competency: 'Which time-travel events occur, who travels, and how and when does each journey take place?',
     queryFile: 'query2.txt',
     resultsFile: 'results2.csv'
   },
