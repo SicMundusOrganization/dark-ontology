@@ -1484,3 +1484,129 @@ if (document.readyState === 'loading') {
   // DOM già pronto
   initQueryCarousel();
 }
+
+// ========================================
+// ALTERNATE MANIFESTATIONS POPUP
+// ========================================
+
+// Configurazione delle manifestazioni alternative
+const alternateManifestations = {
+  'Jonas Kahnwald': {
+    manifestations: [
+      { name: 'Jonas (2019)', age: '16', world: 'Adam World', img: 'assets/img/characters/jonas.png' },
+      { name: 'The Stranger (2052)', age: '~50', world: 'Adam World', img: 'assets/img/characters/stranger.png' },
+      { name: 'Adam (1921)', age: '~80', world: 'Adam World', img: 'assets/img/characters/adam.png' }
+    ]
+  },
+  'Charlotte Doppler': {
+    manifestations: [
+      { name: 'Infant Charlotte (1971)', age: '0', world: 'Both Worlds', img: 'assets/img/characters/charlotte-baby.png' },
+      { name: 'Charlotte (2019)', age: '~45', world: 'Both Worlds', img: 'assets/img/characters/charl.png' }
+    ]
+  },
+  'Elisabeth Doppler': {
+    manifestations: [
+      { name: 'Elisabeth (2019)', age: '~10', world: 'Both Worlds', img: 'assets/img/characters/elis.png' },
+      { name: 'Adult Elisabeth (2052)', age: '~40', world: 'Both Worlds', img: 'assets/img/characters/elisabeth-adult.png' }
+    ]
+  },
+  'Claudia Tiedemann': {
+    manifestations: [
+      { name: 'Young Claudia (1986)', age: '~40', world: 'Both Worlds', img: 'assets/img/characters/claudia.png' },
+      { name: 'Claudia (1986)', age: '~40', world: 'Both Worlds', img: 'assets/img/characters/claudia.png' },
+      { name: 'Old Claudia (2052)', age: '~80', world: 'Both Worlds', img: 'assets/img/characters/claudia-old.png' }
+    ]
+  },
+  'Helge Doppler': {
+    manifestations: [
+      { name: 'Young Helge (1953)', age: '~10', world: 'Adam World', img: 'assets/img/characters/helge-young.png' },
+      { name: 'Helge (1986)', age: '~50', world: 'Adam World', img: 'assets/img/characters/helge.png' },
+      { name: 'Old Helge (1986)', age: '~50', world: 'Adam World', img: 'assets/img/characters/helge.png' },
+    ]
+  },
+  'Martha Nielsen': {
+    manifestations: [
+      { name: 'Martha', age: '~16', world: 'Adam World', img: 'assets/img/characters/martha.png' },
+      { name: 'Eva (Eva World)', age: '~80', world: 'Eva World', img: 'assets/img/characters/eva.png' }
+    ]
+  },
+  'Mikkel Nielsen': {
+    manifestations: [
+      { name: 'Mikkel (2019)', age: '~11', world: 'Adam World', img: 'assets/img/characters/mikkel.png' },
+      { name: 'Michael Kahnwald (2019)', age: '~44', world: 'Adam World', img: 'assets/img/characters/michael.png' }
+    ]
+  }
+};
+
+// Crea il popup per le manifestazioni
+function createAlternateModal(characterName) {
+  const data = alternateManifestations[characterName];
+  if (!data) return;
+
+  // Rimuovi eventuale popup esistente
+  const existing = document.querySelector('.alternate-modal');
+  if (existing) existing.remove();
+
+  const modal = document.createElement('dialog');
+  modal.className = 'alternate-modal';
+  modal.setAttribute('aria-labelledby', 'alternate-modal-title');
+
+  const manifestationsHtml = data.manifestations.map((m, index) => `
+    <div class="manifestation-card">
+      <img src="${m.img}" alt="${m.name}" loading="lazy">
+      <h4>${m.name}</h4>
+      <p class="manifestation-detail">Age: ${m.age}</p>
+      <p class="manifestation-detail">World: ${m.world}</p>
+    </div>
+  `).join(' <div class="manifestation-arrow">⟶</div> ');
+
+  modal.innerHTML = `
+    <div class="alternate-modal-header">
+      <div>
+        <p class="modal-label">TEMPORAL MANIFESTATIONS</p>
+        <h2 id="alternate-modal-title">${characterName}</h2>
+      </div>
+      <button class="modal-close" type="button" aria-label="Close">×</button>
+    </div>
+    <div class="alternate-modal-body">
+      <p style="color: #8f887b; font-size: 12px; margin: 0 0 16px;">
+        Different temporal manifestations of the same persistent person.
+      </p>
+      <div class="alternate-manifestation">
+        ${manifestationsHtml}
+      </div>
+    </div>
+    <div class="alternate-modal-footer">
+      SIC MUNDUS · IDENTITY ARCHIVE
+    </div>
+  `;
+
+  document.body.appendChild(modal);
+
+  // Close button
+  modal.querySelector('.modal-close').addEventListener('click', () => modal.close());
+  
+  // Close on backdrop click
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) modal.close();
+  });
+
+  // Close on Escape
+  modal.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') modal.close();
+  });
+
+  modal.showModal();
+}
+
+// Aggiungi event listener alle card con "see more"
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.character-card.has-alternate').forEach(card => {
+    card.addEventListener('click', () => {
+      const name = card.querySelector('.character-info h4')?.textContent;
+      if (name && alternateManifestations[name]) {
+        createAlternateModal(name);
+      }
+    });
+  });
+});
