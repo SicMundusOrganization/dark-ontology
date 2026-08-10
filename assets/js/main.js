@@ -1159,14 +1159,14 @@ const QUERIES_CONFIG = [
     resultsFile: 'results3.csv'
   },
   {
-    id: 'CQ4',
+    id: 'CQ4a',
     title: 'Events Across Worlds',
     competency: 'Retrieve all non-time-travel events with worlds, participants and places.',
     queryFile: 'query4a.txt',
     resultsFile: 'results4a.csv'
   },
   {
-    id: 'CQ4',
+    id: 'CQ4b',
     title: 'Meetings with oneself',
     competency: 'Retrieve all meeting events where two different manifestations of the same person meet each other.',
     queryFile: 'query4b.txt',

@@ -6378,7 +6378,308 @@ body.modal-open {
   background: rgba(184, 121, 40, 0.04);
 }
 
+/* ========================================
+   COMPETENCY QUESTIONS STYLE
+   ======================================== */
 
+.query-introduction {
+  margin-top: 30px;
+  padding: 30px 40px;
+  background: rgba(7, 12, 14, 0.6);
+  border: 1px solid rgba(184, 121, 40, 0.3);
+  border-radius: 4px;
+}
+
+.query-introduction .eyebrow {
+  margin-bottom: 20px;
+}
+
+.competency-questions {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: cq;
+}
+
+.competency-questions > li {
+  position: relative;
+  padding: 12px 0 12px 36px;
+  color: #d4c9b5;
+  font-size: 14px;
+  line-height: 1.6;
+  border-bottom: 1px solid rgba(184, 121, 40, 0.08);
+}
+
+.competency-questions > li:last-child {
+  border-bottom: none;
+}
+
+/* Punto personalizzato come nel resto del sito */
+.competency-questions > li::before {
+  content: "";
+  position: absolute;
+  left: 8px;
+  top: 19px;
+  width: 8px;
+  height: 8px;
+  border: 1px solid var(--amber);
+  transform: rotate(45deg);
+  background: transparent;
+}
+
+/* Sotto-elenco per CQ4 */
+.competency-sub-questions {
+  margin: 8px 0 0 20px;
+  padding: 0;
+  list-style: none;
+  counter-reset: sub-cq;
+}
+
+.competency-sub-questions > li {
+  position: relative;
+  padding: 8px 0 8px 36px;
+  color: #b0a692;
+  font-size: 13px;
+  line-height: 1.5;
+  border-bottom: 1px solid rgba(184, 121, 40, 0.05);
+}
+
+.competency-sub-questions > li:last-child {
+  border-bottom: none;
+}
+
+/* Punto più piccolo per il sotto-elenco */
+.competency-sub-questions > li::before {
+  content: "";
+  position: absolute;
+  left: 8px;
+  top: 15px;
+  width: 6px;
+  height: 6px;
+  border: 1px solid var(--amber);
+  transform: rotate(45deg);
+  background: transparent;
+  opacity: 0.7;
+}
+
+/* Hover effect */
+.competency-questions > li:hover {
+  background: rgba(184, 121, 40, 0.04);
+  border-radius: 2px;
+}
+
+.competency-sub-questions > li:hover {
+  background: rgba(184, 121, 40, 0.03);
+  border-radius: 2px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .query-introduction {
+    padding: 20px 24px;
+  }
+  
+  .competency-questions > li {
+    padding: 10px 0 10px 32px;
+    font-size: 13px;
+  }
+  
+  .competency-questions > li::before {
+    left: 4px;
+    top: 17px;
+    width: 7px;
+    height: 7px;
+  }
+  
+  .competency-sub-questions > li {
+    padding: 6px 0 6px 32px;
+    font-size: 12px;
+  }
+  
+  .competency-sub-questions > li::before {
+    left: 4px;
+    top: 13px;
+    width: 5px;
+    height: 5px;
+  }
+  
+  .competency-sub-questions {
+    margin-left: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .query-introduction {
+    padding: 16px 18px;
+  }
+  
+  .competency-questions > li {
+    padding: 8px 0 8px 28px;
+    font-size: 12px;
+  }
+  
+  .competency-questions > li::before {
+    left: 2px;
+    top: 14px;
+    width: 6px;
+    height: 6px;
+  }
+  
+  .competency-sub-questions > li {
+    padding: 5px 0 5px 28px;
+    font-size: 11px;
+  }
+  
+  .competency-sub-questions {
+    margin-left: 8px;
+  }
+}
+
+
+/* ========================================
+   RESPONSIVE
+   ======================================== */
+
+@media (max-width: 768px) {
+  .queries-carousel-section {
+    padding-top: 50px;
+    padding-bottom: 60px;
+  }
+  
+  .query-introduction {
+    padding: 20px 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .queries-carousel-section {
+    padding-top: 40px;
+    padding-bottom: 50px;
+  }
+  
+  .query-introduction {
+    padding: 16px 18px;
+  }
+}
+
+/* ========================================
+   QUERY CAROUSEL - Stesso sfondo di About Us
+   ======================================== */
+
+.queries-carousel-section {
+  position: relative;
+  padding-top: 70px;
+  padding-bottom: 90px;
+  overflow: hidden;
+  box-sizing: border-box;
+  scroll-margin-top: 68px;
+  
+  /* STESSO SFONDO DI ABOUT US */
+  background:
+    linear-gradient(
+      rgba(4, 9, 14, 0.12),
+      rgba(4, 9, 14, 0.24)
+    ),
+    url("../img/about-board.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  
+  border-top: 1px solid rgba(233, 224, 205, 0.12);
+}
+
+/* Overlay come in About Us */
+.queries-carousel-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(
+      circle at center,
+      transparent 10%,
+      rgba(3, 7, 8, 0.42) 70%,
+      rgba(3, 7, 8, 0.72) 100%
+    );
+}
+
+/* Tutto il contenuto sopra l'overlay */
+.queries-carousel-section > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* ========================================
+   SFONDO DELLA SEZIONE INTRO (#queries)
+   ======================================== */
+
+/* La sezione intro rimane con il suo sfondo dedicato */
+#queries {
+  background-color: #0b1113;
+  background-image:
+    linear-gradient(
+      90deg,
+      rgba(7, 12, 14, 0.82) 0%,
+      rgba(7, 12, 14, 0.72) 45%,
+      rgba(7, 12, 14, 0.48) 72%,
+      rgba(7, 12, 14, 0.62) 100%
+    ),
+    url("../img/jonas-research-bg.png");
+  background-position: right center;
+  background-size: 140% auto;
+  background-repeat: no-repeat;
+}
+
+/* ========================================
+   STILE PER L'INTESTAZIONE DELLA SEZIONE
+   ======================================== */
+
+.queries-carousel-section .section-heading {
+  position: relative;
+  z-index: 2;
+}
+
+.queries-carousel-section .section-heading h2 {
+  color: #e9e0cd;
+}
+
+.queries-carousel-section .section-heading > p {
+  color: #aaa191;
+}
+
+/* ========================================
+   QUERY INTRODUCTION (Competency Questions)
+   ======================================== */
+
+.query-introduction {
+  position: relative;
+  z-index: 2;
+  margin-top: 30px;
+  padding: 30px 40px;
+  background: rgba(7, 12, 14, 0.7);
+  border: 1px solid rgba(184, 121, 40, 0.3);
+  border-radius: 4px;
+  backdrop-filter: blur(4px);
+}
+
+/* ========================================
+   CAROSELLO QUERY
+   ======================================== */
+
+.queries-carousel-wrapper {
+  position: relative;
+  z-index: 2;
+  margin-top: 30px;
+  min-height: 500px;
+}
+
+/* Slide */
+.query-slide {
+  background: rgba(7, 12, 14, 0.75);
+  border: 1px solid rgba(184, 121, 40, 0.3);
+  backdrop-filter: blur(4px);
+}
 
 
 @media (max-width: 560px) {
