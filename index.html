@@ -45,6 +45,8 @@
         <i>•</i>
         <a href="#queries">Queries</a>
         <i>•</i>
+        <a href="#documentation">Documentation</a>
+        <i>•</i>
         <a href="#about">About us</a>
       </nav>
     </header>
@@ -2301,18 +2303,18 @@
       CQ02 — Which time-travel events occur, who travels, and how and when does each journey take place?
     </li>
     <li>
-      CQ03 — What family and interpersonal relationships connect the characters?
+      CQ03 — What family and interpersonal relationships connect each person to others and to their family?
     </li>
     <li>
-      CQ04a — Which events occur in each world, at what time and place?
+      CQ04a — Which events occur across the different worlds, when and where do they take place, and who participates in them?
       <ul class="competency-sub-questions">
         <li>
-          CQ04b — Which meeting events involve two different manifestations of the same person?
+          CQ04b — Which events involve different temporal manifestations of the same person meeting each other?
         </li>
       </ul>
     </li>
     <li>
-      CQ05 — Which characters or manifestations travel through time?
+      CQ05 — Which persons can be automatically classified as time travelers based on their temporal manifestations?
     </li>
   </ul>
 
@@ -2326,7 +2328,675 @@
 </section>
 
 
+<!-- ========================================
+   SEZIONE DOCUMENTAZIONE
+   ======================================== -->
+<section class="intro section" id="documentation">
+  <div class="section-index">
+    03 / DOCUMENTATION
+  </div>
 
+  <div class="intro-content">
+    <p class="eyebrow">
+      Ontology documentation
+    </p>
+
+    <h2>
+      Beyond the ontology.
+    </h2>
+
+    <p>
+      A comprehensive guide to the <em>Dark</em> universe, exploring existing ontologies,
+        philosophical references, tools used, and a visual character guide.
+    </p>
+
+    <a class="button intro-button" href="#query-carousel">
+      Explore the documentation <span>↓</span>
+    </a>
+  </div>
+
+  <aside class="quote-card">
+    <span>“</span>
+    <p>
+      Everything is connected.
+    </p>
+    <small>DARK · SEASON 1</small>
+  </aside>
+
+<!-- Contenitore ordinato di tutte le sottosezioni -->
+  <div class="doc-subsections-wrapper" id="doc-subsections">
+
+  
+<!-- Sottosezione 1: Esiste già una ontologia su Dark? -->
+  <div class="reference-group">
+  <article class="doc-subsection" id="doc-existing">
+    <div class="doc-subsection-header">
+      <span class="doc-subsection-number">01</span>
+      <h3>Existing ontologies</h3>
+    </div>
+    <div class="doc-subsection-content">
+      <p>
+        To date, no comprehensive OWL ontology specifically dedicated to the <em>Dark</em>
+        universe has been published. While several knowledge graphs and fan-made databases
+        exist (such as the <a href="https://dark.netflix.io/" target="_blank" rel="noopener noreferrer">official Dark website</a>
+        and various wikis), none have been formalized as a reusable semantic web ontology.
+      </p>
+      <p>
+        The <strong>Sic Mundus</strong> ontology fills this gap by providing a formal,
+        machine-readable representation of characters, temporal identities, worlds,
+        events, and time travel in <em>Dark</em>.
+      </p>
+      <div class="doc-resources">
+        <span class="doc-resource-label">Related resources:</span>
+        <ul>
+          <li>
+            <a href="https://dark.netflix.io/" target="_blank" rel="noopener noreferrer">
+              Official Dark Website
+            </a>
+          </li>
+          <li>
+            <a href="https://dark.fandom.com/" target="_blank" rel="noopener noreferrer">
+              Dark Wiki (Fandom)
+            </a>
+          </li>
+          <li>
+            <a href="https://www.reddit.com/r/DarK/" target="_blank" rel="noopener noreferrer">
+              Dark Subreddit
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </article>
+  </div>
+
+  <!-- Sottosezione 2: Riferimenti filosofici della serie -->
+  <article class="doc-subsection">
+    <div class="doc-subsection-header">
+      <span class="doc-subsection-number">02</span>
+      <h3>Philosophical references</h3>
+    </div>
+    <div class="doc-subsection-content">
+      <p>
+        <em>Dark</em> is deeply rooted in philosophical and scientific concepts that
+        shape its narrative structure:
+      </p>
+      <ul class="philosophy-list">
+        <li>
+          <strong>Eternal Return</strong> — Friedrich Nietzsche's concept that all events
+          recur infinitely, central to the show's time loop mechanics.
+        </li>
+        <li>
+          <strong>Schopenhauer's Will</strong> — The idea that an underlying metaphysical
+          will drives existence, reflected in the characters' deterministic actions.
+        </li>
+        <li>
+          <strong>Quantum Mechanics</strong> — The Many-Worlds Interpretation and quantum
+          entanglement, which explain the existence of parallel worlds.
+        </li>
+        <li>
+          <strong>Bootstrap Paradox</strong> — The causal loop where an object or information
+          exists without a clear origin, seen in the time travel devices.
+        </li>
+        <li>
+          <strong>Gnosticism</strong> — The duality between light and darkness, the material
+          and spiritual worlds, embodied in the conflict between Adam and Eva.
+        </li>
+      </ul>
+      <div class="doc-quote">
+        <span>“</span>
+        <p>
+          The distinction between past, present and future is only a stubbornly persistent illusion.
+        </p>
+        <small>ALBERT EINSTEIN</small>
+      </div>
+    </div>
+  </article>
+
+  <!-- Sottosezione 3: Strumenti utilizzati -->
+  <article class="doc-subsection">
+    <div class="doc-subsection-header">
+      <span class="doc-subsection-number">03</span>
+      <h3>Tools used</h3>
+    </div>
+    <div class="doc-subsection-content">
+      <p>
+        The ontology was developed using the following tools and technologies:
+      </p>
+      <div class="tools-grid">
+        <div class="tool-item">
+          <span class="tool-icon">⊡</span>
+          <div>
+            <strong>Protégé</strong>
+            <small>Ontology editor</small>
+          </div>
+        </div>
+        <div class="tool-item">
+          <span class="tool-icon">◈</span>
+          <div>
+            <strong>OWL 2</strong>
+            <small>Web Ontology Language</small>
+          </div>
+        </div>
+        <div class="tool-item">
+          <span class="tool-icon">⧫</span>
+          <div>
+            <strong>SPARQL</strong>
+            <small>Query language</small>
+          </div>
+        </div>
+        <div class="tool-item">
+          <span class="tool-icon">◉</span>
+          <div>
+            <strong>GitHub</strong>
+            <small>Version control</small>
+          </div>
+        </div>
+        <div class="tool-item">
+          <span class="tool-icon">⊚</span>
+          <div>
+            <strong>WebVOWL</strong>
+            <small>Visualization</small>
+          </div>
+        </div>
+        <div class="tool-item">
+          <span class="tool-icon">⬡</span>
+          <div>
+            <strong>RDF/XML</strong>
+            <small>Serialization format</small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- Sottosezione 4: Guida alla serie - COMPLETA CON TUTTI I PERSONAGGI -->
+<article class="doc-subsection doc-subsection-characters">
+  <div class="doc-subsection-header">
+    <span class="doc-subsection-number">04</span>
+    <h3>Character guide</h3>
+  </div>
+  <div class="doc-subsection-content">
+    <p class="characters-intro">
+      The complete cast of <em>Dark</em>, organized alphabetically. Each card represents 
+      a persistent person across time and worlds, with their temporal manifestations 
+      and world affiliations.
+    </p>
+
+    <!-- Griglia dei personaggi - 28 personaggi -->
+    <div class="characters-grid">
+      
+      <!-- Agnes Nielsen -->
+      <div class="character-card">
+        <div class="character-image">
+          <img src="assets/img/characters/agnes.jpg" alt="Agnes Nielsen" loading="lazy">
+          <span class="character-world adam">Adam World</span>
+        </div>
+        <div class="character-info">
+          <h4>Agnes Nielsen</h4>
+          <p class="character-role">The Nomad</p>
+          <p class="character-description">
+            A mysterious woman who moves between time periods, connected to both Adam and Claudia.
+          </p>
+        </div>
+      </div>
+
+      <!-- Aleksander Tiedemann -->
+      <div class="character-card">
+        <div class="character-image">
+          <img src="assets/img/characters/aleksander.jpg" alt="Aleksander Tiedemann" loading="lazy">
+          <span class="character-world adam">Adam World</span>
+        </div>
+        <div class="character-info">
+          <h4>Aleksander Tiedemann</h4>
+          <p class="character-role">The Director</p>
+          <p class="character-description">
+            Director of the Winden nuclear power plant, whose past holds dark secrets.
+          </p>
+        </div>
+      </div>
+
+      <!-- Bartosz Tiedemann -->
+      <div class="character-card">
+        <div class="character-image">
+          <img src="assets/img/characters/bartosz.jpg" alt="Bartosz Tiedemann" loading="lazy">
+          <span class="character-world adam">Adam World</span>
+        </div>
+        <div class="character-info">
+          <h4>Bartosz Tiedemann</h4>
+          <p class="character-role">The Conflicted</p>
+          <p class="character-description">
+            Jonas's best friend, torn between loyalty and the pull of Adam's world.
+          </p>
+        </div>
+      </div>
+
+      <!-- Charlotte Doppler -->
+      <div class="character-card">
+        <div class="character-image">
+          <img src="assets/img/characters/charlotte.jpg" alt="Charlotte Doppler" loading="lazy">
+          <span class="character-world both">Both Worlds</span>
+        </div>
+        <div class="character-info">
+          <h4>Charlotte Doppler</h4>
+          <p class="character-role">The Detective</p>
+          <p class="character-description">
+            Police chief of Winden, caught in a temporal paradox — daughter and mother of Elisabeth.
+          </p>
+        </div>
+      </div>
+
+      <!-- Claudia Tiedemann -->
+      <div class="character-card">
+        <div class="character-image">
+          <img src="assets/img/characters/claudia.jpg" alt="Claudia Tiedemann" loading="lazy">
+          <span class="character-world both">Both Worlds</span>
+        </div>
+        <div class="character-info">
+          <h4>Claudia Tiedemann</h4>
+          <p class="character-role">The White Devil</p>
+          <p class="character-description">
+            The time-traveling scientist who seeks to break the cycle across all realities.
+          </p>
+        </div>
+      </div>
+
+      <!-- Egon Tiedemann -->
+      <div class="character-card">
+        <div class="character-image">
+          <img src="assets/img/characters/egon.jpg" alt="Egon Tiedemann" loading="lazy">
+          <span class="character-world adam">Adam World</span>
+        </div>
+        <div class="character-info">
+          <h4>Egon Tiedemann</h4>
+          <p class="character-role">The Inspector</p>
+          <p class="character-description">
+            A police inspector investigating the disappearance of children in 1953.
+          </p>
+        </div>
+      </div>
+
+      <!-- Elisabeth Doppler -->
+      <div class="character-card">
+        <div class="character-image">
+          <img src="assets/img/characters/elisabeth.jpg" alt="Elisabeth Doppler" loading="lazy">
+          <span class="character-world both">Both Worlds</span>
+        </div>
+        <div class="character-info">
+          <h4>Elisabeth Doppler</h4>
+          <p class="character-role">The Paradox</p>
+          <p class="character-description">
+            A deaf girl caught in a time paradox — she is both daughter and mother of Charlotte.
+          </p>
+        </div>
+      </div>
+
+      <!-- Erik Obendorf -->
+      <div class="character-card">
+        <div class="character-image">
+          <img src="assets/img/characters/erik.jpg" alt="Erik Obendorf" loading="lazy">
+          <span class="character-world adam">Adam World</span>
+        </div>
+        <div class="character-info">
+          <h4>Erik Obendorf</h4>
+          <p class="character-role">The Missing</p>
+          <p class="character-description">
+            A teenager whose disappearance in 2019 sets the events of the series in motion.
+          </p>
+        </div>
+      </div>
+
+      <!-- Franziska Doppler -->
+      <div class="character-card">
+        <div class="character-image">
+          <img src="assets/img/characters/franziska.jpg" alt="Franziska Doppler" loading="lazy">
+          <span class="character-world adam">Adam World</span>
+        </div>
+        <div class="character-info">
+          <h4>Franziska Doppler</h4>
+          <p class="character-role">The Rebel</p>
+          <p class="character-description">
+            Charlotte's eldest daughter, rebellious and protective of her sister Elisabeth.
+          </p>
+        </div>
+      </div>
+
+      <!-- Hannah Kahnwald -->
+      <div class="character-card">
+        <div class="character-image">
+          <img src="assets/img/characters/hannah.jpg" alt="Hannah Kahnwald" loading="lazy">
+          <span class="character-world adam">Adam World</span>
+        </div>
+        <div class="character-info">
+          <h4>Hannah Kahnwald</h4>
+          <p class="character-role">The Manipulator</p>
+          <p class="character-description">
+            Jonas's mother, driven by jealousy and obsession that spans across time.
+          </p>
+        </div>
+      </div>
+
+      <!-- Helge Doppler -->
+      <div class="character-card">
+        <div class="character-image">
+          <img src="assets/img/characters/helge.jpg" alt="Helge Doppler" loading="lazy">
+          <span class="character-world adam">Adam World</span>
+        </div>
+        <div class="character-info">
+          <h4>Helge Doppler</h4>
+          <p class="character-role">The Pawn</p>
+          <p class="character-description">
+            A man used as a pawn in the time travel experiments, scarred by his past.
+          </p>
+        </div>
+      </div>
+
+      <!-- H.G. Tannhaus -->
+      <div class="character-card">
+        <div class="character-image">
+          <img src="assets/img/characters/tannhaus.jpg" alt="H.G. Tannhaus" loading="lazy">
+          <span class="character-world origin">Origin World</span>
+        </div>
+        <div class="character-info">
+          <h4>H.G. Tannhaus</h4>
+          <p class="character-role">The Watchmaker</p>
+          <p class="character-description">
+            The creator of the time machine, whose grief creates the entire time loop.
+          </p>
+        </div>
+      </div>
+
+      <!-- Ines Kahnwald -->
+      <div class="character-card">
+        <div class="character-image">
+          <img src="assets/img/characters/ines.jpg" alt="Ines Kahnwald" loading="lazy">
+          <span class="character-world adam">Adam World</span>
+        </div>
+        <div class="character-info">
+          <h4>Ines Kahnwald</h4>
+          <p class="character-role">The Nurse</p>
+          <p class="character-description">
+            A nurse who raises Mikkel as her adopted son, keeping his true identity secret.
+          </p>
+        </div>
+      </div>
+
+      <!-- Jonas Kahnwald -->
+      <div class="character-card">
+        <div class="character-image">
+          <img src="assets/img/characters/jonas.jpg" alt="Jonas Kahnwald" loading="lazy">
+          <span class="character-world adam">Adam World</span>
+        </div>
+        <div class="character-info">
+          <h4>Jonas Kahnwald</h4>
+          <p class="character-role">The Stranger · Adam</p>
+          <p class="character-description">
+            The protagonist, whose journey across time transforms him into the enigmatic Adam.
+          </p>
+        </div>
+      </div>
+
+      <!-- Katharina Nielsen -->
+      <div class="character-card">
+        <div class="character-image">
+          <img src="assets/img/characters/katharina.jpg" alt="Katharina Nielsen" loading="lazy">
+          <span class="character-world adam">Adam World</span>
+        </div>
+        <div class="character-info">
+          <h4>Katharina Nielsen</h4>
+          <p class="character-role">The Mother</p>
+          <p class="character-description">
+            A mother desperate to save her children, whose determination defies time itself.
+          </p>
+        </div>
+      </div>
+
+      <!-- Mads Nielsen -->
+      <div class="character-card">
+        <div class="character-image">
+          <img src="assets/img/characters/mads.jpg" alt="Mads Nielsen" loading="lazy">
+          <span class="character-world adam">Adam World</span>
+        </div>
+        <div class="character-info">
+          <h4>Mads Nielsen</h4>
+          <p class="character-role">The Lost</p>
+          <p class="character-description">
+            Ulrich's brother who disappears in 1986, becoming one of the time experiments.
+          </p>
+        </div>
+      </div>
+
+      <!-- Magnus Nielsen -->
+      <div class="character-card">
+        <div class="character-image">
+          <img src="assets/img/characters/magnus.jpg" alt="Magnus Nielsen" loading="lazy">
+          <span class="character-world adam">Adam World</span>
+        </div>
+        <div class="character-info">
+          <h4>Magnus Nielsen</h4>
+          <p class="character-role">The Observer</p>
+          <p class="character-description">
+            Ulrich's son, who witnesses the unraveling of his family across time.
+          </p>
+        </div>
+      </div>
+
+      <!-- Martha Nielsen_AdamWorld -->
+      <div class="character-card">
+        <div class="character-image">
+          <img src="assets/img/characters/martha.jpg" alt="Martha Nielsen - Adam World" loading="lazy">
+          <span class="character-world adam">Adam World</span>
+        </div>
+        <div class="character-info">
+          <h4>Martha Nielsen</h4>
+          <p class="character-role">The Lost Love</p>
+          <p class="character-description">
+            Jonas's love interest in Adam's world, whose fate is tied to the cycle.
+          </p>
+        </div>
+      </div>
+
+      <!-- Martha Nielsen_EvaWorld -->
+      <div class="character-card">
+        <div class="character-image">
+          <img src="assets/img/characters/martha-eva.jpg" alt="Martha Nielsen - Eva World" loading="lazy">
+          <span class="character-world eva">Eva World</span>
+        </div>
+        <div class="character-info">
+          <h4>Martha Nielsen</h4>
+          <p class="character-role">Eva</p>
+          <p class="character-description">
+            Jonas's love interest in Eva's world, who becomes the leader of the resistance.
+          </p>
+        </div>
+      </div>
+
+      <!-- Mikkel Nielsen -->
+      <div class="character-card">
+        <div class="character-image">
+          <img src="assets/img/characters/mikkel.jpg" alt="Mikkel Nielsen" loading="lazy">
+          <span class="character-world adam">Adam World</span>
+        </div>
+        <div class="character-info">
+          <h4>Mikkel Nielsen</h4>
+          <p class="character-role">Michael Kahnwald</p>
+          <p class="character-description">
+            A boy who travels to 1986 and becomes his own grandfather's father.
+          </p>
+        </div>
+      </div>
+
+      <!-- Noah Tauber -->
+      <div class="character-card">
+        <div class="character-image">
+          <img src="assets/img/characters/noah.jpg" alt="Noah Tauber" loading="lazy">
+          <span class="character-world adam">Adam World</span>
+        </div>
+        <div class="character-info">
+          <h4>Noah Tauber</h4>
+          <p class="character-role">The Priest</p>
+          <p class="character-description">
+            A mysterious figure serving Adam, whose true identity is revealed across seasons.
+          </p>
+        </div>
+      </div>
+
+      <!-- Peter Doppler -->
+      <div class="character-card">
+        <div class="character-image">
+          <img src="assets/img/characters/peter.jpg" alt="Peter Doppler" loading="lazy">
+          <span class="character-world adam">Adam World</span>
+        </div>
+        <div class="character-info">
+          <h4>Peter Doppler</h4>
+          <p class="character-role">The Therapist</p>
+          <p class="character-description">
+            Charlotte's husband, a therapist struggling with family secrets and time travel.
+          </p>
+        </div>
+      </div>
+
+      <!-- Regina Tiedemann -->
+      <div class="character-card">
+        <div class="character-image">
+          <img src="assets/img/characters/regina.jpg" alt="Regina Tiedemann" loading="lazy">
+          <span class="character-world both">Both Worlds</span>
+        </div>
+        <div class="character-info">
+          <h4>Regina Tiedemann</h4>
+          <p class="character-role">The Innocent</p>
+          <p class="character-description">
+            Claudia's daughter, an innocent victim caught in the web of time travel.
+          </p>
+        </div>
+      </div>
+
+      <!-- Silja Tiedemann -->
+      <div class="character-card">
+        <div class="character-image">
+          <img src="assets/img/characters/silja.jpg" alt="Silja Tiedemann" loading="lazy">
+          <span class="character-world adam">Adam World</span>
+        </div>
+        <div class="character-info">
+          <h4>Silja Tiedemann</h4>
+          <p class="character-role">The Wanderer</p>
+          <p class="character-description">
+            A mysterious figure who appears across time, connected to multiple families.
+          </p>
+        </div>
+      </div>
+
+      <!-- Unknown -->
+      <div class="character-card">
+        <div class="character-image">
+          <img src="assets/img/characters/unknown.jpg" alt="Unknown" loading="lazy">
+          <span class="character-world both">Both Worlds</span>
+        </div>
+        <div class="character-info">
+          <h4>Unknown</h4>
+          <p class="character-role">The Anomaly</p>
+          <p class="character-description">
+            A mysterious entity whose true nature and purpose remain hidden across the series.
+          </p>
+        </div>
+      </div>
+
+      <!-- Tronte Nielsen -->
+      <div class="character-card">
+        <div class="character-image">
+          <img src="assets/img/characters/tronte.jpg" alt="Tronte Nielsen" loading="lazy">
+          <span class="character-world adam">Adam World</span>
+        </div>
+        <div class="character-info">
+          <h4>Tronte Nielsen</h4>
+          <p class="character-role">The Journalist</p>
+          <p class="character-description">
+            A journalist and patriarch of the Nielsen family, connected to Claudia.
+          </p>
+        </div>
+      </div>
+
+      <!-- Ulrich Nielsen -->
+      <div class="character-card">
+        <div class="character-image">
+          <img src="assets/img/characters/ulrich.jpg" alt="Ulrich Nielsen" loading="lazy">
+          <span class="character-world adam">Adam World</span>
+        </div>
+        <div class="character-info">
+          <h4>Ulrich Nielsen</h4>
+          <p class="character-role">The Detective</p>
+          <p class="character-description">
+            A police officer who travels to 1953 in search of his missing son.
+          </p>
+        </div>
+      </div>
+
+      <!-- Yasin Friese -->
+      <div class="character-card">
+        <div class="character-image">
+          <img src="assets/img/characters/yasin.jpg" alt="Yasin Friese" loading="lazy">
+          <span class="character-world adam">Adam World</span>
+        </div>
+        <div class="character-info">
+          <h4>Yasin Friese</h4>
+          <p class="character-role">The Missing Boy</p>
+          <p class="character-description">
+            A boy who disappears in 2019, becoming part of the time travel experiments.
+          </p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Grafo delle relazioni tra personaggi -->
+    <div class="character-graph">
+      <div class="graph-header">
+        <span class="graph-label">Character network</span>
+        <small>Relationships &amp; temporal connections</small>
+      </div>
+      <div class="graph-container">
+        <img 
+          src="assets/img/network.png" 
+          alt="Dark character relationship graph" 
+          loading="lazy"
+          onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=graph-placeholder><span>⬡</span><p>Character relationship network coming soon.</p></div>'"
+        >
+        <div class="graph-legend">
+          <span><span class="legend-dot family"></span> Family ties</span>
+          <span><span class="legend-dot temporal"></span> Temporal connection</span>
+          <span><span class="legend-dot travel"></span> Time travel</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</article>
+
+      <!-- Grafo delle relazioni tra personaggi -->
+      <div class="character-graph">
+        <div class="graph-header">
+          <span class="graph-label">Character network</span>
+          <small>Relationships &amp; temporal connections</small>
+        </div>
+        <div class="graph-container">
+          <img 
+            src="assets/img/character-graph.png" 
+            alt="Dark character relationship graph" 
+            loading="lazy"
+            onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=graph-placeholder><span>⬡</span><p>Character relationship network coming soon.</p></div>'"
+          >
+          <div class="graph-legend">
+            <span><span class="legend-dot family"></span> Family ties</span>
+            <span><span class="legend-dot temporal"></span> Temporal connection</span>
+            <span><span class="legend-dot travel"></span> Time travel</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </article>
+</div>
+</section>
 
 
 

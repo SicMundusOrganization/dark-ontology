@@ -1154,28 +1154,28 @@ const QUERIES_CONFIG = [
   {
     id: 'CQ3',
     title: 'Family Relationships',
-    competency: 'Retrieve the family network of every persistent person.',
+    competency: 'What family and interpersonal relationships connect each person to others and to their family?',
     queryFile: 'query3.txt',
     resultsFile: 'results3.csv'
   },
   {
     id: 'CQ4a',
     title: 'Events Across Worlds',
-    competency: 'Retrieve all non-time-travel events with worlds, participants and places.',
+    competency: 'Which events occur across the different worlds, when and where do they take place, and who participates in them?',
     queryFile: 'query4a.txt',
     resultsFile: 'results4a.csv'
   },
   {
     id: 'CQ4b',
     title: 'Meetings with oneself',
-    competency: 'Retrieve all meeting events where two different manifestations of the same person meet each other.',
+    competency: 'Which events involve different temporal manifestations of the same person meeting each other?',
     queryFile: 'query4b.txt',
     resultsFile: 'results4b.csv'
   },
   {
     id: 'CQ5',
     title: 'Time Travellers',
-    competency: 'Retrieve every person together with their travelling manifestations and time travel events.',
+    competency: 'Which persons can be automatically classified as time travelers based on their temporal manifestations?',
     queryFile: 'query5.txt',
     resultsFile: 'results5.csv'
   }
