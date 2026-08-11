@@ -1128,12 +1128,8 @@ fetch("../dark_ontology_populated.ttl")
   );
 
 
-
-
-
-
 // ========================================
-// QUERY CAROUSEL - COMPLETO
+// QUERY CAROUSEL 
 // ========================================
 
 const QUERIES_CONFIG = [
@@ -1187,7 +1183,7 @@ let currentQueryIndex = 0;
 let isQueryLoading = false;
 
 // ========================================
-// INIZIALIZZAZIONE
+// QUERIES INITIALIZATION
 // ========================================
 
 async function initQueryCarousel() {
@@ -1199,7 +1195,6 @@ async function initQueryCarousel() {
     return;
   }
 
-  // Crea i dots
   QUERIES_CONFIG.forEach((_, index) => {
     const dot = document.createElement('button');
     dot.className = 'queries-dot';
@@ -1209,17 +1204,13 @@ async function initQueryCarousel() {
     dotsContainer.appendChild(dot);
   });
 
-  // Carica la prima query - SENZA SCROLL AUTOMATICO
   await loadQuery(0, false);
   updateDots(0);
 }
 
 // ========================================
-// EVENT LISTENER PER I PULSANTI INLINE
+// EVENT LISTENER 
 // ========================================
-
-// Delegazione eventi per i pulsanti inline (che vengono ricreati ad ogni cambio query)
-// Alla fine della funzione initQueryCarousel(), aggiungi:
 
 // Delegazione eventi per i pulsanti inline
 document.addEventListener('click', function(e) {
@@ -1243,7 +1234,7 @@ document.addEventListener('click', function(e) {
 });
 
 // ========================================
-// CARICAMENTO QUERY
+// LOADING QUERIES
 // ========================================
 
 async function loadQuery(index, shouldScroll = true) {
@@ -1258,7 +1249,6 @@ async function loadQuery(index, shouldScroll = true) {
     return;
   }
 
-  // Mostra loading
   track.innerHTML = `
     <div class="query-slide active" data-query-index="${index}">
       <div class="query-loading">Loading query ${config.id}...</div>
@@ -1266,16 +1256,13 @@ async function loadQuery(index, shouldScroll = true) {
   `;
 
   try {
-    // Carica entrambi i file in parallelo
     const [queryText, resultsCSV] = await Promise.all([
       fetchFile(`${GITHUB_BASE_QUERIES}${config.id}/${config.queryFile}`),
       fetchFile(`${GITHUB_BASE_QUERIES}${config.id}/${config.resultsFile}`)
     ]);
 
-    // Renderizza la query
     track.innerHTML = renderQueryCard(config, queryText, resultsCSV, index);
     
-    // Scroll all'inizio della query SOLO se shouldScroll è true
     if (shouldScroll) {
       requestAnimationFrame(() => {
         const slide = track.querySelector('.query-slide.active');
@@ -1379,7 +1366,7 @@ function renderQueryCard(config, queryText, resultsCSV, index) {
 }
 
 // ========================================
-// PARSING CSV IN TABELLA
+// PARSING CSV IN TABLE
 // ========================================
 
 function parseCSVToTable(csv) {
@@ -1416,7 +1403,6 @@ function parseCSVToTable(csv) {
   const headers = parseRow(lines[0]);
   const rows = lines.slice(1).map(parseRow);
 
-  // Costruisce la tabella
   let table = '<div class="query-results-scroll">'; // Wrapper per lo scroll
   table += '<table><thead><tr>';
   headers.forEach(header => {
@@ -1455,7 +1441,7 @@ function escapeHtml(text) {
 }
 
 // ========================================
-// NAVIGAZIONE
+// NAVIGATION
 // ========================================
 
 function goToQuery(index) {
@@ -1489,61 +1475,58 @@ if (document.readyState === 'loading') {
 // ALTERNATE MANIFESTATIONS POPUP
 // ========================================
 
-// Configurazione delle manifestazioni alternative
 const alternateManifestations = {
   'Jonas Kahnwald': {
     manifestations: [
-      { name: 'Jonas (2019)', age: '16', world: 'Adam World', img: 'assets/img/characters/jonas.png' },
-      { name: 'The Stranger (2052)', age: '~50', world: 'Adam World', img: 'assets/img/characters/stranger.png' },
-      { name: 'Adam (1921)', age: '~80', world: 'Adam World', img: 'assets/img/characters/adam.png' }
+      { name: 'Jonas (2019)', age: '16', img: 'assets/img/characters/jonas.png' },
+      { name: 'The Stranger (2052)', age: '50', img: 'assets/img/characters/stranger.png' },
+      { name: 'Adam (1921)', age: '~84', img: 'assets/img/characters/adam.png' }
     ]
   },
   'Charlotte Doppler': {
     manifestations: [
-      { name: 'Infant Charlotte (1971)', age: '0', world: 'Both Worlds', img: 'assets/img/characters/charlotte-baby.png' },
-      { name: 'Charlotte (2019)', age: '~45', world: 'Both Worlds', img: 'assets/img/characters/charl.png' }
+      { name: 'Infant Charlotte (1971)', age: '0', img: 'assets/img/characters/infantch.png' },
+      { name: 'Charlotte (2019)', age: '48', img: 'assets/img/characters/charl.png' }
     ]
   },
   'Elisabeth Doppler': {
     manifestations: [
-      { name: 'Elisabeth (2019)', age: '~10', world: 'Both Worlds', img: 'assets/img/characters/elis.png' },
-      { name: 'Adult Elisabeth (2052)', age: '~40', world: 'Both Worlds', img: 'assets/img/characters/elisabeth-adult.png' }
+      { name: 'Elisabeth (2019)', age: '10', img: 'assets/img/characters/elis.png' },
+      { name: 'Adult Elisabeth (2052)', age: '43', img: 'assets/img/characters/elisadult.png' }
     ]
   },
   'Claudia Tiedemann': {
     manifestations: [
-      { name: 'Young Claudia (1986)', age: '~40', world: 'Both Worlds', img: 'assets/img/characters/claudia.png' },
-      { name: 'Claudia (1986)', age: '~40', world: 'Both Worlds', img: 'assets/img/characters/claudia.png' },
-      { name: 'Old Claudia (2052)', age: '~80', world: 'Both Worlds', img: 'assets/img/characters/claudia-old.png' }
+      { name: 'Young Claudia (1953)', age: '9', img: 'assets/img/characters/claudiayoung.png' },
+      { name: 'Claudia (1986)', age: '42', img: 'assets/img/characters/claudia.png' },
+      { name: 'Old Claudia (2052)', age: '80', img: 'assets/img/characters/claudiaold.png' }
     ]
   },
   'Helge Doppler': {
     manifestations: [
-      { name: 'Young Helge (1953)', age: '~10', world: 'Adam World', img: 'assets/img/characters/helge-young.png' },
-      { name: 'Helge (1986)', age: '~50', world: 'Adam World', img: 'assets/img/characters/helge.png' },
-      { name: 'Old Helge (1986)', age: '~50', world: 'Adam World', img: 'assets/img/characters/helge.png' },
+      { name: 'Young Helge (1953)', age: '9', img: 'assets/img/characters/helgeyoung.png' },
+      { name: 'Helge (1986)', age: '42', img: 'assets/img/characters/helge.png' },
+      { name: 'Old Helge (2019)', age: '75', img: 'assets/img/characters/helgeold.png' },
     ]
   },
   'Martha Nielsen': {
     manifestations: [
-      { name: 'Martha', age: '~16', world: 'Adam World', img: 'assets/img/characters/martha.png' },
-      { name: 'Eva (Eva World)', age: '~80', world: 'Eva World', img: 'assets/img/characters/eva.png' }
+      { name: 'Martha', age: '16', img: 'assets/img/characters/martha.png' },
+      { name: 'Eva (Eva World)', age: '80', img: 'assets/img/characters/eva.png' }
     ]
   },
   'Mikkel Nielsen': {
     manifestations: [
-      { name: 'Mikkel (2019)', age: '~11', world: 'Adam World', img: 'assets/img/characters/mikkel.png' },
-      { name: 'Michael Kahnwald (2019)', age: '~44', world: 'Adam World', img: 'assets/img/characters/michael.png' }
+      { name: 'Mikkel (2019)', age: '11', img: 'assets/img/characters/mikkel.png' },
+      { name: 'Michael Kahnwald (2019)', age: '44', img: 'assets/img/characters/mich.png' }
     ]
   }
 };
 
-// Crea il popup per le manifestazioni
 function createAlternateModal(characterName) {
   const data = alternateManifestations[characterName];
   if (!data) return;
 
-  // Rimuovi eventuale popup esistente
   const existing = document.querySelector('.alternate-modal');
   if (existing) existing.remove();
 
@@ -1551,14 +1534,19 @@ function createAlternateModal(characterName) {
   modal.className = 'alternate-modal';
   modal.setAttribute('aria-labelledby', 'alternate-modal-title');
 
-  const manifestationsHtml = data.manifestations.map((m, index) => `
-    <div class="manifestation-card">
-      <img src="${m.img}" alt="${m.name}" loading="lazy">
-      <h4>${m.name}</h4>
-      <p class="manifestation-detail">Age: ${m.age}</p>
-      <p class="manifestation-detail">World: ${m.world}</p>
-    </div>
-  `).join(' <div class="manifestation-arrow">⟶</div> ');
+  const manifestationsHtml = data.manifestations.map((m, index) => {
+    const isLast = index === data.manifestations.length - 1;
+    return `
+      <div class="manifestation-wrapper">
+        <div class="manifestation-card">
+          <img src="${m.img}" alt="${m.name}" loading="lazy">
+          <h4>${m.name}</h4>
+          <p class="manifestation-detail">Age: ${m.age}</p>
+        </div>
+        ${!isLast ? `<div class="manifestation-arrow"><span>⟶</span></div>` : ''}
+      </div>
+    `;
+  }).join('');
 
   modal.innerHTML = `
     <div class="alternate-modal-header">
@@ -1599,7 +1587,6 @@ function createAlternateModal(characterName) {
   modal.showModal();
 }
 
-// Aggiungi event listener alle card con "see more"
 document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('.character-card.has-alternate').forEach(card => {
     card.addEventListener('click', () => {
@@ -1607,6 +1594,41 @@ document.addEventListener('DOMContentLoaded', () => {
       if (name && alternateManifestations[name]) {
         createAlternateModal(name);
       }
+    });
+  });
+});
+
+// ========================================
+// COLLAPSIBLE SUBSECTIONS
+// ========================================
+
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.doc-subsection.collapsible').forEach(section => {
+    const toggle = section.querySelector('.subsection-toggle');
+    if (!toggle) return;
+
+    toggle.addEventListener('click', () => {
+      const isExpanded = section.classList.contains('expanded');
+      
+      if (isExpanded) {
+        
+        const sectionTop = section.getBoundingClientRect().top + window.pageYOffset;
+       
+        window.scrollTo({
+          top: sectionTop - 20,
+          behavior: 'smooth'
+        });
+      }
+      
+      section.classList.toggle('expanded');
+      
+      
+      const textSpan = toggle.querySelector('.toggle-text');
+      if (textSpan) {
+        textSpan.textContent = isExpanded ? 'Read more' : 'Read less';
+      }
+      
+      toggle.setAttribute('aria-expanded', !isExpanded);
     });
   });
 });

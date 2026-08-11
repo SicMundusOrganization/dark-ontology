@@ -2328,10 +2328,7 @@
 </section>
 
 
-<!-- ========================================
-   INTRO DOCUMENTAZIONE (stessa struttura di #queries)
-   ======================================== -->
-<section class="intro section" id="documentation">
+<section class="intro section" id="documentation" style="background-image: url('assets/img/cave2.jpg'); background-size: cover; background-position: center 30%; background-repeat: no-repeat; background-color: rgba(0, 0, 0, 0.6); background-blend-mode: multiply;">
   <div class="section-index">
     03 / DOCUMENTATION
   </div>
@@ -2346,11 +2343,11 @@
     </h2>
 
     <p>
-      A comprehensive guide to the <em>Dark</em> universe, exploring existing ontologies,
-      philosophical references, tools used, and a visual character guide.
+      Documentation of the research, conceptual foundations, and tools behind the development of the <em>Dark</em> ontology.
+
     </p>
 
-    <a class="button intro-button" href="#doc-existing">
+    <a class="button intro-button" href="#doc-subsections">
       Explore the documentation <span>↓</span>
     </a>
   </div>
@@ -2358,170 +2355,227 @@
   <aside class="quote-card">
     <span>“</span>
     <p>
-      Everything is connected.
+      The beginning is the end. And the end is the beginning.
     </p>
     <small>DARK · SEASON 1</small>
   </aside>
 </section>
 
-<!-- ========================================
-   CORPO DELLA DOCUMENTAZIONE (sottosezioni)
-   ======================================== -->
 <section class="documentation-section" id="doc-subsections">
   <div class="doc-subsections-wrapper">
 
-    <!-- Sottosezione 1: Esiste già una ontologia su Dark? -->
-    <article class="doc-subsection" id="doc-existing">
+    <!-- Subsection 1 -->
+    <article class="doc-subsection collapsible" id="doc-existing">
       <div class="doc-subsection-header">
         <span class="doc-subsection-number">01</span>
-        <h3>Existing ontologies</h3>
+        <h3>State of the art</h3>
       </div>
       <div class="doc-subsection-content">
-        <p>
-          To date, no comprehensive OWL ontology specifically dedicated to the <em>Dark</em>
-          universe has been published. While several knowledge graphs and fan-made databases
-          exist (such as the <a href="https://dark.netflix.io/" target="_blank" rel="noopener noreferrer">official Dark website</a>
-          and various wikis), none have been formalized as a reusable semantic web ontology.
-        </p>
-        <p>
-          The <strong>Sic Mundus</strong> ontology fills this gap by providing a formal,
-          machine-readable representation of characters, temporal identities, worlds,
-          events, and time travel in <em>Dark</em>.
-        </p>
-        <div class="doc-resources">
-          <span class="doc-resource-label">Related resources:</span>
-          <ul>
-            <li>
-              <a href="https://dark.netflix.io/" target="_blank" rel="noopener noreferrer">
-                Official Dark Website
-              </a>
-            </li>
-            <li>
-              <a href="https://dark.fandom.com/" target="_blank" rel="noopener noreferrer">
-                Dark Wiki (Fandom)
-              </a>
-            </li>
-            <li>
-              <a href="https://www.reddit.com/r/DarK/" target="_blank" rel="noopener noreferrer">
-                Dark Subreddit
-              </a>
-            </li>
-          </ul>
+        <div class="subsection-preview">
+          <p> <em>Dark</em> is a narrative built on an extraordinary density of relationships: intertwined family trees, multiple timelines, temporal manifestations, parallel worlds, and events whose causes and consequences often cross the boundaries of time. This complexity makes the series an especially interesting domain for semantic modelling. But before building a new ontology, a fundamental question had to be addressed: <strong>does a formal ontology of <em>Dark</em> already exist?</strong> </p> 
+          <p> Unlike other fictional universes, no official or widely standardised ontology specifically dedicated to <em>Dark</em> was identified in the research conducted for this project. In particular, no established OWL/RDF model was found that formally represents the series' characters, temporal manifestations, worlds, events, and relationships as a coherent ontology. What does exist, however, is a range of alternative attempts to structure and visualise the knowledge contained in the series. </p>
         </div>
+        <div class="subsection-full">
+          <p> One significant approach comes from the development community, where data extracted from fan-maintained wikis has been transformed into <strong>relationship graphs and network structures</strong>. Projects such as <a href="https://meysamraz.medium.com/graph-analysis-and-relationship-extraction-from-dark-tv-series-a8b61dd45da9" target="_blank" rel="noopener"> Graph Analysis and Relationship Extraction from <em>Dark</em> </a> demonstrate how information about characters, biographies, family relationships, and temporal paradoxes can be extracted from the <em>Dark Netflix Fandom</em> and represented as a graph for further analysis. </p> 
+          <p> A similar direction can be found in the <a href="https://github.com/paulozip/dark_characters_network" target="_blank" rel="noopener"> Dark Characters Network </a> project, which uses web crawling and network analysis to collect relationships between characters and visualise them as a connected structure. These projects demonstrate that the universe of <em>Dark</em> can naturally be understood as a network of entities and relationships. However, they do not provide the formal ontological layer required to explicitly define the meaning, hierarchy, and semantics of those relationships in OWL/RDF. </p> 
+          <p> Another important reference is <a href="https://dark.netflix.io/" target="_blank" rel="noopener"> Netflix's official interactive <em>Dark</em> website</a>. Rather than exposing an OWL ontology, the platform offers a dynamic visual representation of the series' narrative structure. Characters, places, objects, and temporal connections can be explored according to the season and episode reached by the viewer. The result is an intuitive way of navigating the increasingly complex network of relationships while limiting the risk of spoilers. </p> <p> These existing approaches reveal an important distinction. <strong><em>Dark</em> has already been represented as a network, visualised as an interactive structure, and analysed through extracted relationships — but these approaches do not constitute a formal ontology of the domain.</strong> This gap provides the starting point for the present project. </p> <p> Building an ontology for <em>Dark</em> therefore means moving from simply <em>connecting</em> pieces of information to formally <strong>representing what those entities are, how they relate to one another, and under which temporal and narrative conditions those relationships hold</strong>. </p> <p> The complexity that makes <em>Dark</em> difficult to follow is precisely what makes it valuable as a knowledge representation problem. Family relationships can become paradoxical, the same person can appear through different temporal manifestations, and apparently separate events may be connected across different worlds and points in time. These characteristics provide a rich environment for testing how an ontology can represent a fictional world in a structured, machine-readable, and queryable form. </p>
+        </div>
+        <button class="subsection-toggle" aria-expanded="false">
+          <span class="toggle-text">Read more</span>
+          <span class="toggle-icon">↓</span>
+        </button>
       </div>
     </article>
 
-    <!-- Sottosezione 2: Riferimenti filosofici della serie -->
-    <article class="doc-subsection">
+    <!-- Subsection 2 -->
+    <article class="doc-subsection collapsible">
       <div class="doc-subsection-header">
         <span class="doc-subsection-number">02</span>
         <h3>Philosophical references</h3>
       </div>
       <div class="doc-subsection-content">
-        <p>
-          <em>Dark</em> is deeply rooted in philosophical and scientific concepts that
-          shape its narrative structure:
-        </p>
-        <ul class="philosophy-list">
-          <li>
-            <strong>Eternal Return</strong> — Friedrich Nietzsche's concept that all events
-            recur infinitely, central to the show's time loop mechanics.
-          </li>
-          <li>
-            <strong>Schopenhauer's Will</strong> — The idea that an underlying metaphysical
-            will drives existence, reflected in the characters' deterministic actions.
-          </li>
-          <li>
-            <strong>Quantum Mechanics</strong> — The Many-Worlds Interpretation and quantum
-            entanglement, which explain the existence of parallel worlds.
-          </li>
-          <li>
-            <strong>Bootstrap Paradox</strong> — The causal loop where an object or information
-            exists without a clear origin, seen in the time travel devices.
-          </li>
-          <li>
-            <strong>Gnosticism</strong> — The duality between light and darkness, the material
-            and spiritual worlds, embodied in the conflict between Adam and Eva.
-          </li>
-        </ul>
-        <div class="doc-quote">
-          <span>“</span>
+        <div class="subsection-preview">
           <p>
-            The distinction between past, present and future is only a stubbornly persistent illusion.
+            Beyond its intricate plot and science-fiction framework, Netflix's <em>Dark</em> functions as a profound <strong>ontological exploration</strong> of human existence, time, and causality. The series rejects the traditional linear progression of time—where the past moves cleanly into the present and future—in favor of a closed, deterministic loop where cause and effect are inextricably fused. To construct this narrative, the show draws deeply upon core philosophical traditions, fusing physics-based temporal logic with metaphysics, classical determinism, and existential dread.
           </p>
-          <small>ALBERT EINSTEIN</small>
+          <p>
+            At the mechanical core of the series lies the <strong>Novikov Self-Consistency Principle</strong> and the <em>bootstrap paradox</em>. Time operates as a rigid, self-sustaining circle: actions taken by characters attempting to alter the past end up causing the very events they intended to prevent. Past, present, and future do not merely influence one another sequentially; they coexist and act upon each other simultaneously, dissolving the boundaries of linear causality.
+          </p>
         </div>
+        <div class="subsection-full">
+          <p>
+            This temporal framework is sustained by several major philosophical paradigms:
+          </p>
+          <ul class="competency-questions">
+            <li>
+              <strong>Nietzsche's Eternal Recurrence:</strong> The narrative embodies Friedrich Nietzsche's thought experiment, wherein existence is trapped in a cyclical repetition. Characters are condemned to relive their choices, suffering, and mistakes indefinitely across time and parallel worlds, highlighting the crushing weight of an infinite loop.
+            </li>
+            <li>
+              <strong>Leibniz's Rationalism and the Principle of Sufficient Reason:</strong> Gottfried Wilhelm Leibniz argued that nothing happens without a cause or reason (Ratio). In <em>Dark</em>, every event, paradox, and familial link—no matter how illogical it appears on the surface—has a definitive rational cause embedded within the broader structure of the multiverse, illustrating a universe governed by absolute metaphysical order.
+            </li>
+            <li>
+              <strong>Schopenhauerian Determinism:</strong> Arthur Schopenhauer's famous assertion—<em>"A man can do what he wills, but he cannot will what he wills"</em>—serves as a central thematic motif. The characters possess the feeling of agency and can execute their desires, yet they cannot choose the underlying motivations, fears, and grief that drive those desires. Thus, their illusion of free will becomes the very engine that drives their entrapment.
+            </li>
+            <li>
+              <strong>Existential Dread and the Search for Meaning:</strong> Facing an inescapable web of fate, the characters grapple with core existentialist dilemmas. In a world where every action is predetermined, they are forced to confront the angst ($Angst$) of identity, purpose, and the agony of trying to forge personal meaning in a universe stripped of genuine autonomy.
+            </li>
+          </ul>
+          <p>
+            Ultimately, <em>Dark</em> presents a world governed by an uncompromising metaphysical necessity. The tragedy of its characters lies not in their lack of effort to break the cycle, but in the paradox that every conscious act of resistance is precisely what binds the knot tighter.
+          </p>
+          <div class="doc-quote">
+            <span>"</span>
+            <p>
+              The distinction between past, present and future is only a stubbornly persistent illusion.
+            </p>
+            <small>ALBERT EINSTEIN</small>
+          </div>
+        </div>
+        <button class="subsection-toggle" aria-expanded="false">
+          <span class="toggle-text">Read more</span>
+          <span class="toggle-icon">↓</span>
+        </button>
       </div>
     </article>
 
-    <!-- Sottosezione 3: Strumenti utilizzati -->
-    <article class="doc-subsection">
+    <!-- Subsection 3 -->
+    <article class="doc-subsection collapsible">
       <div class="doc-subsection-header">
         <span class="doc-subsection-number">03</span>
         <h3>Tools used</h3>
       </div>
       <div class="doc-subsection-content">
-        <p>
-          The ontology was developed using the following tools and technologies:
-        </p>
-        <div class="tools-grid">
-          <div class="tool-item">
-            <span class="tool-icon">⊡</span>
-            <div>
-              <strong>Protégé</strong>
-              <small>Ontology editor</small>
+        <div class="subsection-preview">
+          <p>
+            The ontology was developed using the following tools and technologies:
+          </p>
+          
+          <!-- Models -->
+          <h4 style="margin-top: 2rem; margin-bottom: 1rem; font-size: 1rem; text-transform: uppercase; letter-spacing: 2px; color: #b89b7b; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 0.5rem;">
+            Conceptual &amp; Architectural Models
+          </h4>
+          <div class="tools-grid" style="grid-template-columns: repeat(2, 1fr);">
+            <div class="tool-item">
+              <span class="tool-icon">⊡</span>
+              <div>
+                <strong>
+                  <a href="https://github.com/odpa/patterns-repository/tree/master/Change_of_Time_Varying_Entities" target="_blank" rel="noopener noreferrer" style="color: #d4b48c; text-decoration: none; border-bottom: 1px dotted rgba(212,180,140,0.3);">Change of Time Varying Entities</a>
+                </strong>
+                <small>ODP · Temporal dynamics</small>
+              </div>
             </div>
-          </div>
-          <div class="tool-item">
-            <span class="tool-icon">◈</span>
-            <div>
-              <strong>OWL 2</strong>
-              <small>Web Ontology Language</small>
-            </div>
-          </div>
-          <div class="tool-item">
-            <span class="tool-icon">⧫</span>
-            <div>
-              <strong>SPARQL</strong>
-              <small>Query language</small>
-            </div>
-          </div>
-          <div class="tool-item">
-            <span class="tool-icon">◉</span>
-            <div>
-              <strong>GitHub</strong>
-              <small>Version control</small>
-            </div>
-          </div>
-          <div class="tool-item">
-            <span class="tool-icon">⊚</span>
-            <div>
-              <strong>WebVOWL</strong>
-              <small>Visualization</small>
-            </div>
-          </div>
-          <div class="tool-item">
-            <span class="tool-icon">⬡</span>
-            <div>
-              <strong>RDF/XML</strong>
-              <small>Serialization format</small>
+            <div class="tool-item">
+              <span class="tool-icon">◈</span>
+              <div>
+                <strong>
+                  <a href="https://github.com/odpa/patterns-repository/tree/master/EventCore" target="_blank" rel="noopener noreferrer" style="color: #d4b48c; text-decoration: none; border-bottom: 1px dotted rgba(212,180,140,0.3);">EventCore</a>
+                </strong>
+                <small>ODP · Event representation</small>
+              </div>
             </div>
           </div>
         </div>
+        <div class="subsection-full">
+          <div class="tools-grid">
+            <div class="tool-item">
+              <span class="tool-icon">⧫</span>
+              <div>
+                <strong>
+                  <a href="https://github.com/odpa/patterns-repository/tree/master/Participation" target="_blank" rel="noopener noreferrer" style="color: #d4b48c; text-decoration: none; border-bottom: 1px dotted rgba(212,180,140,0.3);">Participation</a>
+                </strong>
+                <small>ODP · Entity involvement</small>
+              </div>
+            </div>
+            <div class="tool-item">
+              <span class="tool-icon">◉</span>
+              <div>
+                <strong>
+                  <a href="https://github.com/odpa/patterns-repository/tree/master/AgentRole" target="_blank" rel="noopener noreferrer" style="color: #d4b48c; text-decoration: none; border-bottom: 1px dotted rgba(212,180,140,0.3);">AgentRole</a>
+                </strong>
+                <small>ODP · Role modeling</small>
+              </div>
+            </div>
+          </div>
+
+          <!-- Languages -->
+          <h4 style="margin-top: 2.5rem; margin-bottom: 1rem; font-size: 1rem; text-transform: uppercase; letter-spacing: 2px; color: #b89b7b; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 0.5rem;">
+            Languages
+          </h4>
+          <div class="tools-grid">
+            <div class="tool-item">
+              <span class="tool-icon">⊚</span>
+              <div>
+                <strong><a href="https://www.w3.org/TR/owl2-overview/" target="_blank" rel="noopener noreferrer" style="color: #d4b48c; text-decoration: none; border-bottom: 1px dotted rgba(212,180,140,0.3);">OWL 2</a></strong>
+                <small>Web Ontology Language</small>
+              </div>
+            </div>
+            <div class="tool-item">
+              <span class="tool-icon">⬡</span>
+              <div>
+                <strong><a href="https://www.w3.org/TR/turtle/" target="_blank" rel="noopener noreferrer" style="color: #d4b48c; text-decoration: none; border-bottom: 1px dotted rgba(212,180,140,0.3);">RDF/Turtle</a></strong>
+                <small>Serialization format</small>
+              </div>
+            </div>
+            <div class="tool-item">
+              <span class="tool-icon">◉</span>
+              <div>
+                <strong><a href="https://www.w3.org/TR/sparql11-overview/" target="_blank" rel="noopener noreferrer" style="color: #d4b48c; text-decoration: none; border-bottom: 1px dotted rgba(212,180,140,0.3);">SPARQL</a></strong>
+                <small>Query language</small>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tools -->
+          <h4 style="margin-top: 2.5rem; margin-bottom: 1rem; font-size: 1rem; text-transform: uppercase; letter-spacing: 2px; color: #b89b7b; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 0.5rem;">
+            Software Tools
+          </h4>
+          <div class="tools-grid">
+            <div class="tool-item">
+              <span class="tool-icon">⊡</span>
+              <div>
+                <strong><a href="https://protege.stanford.edu/" target="_blank" rel="noopener noreferrer" style="color: #d4b48c; text-decoration: none; border-bottom: 1px dotted rgba(212,180,140,0.3);">Protégé</a></strong>
+                <small>Ontology editor</small>
+              </div>
+            </div>
+            <div class="tool-item">
+              <span class="tool-icon">◈</span>
+              <div>
+                <strong><a href="https://graphdb.ontotext.com/" target="_blank" rel="noopener noreferrer" style="color: #d4b48c; text-decoration: none; border-bottom: 1px dotted rgba(212,180,140,0.3);">GraphDB</a></strong>
+                <small>RDF database &amp; reasoning</small>
+              </div>
+            </div>
+          </div>
+
+          <!-- Management -->
+          <h4 style="margin-top: 2.5rem; margin-bottom: 1rem; font-size: 1rem; text-transform: uppercase; letter-spacing: 2px; color: #b89b7b; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 0.5rem;">
+            Management
+          </h4>
+          <div class="tools-grid">
+            <div class="tool-item">
+              <span class="tool-icon">⊚</span>
+              <div>
+                <strong><a href="https://github.com/" target="_blank" rel="noopener noreferrer" style="color: #d4b48c; text-decoration: none; border-bottom: 1px dotted rgba(212,180,140,0.3);">GitHub</a></strong>
+                <small>Version control &amp; collaboration</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button class="subsection-toggle" aria-expanded="false">
+          <span class="toggle-text">Read more</span>
+          <span class="toggle-icon">↓</span>
+        </button>
       </div>
     </article>
 
-    <!-- Sottosezione 4: Guida alla serie -->
-    <article class="doc-subsection doc-subsection-characters">
+    <!-- Guide -->
+     <article class="doc-subsection doc-subsection-characters">
       <div class="doc-subsection-header">
         <span class="doc-subsection-number">04</span>
         <h3>Character guide</h3>
       </div>
       <div class="doc-subsection-content">
         <p class="characters-intro">
-          The complete cast of <em>Dark</em>, organized alphabetically. Each card represents
-          a persistent person across time and worlds, with their temporal manifestations
-          and world affiliations.
+          The complete cast of <em>Dark</em>, organized alphabetically. Each card represents a persistent character across time. Clicking on a character reveals their different temporal manifestations, where available.
         </p>
 
         <div class="characters-grid">
@@ -2737,7 +2791,7 @@
 
           <div class="character-card">
             <div class="character-image">
-              <img src="assets/img/characters/martha.png" alt="Martha Nielsen - Adam World" loading="lazy">
+              <img src="assets/img/characters/marthadam.png" alt="Martha Nielsen - Adam World" loading="lazy">
               <span class="character-world adam">Adam World</span>
             </div>
             <div class="character-info">
@@ -2751,7 +2805,7 @@
 
           <div class="character-card has-alternate">
             <div class="character-image">
-              <img src="assets/img/characters/eva.png" alt="Martha Nielsen - Eva World" loading="lazy">
+              <img src="assets/img/characters/martha.png" alt="Martha Nielsen - Eva World" loading="lazy">
               <span class="character-world eva">Eva World</span>
             </div>
             <div class="character-info">
@@ -2875,7 +2929,6 @@
         <div class="character-graph">
           <div class="graph-header">
             <span class="graph-label">Character network</span>
-            <small>Relationships &amp; temporal connections</small>
           </div>
           <div class="graph-container">
             <img

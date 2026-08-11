@@ -5758,10 +5758,8 @@ body.modal-open {
 
 
 
-
-
 /* ========================================
-   QUERY CAROUSEL - Specifico per le query
+   QUERY CAROUSEL 
    ======================================== */
 
 .queries-carousel-section {
@@ -5777,14 +5775,12 @@ body.modal-open {
   min-height: 500px;
 }
 
-/* Track delle query */
 .queries-track {
   position: relative;
   overflow: hidden;
   min-height: 480px;
 }
 
-/* Slide singola */
 .query-slide {
   display: none;
   animation: queryFadeIn 0.4s ease-in-out;
@@ -5812,9 +5808,6 @@ body.modal-open {
   }
 }
 
-/* ========================================
-   INTESTAZIONE DELLA QUERY CON NAVIGAZIONE
-   ======================================== */
 
 .query-header-with-nav {
   display: flex;
@@ -5882,10 +5875,9 @@ body.modal-open {
 }
 
 /* ========================================
-   CONTENUTO DELLA QUERY
+   QUERY CONTENT
    ======================================== */
 
-/* Titolo della query - solo uno */
 .query-title {
   margin: 8px 0 0 0;
   font-family: var(--serif);
@@ -5894,7 +5886,6 @@ body.modal-open {
   color: var(--paper);
 }
 
-/* Competency Question */
 .query-competency {
   margin: 20px 0 25px;
   padding: 18px 24px;
@@ -5919,7 +5910,6 @@ body.modal-open {
   line-height: 1.6;
 }
 
-/* Codice SPARQL */
 .query-code-wrapper {
   position: relative;
   margin: 20px 0;
@@ -5967,7 +5957,6 @@ body.modal-open {
   background: var(--amber);
 }
 
-/* Risultati */
 .query-results-wrapper {
   margin-top: 25px;
 }
@@ -6045,7 +6034,6 @@ body.modal-open {
   background: rgba(192, 57, 43, 0.05);
 }
 
-/* Dots per le query */
 .queries-dots {
   display: flex;
   justify-content: center;
@@ -6188,7 +6176,7 @@ body.modal-open {
 }
 
 /* ========================================
-   COMPETENCY QUESTION CON NAVIGAZIONE
+   COMPETENCY QUESTION WITH NAVIGATION
    ======================================== */
 
 .query-competency-with-nav {
@@ -6225,7 +6213,6 @@ body.modal-open {
   line-height: 1.6;
 }
 
-/* Pulsanti di navigazione inline */
 .query-nav-controls {
   display: flex;
   align-items: center;
@@ -6290,9 +6277,9 @@ body.modal-open {
   }
 }
 
-/* Stile speciale per CQ4b - sottolinea che è una sotto-query */
+
 .query-slide[data-query-index="4"] .dossier-head b {
-  color: #d4a05a; /* Leggermente più chiaro per distinguerla */
+  color: #d4a05a; 
 }
 
 .query-slide[data-query-index="4"] .query-competency {
@@ -6301,19 +6288,19 @@ body.modal-open {
 }
 
 /* ========================================
-   SCROLL VERTICALE PER I RISULTATI
+   VERTICAL SCROLL 
    ======================================== */
 
 .query-results {
   overflow-x: auto;
-  overflow-y: auto; /* Aggiunto per lo scroll verticale */
-  max-height: 400px; /* Altezza massima prima che appaia lo scroll */
+  overflow-y: auto; 
+  max-height: 400px; 
   border: 1px solid var(--line);
   border-radius: 4px;
   background: rgba(5, 10, 12, 0.6);
 }
 
-/* Stile per la scrollbar verticale */
+
 .query-results::-webkit-scrollbar {
   width: 8px;
   height: 8px;
@@ -6333,13 +6320,11 @@ body.modal-open {
   background: var(--amber);
 }
 
-/* Firefox scrollbar */
 .query-results {
   scrollbar-width: thin;
   scrollbar-color: var(--amber) #0a1012;
 }
 
-/* La tabella mantiene il suo comportamento */
 .query-results table {
   width: 100%;
   border-collapse: collapse;
@@ -6347,7 +6332,6 @@ body.modal-open {
   min-width: 600px;
 }
 
-/* Intestazione fissa durante lo scroll (opzionale) */
 .query-results thead th {
   position: sticky;
   top: 0;
@@ -6414,7 +6398,6 @@ body.modal-open {
   border-bottom: none;
 }
 
-/* Punto personalizzato come nel resto del sito */
 .competency-questions > li::before {
   content: "";
   position: absolute;
@@ -6427,7 +6410,6 @@ body.modal-open {
   background: transparent;
 }
 
-/* Sotto-elenco per CQ4 */
 .competency-sub-questions {
   margin: 8px 0 0 20px;
   padding: 0;
@@ -6448,7 +6430,6 @@ body.modal-open {
   border-bottom: none;
 }
 
-/* Punto più piccolo per il sotto-elenco */
 .competency-sub-questions > li::before {
   content: "";
   position: absolute;
@@ -6563,7 +6544,7 @@ body.modal-open {
 }
 
 /* ========================================
-   QUERY CAROUSEL - Stesso sfondo di About Us
+   QUERY CAROUSEL 
    ======================================== */
 
 .queries-carousel-section {
@@ -6574,7 +6555,6 @@ body.modal-open {
   box-sizing: border-box;
   scroll-margin-top: 68px;
   
-  /* STESSO SFONDO DI ABOUT US */
   background:
     linear-gradient(
       rgba(4, 9, 14, 0.12),
@@ -6588,7 +6568,6 @@ body.modal-open {
   border-top: 1px solid rgba(233, 224, 205, 0.12);
 }
 
-/* Overlay come in About Us */
 .queries-carousel-section::before {
   content: "";
   position: absolute;
@@ -6604,17 +6583,13 @@ body.modal-open {
     );
 }
 
-/* Tutto il contenuto sopra l'overlay */
 .queries-carousel-section > * {
   position: relative;
   z-index: 1;
 }
 
-/* ========================================
-   SFONDO DELLA SEZIONE INTRO (#queries)
-   ======================================== */
 
-/* La sezione intro rimane con il suo sfondo dedicato */
+
 #queries {
   background-color: #0b1113;
   background-image:
@@ -6631,9 +6606,6 @@ body.modal-open {
   background-repeat: no-repeat;
 }
 
-/* ========================================
-   STILE PER L'INTESTAZIONE DELLA SEZIONE
-   ======================================== */
 
 .queries-carousel-section .section-heading {
   position: relative;
@@ -6663,9 +6635,6 @@ body.modal-open {
   backdrop-filter: blur(4px);
 }
 
-/* ========================================
-   CAROSELLO QUERY
-   ======================================== */
 
 .queries-carousel-wrapper {
   position: relative;
@@ -6685,7 +6654,7 @@ body.modal-open {
 
 
 /* ========================================
-   SEZIONE DOCUMENTAZIONE
+   DOCUMENTATION SECTION
    ======================================== */
 
 .documentation-section {
@@ -6701,7 +6670,7 @@ body.modal-open {
 }
 
 /* ========================================
-   HEADER - Stile come le altre sezioni
+   HEADER DOCUMENTATION
    ======================================== */
 
 .documentation-header {
@@ -6731,7 +6700,6 @@ body.modal-open {
   max-width: 620px;
 }
 
-/* Citazione a lato */
 .documentation-quote {
   align-self: center;
   padding: 30px 36px;
@@ -6766,7 +6734,7 @@ body.modal-open {
 }
 
 /* ========================================
-   SOTTOSEZIONI - Stile "01 / Titolo"
+   SUBSECTIONS
    ======================================== */
 
 .doc-subsection {
@@ -6833,7 +6801,7 @@ body.modal-open {
 }
 
 /* ========================================
-   SOTTOSEZIONE 1: Existing ontologies
+   Existing ontologies
    ======================================== */
 
 .doc-resources {
@@ -6865,7 +6833,7 @@ body.modal-open {
 }
 
 /* ========================================
-   SOTTOSEZIONE 2: Philosophical references
+   Philosophical references
    ======================================== */
 
 .philosophy-list {
@@ -6932,7 +6900,7 @@ body.modal-open {
 }
 
 /* ========================================
-   SOTTOSEZIONE 3: Tools
+   Tools
    ======================================== */
 
 .tools-grid {
@@ -6977,7 +6945,7 @@ body.modal-open {
 }
 
 /* ========================================
-   SOTTOSEZIONE 4: Character guide
+   Character guide
    ======================================== */
 
 .characters-intro {
@@ -7085,7 +7053,7 @@ body.modal-open {
 }
 
 /* ========================================
-   GRAFO DEI PERSONAGGI
+   GRAPH CH. 
    ======================================== */
 
 .character-graph {
@@ -7310,9 +7278,6 @@ body.modal-open {
   }
 }
 
-/* ========================================
-   SEZIONE DOCUMENTAZIONE - SFONDO CAVE.PNG
-   ======================================== */
 
 .documentation-section {
   position: relative;
@@ -7325,7 +7290,6 @@ body.modal-open {
   scroll-margin-top: 68px;
   overflow: hidden;
   
-  /* SFONDO CAVE.PNG come About Us */
   background:
     linear-gradient(
       rgba(4, 9, 14, 0.15),
@@ -7338,7 +7302,7 @@ body.modal-open {
   background-attachment: fixed;
 }
 
-/* Overlay come About Us */
+
 .documentation-section::before {
   content: "";
   position: absolute;
@@ -7354,14 +7318,13 @@ body.modal-open {
     );
 }
 
-/* Tutto il contenuto sopra l'overlay */
 .documentation-section > * {
   position: relative;
   z-index: 1;
 }
 
 /* ========================================
-   HEADER - Stile identico a "The research question"
+   HEADER 
    ======================================== */
 
 .documentation-header {
@@ -7399,7 +7362,7 @@ body.modal-open {
   max-width: 620px;
 }
 
-/* Pulsante come nelle altre sezioni */
+
 .doc-button {
   display: inline-flex;
   align-items: center;
@@ -7434,7 +7397,6 @@ body.modal-open {
   filter: brightness(1.16);
 }
 
-/* Citazione a lato - identica a "The research question" */
 .documentation-quote {
   width: 100%;
   align-self: center;
@@ -7473,7 +7435,7 @@ body.modal-open {
 }
 
 /* ========================================
-   SOTTOSEZIONI - Stile "01 / Titolo"
+   SUBSECTIONS
    ======================================== */
 
 .doc-subsection {
@@ -7540,7 +7502,7 @@ body.modal-open {
 }
 
 /* ========================================
-   SOTTOSEZIONE 1: Existing ontologies
+   Existing ontologies
    ======================================== */
 
 .doc-resources {
@@ -7572,7 +7534,7 @@ body.modal-open {
 }
 
 /* ========================================
-   SOTTOSEZIONE 2: Philosophical references
+   Philosophical references
    ======================================== */
 
 .philosophy-list {
@@ -7638,8 +7600,8 @@ body.modal-open {
   text-transform: uppercase;
 }
 
-/* ========================================
-   SOTTOSEZIONE 3: Tools
+/* =======================================
+   Tools
    ======================================== */
 
 .tools-grid {
@@ -7684,7 +7646,7 @@ body.modal-open {
 }
 
 /* ========================================
-   SOTTOSEZIONE 4: Character guide
+   Character guide
    ======================================== */
 
 .characters-intro {
@@ -7793,7 +7755,7 @@ body.modal-open {
 }
 
 /* ========================================
-   SEE MORE - Personaggi con doppia manifestazione
+   SEE MORE 
    ======================================== */
 
 .character-card.has-alternate .character-image::after {
@@ -7845,7 +7807,7 @@ body.modal-open {
 }
 
 /* ========================================
-   POPUP PER LE MANIFESTAZIONI ALTERNATIVE
+   POPUP PER 
    ======================================== */
 
 .alternate-modal {
@@ -7969,9 +7931,7 @@ body.modal-open {
   text-align: center;
 }
 
-/* ========================================
-   GRAFO DEI PERSONAGGI
-   ======================================== */
+
 
 .character-graph {
   margin-top: 30px;
@@ -8306,8 +8266,314 @@ body.modal-open {
   }
 }
 
+#documentation.intro.section {
+    background-image: url("..img/cave2.jpg");
+    background-size: cover;
+    background-position: center 30%;
+    background-repeat: no-repeat;
+}
 
 
+.alternate-modal {
+  max-width: 780px;
+  width: 90%;
+  padding: 0;
+  border: none;
+  border-radius: 12px;
+  background: #1a1a1a;
+  color: #e0dcd5;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.9);
+  overflow: hidden;
+}
+
+.alternate-modal::backdrop {
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(4px);
+}
+
+.alternate-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 24px 28px 16px 28px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.alternate-modal-header .modal-label {
+  font-size: 10px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #b89b7b;
+  margin: 0 0 4px 0;
+}
+
+.alternate-modal-header h2 {
+  font-size: 24px;
+  font-weight: 300;
+  color: #ffffff;
+  margin: 0;
+}
+
+.modal-close {
+  background: none;
+  border: none;
+  color: #8f887b;
+  font-size: 28px;
+  cursor: pointer;
+  padding: 0 4px;
+  line-height: 1;
+  transition: color 0.3s ease;
+}
+
+.modal-close:hover {
+  color: #d4b48c;
+}
+
+.alternate-modal-body {
+  padding: 16px 28px 24px 28px;
+}
+
+.alternate-manifestation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.manifestation-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.manifestation-card {
+  text-align: center;
+  padding: 12px 16px 14px 16px;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  min-width: 140px;
+  transition: all 0.3s ease;
+}
+
+.manifestation-card:hover {
+  background: rgba(255, 255, 255, 0.07);
+  border-color: rgba(184, 155, 123, 0.3);
+  transform: translateY(-2px);
+}
+
+.manifestation-card img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid rgba(184, 155, 123, 0.3);
+  margin-bottom: 10px;
+  background: #0a0a0a;
+}
+
+.manifestation-card h4 {
+  font-size: 13px;
+  font-weight: 500;
+  color: #f0ece5;
+  margin: 0 0 4px 0;
+  line-height: 1.2;
+}
+
+.manifestation-card .manifestation-detail {
+  font-size: 11px;
+  color: #8f887b;
+  margin: 0;
+}
+
+.manifestation-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 4px;
+  flex-shrink: 0;
+}
+
+.manifestation-arrow span {
+  font-size: 22px;
+  color: #b89b7b;
+  opacity: 0.6;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.manifestation-wrapper:hover .manifestation-arrow span {
+  opacity: 1;
+  transform: translateX(3px);
+}
+
+
+.manifestation-wrapper:has(+ .manifestation-wrapper) .manifestation-arrow span {
+  font-size: 26px;
+  opacity: 0.7;
+}
+
+
+.alternate-manifestation:has(.manifestation-wrapper:nth-child(3)) .manifestation-arrow span {
+  font-size: 28px;
+  color: #d4b48c;
+  opacity: 0.8;
+}
+
+.alternate-modal-footer {
+  padding: 12px 28px;
+  border-top: 1px solid rgba(255, 255, 255, 0.04);
+  font-size: 10px;
+  letter-spacing: 4px;
+  color: #4a4540;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+
+@media (max-width: 600px) {
+  .alternate-modal {
+    width: 95%;
+    max-width: 95%;
+    margin: 10px;
+    border-radius: 8px;
+  }
+
+  .alternate-modal-body {
+    padding: 12px 16px 20px 16px;
+  }
+
+  .alternate-manifestation {
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .manifestation-wrapper {
+    flex-direction: column;
+    gap: 4px;
+    width: 100%;
+  }
+
+  .manifestation-card {
+    width: 100%;
+    min-width: unset;
+    padding: 10px;
+  }
+
+  .manifestation-card img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .manifestation-arrow span {
+    transform: rotate(90deg);
+    font-size: 20px !important;
+  }
+
+  .manifestation-wrapper:hover .manifestation-arrow span {
+    transform: rotate(90deg) translateX(3px);
+  }
+
+  .alternate-modal-header {
+    padding: 18px 16px 12px 16px;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .alternate-modal-header h2 {
+    font-size: 20px;
+  }
+}
+
+
+/* ========================================
+   COLLAPSIBLE SUBSECTIONS
+   ======================================== */
+
+.doc-subsection.collapsible .subsection-full {
+  display: none;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.doc-subsection.collapsible.expanded .subsection-full {
+  display: block;
+  max-height: 5000px;
+}
+
+.doc-subsection.collapsible .subsection-preview {
+  position: relative;
+}
+
+.doc-subsection.collapsible .subsection-preview::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background: linear-gradient(to bottom, transparent, #1a1a1a);
+  pointer-events: none;
+  opacity: 1;
+  transition: opacity 0.4s ease;
+}
+
+.doc-subsection.collapsible.expanded .subsection-preview::after {
+  opacity: 0;
+}
+
+/* Toggle button */
+.subsection-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+  padding: 0.6rem 1.8rem;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 50px;
+  color: #b89b7b;
+  font-size: 0.85rem;
+  font-weight: 400;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(4px);
+}
+
+.subsection-toggle:hover {
+  background: rgba(184, 155, 123, 0.08);
+  border-color: rgba(184, 155, 123, 0.3);
+  transform: translateY(-2px);
+}
+
+.subsection-toggle .toggle-icon {
+  display: inline-block;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  font-size: 1.2rem;
+  line-height: 1;
+}
+
+.doc-subsection.collapsible.expanded .subsection-toggle .toggle-icon {
+  transform: rotate(180deg);
+}
+
+
+.doc-subsection-characters .subsection-toggle {
+  display: none;
+}
+
+.doc-subsection-characters .subsection-full {
+  display: block !important;
+  max-height: none !important;
+}
+
+.doc-subsection-characters .subsection-preview::after {
+  display: none !important;
+}
 @media (max-width: 560px) {
   .ontology-reference .reference-group-header {
     display: flex;
