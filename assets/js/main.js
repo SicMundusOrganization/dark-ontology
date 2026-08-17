@@ -1097,15 +1097,28 @@ if (caseStudiesCarousel) {
 }
 
 /* Caricamento ttl */
+
 const ttlCode =
   document.querySelector("#ttl-code code");
 
-fetch("./dark_ontology_populated.ttl")
+const ttlDownload =
+  document.querySelector("#ttl-download");
+
+const ttlFileUrl =
+  new URL(
+    "dark_ontology_populated.ttl",
+    document.baseURI
+  );
+
+let ttlObjectUrl =
+  null;
+
+fetch(ttlFileUrl)
   .then(
     function (response) {
       if (!response.ok) {
         throw new Error(
-          "Impossibile caricare il file TTL."
+          `HTTP error: ${response.status}`
         );
       }
 
@@ -1113,9 +1126,26 @@ fetch("./dark_ontology_populated.ttl")
     }
   )
   .then(
-    function (ontologySource) {
+    function (source) {
       ttlCode.textContent =
-        ontologySource;
+        source;
+
+      const ttlBlob =
+        new Blob(
+          [source],
+          {
+            type: "text/turtle;charset=utf-8"
+          }
+        );
+
+      ttlObjectUrl =
+        URL.createObjectURL(ttlBlob);
+
+      ttlDownload.href =
+        ttlObjectUrl;
+
+      ttlDownload.download =
+        "dark_ontology_populated.ttl";
     }
   )
   .catch(
@@ -1123,9 +1153,32 @@ fetch("./dark_ontology_populated.ttl")
       ttlCode.textContent =
         "Ontology source unavailable.";
 
-      console.error(error);
+      ttlDownload.removeAttribute(
+        "href"
+      );
+
+      ttlDownload.setAttribute(
+        "aria-disabled",
+        "true"
+      );
+
+      console.error(
+        "Unable to load the ontology:",
+        error
+      );
     }
   );
+
+window.addEventListener(
+  "beforeunload",
+  function () {
+    if (ttlObjectUrl) {
+      URL.revokeObjectURL(
+        ttlObjectUrl
+      );
+    }
+  }
+);
 
 
 // ========================================
