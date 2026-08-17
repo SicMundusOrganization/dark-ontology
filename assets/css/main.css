@@ -3588,14 +3588,17 @@ body.modal-open {
   height: 100%;
 
   object-fit: cover;
-
   object-position: center;
 
   filter:
-    grayscale(82%)
-    sepia(8%)
-    brightness(68%)
-    contrast(112%);
+    grayscale(35%)
+    brightness(82%)
+    contrast(106%)
+    saturate(82%);
+}
+
+.evidence-photo img.maria-photo {
+  object-position: 50% 5%;
 }
 
 .evidence-info {
