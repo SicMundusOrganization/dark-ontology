@@ -1,4 +1,4 @@
-<div align="center">
+<img width="1440" height="789" alt="image" src="https://github.com/user-attachments/assets/100e585c-5a6c-46c9-a194-9641c787ed84" /><div align="center">
 
   <img
     src="assets/img/favicon.png"
@@ -14,7 +14,7 @@
 *A semantic representation of identities, temporal manifestations,
 family paradoxes, worlds, events, and time travel.*
 
-[Explore the website](YOUR_GITHUB_PAGES_URL) ·
+[Explore the website](https://sicmundusorganization.github.io/dark-ontology/) ·
 [Browse the ontology](dark_ontology_populated.ttl)
 
 </div>
