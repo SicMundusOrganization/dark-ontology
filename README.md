@@ -1,7 +1,6 @@
-<img width="1440" height="789" alt="image" src="https://github.com/user-attachments/assets/100e585c-5a6c-46c9-a194-9641c787ed84" /><div align="center">
-
+<div align="center">
   <img
-    src="assets/img/favicon.png"
+    src="./assets/img/favicon.png"
     alt="Sic Mundus logo"
     width="200"
   />
