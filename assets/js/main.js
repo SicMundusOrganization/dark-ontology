@@ -1100,7 +1100,7 @@ if (caseStudiesCarousel) {
 const ttlCode =
   document.querySelector("#ttl-code code");
 
-fetch("../dark_ontology_populated.ttl")
+fetch("./dark_ontology_populated.ttl")
   .then(
     function (response) {
       if (!response.ok) {
