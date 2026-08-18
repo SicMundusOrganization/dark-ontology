@@ -2082,9 +2082,10 @@ body.modal-open {
   #ontology.intro > .quote-card {
     order: 1;
     width: 100%;
-    margin-bottom: 20px;
-    padding: 16px 20px;
-    background: rgba(7, 12, 14, 0.9);
+    border: none;
+    background: transparent;
+    margin-bottom: 0px;
+    padding: 0px;
   }
 
   #ontology.intro > .quote-card > span {
@@ -2101,12 +2102,18 @@ body.modal-open {
 
   #ontology.intro > .quote-card > small {
     font-size: 9px;
+    margin-bottom: 12px;
   }
 
   /* Testo e CTA sotto la citazione */
   #ontology.intro > .intro-content {
     order: 2;
     width: 100%;
+  }
+
+  #ontology.intro > .intro-content > .eyebrow {
+    margin-top: 0;             /* <-- Rimuove margini extra sopra "THE RESEARCH QUESTION" */
+    margin-bottom: 8px;
   }
 }
 
