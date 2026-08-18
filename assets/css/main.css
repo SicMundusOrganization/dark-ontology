@@ -2078,7 +2078,7 @@ body.modal-open {
 
   padding-top: 30px;
 
-  padding-bottom: 80px;
+  padding-bottom: 120px;
 }
 
 /*
@@ -4019,7 +4019,7 @@ body.modal-open {
   .hero {
     padding-left: 20px;
     padding-right: 20px;
-    padding-bottom: 80px;
+    padding-bottom: 120px;
   }
 
   .hero h1 {
