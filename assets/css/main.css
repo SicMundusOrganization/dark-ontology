@@ -2070,7 +2070,7 @@ body.modal-open {
     justify-content: flex-start;
     gap: 20px;
     padding-top: 50px;
-    padding-bottom: 80px;
+    padding-bottom: 120px;
   }
 
   /* Nasconde l'indice solo su schermi piccoli */
