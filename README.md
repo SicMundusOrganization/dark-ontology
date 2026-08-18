@@ -1,6 +1,6 @@
 <div align="center">
   <img
-    src="./assets/img/favicon.png"
+    src="./assets/img/readme.png"
     alt="Sic Mundus logo"
     width="200"
   />
