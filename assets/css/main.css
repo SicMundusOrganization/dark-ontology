@@ -9150,7 +9150,31 @@ body.modal-open {
     touch-action: none;
   }
 
-  body.mobile-menu-open .main-navigation {
+    body.mobile-menu-open .main-navigation {
     touch-action: auto;
   }
+
+  /*
+   * Rimuove il bordo azzurro della X
+   * nei popup su Safari per iPhone
+   */
+
+  .ontology-modal .modal-close,
+  .ontology-modal .modal-close:focus,
+  .ontology-modal .modal-close:focus-visible,
+  .ontology-modal .modal-close:active {
+    outline: 0 !important;
+
+    box-shadow: none !important;
+
+    -webkit-tap-highlight-color:
+      transparent;
+
+    -webkit-appearance:
+      none;
+
+    appearance:
+      none;
+  }
+
 }
