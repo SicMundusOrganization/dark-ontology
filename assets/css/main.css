@@ -2078,6 +2078,9 @@ body.modal-open {
   }
   /* Assicura che l'immagine di sfondo copra tutto fino in fondo */
   #documentation {
+    background-image: 
+      linear-gradient(rgba(0, 0, 0, 0.40), rgba(0, 0, 0, 0.40)),
+      url("../img/cave2.jpg") !important;
     background-size: cover !important;
     background-position: center center !important;
     background-repeat: no-repeat !important;
