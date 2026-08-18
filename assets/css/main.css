@@ -245,6 +245,7 @@ body.modal-open {
 }
 
 @media (max-width: 760px) {
+  .dossier,
   .case-meta {
     display: none;
   }
@@ -2059,6 +2060,151 @@ body.modal-open {
 
   background-repeat: no-repeat;
 }
+
+/*
+ * Research question: disposizione mobile
+ */
+
+#ontology.intro {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: stretch;
+
+  justify-content: flex-start;
+
+  gap: 0;
+
+  padding-top: 30px;
+
+  padding-bottom: 40px;
+}
+
+/*
+ * Nasconde "01 / THE QUESTION"
+ */
+
+#ontology.intro > .section-index {
+  display: none;
+}
+
+
+/*
+ * Citazione posizionata per prima
+ */
+
+#ontology.intro > .quote-card {
+  order: 1;
+
+  width: 100%;
+
+  height: auto;
+
+  min-height: 0;
+
+  margin: 0 0 30px;
+
+  padding: 14px 18px;
+
+  box-sizing: border-box;
+}
+
+#ontology.intro > .quote-card > span {
+  display: block;
+
+  margin: 0 0 5px;
+
+  font-size: 24px;
+
+  line-height: 1;
+}
+
+#ontology.intro > .quote-card > p {
+  margin: 0 0 8px;
+
+  font-size: 16px;
+
+  line-height: 1.35;
+}
+
+#ontology.intro > .quote-card > small {
+  display: block;
+
+  font-size: 8px;
+
+  line-height: 1.35;
+}
+
+/*
+ * Virgoletta decorativa
+ */
+
+#ontology .quote-card > span {
+  display: block;
+
+  margin-bottom: 8px;
+
+  font-size: 28px;
+
+  line-height: 1;
+}
+
+/*
+ * Testo della citazione
+ */
+
+#ontology .quote-card > p {
+  margin:
+    0
+    0
+    12px;
+
+  font-size: 17px;
+
+  line-height: 1.35;
+}
+
+/*
+ * Autore della citazione
+ */
+
+#ontology .quote-card > small {
+  display: block;
+
+  font-size: 8px;
+
+  line-height: 1.4;
+}
+
+/*
+ * Contenuto subito sotto la citazione
+ */
+
+#ontology.intro > .intro-content {
+  order: 2;
+
+  width: 100%;
+
+  min-width: 0;
+
+  margin: 0;
+
+  padding: 0;
+}
+
+/*
+ * Scritta "THE RESEARCH QUESTION"
+ */
+
+#ontology.intro > .intro-content > .eyebrow {
+  margin-top: 0;
+
+  margin-bottom: 12px;
+}
+
+
+
 
 
 /* Identity case: Mikkel and Michael */
