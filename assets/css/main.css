@@ -121,6 +121,44 @@ a {
   left: -32px;
 }
 
+/* Hamburger menu */
+
+.menu-toggle {
+  display: none;
+
+  width: 44px;
+  height: 44px;
+
+  padding: 10px;
+
+  border: 1px solid rgba(184, 121, 40, 0.45);
+
+  background: transparent;
+
+  cursor: pointer;
+}
+
+.menu-toggle span {
+  display: block;
+
+  width: 100%;
+  height: 1px;
+
+  margin: 5px 0;
+
+  background: var(--paper);
+
+  transform-origin: center;
+
+  transition:
+    transform 250ms ease,
+    opacity 250ms ease;
+}
+
+
+
+
+
 html.modal-open {
   overflow:
     hidden;
@@ -137,16 +175,6 @@ body.modal-open {
     hidden;
 }
 
-.language {
-  justify-self: end;
-  border-left: 1px solid var(--line);
-  padding-left: 26px;
-}
-
-.language b {
-  color: var(--amber);
-  margin-left: 10px;
-}
 
 .hero {
   min-height: 100vh;
@@ -3772,9 +3800,6 @@ body.modal-open {
 }
 
 @media (max-width: 1050px) {
-  .site-header nav {
-    display: none;
-  }
 
   .hero {
     grid-template-columns: 1fr;
@@ -8604,5 +8629,374 @@ body.modal-open {
     flex-direction: column;
 
     gap: 6px;
+  }
+}
+
+
+/* Navbar — mobile version */
+
+@media (max-width: 760px) {
+  .site-header {
+    position: fixed;
+
+    top: 0;
+    right: 0;
+    left: 0;
+
+    z-index: 100;
+
+    display: grid;
+
+    grid-template-columns:
+      minmax(0, 1fr)
+      auto;
+
+    align-items: center;
+
+    width: 100%;
+    height: 68px;
+
+    padding:
+      0
+      18px;
+
+    box-sizing: border-box;
+
+    background:
+      rgba(4, 8, 10, 0.96);
+
+    border-bottom:
+      1px solid
+      rgba(233, 224, 205, 0.18);
+
+    backdrop-filter:
+      blur(12px);
+
+    -webkit-backdrop-filter:
+      blur(12px);
+  }
+
+  .navbar-wordmark {
+  position: relative;
+
+  z-index: 102;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-self: start;
+
+  gap: 18px;
+
+  width: auto;
+  min-width: 0;
+
+  color: var(--paper);
+
+  white-space: nowrap;
+}
+
+.navbar-logo {
+  position: relative;
+
+  top: auto;
+  right: auto;
+  bottom: auto;
+  left: auto;
+
+  display: block;
+
+  flex: 0 0 42px;
+
+  width: 42px;
+  height: 42px;
+
+  overflow: visible;
+
+  transform: none;
+}
+
+.navbar-logo img {
+  position: absolute;
+
+  top: 50%;
+  left: 50%;
+
+  display: block;
+
+  width: 1600px;
+  height: 160px;
+
+  max-width: none;
+
+  object-fit: contain;
+
+  opacity: 1;
+
+  visibility: visible;
+
+  transform:
+    translate(-50%, -50%)
+    scale(1);
+
+  filter: none;
+}
+
+
+  /*
+   * Pulsante hamburger
+   */
+
+  .site-header .menu-toggle {
+    position: relative;
+
+    z-index: 103;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 5px;
+
+    width: 44px;
+    height: 44px;
+
+    margin: 0;
+    padding: 0;
+
+    appearance: none;
+
+    border: 0;
+
+    outline: 0;
+
+    box-shadow: none;
+
+    background: transparent;
+
+    color: var(--paper);
+
+    cursor: pointer;
+  }
+
+  .site-header .menu-toggle:hover,
+  .site-header .menu-toggle:focus,
+  .site-header .menu-toggle:active,
+  .site-header .menu-toggle.is-open {
+    border: 0;
+
+    outline: 0;
+
+    box-shadow: none;
+
+    background: transparent;
+  }
+
+  .site-header .menu-toggle:focus-visible {
+    outline:
+      1px solid
+      var(--amber);
+
+    outline-offset: 3px;
+
+    color: var(--amber);
+  }
+
+  .site-header .menu-toggle span {
+    display: block;
+
+    width: 24px;
+    height: 1px;
+
+    margin: 0;
+
+    background-color: currentColor;
+
+    transform-origin: center;
+
+    transition:
+      opacity 220ms ease,
+      transform 220ms ease,
+      background-color 220ms ease;
+  }
+
+  /*
+   * Trasformazione dell’hamburger in X
+   */
+
+  .site-header .menu-toggle.is-open span:nth-child(1) {
+    transform:
+      translateY(6px)
+      rotate(45deg);
+  }
+
+  .site-header .menu-toggle.is-open span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .site-header .menu-toggle.is-open span:nth-child(3) {
+    transform:
+      translateY(-6px)
+      rotate(-45deg);
+  }
+
+  /*
+   * Pannello del menu
+   */
+
+  .site-header .main-navigation {
+  position: absolute;
+
+  top: 68px;
+  right: 14px;
+  left: auto;
+  bottom: auto;
+
+  z-index: 101;
+
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+
+  gap: 0;
+
+  width: min(280px, calc(100vw - 28px));
+  height: auto;
+
+  margin: 0;
+  padding: 10px 18px;
+
+  box-sizing: border-box;
+
+  overflow: hidden;
+
+  border:
+    1px solid
+    rgba(233, 224, 205, 0.16);
+
+  background:
+    rgba(4, 8, 10, 0.97);
+
+  backdrop-filter:
+    blur(12px);
+
+  -webkit-backdrop-filter:
+    blur(12px);
+
+  box-shadow:
+    0 18px 45px
+    rgba(0, 0, 0, 0.5);
+
+  opacity: 0;
+  visibility: hidden;
+
+  transform:
+    translateY(-10px);
+
+  pointer-events: none;
+
+  transition:
+    opacity 250ms ease,
+    visibility 250ms ease,
+    transform 250ms ease;
+}
+
+.site-header .main-navigation.is-open {
+  opacity: 1;
+  visibility: visible;
+
+  transform:
+    translateY(0);
+
+  pointer-events: auto;
+}
+
+  /*
+   * Collegamenti del menu
+   */
+
+  .site-header .main-navigation a {
+  display: flex;
+
+  justify-content: flex-start;
+  align-items: center;
+
+  width: 100%;
+  min-height: 52px;
+
+  margin: 0;
+  padding: 10px 8px;
+
+  box-sizing: border-box;
+
+  border-bottom:
+    1px solid
+    rgba(233, 224, 205, 0.12);
+
+  color: var(--paper);
+
+  font-size: 13px;
+  line-height: 1.2;
+
+  text-align: left;
+  text-decoration: none;
+}
+
+  .site-header .main-navigation a:last-of-type {
+    border-bottom: 0;
+  }
+
+  .site-header .main-navigation a:hover,
+  .site-header .main-navigation a:focus-visible {
+    color: var(--amber);
+
+    border-color:
+      rgba(184, 121, 40, 0.5);
+  }
+
+  .site-header .main-navigation a:focus-visible {
+    outline:
+      1px solid
+      var(--amber);
+
+    outline-offset: -4px;
+  }
+
+  .site-header .main-navigation i {
+    display: none;
+  }
+
+  /*
+   * Impedisce alla navbar fissa di coprire
+   * l’inizio delle sezioni raggiunte tramite link
+   */
+
+  section[id] {
+    scroll-margin-top: 68px;
+  }
+
+  /*
+   * Blocca lo scorrimento della pagina
+   * quando il menu è aperto
+   */
+
+  html:has(body.mobile-menu-open),
+  body.mobile-menu-open {
+    overflow: hidden;
+
+    overscroll-behavior: none;
+  }
+
+  body.mobile-menu-open {
+    touch-action: none;
+  }
+
+  body.mobile-menu-open .main-navigation {
+    touch-action: auto;
   }
 }

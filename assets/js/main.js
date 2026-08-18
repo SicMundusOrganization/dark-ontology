@@ -1685,3 +1685,85 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 });
+
+
+/* Mobile navigation */
+
+const menuToggle =
+  document.querySelector(".menu-toggle");
+
+const mainNavigation =
+  document.querySelector(".main-navigation");
+
+const navigationLinks =
+  mainNavigation.querySelectorAll("a");
+
+function setMobileMenu(open) {
+  menuToggle.classList.toggle(
+    "is-open",
+    open
+  );
+
+  mainNavigation.classList.toggle(
+    "is-open",
+    open
+  );
+
+  document.body.classList.toggle(
+    "mobile-menu-open",
+    open
+  );
+
+  menuToggle.setAttribute(
+    "aria-expanded",
+    String(open)
+  );
+
+  menuToggle.setAttribute(
+    "aria-label",
+    open
+      ? "Close navigation menu"
+      : "Open navigation menu"
+  );
+}
+
+menuToggle.addEventListener(
+  "click",
+  function () {
+    const menuIsOpen =
+      menuToggle.getAttribute("aria-expanded") === "true";
+
+    setMobileMenu(
+      !menuIsOpen
+    );
+  }
+);
+
+navigationLinks.forEach(
+  function (link) {
+    link.addEventListener(
+      "click",
+      function () {
+        setMobileMenu(false);
+      }
+    );
+  }
+);
+
+document.addEventListener(
+  "keydown",
+  function (event) {
+    if (event.key === "Escape") {
+      setMobileMenu(false);
+    }
+  }
+);
+
+window.addEventListener(
+  "resize",
+  function () {
+    if (window.innerWidth > 760) {
+      setMobileMenu(false);
+    }
+  }
+);
