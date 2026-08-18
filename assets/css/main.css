@@ -2061,9 +2061,11 @@ body.modal-open {
   background-repeat: no-repeat;
 }
 
-/* Responsive mobile Ontology section */
+/* Responsive mobile per Ontology, Queries e Documentation */
 @media (max-width: 768px) {
-  #ontology.intro {
+  #ontology.intro,
+  #queries.intro,
+  #documentation.intro {
     display: flex;
     flex-direction: column;
     align-items: stretch;
@@ -2074,12 +2076,16 @@ body.modal-open {
   }
 
   /* Nasconde l'indice solo su schermi piccoli */
-  #ontology.intro > .section-index {
+  #ontology.intro > .section-index,
+  #queries.intro > .section-index,
+  #documentation.intro > .section-index {
     display: none;
   }
 
   /* Mostra la citazione in alto su mobile */
-  #ontology.intro > .quote-card {
+  #ontology.intro > .quote-card,
+  #queries.intro > .quote-card,
+  #documentation.intro > .quote-card {
     order: 1;
     width: 100%;
     border: none;
@@ -2088,35 +2094,44 @@ body.modal-open {
     padding: 0px;
   }
 
-  #ontology.intro > .quote-card > span {
+  #ontology.intro > .quote-card > span,
+  #queries.intro > .quote-card > span,
+  #documentation.intro > .quote-card > span {
     font-size: 28px;
     margin-bottom: 8px;
   }
 
-  #ontology.intro > .quote-card > p {
+  #ontology.intro > .quote-card > p,
+  #queries.intro > .quote-card > p,
+  #documentation.intro > .quote-card > p {
     font-size: 16px;
     line-height: 1.35;
     margin-bottom: 10px;
     transform: none;
   }
 
-  #ontology.intro > .quote-card > small {
+  #ontology.intro > .quote-card > small,
+  #queries.intro > .quote-card > small,
+  #documentation.intro > .quote-card > small {
     font-size: 9px;
     margin-bottom: 12px;
   }
 
   /* Testo e CTA sotto la citazione */
-  #ontology.intro > .intro-content {
+  #ontology.intro > .intro-content,
+  #queries.intro > .intro-content,
+  #documentation.intro > .intro-content {
     order: 2;
     width: 100%;
   }
 
-  #ontology.intro > .intro-content > .eyebrow {
-    margin-top: 0;             /* <-- Rimuove margini extra sopra "THE RESEARCH QUESTION" */
+  #ontology.intro > .intro-content > .eyebrow,
+  #queries.intro > .intro-content > .eyebrow,
+  #documentation.intro > .intro-content > .eyebrow {
+    margin-top: 0;
     margin-bottom: 8px;
   }
 }
-
 
 /* Identity case: Mikkel and Michael */
 
