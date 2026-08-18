@@ -4065,6 +4065,10 @@ body.modal-open {
     padding: 80px 20px;
   }
 
+  #classes {
+  padding-top: 35px;
+  }
+  
   .intro {
     grid-template-columns: 1fr;
   }
