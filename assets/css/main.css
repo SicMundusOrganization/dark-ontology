@@ -244,6 +244,12 @@ body.modal-open {
   line-height: 2;
 }
 
+@media (max-width: 760px) {
+  .case-meta {
+    display: none;
+  }
+}
+
 .hero-copy {
   max-width: 480px;
   padding-left: 0;
