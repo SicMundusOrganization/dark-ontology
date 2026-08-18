@@ -2069,7 +2069,7 @@ body.modal-open {
     align-items: stretch;
     justify-content: flex-start;
     gap: 20px;
-    padding-top: 50px;
+    padding-top: 32px;
     padding-bottom: 120px;
   }
 
