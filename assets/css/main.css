@@ -6827,6 +6827,14 @@ body.modal-open {
   margin-bottom: 20px;
 }
 
+.doc-subsection-content p,
+.philosophy-list li {
+  text-align: justify;
+  text-justify: inter-word;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+}
+
 /* ========================================
    HEADER DOCUMENTATION
    ======================================== */
@@ -7484,6 +7492,7 @@ body.modal-open {
   position: relative;
   z-index: 1;
 }
+
 
 /* ========================================
    HEADER 
