@@ -5732,7 +5732,7 @@ body.modal-open {
 }
 
 
-/* Responsive ontology documentation */
+/* Responsive ontology overview */
 
 @media (max-width: 900px) {
   .ontology-reference {
@@ -5817,6 +5817,13 @@ body.modal-open {
     font-size: 9px;
 
     line-height: 1.7;
+  }
+  /* Sottoclassi con lo stesso font con grazie (Serif) delle classi principali */
+  .ontology-reference .subclass-list strong {
+    font-family: var(--serif) !important;
+    font-size: 18px !important;
+    font-weight: 500 !important;
+    letter-spacing: normal !important;
   }
 }
 
@@ -7339,7 +7346,11 @@ body.modal-open {
 
 @media (max-width: 768px) {
   .documentation-section {
-    padding: 80px 24px 60px;
+    padding: 30px 24px 60px !important;
+  }
+
+  .doc-subsections-wrapper {
+    margin-top: 0 !important;
   }
 
   .doc-subsection {
