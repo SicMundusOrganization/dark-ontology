@@ -7379,6 +7379,14 @@ body.modal-open {
     font-size: 13px;
   }
 
+  /* text on the left on mobile */
+  .doc-subsection-content p,
+  .philosophy-list li {
+    text-align: left !important;
+    hyphens: manual !important;
+    -webkit-hyphens: manual !important;
+  }
+
   .characters-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 16px;
