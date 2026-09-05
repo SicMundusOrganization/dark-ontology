@@ -199,22 +199,45 @@ This case demonstrates how the narrative structure of *Dark* challenges assumpti
 
 ---
 
-## 💡 Competency questions
+## 💡 Knowledge Extraction: The SPARQL Queries
 
-The ontology was developed to answer questions such as:
+After structuring the domain knowledge into an OWL ontology, the project’s focus shifted to knowledge extraction. The goal was to answer specific, complex questions about the interconnected world of Dark. This was achieved by formulating a set of Competency Questions (CQs) that capture the most intriguing and characteristic aspects of the series.
 
-* Which manifestations belong to the same persistent person?
-* Which characters exist in a particular year or world?
-* Which events occur at a given time and place?
-* Who participates in a particular event?
-* Which device is used during a time-travel event?
-* From which year and world does a journey depart?
-* In which year, place, and world does it arrive?
-* Which people belong to a specific family?
-* Which characters are related across different generations?
-* Which relationships produce temporal or genealogical paradoxes?
+The following CQs were defined:
 
-The repository includes the SPARQL queries and their results.
+CQ01 — Which persons have multiple temporal manifestations, and what are those manifestations?
+
+CQ02 — Which time-travel events occur, who travels, and how and when does each journey take place?
+
+CQ03 — What family and interpersonal relationships connect each person to others and to their family?
+
+CQ04a — Which events occur across the different worlds, when and where do they take place, and who participates in them?
+
+CQ04b — Which events involve different temporal manifestations of the same person meeting each other?
+
+CQ05 — Which persons can be automatically classified as time travelers based on their temporal manifestations?
+
+These questions are not just arbitrary; they are designed to synthesize and highlight the most narrative-rich elements of the ontology. For instance, they allow us to explore paradoxical self-encounters (CQ04b), trace the complex family trees that weave the entire plot together (CQ03), and identify characters who actively alter the timeline (CQ05).
+
+---
+
+## 🔗 From Competency Questions to SPARQL Queries
+
+The transition from CQs to executable SPARQL queries is the core of this knowledge extraction phase. Each query was engineered to interrogate the relationships encoded in the ontology, leveraging features like:
+
+* Property paths to traverse complex family connections.
+
+* Grouping and aggregation to consolidate multiple manifestations under a single person.
+
+* Filters and optional patterns to handle the nuances of incomplete or branching narrative data.
+
+* Inference-based queries (e.g., classifying a TimeTraveler) to automatically derive new knowledge.
+
+The ontology is fully queryable via a public SPARQL endpoint hosted on TriplyDB. You can explore and run all the queries directly at the following address:
+
+🔗 https://triplydb.com/SilviaAntonellaPellicano/darkontology/sparql
+
+This endpoint allows anyone to interact with the knowledge graph, test new questions, and verify the existing ones without needing to set up a local environment.
 
 ---
 
@@ -247,6 +270,7 @@ The repository includes the SPARQL queries and their results.
 
 * `dark_ontology_structure.ttl` contains the conceptual structure of the ontology.
 * `dark_ontology_populated.ttl` contains the populated ontology and its individuals.
+* The .txt files contain the SPARQL queries.
 * The CSV files contain the results of the competency-question queries.
 * The website offers an interactive visual presentation of the ontology.
 
