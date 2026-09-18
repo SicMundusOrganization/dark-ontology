@@ -3374,14 +3374,12 @@ body.modal-open {
 }
 
 /*
- * Character manifestations popup — Safari mobile
+ * Popup manifestazioni — Safari mobile
  */
 
-@media (max-width: 600px) {
-  .alternate-modal {
-    width: calc(100% - 24px) !important;
-
-    max-width: calc(100% - 24px) !important;
+@media (max-width: 700px) {
+  .manifestation-modal {
+    width: calc(100% - 24px);
 
     height:
       calc(
@@ -3389,7 +3387,7 @@ body.modal-open {
         - 32px
         - env(safe-area-inset-top)
         - env(safe-area-inset-bottom)
-      ) !important;
+      );
 
     max-height:
       calc(
@@ -3397,91 +3395,52 @@ body.modal-open {
         - 32px
         - env(safe-area-inset-top)
         - env(safe-area-inset-bottom)
-      ) !important;
+      );
 
-    margin: auto !important;
+    margin: auto;
 
-    padding: 0 !important;
-
-    overflow: hidden !important;
+    padding: 0;
 
     box-sizing: border-box;
+
+    overflow: hidden;
   }
 
-  .alternate-modal[open] {
-    display: flex !important;
+  .manifestation-modal[open] {
+    display: flex;
 
-    flex-direction: column !important;
+    flex-direction: column;
   }
 
-  .alternate-modal-header,
-  .alternate-modal-footer {
+  .manifestation-modal .modal-header,
+  .manifestation-modal .modal-counter,
+  .manifestation-modal .modal-footer {
     flex: 0 0 auto;
   }
 
-  .alternate-modal-body {
-    display: block !important;
+  .manifestation-scroll {
+    display: block;
 
-    flex: 1 1 auto !important;
+    flex: 1 1 auto;
 
-    min-height: 0 !important;
+    min-height: 0;
 
-    padding: 14px 16px 20px !important;
-
-    overflow-x: hidden !important;
-    overflow-y: auto !important;
+    overflow-x: hidden;
+    overflow-y: auto;
 
     -webkit-overflow-scrolling: touch;
+
+    overscroll-behavior: contain;
   }
 
-  .alternate-manifestation {
-    display: flex !important;
+  /*
+   * Elimina il quadrato azzurro dalla X su Safari
+   */
 
-    flex-direction: column !important;
-
-    align-items: stretch !important;
-
-    gap: 12px !important;
-
-    width: 100% !important;
-  }
-
-  .manifestation-wrapper {
-    display: flex !important;
-
-    flex-direction: column !important;
-
-    align-items: stretch !important;
-
-    gap: 8px !important;
-
-    width: 100% !important;
-  }
-
-  .alternate-modal .manifestation-card {
-    display: block !important;
-
-    width: 100% !important;
-
-    min-width: 0 !important;
-
-    flex: none !important;
-  }
-
-  .alternate-modal .manifestation-arrow {
-    display: flex !important;
-
-    justify-content: center !important;
-  }
-
-  .alternate-modal .manifestation-arrow span {
-    transform: rotate(90deg) !important;
-  }
-
-  .alternate-modal .modal-close,
-  .alternate-modal .modal-close:focus,
-  .alternate-modal .modal-close:focus-visible,
-  .alternate-modal .modal-close:active {
+  .manifestation-modal .modal-close,
+  .manifestation-modal .modal-close:focus,
+  .manifestation-modal .modal-close:active,
+  .manifestation-modal .modal-close:focus-visible {
     outline: none !important;
 
     box-shadow: none !important;
@@ -9671,9 +9630,6 @@ body.modal-open {
     display: none !important;
   }
 }
-
-
-
 
 
 .alternate-modal .modal-close,
