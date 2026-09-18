@@ -600,6 +600,13 @@ body.modal-open {
   backdrop-filter: blur(4px);
 }
 
+.sparql-endpoint-button {
+  padding-top: 16px;
+  padding-bottom: 16px;
+
+  box-sizing: border-box;
+}
+
 .intro-button span {
   color: var(--amber);
 
@@ -3366,6 +3373,85 @@ body.modal-open {
   }
 }
 
+/*
+ * Popup manifestazioni — Safari mobile
+ */
+
+@media (max-width: 700px) {
+  .manifestation-modal {
+    width: calc(100% - 24px);
+
+    height:
+      calc(
+        100dvh
+        - 32px
+        - env(safe-area-inset-top)
+        - env(safe-area-inset-bottom)
+      );
+
+    max-height:
+      calc(
+        100dvh
+        - 32px
+        - env(safe-area-inset-top)
+        - env(safe-area-inset-bottom)
+      );
+
+    margin: auto;
+
+    padding: 0;
+
+    box-sizing: border-box;
+
+    overflow: hidden;
+  }
+
+  .manifestation-modal[open] {
+    display: flex;
+
+    flex-direction: column;
+  }
+
+  .manifestation-modal .modal-header,
+  .manifestation-modal .modal-counter,
+  .manifestation-modal .modal-footer {
+    flex: 0 0 auto;
+  }
+
+  .manifestation-scroll {
+    display: block;
+
+    flex: 1 1 auto;
+
+    min-height: 0;
+
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    -webkit-overflow-scrolling: touch;
+
+    overscroll-behavior: contain;
+  }
+
+  /*
+   * Elimina il quadrato azzurro dalla X su Safari
+   */
+
+  .manifestation-modal .modal-close,
+  .manifestation-modal .modal-close:focus,
+  .manifestation-modal .modal-close:active,
+  .manifestation-modal .modal-close:focus-visible {
+    outline: none !important;
+
+    box-shadow: none !important;
+
+    -webkit-tap-highlight-color: transparent;
+
+    -webkit-appearance: none;
+
+    appearance: none;
+  }
+}
 
 
 /*/About us/*/
