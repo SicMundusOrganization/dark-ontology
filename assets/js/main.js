@@ -1592,7 +1592,7 @@ function createAlternateModal(characterName) {
     return `
       <div class="manifestation-wrapper">
         <div class="manifestation-card">
-          <img src="${m.img}" alt="${m.name}" loading="lazy">
+          <img src="${m.img}" alt="${m.name}" loading="eager">
           <h4>${m.name}</h4>
           <p class="manifestation-detail">Age: ${m.age}</p>
         </div>
