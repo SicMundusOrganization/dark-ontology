@@ -1187,11 +1187,18 @@ window.addEventListener(
 
 const QUERIES_CONFIG = [
   {
-    id: 'CQ1',
+    id: 'CQ1a',
     title: 'Multiple Temporal Manifestations',
     competency: 'Which persons have multiple temporal manifestations, and what are those manifestations?',
-    queryFile: 'query1.txt',
-    resultsFile: 'results1.csv'
+    queryFile: 'query1a.txt',
+    resultsFile: 'results1a.csv'
+  },
+  {
+    id: 'CQ1b',
+    title: 'Coexisting Manifestations',
+    competency: 'Which persons with more than one temporal manifestation have manifestations present in the same year?',
+    queryFile: 'query1b.txt',
+    resultsFile: 'results1b.csv'
   },
   {
     id: 'CQ2',

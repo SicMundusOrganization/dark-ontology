@@ -205,7 +205,9 @@ After structuring the domain knowledge into an OWL ontology, the project’s foc
 
 The following CQs were defined:
 
-CQ01 — Which persons have multiple temporal manifestations, and what are those manifestations?
+CQ01a — Which persons have multiple temporal manifestations, and what are those manifestations?
+
+CQ01b — Which persons with more than one temporal manifestation have manifestations present in the same year?
 
 CQ02 — Which time-travel events occur, who travels, and how and when does each journey take place?
 
@@ -225,13 +227,15 @@ These questions are not just arbitrary; they are designed to synthesize and high
 
 The transition from CQs to executable SPARQL queries is the core of this knowledge extraction phase. Each query was engineered to interrogate the relationships encoded in the ontology, leveraging features like:
 
-* Property paths to traverse complex family connections.
-
 * Grouping and aggregation to consolidate multiple manifestations under a single person.
+
+* Self-joins to relate different manifestations of the same person, whether they coexist in the same year (CQ01b) or meet each other in the same event (CQ04b).
 
 * Filters and optional patterns to handle the nuances of incomplete or branching narrative data.
 
-* Inference-based queries (e.g., classifying a TimeTraveler) to automatically derive new knowledge.
+* Reasoning-enabled querying: the results were produced in GraphDB with the RDFS-Plus ruleset, so queries such as CQ03 also retrieve inferred triples (e.g., `childOf` derived from its inverse `parentOf`, and symmetric `siblingOf` and `spouseOf` links).
+
+* Explicit reconstruction of class definitions: CQ05 follows the same path that defines the `TimeTraveler` class (person → manifestation → time-travel event), so it returns the evidence behind each classification and does not depend on a reasoner.
 
 The ontology is fully queryable via a public SPARQL endpoint hosted on TriplyDB. You can explore and run all the queries directly at the following address:
 
@@ -256,7 +260,8 @@ This endpoint allows anyone to interact with the knowledge graph, test new quest
 │   └── js/
 │       └── main.js
 ├── queries/
-│   ├── CQ1/
+│   ├── CQ1a/
+│   ├── CQ1b/
 │   ├── CQ2/
 │   ├── CQ3/
 │   ├── CQ4a/

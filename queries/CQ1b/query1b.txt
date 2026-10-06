@@ -1,0 +1,18 @@
+PREFIX dark: <https://w3id.org/dark-ontology/>
+
+SELECT ?personName ?manifestationLabel ?year ?familyLabel ?age
+WHERE {
+    ?person a dark:Person ;
+            dark:hasCanonicalName ?personName .
+    ?manifestation dark:manifestationOf ?person ;
+                   dark:existsDuring ?time ;
+                   dark:memberOfFamily ?family ;
+                   dark:hasAge ?age ;
+                   dark:hasManifestationName ?manifestationLabel .
+    ?otherManifestation dark:manifestationOf ?person ;
+                        dark:existsDuring ?time .
+    FILTER(?manifestation != ?otherManifestation)
+    ?time dark:hasYearValue ?year .
+    BIND(REPLACE(STR(?family), "https://w3id.org/dark-ontology/", "") AS ?familyLabel)
+}
+ORDER BY ?age
