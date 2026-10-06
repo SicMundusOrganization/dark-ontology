@@ -1,4 +1,4 @@
-personName,parents,children,siblings,spouseName,adoptiveParentName,adoptiveChildName,relationships,families
+personName,parents,children,siblings,spouses,adoptiveParents,adoptiveChildren,relationships,families
 Agnes Nielsen,"Bartosz Tiedemann, Silja Tiedemann",Tronte Nielsen,Hanno Tauber,The Unknown,,,,NielsenFamily
 Aleksander Tiedemann,,Bartosz Tiedemann,,Regina Tiedemann,,,,TiedemannFamily
 Bartosz Tiedemann,"Aleksander Tiedemann, Regina Tiedemann","Agnes Nielsen, Hanno Tauber",,Silja Tiedemann,,,,TiedemannFamily

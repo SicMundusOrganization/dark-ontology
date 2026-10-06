@@ -5,9 +5,9 @@ SELECT
     (GROUP_CONCAT(DISTINCT ?parentName; SEPARATOR=", ") AS ?parents)
     (GROUP_CONCAT(DISTINCT ?childName; SEPARATOR=", ") AS ?children)
     (GROUP_CONCAT(DISTINCT ?siblingName; SEPARATOR=", ") AS ?siblings)
-    ?spouseName
-    ?adoptiveParentName
-    ?adoptiveChildName
+    (GROUP_CONCAT(DISTINCT ?spouseName; SEPARATOR=", ") AS ?spouses)
+    (GROUP_CONCAT(DISTINCT ?adoptiveParentName; SEPARATOR=", ") AS ?adoptiveParents)
+    (GROUP_CONCAT(DISTINCT ?adoptiveChildName; SEPARATOR=", ") AS ?adoptiveChildren)
     (GROUP_CONCAT(DISTINCT ?relationshipName; SEPARATOR=", ") AS ?relationships)
     (GROUP_CONCAT(DISTINCT ?familyLabel; SEPARATOR=", ") AS ?families)
 WHERE {
@@ -26,5 +26,5 @@ WHERE {
         BIND(REPLACE(STR(?family), "https://w3id.org/dark-ontology/", "") AS ?familyLabel)
     }
 }
-GROUP BY ?person ?personName ?spouseName ?adoptiveParentName ?adoptiveChildName
+GROUP BY ?person ?personName
 ORDER BY ?personName
