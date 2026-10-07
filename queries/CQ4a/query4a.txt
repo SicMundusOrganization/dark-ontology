@@ -24,7 +24,6 @@ WHERE {
     ?time dark:hasYearValue ?year .
     
     ?event dark:occursAtPlace ?place .
-    ?place a owl:NamedIndividual .
     BIND(REPLACE(STR(?place), "https://w3id.org/dark-ontology/", "") AS ?placeLabel)
     
     OPTIONAL {

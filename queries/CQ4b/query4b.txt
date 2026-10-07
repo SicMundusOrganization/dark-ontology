@@ -33,10 +33,8 @@ WHERE {
     ?event dark:occursAtPlace ?place .
     BIND(REPLACE(STR(?place), "https://w3id.org/dark-ontology/", "") AS ?placeLabel)
     
-    OPTIONAL {
-        ?event dark:hasParticipant ?participant .
-        BIND(REPLACE(STR(?participant), "https://w3id.org/dark-ontology/", "") AS ?participantLabel)
-    }
+    ?event dark:hasParticipant ?participant .
+    BIND(REPLACE(STR(?participant), "https://w3id.org/dark-ontology/", "") AS ?participantLabel)
 }
 GROUP BY ?event ?eventLabel ?samePerson ?year ?placeLabel ?description
 ORDER BY ?year
