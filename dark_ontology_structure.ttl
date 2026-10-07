@@ -53,11 +53,6 @@ dark:reusesPattern rdf:type owl:AnnotationProperty ;
                    rdfs:label "reuses pattern"@en .
 
 
-###  https://w3id.org/dark-ontology/supportsCompetencyQuestion
-dark:supportsCompetencyQuestion rdf:type owl:AnnotationProperty ;
-                                rdfs:label "supports competency question"@en .
-
-
 #################################################################
 #    Datatypes
 #################################################################
@@ -538,9 +533,7 @@ dark:Person rdf:type owl:Class ;
             owl:disjointWith dark:PersonManifestation ;
             rdfs:comment "A persistent personal identity, distinct from its contextualized temporal manifestations."@en ;
             rdfs:label "Person"@en ;
-            dark:reusesPattern "Change of Time Varying Entities" ;
-            dark:supportsCompetencyQuestion "CQ1: Which temporal manifestations belong to the same person?"@en ,
-                                            "CQ4: Which persons assume different names across their temporal manifestations?"@en .
+            dark:reusesPattern "Change of Time Varying Entities" .
 
 
 ###  https://w3id.org/dark-ontology/PersonManifestation
@@ -552,9 +545,7 @@ dark:PersonManifestation rdf:type owl:Class ;
                                          ] ;
                          rdfs:comment "A manifestation of a person within a specific temporal and narrative context."@en ;
                          rdfs:label "Person manifestation"@en ;
-                         dark:reusesPattern "Change of Time Varying Entities" ;
-                         dark:supportsCompetencyQuestion "CQ2: Which names, ages, roles, family memberships, and temporal locations are associated with different person manifestations?"@en ,
-                                                         "CQ3: Which manifestations of the same person are present during the same temporal period?"@en .
+                         dark:reusesPattern "Change of Time Varying Entities" .
 
 
 ###  https://w3id.org/dark-ontology/Place
@@ -619,10 +610,7 @@ dark:TimeTravelEvent rdf:type owl:Class ;
                                      ] ;
                      rdfs:comment "An event connecting a departure time with an arrival time."@en ;
                      rdfs:label "Time travel event"@en ;
-                     dark:reusesPattern "EventCore" ;
-                     dark:supportsCompetencyQuestion "CQ11: Which events connect different temporal periods?"@en ,
-                                                     "CQ7: Which persons have a manifestation participating as a traveler in a time travel event?"@en ,
-                                                     "CQ8: Which time travel events use a specific place or device?"@en .
+                     dark:reusesPattern "EventCore" .
 
 
 ###  https://w3id.org/dark-ontology/TimeTraveler
@@ -643,8 +631,7 @@ dark:TimeTraveler rdf:type owl:Class ;
                                         rdf:type owl:Class
                                       ] ;
                   rdfs:comment "A person inferred as a time traveler when at least one of their manifestations is related through isTravelerIn to a time travel event."@en ;
-                  rdfs:label "Time traveler"@en ;
-                  dark:supportsCompetencyQuestion "CQ12: Which persons can be automatically classified as time travelers?"@en .
+                  rdfs:label "Time traveler"@en .
 
 
 ###  https://w3id.org/dark-ontology/World

@@ -53,11 +53,6 @@ dark:reusesPattern rdf:type owl:AnnotationProperty ;
                    rdfs:label "reuses pattern"@en .
 
 
-###  https://w3id.org/dark-ontology/supportsCompetencyQuestion
-dark:supportsCompetencyQuestion rdf:type owl:AnnotationProperty ;
-                                rdfs:label "supports competency question"@en .
-
-
 #################################################################
 #    Datatypes
 #################################################################
@@ -539,9 +534,7 @@ dark:Person rdf:type owl:Class ;
             owl:disjointWith dark:PersonManifestation ;
             rdfs:comment "A persistent personal identity, distinct from its contextualized temporal manifestations."@en ;
             rdfs:label "Person"@en ;
-            dark:reusesPattern "Change of Time Varying Entities" ;
-            dark:supportsCompetencyQuestion "CQ1: Which temporal manifestations belong to the same person?"@en ,
-                                            "CQ4: Which persons assume different names across their temporal manifestations?"@en .
+            dark:reusesPattern "Change of Time Varying Entities" .
 
 
 ###  https://w3id.org/dark-ontology/PersonManifestation
