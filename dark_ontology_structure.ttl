@@ -65,32 +65,32 @@ xsd:gYear rdf:type rdfs:Datatype .
 #    Object Properties
 #################################################################
 
-###  http://www.W3id.org/dark-ontology/hasAlternateWorldCounterpart
-<http://www.W3id.org/dark-ontology/hasAlternateWorldCounterpart> rdf:type owl:ObjectProperty ,
+###  https://w3id.org/dark-ontology/hasAlternateWorldCounterpart
+<https://w3id.org/dark-ontology/hasAlternateWorldCounterpart> rdf:type owl:ObjectProperty ,
                                                                           owl:SymmetricProperty ;
                                                                  rdfs:domain dark:Person ;
                                                                  rdfs:comment "Relates a person to a corresponding person in an alternate narrative world."@en ;
                                                                  rdfs:label "has alternate-world counterpart"@en .
 
 
-###  http://www.w3id.org/dark-ontology/arrivesInWorld
-<http://www.w3id.org/dark-ontology/arrivesInWorld> rdf:type owl:ObjectProperty ;
+###  https://w3id.org/dark-ontology/arrivesInWorld
+<https://w3id.org/dark-ontology/arrivesInWorld> rdf:type owl:ObjectProperty ;
                                                    rdfs:domain dark:TimeTravelEvent ;
                                                    rdfs:range dark:World ;
                                                    rdfs:comment "Relates a time travel event to the world in which it arrives."@en ;
                                                    rdfs:label "arrives in world"@en .
 
 
-###  http://www.w3id.org/dark-ontology/departsFromWorld
-<http://www.w3id.org/dark-ontology/departsFromWorld> rdf:type owl:ObjectProperty ;
+###  https://w3id.org/dark-ontology/departsFromWorld
+<https://w3id.org/dark-ontology/departsFromWorld> rdf:type owl:ObjectProperty ;
                                                      rdfs:domain dark:TimeTravelEvent ;
                                                      rdfs:range dark:World ;
                                                      rdfs:comment "Relates a time travel event to the world from which it departs."@en ;
                                                      rdfs:label "departs from world"@en .
 
 
-###  http://www.w3id.org/dark-ontology/hasOrganizationMember
-<http://www.w3id.org/dark-ontology/hasOrganizationMember> rdf:type owl:ObjectProperty ;
+###  https://w3id.org/dark-ontology/hasOrganizationMember
+<https://w3id.org/dark-ontology/hasOrganizationMember> rdf:type owl:ObjectProperty ;
                                                           owl:inverseOf dark:belongsToOrganization ;
                                                           rdfs:domain dark:Organization ;
                                                           rdfs:range dark:PersonManifestation ;
@@ -98,10 +98,10 @@ xsd:gYear rdf:type rdfs:Datatype .
                                                           rdfs:label "has organization member"@en .
 
 
-###  http://www.w3id.org/dark-ontology/occursInReality
-<http://www.w3id.org/dark-ontology/occursInReality> rdf:type owl:ObjectProperty ;
+###  https://w3id.org/dark-ontology/occursInReality
+<https://w3id.org/dark-ontology/occursInReality> rdf:type owl:ObjectProperty ;
                                                     rdfs:domain dark:Event ;
-                                                    rdfs:range <http://www.w3id.org/dark-ontology/Reality> ;
+                                                    rdfs:range <https://w3id.org/dark-ontology/Reality> ;
                                                     rdfs:comment "Relates an event to the narrative reality or branch in which it occurs."@en ;
                                                     rdfs:label "occurs in reality"@en .
 
@@ -471,8 +471,8 @@ dark:isIntentional rdf:type owl:DatatypeProperty ,
                                                            rdfs:subClassOf dark:Place .
 
 
-###  http://www.w3id.org/dark-ontology/Reality
-<http://www.w3id.org/dark-ontology/Reality> rdf:type owl:Class ;
+###  https://w3id.org/dark-ontology/Reality
+<https://w3id.org/dark-ontology/Reality> rdf:type owl:Class ;
                                             rdfs:comment "A reality is a distinct narrative branch in which events may unfold differently while involving the same worlds, persons, or temporal locations." ;
                                             rdfs:label "Reality"@en .
 

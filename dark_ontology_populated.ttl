@@ -65,32 +65,32 @@ xsd:gYear rdf:type rdfs:Datatype .
 #    Object Properties
 #################################################################
 
-###  http://www.W3id.org/dark-ontology/hasAlternateWorldCounterpart
-<http://www.W3id.org/dark-ontology/hasAlternateWorldCounterpart> rdf:type owl:ObjectProperty ,
+###  https://w3id.org/dark-ontology/hasAlternateWorldCounterpart
+<https://w3id.org/dark-ontology/hasAlternateWorldCounterpart> rdf:type owl:ObjectProperty ,
                                                                           owl:SymmetricProperty ;
                                                                  rdfs:domain dark:Person ;
                                                                  rdfs:comment "Relates a person to a corresponding person in an alternate narrative world."@en ;
                                                                  rdfs:label "has alternate-world counterpart"@en .
 
 
-###  http://www.w3id.org/dark-ontology/arrivesInWorld
-<http://www.w3id.org/dark-ontology/arrivesInWorld> rdf:type owl:ObjectProperty ;
+###  https://w3id.org/dark-ontology/arrivesInWorld
+<https://w3id.org/dark-ontology/arrivesInWorld> rdf:type owl:ObjectProperty ;
                                                    rdfs:domain dark:TimeTravelEvent ;
                                                    rdfs:range dark:World ;
                                                    rdfs:comment "Relates a time travel event to the world in which it arrives."@en ;
                                                    rdfs:label "arrives in world"@en .
 
 
-###  http://www.w3id.org/dark-ontology/departsFromWorld
-<http://www.w3id.org/dark-ontology/departsFromWorld> rdf:type owl:ObjectProperty ;
+###  https://w3id.org/dark-ontology/departsFromWorld
+<https://w3id.org/dark-ontology/departsFromWorld> rdf:type owl:ObjectProperty ;
                                                      rdfs:domain dark:TimeTravelEvent ;
                                                      rdfs:range dark:World ;
                                                      rdfs:comment "Relates a time travel event to the world from which it departs."@en ;
                                                      rdfs:label "departs from world"@en .
 
 
-###  http://www.w3id.org/dark-ontology/hasOrganizationMember
-<http://www.w3id.org/dark-ontology/hasOrganizationMember> rdf:type owl:ObjectProperty ;
+###  https://w3id.org/dark-ontology/hasOrganizationMember
+<https://w3id.org/dark-ontology/hasOrganizationMember> rdf:type owl:ObjectProperty ;
                                                           owl:inverseOf dark:belongsToOrganization ;
                                                           rdfs:domain dark:Organization ;
                                                           rdfs:range dark:PersonManifestation ;
@@ -98,10 +98,10 @@ xsd:gYear rdf:type rdfs:Datatype .
                                                           rdfs:label "has organization member"@en .
 
 
-###  http://www.w3id.org/dark-ontology/occursInReality
-<http://www.w3id.org/dark-ontology/occursInReality> rdf:type owl:ObjectProperty ;
+###  https://w3id.org/dark-ontology/occursInReality
+<https://w3id.org/dark-ontology/occursInReality> rdf:type owl:ObjectProperty ;
                                                     rdfs:domain dark:Event ;
-                                                    rdfs:range <http://www.w3id.org/dark-ontology/Reality> ;
+                                                    rdfs:range <https://w3id.org/dark-ontology/Reality> ;
                                                     rdfs:comment "Relates an event to the narrative reality or branch in which it occurs."@en ;
                                                     rdfs:label "occurs in reality"@en .
 
@@ -472,8 +472,8 @@ dark:isIntentional rdf:type owl:DatatypeProperty ,
                                                            rdfs:subClassOf dark:Place .
 
 
-###  http://www.w3id.org/dark-ontology/Reality
-<http://www.w3id.org/dark-ontology/Reality> rdf:type owl:Class ;
+###  https://w3id.org/dark-ontology/Reality
+<https://w3id.org/dark-ontology/Reality> rdf:type owl:Class ;
                                             rdfs:comment "A reality is a distinct narrative branch in which events may unfold differently while involving the same worlds, persons, or temporal locations." ;
                                             rdfs:label "Reality"@en .
 
@@ -668,9 +668,9 @@ dark:Adam rdf:type owl:NamedIndividual ,
 ###  https://w3id.org/dark-ontology/AdamTravel01_1921_2020
 dark:AdamTravel01_1921_2020 rdf:type owl:NamedIndividual ,
                                      dark:TimeTravelEvent ;
-                            <http://www.w3id.org/dark-ontology/arrivesInWorld> dark:AdamWorld ;
-                            <http://www.w3id.org/dark-ontology/departsFromWorld> dark:AdamWorld ;
-                            <http://www.w3id.org/dark-ontology/occursInReality> dark:FirstReality ;
+                            <https://w3id.org/dark-ontology/arrivesInWorld> dark:AdamWorld ;
+                            <https://w3id.org/dark-ontology/departsFromWorld> dark:AdamWorld ;
+                            <https://w3id.org/dark-ontology/occursInReality> dark:FirstReality ;
                             dark:arrivesAtTime dark:Year_2020 ;
                             dark:departsFromTime dark:Year_1921 ;
                             dark:hasTraveler dark:Adam ;
@@ -683,9 +683,9 @@ dark:AdamTravel01_1921_2020 rdf:type owl:NamedIndividual ,
 ###  https://w3id.org/dark-ontology/AdamTravel02_2053_2020
 dark:AdamTravel02_2053_2020 rdf:type owl:NamedIndividual ,
                                      dark:TimeTravelEvent ;
-                            <http://www.w3id.org/dark-ontology/arrivesInWorld> dark:AdamWorld ;
-                            <http://www.w3id.org/dark-ontology/departsFromWorld> dark:AdamWorld ;
-                            <http://www.w3id.org/dark-ontology/occursInReality> dark:ThirdReality ;
+                            <https://w3id.org/dark-ontology/arrivesInWorld> dark:AdamWorld ;
+                            <https://w3id.org/dark-ontology/departsFromWorld> dark:AdamWorld ;
+                            <https://w3id.org/dark-ontology/occursInReality> dark:ThirdReality ;
                             dark:arrivesAtTime dark:Year_2020 ;
                             dark:departsFromTime dark:Year_2053 ;
                             dark:hasTraveler dark:Adam ;
@@ -698,9 +698,9 @@ dark:AdamTravel02_2053_2020 rdf:type owl:NamedIndividual ,
 ###  https://w3id.org/dark-ontology/AdamTravel03_2020_2019
 dark:AdamTravel03_2020_2019 rdf:type owl:NamedIndividual ,
                                      dark:TimeTravelEvent ;
-                            <http://www.w3id.org/dark-ontology/arrivesInWorld> dark:EvaWorld ;
-                            <http://www.w3id.org/dark-ontology/departsFromWorld> dark:AdamWorld ;
-                            <http://www.w3id.org/dark-ontology/occursInReality> dark:ThirdReality ;
+                            <https://w3id.org/dark-ontology/arrivesInWorld> dark:EvaWorld ;
+                            <https://w3id.org/dark-ontology/departsFromWorld> dark:AdamWorld ;
+                            <https://w3id.org/dark-ontology/occursInReality> dark:ThirdReality ;
                             dark:arrivesAtTime dark:Year_2019 ;
                             dark:departsFromTime dark:Year_2020 ;
                             dark:hasTraveler dark:Adam ,
@@ -714,9 +714,9 @@ dark:AdamTravel03_2020_2019 rdf:type owl:NamedIndividual ,
 ###  https://w3id.org/dark-ontology/AdamTravel04_2019_2052
 dark:AdamTravel04_2019_2052 rdf:type owl:NamedIndividual ,
                                      dark:TimeTravelEvent ;
-                            <http://www.w3id.org/dark-ontology/arrivesInWorld> dark:EvaWorld ;
-                            <http://www.w3id.org/dark-ontology/departsFromWorld> dark:EvaWorld ;
-                            <http://www.w3id.org/dark-ontology/occursInReality> dark:ThirdReality ;
+                            <https://w3id.org/dark-ontology/arrivesInWorld> dark:EvaWorld ;
+                            <https://w3id.org/dark-ontology/departsFromWorld> dark:EvaWorld ;
+                            <https://w3id.org/dark-ontology/occursInReality> dark:ThirdReality ;
                             dark:arrivesAtTime dark:Year_2052 ;
                             dark:departsFromTime dark:Year_2019 ;
                             dark:hasTraveler dark:Adam ;
@@ -782,7 +782,7 @@ dark:AleksanderTiedemann rdf:type owl:NamedIndividual ,
 ###  https://w3id.org/dark-ontology/Apocalypse_2019_EvaWorld
 dark:Apocalypse_2019_EvaWorld rdf:type owl:NamedIndividual ,
                                        dark:ApocalypseEvent ;
-                              <http://www.w3id.org/dark-ontology/occursInReality> dark:FirstReality ;
+                              <https://w3id.org/dark-ontology/occursInReality> dark:FirstReality ;
                               dark:occursAtTime dark:Year_2019 ;
                               dark:occursAtPlace dark:Winden ;
                               dark:occursInWorld dark:EvaWorld ;
@@ -793,7 +793,7 @@ dark:Apocalypse_2019_EvaWorld rdf:type owl:NamedIndividual ,
 ###  https://w3id.org/dark-ontology/Apocalypse_2020_AdamWorld
 dark:Apocalypse_2020_AdamWorld rdf:type owl:NamedIndividual ,
                                         dark:ApocalypseEvent ;
-                               <http://www.w3id.org/dark-ontology/occursInReality> dark:FirstReality ;
+                               <https://w3id.org/dark-ontology/occursInReality> dark:FirstReality ;
                                dark:occursAtTime dark:Year_2020 ;
                                dark:occursAtPlace dark:Winden ;
                                dark:occursInWorld dark:AdamWorld ;
@@ -908,7 +908,7 @@ dark:CharlotteDoppler rdf:type owl:NamedIndividual ,
 ###  https://w3id.org/dark-ontology/CharlotteMeetsInfantCharlotte_1971
 dark:CharlotteMeetsInfantCharlotte_1971 rdf:type owl:NamedIndividual ,
                                                  dark:MeetingEvent ;
-                                        <http://www.w3id.org/dark-ontology/occursInReality> dark:FirstReality ;
+                                        <https://w3id.org/dark-ontology/occursInReality> dark:FirstReality ;
                                         dark:hasParticipant dark:Charlotte ,
                                                             dark:InfantCharlotte ;
                                         dark:occursAtPlace dark:Winden ;
@@ -921,8 +921,8 @@ dark:CharlotteMeetsInfantCharlotte_1971 rdf:type owl:NamedIndividual ,
 ###  https://w3id.org/dark-ontology/CharlotteTravel01_2020_2053
 dark:CharlotteTravel01_2020_2053 rdf:type owl:NamedIndividual ,
                                           dark:TimeTravelEvent ;
-                                 <http://www.w3id.org/dark-ontology/arrivesInWorld> dark:AdamWorld ;
-                                 <http://www.w3id.org/dark-ontology/departsFromWorld> dark:AdamWorld ;
+                                 <https://w3id.org/dark-ontology/arrivesInWorld> dark:AdamWorld ;
+                                 <https://w3id.org/dark-ontology/departsFromWorld> dark:AdamWorld ;
                                  dark:arrivesAtTime dark:Year_2053 ;
                                  dark:departsFromPlace dark:WindenNuclearPlant ;
                                  dark:departsFromTime dark:Year_2020 ;
@@ -947,7 +947,7 @@ dark:Claudia rdf:type owl:NamedIndividual ,
 ###  https://w3id.org/dark-ontology/ClaudiaMeetsOldClaudia_1987
 dark:ClaudiaMeetsOldClaudia_1987 rdf:type owl:NamedIndividual ,
                                           dark:MeetingEvent ;
-                                 <http://www.w3id.org/dark-ontology/occursInReality> dark:FirstReality ;
+                                 <https://w3id.org/dark-ontology/occursInReality> dark:FirstReality ;
                                  dark:hasParticipant dark:Claudia ,
                                                      dark:OldClaudia ;
                                  dark:occursAtPlace dark:Winden ;
@@ -967,8 +967,8 @@ dark:ClaudiaTiedemann rdf:type owl:NamedIndividual ,
 ###  https://w3id.org/dark-ontology/ClaudiaTravel01_1987_2020
 dark:ClaudiaTravel01_1987_2020 rdf:type owl:NamedIndividual ,
                                         dark:TimeTravelEvent ;
-                               <http://www.w3id.org/dark-ontology/arrivesInWorld> dark:AdamWorld ;
-                               <http://www.w3id.org/dark-ontology/departsFromWorld> dark:AdamWorld ;
+                               <https://w3id.org/dark-ontology/arrivesInWorld> dark:AdamWorld ;
+                               <https://w3id.org/dark-ontology/departsFromWorld> dark:AdamWorld ;
                                dark:arrivesAtTime dark:Year_2020 ;
                                dark:departsFromTime dark:Year_1987 ;
                                dark:hasTraveler dark:Claudia ;
@@ -981,8 +981,8 @@ dark:ClaudiaTravel01_1987_2020 rdf:type owl:NamedIndividual ,
 ###  https://w3id.org/dark-ontology/ClaudiaTravel02_2020_1987
 dark:ClaudiaTravel02_2020_1987 rdf:type owl:NamedIndividual ,
                                         dark:TimeTravelEvent ;
-                               <http://www.w3id.org/dark-ontology/arrivesInWorld> dark:AdamWorld ;
-                               <http://www.w3id.org/dark-ontology/departsFromWorld> dark:AdamWorld ;
+                               <https://w3id.org/dark-ontology/arrivesInWorld> dark:AdamWorld ;
+                               <https://w3id.org/dark-ontology/departsFromWorld> dark:AdamWorld ;
                                dark:departsFromTime dark:Year_2020 ;
                                dark:arrivesAtTime dark:Year_1987 ;
                                dark:hasTraveler dark:Claudia ;
@@ -1043,8 +1043,8 @@ dark:Elisabeth rdf:type owl:NamedIndividual ,
 ###  https://w3id.org/dark-ontology/ElisabethAndCharlotteTravel01_2053_2041
 dark:ElisabethAndCharlotteTravel01_2053_2041 rdf:type owl:NamedIndividual ,
                                                       dark:TimeTravelEvent ;
-                                             <http://www.w3id.org/dark-ontology/arrivesInWorld> dark:AdamWorld ;
-                                             <http://www.w3id.org/dark-ontology/departsFromWorld> dark:AdamWorld ;
+                                             <https://w3id.org/dark-ontology/arrivesInWorld> dark:AdamWorld ;
+                                             <https://w3id.org/dark-ontology/departsFromWorld> dark:AdamWorld ;
                                              dark:arrivesAtTime dark:Year_2041 ;
                                              dark:departsFromTime dark:Year_2053 ;
                                              dark:hasTraveler dark:AdultElisabeth ,
@@ -1058,8 +1058,8 @@ dark:ElisabethAndCharlotteTravel01_2053_2041 rdf:type owl:NamedIndividual ,
 ###  https://w3id.org/dark-ontology/ElisabethAndCharlotteTravel02_2041_1971
 dark:ElisabethAndCharlotteTravel02_2041_1971 rdf:type owl:NamedIndividual ,
                                                       dark:TimeTravelEvent ;
-                                             <http://www.w3id.org/dark-ontology/arrivesInWorld> dark:AdamWorld ;
-                                             <http://www.w3id.org/dark-ontology/departsFromWorld> dark:AdamWorld ;
+                                             <https://w3id.org/dark-ontology/arrivesInWorld> dark:AdamWorld ;
+                                             <https://w3id.org/dark-ontology/departsFromWorld> dark:AdamWorld ;
                                              dark:arrivesAtTime dark:Year_1971 ;
                                              dark:departsFromTime dark:Year_2041 ;
                                              dark:hasTraveler dark:AdultElisabeth ,
@@ -1097,7 +1097,7 @@ dark:ErikObendorf rdf:type owl:NamedIndividual ,
 ###  https://w3id.org/dark-ontology/ErikObendorfDisappearance_2019
 dark:ErikObendorfDisappearance_2019 rdf:type owl:NamedIndividual ,
                                              dark:DisappearanceEvent ;
-                                    <http://www.w3id.org/dark-ontology/occursInReality> dark:FirstReality ;
+                                    <https://w3id.org/dark-ontology/occursInReality> dark:FirstReality ;
                                     dark:hasParticipant dark:Erik ;
                                     dark:hasParticipant dark:Noah ;
                                     dark:hasParticipant dark:Helge ;
@@ -1167,7 +1167,7 @@ dark:FinalDinner_2019 rdf:type owl:NamedIndividual ,
 
 ###  https://w3id.org/dark-ontology/FirstReality
 dark:FirstReality rdf:type owl:NamedIndividual ,
-                           <http://www.w3id.org/dark-ontology/Reality> ;
+                           <https://w3id.org/dark-ontology/Reality> ;
                   owl:differentFrom dark:SecondReality ,
                                     dark:ThirdReality ;
                   rdfs:comment "The first narrative branch associated with the events leading to the preservation of the temporal knot."@en ;
@@ -1242,9 +1242,9 @@ dark:HannahKahnwald rdf:type owl:NamedIndividual ,
 ###  https://w3id.org/dark-ontology/HannahTravel01_2020_1954
 dark:HannahTravel01_2020_1954 rdf:type owl:NamedIndividual ,
                                        dark:TimeTravelEvent ;
-                              <http://www.w3id.org/dark-ontology/arrivesInWorld> dark:AdamWorld ;
-                              <http://www.w3id.org/dark-ontology/departsFromWorld> dark:AdamWorld ;
-                              <http://www.w3id.org/dark-ontology/occursInReality> dark:FirstReality ;
+                              <https://w3id.org/dark-ontology/arrivesInWorld> dark:AdamWorld ;
+                              <https://w3id.org/dark-ontology/departsFromWorld> dark:AdamWorld ;
+                              <https://w3id.org/dark-ontology/occursInReality> dark:FirstReality ;
                               dark:arrivesAtTime dark:Year_1954 ;
                               dark:departsFromTime dark:Year_2020 ;
                               dark:hasTraveler dark:Hannah ;
@@ -1274,7 +1274,7 @@ dark:HelgeDoppler rdf:type owl:NamedIndividual ,
 ###  https://w3id.org/dark-ontology/HelgeMeetsOldHelge_1986
 dark:HelgeMeetsOldHelge_1986 rdf:type owl:NamedIndividual ,
                                       dark:MeetingEvent ;
-                             <http://www.w3id.org/dark-ontology/occursInReality> dark:FirstReality ;
+                             <https://w3id.org/dark-ontology/occursInReality> dark:FirstReality ;
                              dark:hasParticipant dark:Helge ,
                                                  dark:OldHelge ;
                              dark:occursAtPlace dark:Winden ;
@@ -1287,7 +1287,7 @@ dark:HelgeMeetsOldHelge_1986 rdf:type owl:NamedIndividual ,
 ###  https://w3id.org/dark-ontology/HelgeMeetsYoungHelge_1986
 dark:HelgeMeetsYoungHelge_1986 rdf:type owl:NamedIndividual ,
                                         dark:MeetingEvent ;
-                               <http://www.w3id.org/dark-ontology/occursInReality> dark:FirstReality ;
+                               <https://w3id.org/dark-ontology/occursInReality> dark:FirstReality ;
                                dark:hasParticipant dark:Helge ,
                                                    dark:YoungHelge ;
                                dark:occursAtPlace dark:DopplerBunker ;
@@ -1328,8 +1328,8 @@ dark:InfantCharlotte rdf:type owl:NamedIndividual ,
 ###  https://w3id.org/dark-ontology/JonasFinalTravel01_2019_1986
 dark:JonasFinalTravel01_2019_1986 rdf:type owl:NamedIndividual ,
                                            dark:TimeTravelEvent ;
-                                  <http://www.w3id.org/dark-ontology/departsFromWorld> dark:EvaWorld ;
-                                  <http://www.w3id.org/dark-ontology/occursInReality> dark:ThirdReality ;
+                                  <https://w3id.org/dark-ontology/departsFromWorld> dark:EvaWorld ;
+                                  <https://w3id.org/dark-ontology/occursInReality> dark:ThirdReality ;
                                   dark:arrivesAtTime dark:Year_1986 ;
                                   dark:departsFromTime dark:Year_2019 ;
                                   dark:hasTraveler dark:Jonas_2019 ,
@@ -1343,8 +1343,8 @@ dark:JonasFinalTravel01_2019_1986 rdf:type owl:NamedIndividual ,
 ###  https://w3id.org/dark-ontology/JonasFinalTravel02_1986_1971
 dark:JonasFinalTravel02_1986_1971 rdf:type owl:NamedIndividual ,
                                            dark:TimeTravelEvent ;
-                                  <http://www.w3id.org/dark-ontology/arrivesInWorld> dark:OriginWorld ;
-                                  <http://www.w3id.org/dark-ontology/departsFromWorld> dark:AdamWorld ;
+                                  <https://w3id.org/dark-ontology/arrivesInWorld> dark:OriginWorld ;
+                                  <https://w3id.org/dark-ontology/departsFromWorld> dark:AdamWorld ;
                                   dark:arrivesAtTime dark:Year_1971 ;
                                   dark:departsFromPlace dark:WindenCave ;
                                   dark:departsFromTime dark:Year_1986 ;
@@ -1371,7 +1371,7 @@ dark:JonasKahnwald rdf:type owl:NamedIndividual ,
 ###  https://w3id.org/dark-ontology/JonasMeetsAdam_1921
 dark:JonasMeetsAdam_1921 rdf:type owl:NamedIndividual ,
                                   dark:MeetingEvent ;
-                         <http://www.w3id.org/dark-ontology/occursInReality> dark:FirstReality ;
+                         <https://w3id.org/dark-ontology/occursInReality> dark:FirstReality ;
                          dark:hasParticipant dark:Adam ,
                                              dark:Jonas_2019 ;
                          dark:occursAtPlace dark:SicMundusHeadquarters ;
@@ -1384,7 +1384,7 @@ dark:JonasMeetsAdam_1921 rdf:type owl:NamedIndividual ,
 ###  https://w3id.org/dark-ontology/JonasMeetsMartha_1986
 dark:JonasMeetsMartha_1986 rdf:type owl:NamedIndividual ,
                                     dark:MeetingEvent ;
-                         <http://www.w3id.org/dark-ontology/occursInReality> dark:ThirdReality ;
+                         <https://w3id.org/dark-ontology/occursInReality> dark:ThirdReality ;
                          dark:hasParticipant dark:Martha_2019_AdamWorld ,
                                              dark:Jonas_2019 ;
                          dark:occursAtPlace dark:BetweenWorlds ;
@@ -1398,7 +1398,7 @@ dark:JonasMeetsMartha_1986 rdf:type owl:NamedIndividual ,
 ###  https://w3id.org/dark-ontology/JonasMeetsMichael_2019
 dark:JonasMeetsMichael_2019 rdf:type owl:NamedIndividual ,
                                      dark:MeetingEvent ;
-                              <http://www.w3id.org/dark-ontology/occursInReality> dark:FirstReality ;
+                              <https://w3id.org/dark-ontology/occursInReality> dark:FirstReality ;
                               dark:occursInWorld dark:AdamWorld ;
                               dark:occursAtTime dark:Year_2019 ;
                               dark:occursAtPlace dark:Winden ;
@@ -1411,7 +1411,7 @@ dark:JonasMeetsMichael_2019 rdf:type owl:NamedIndividual ,
 ###  https://w3id.org/dark-ontology/JonasMeetsStranger_1986
 dark:JonasMeetsStranger_1986 rdf:type owl:NamedIndividual ,
                                       dark:MeetingEvent ;
-                             <http://www.w3id.org/dark-ontology/occursInReality> dark:FirstReality ;
+                             <https://w3id.org/dark-ontology/occursInReality> dark:FirstReality ;
                              dark:hasParticipant dark:Jonas_2019 ,
                                                  dark:TheStranger ;
                              dark:occursAtPlace dark:DopplerBunker ;
@@ -1424,9 +1424,9 @@ dark:JonasMeetsStranger_1986 rdf:type owl:NamedIndividual ,
 ###  https://w3id.org/dark-ontology/JonasTravel01_2019_1986
 dark:JonasTravel01_2019_1986 rdf:type owl:NamedIndividual ,
                                       dark:TimeTravelEvent ;
-                             <http://www.w3id.org/dark-ontology/arrivesInWorld> dark:AdamWorld ;
-                             <http://www.w3id.org/dark-ontology/departsFromWorld> dark:AdamWorld ;
-                             <http://www.w3id.org/dark-ontology/occursInReality> dark:FirstReality ;
+                             <https://w3id.org/dark-ontology/arrivesInWorld> dark:AdamWorld ;
+                             <https://w3id.org/dark-ontology/departsFromWorld> dark:AdamWorld ;
+                             <https://w3id.org/dark-ontology/occursInReality> dark:FirstReality ;
                              dark:arrivesAtPlace dark:WindenCave ;
                              dark:arrivesAtTime dark:Year_1986 ;
                              dark:departsFromPlace dark:WindenCave ;
@@ -1441,9 +1441,9 @@ dark:JonasTravel01_2019_1986 rdf:type owl:NamedIndividual ,
 ###  https://w3id.org/dark-ontology/JonasTravel02_1986_2019
 dark:JonasTravel02_1986_2019 rdf:type owl:NamedIndividual ,
                                       dark:TimeTravelEvent ;
-                             <http://www.w3id.org/dark-ontology/arrivesInWorld> dark:AdamWorld ;
-                             <http://www.w3id.org/dark-ontology/departsFromWorld> dark:AdamWorld ;
-                             <http://www.w3id.org/dark-ontology/occursInReality> dark:FirstReality ;
+                             <https://w3id.org/dark-ontology/arrivesInWorld> dark:AdamWorld ;
+                             <https://w3id.org/dark-ontology/departsFromWorld> dark:AdamWorld ;
+                             <https://w3id.org/dark-ontology/occursInReality> dark:FirstReality ;
                              dark:arrivesAtPlace dark:WindenCave ;
                              dark:arrivesAtTime dark:Year_2019 ;
                              dark:departsFromPlace dark:WindenCave ;
@@ -1458,9 +1458,9 @@ dark:JonasTravel02_1986_2019 rdf:type owl:NamedIndividual ,
 ###  https://w3id.org/dark-ontology/JonasTravel03_2019_1986
 dark:JonasTravel03_2019_1986 rdf:type owl:NamedIndividual ,
                                       dark:TimeTravelEvent ;
-                             <http://www.w3id.org/dark-ontology/arrivesInWorld> dark:AdamWorld ;
-                             <http://www.w3id.org/dark-ontology/departsFromWorld> dark:AdamWorld ;
-                             <http://www.w3id.org/dark-ontology/occursInReality> dark:FirstReality ;
+                             <https://w3id.org/dark-ontology/arrivesInWorld> dark:AdamWorld ;
+                             <https://w3id.org/dark-ontology/departsFromWorld> dark:AdamWorld ;
+                             <https://w3id.org/dark-ontology/occursInReality> dark:FirstReality ;
                              dark:arrivesAtPlace dark:WindenCave ;
                              dark:arrivesAtTime dark:Year_1986 ;
                              dark:departsFromPlace dark:WindenCave ;
@@ -1475,9 +1475,9 @@ dark:JonasTravel03_2019_1986 rdf:type owl:NamedIndividual ,
 ###  https://w3id.org/dark-ontology/JonasTravel04_1986_2052
 dark:JonasTravel04_1986_2052 rdf:type owl:NamedIndividual ,
                                       dark:TimeTravelEvent ;
-                             <http://www.w3id.org/dark-ontology/arrivesInWorld> dark:AdamWorld ;
-                             <http://www.w3id.org/dark-ontology/departsFromWorld> dark:AdamWorld ;
-                             <http://www.w3id.org/dark-ontology/occursInReality> dark:FirstReality ;
+                             <https://w3id.org/dark-ontology/arrivesInWorld> dark:AdamWorld ;
+                             <https://w3id.org/dark-ontology/departsFromWorld> dark:AdamWorld ;
+                             <https://w3id.org/dark-ontology/occursInReality> dark:FirstReality ;
                              dark:arrivesAtPlace dark:DopplerBunker ;
                              dark:arrivesAtTime dark:Year_2052 ;
                              dark:departsFromPlace dark:DopplerBunker ;
@@ -1492,9 +1492,9 @@ dark:JonasTravel04_1986_2052 rdf:type owl:NamedIndividual ,
 ###  https://w3id.org/dark-ontology/JonasTravel05_2053_1921
 dark:JonasTravel05_2053_1921 rdf:type owl:NamedIndividual ,
                                       dark:TimeTravelEvent ;
-                             <http://www.w3id.org/dark-ontology/arrivesInWorld> dark:AdamWorld ;
-                             <http://www.w3id.org/dark-ontology/departsFromWorld> dark:AdamWorld ;
-                             <http://www.w3id.org/dark-ontology/occursInReality> dark:FirstReality ;
+                             <https://w3id.org/dark-ontology/arrivesInWorld> dark:AdamWorld ;
+                             <https://w3id.org/dark-ontology/departsFromWorld> dark:AdamWorld ;
+                             <https://w3id.org/dark-ontology/occursInReality> dark:FirstReality ;
                              dark:arrivesAtTime dark:Year_1921 ;
                              dark:departsFromPlace dark:WindenNuclearPlant ;
                              dark:departsFromTime dark:Year_2053 ;
@@ -1508,9 +1508,9 @@ dark:JonasTravel05_2053_1921 rdf:type owl:NamedIndividual ,
 ###  https://w3id.org/dark-ontology/JonasTravel06_1921_2019
 dark:JonasTravel06_1921_2019 rdf:type owl:NamedIndividual ,
                                       dark:TimeTravelEvent ;
-                             <http://www.w3id.org/dark-ontology/arrivesInWorld> dark:AdamWorld ;
-                             <http://www.w3id.org/dark-ontology/departsFromWorld> dark:AdamWorld ;
-                             <http://www.w3id.org/dark-ontology/occursInReality> dark:FirstReality ;
+                             <https://w3id.org/dark-ontology/arrivesInWorld> dark:AdamWorld ;
+                             <https://w3id.org/dark-ontology/departsFromWorld> dark:AdamWorld ;
+                             <https://w3id.org/dark-ontology/occursInReality> dark:FirstReality ;
                              dark:arrivesAtTime dark:Year_2019 ;
                              dark:departsFromPlace dark:SicMundusHeadquarters ;
                              dark:departsFromTime dark:Year_1921 ;
@@ -1524,9 +1524,9 @@ dark:JonasTravel06_1921_2019 rdf:type owl:NamedIndividual ,
 ###  https://w3id.org/dark-ontology/JonasTravel07_1987_2020
 dark:JonasTravel07_1987_2020 rdf:type owl:NamedIndividual ,
                                       dark:TimeTravelEvent ;
-                             <http://www.w3id.org/dark-ontology/arrivesInWorld> dark:AdamWorld ;
-                             <http://www.w3id.org/dark-ontology/departsFromWorld> dark:AdamWorld ;
-                             <http://www.w3id.org/dark-ontology/occursInReality> dark:FirstReality ;
+                             <https://w3id.org/dark-ontology/arrivesInWorld> dark:AdamWorld ;
+                             <https://w3id.org/dark-ontology/departsFromWorld> dark:AdamWorld ;
+                             <https://w3id.org/dark-ontology/occursInReality> dark:FirstReality ;
                              dark:arrivesAtPlace dark:WindenCave ;
                              dark:arrivesAtTime dark:Year_2020 ;
                              dark:departsFromPlace dark:WindenCave ;
@@ -1542,9 +1542,9 @@ dark:JonasTravel07_1987_2020 rdf:type owl:NamedIndividual ,
 ###  https://w3id.org/dark-ontology/JonasTravel08_2020_2019
 dark:JonasTravel08_2020_2019 rdf:type owl:NamedIndividual ,
                                       dark:TimeTravelEvent ;
-                             <http://www.w3id.org/dark-ontology/arrivesInWorld> dark:EvaWorld ;
-                             <http://www.w3id.org/dark-ontology/departsFromWorld> dark:AdamWorld ;
-                             <http://www.w3id.org/dark-ontology/occursInReality> dark:SecondReality ;
+                             <https://w3id.org/dark-ontology/arrivesInWorld> dark:EvaWorld ;
+                             <https://w3id.org/dark-ontology/departsFromWorld> dark:AdamWorld ;
+                             <https://w3id.org/dark-ontology/occursInReality> dark:SecondReality ;
                              dark:arrivesAtTime dark:Year_2019 ;
                              dark:departsFromTime dark:Year_2020 ;
                              dark:hasTraveler dark:Jonas_2019 ,
@@ -1558,9 +1558,9 @@ dark:JonasTravel08_2020_2019 rdf:type owl:NamedIndividual ,
 ###  https://w3id.org/dark-ontology/JonasTravel09_2019_2052
 dark:JonasTravel09_2019_2052 rdf:type owl:NamedIndividual ,
                                       dark:TimeTravelEvent ;
-                             <http://www.w3id.org/dark-ontology/arrivesInWorld> dark:EvaWorld ;
-                             <http://www.w3id.org/dark-ontology/departsFromWorld> dark:EvaWorld ;
-                             <http://www.w3id.org/dark-ontology/occursInReality> dark:SecondReality ;
+                             <https://w3id.org/dark-ontology/arrivesInWorld> dark:EvaWorld ;
+                             <https://w3id.org/dark-ontology/departsFromWorld> dark:EvaWorld ;
+                             <https://w3id.org/dark-ontology/occursInReality> dark:SecondReality ;
                              dark:arrivesAtTime dark:Year_2052 ;
                              dark:departsFromTime dark:Year_2019 ;
                              dark:hasTraveler dark:Jonas_2019 ,
@@ -1574,9 +1574,9 @@ dark:JonasTravel09_2019_2052 rdf:type owl:NamedIndividual ,
 ###  https://w3id.org/dark-ontology/JonasTravel10_2052_2019
 dark:JonasTravel10_2052_2019 rdf:type owl:NamedIndividual ,
                                       dark:TimeTravelEvent ;
-                             <http://www.w3id.org/dark-ontology/arrivesInWorld> dark:EvaWorld ;
-                             <http://www.w3id.org/dark-ontology/departsFromWorld> dark:EvaWorld ;
-                             <http://www.w3id.org/dark-ontology/occursInReality> dark:SecondReality ;
+                             <https://w3id.org/dark-ontology/arrivesInWorld> dark:EvaWorld ;
+                             <https://w3id.org/dark-ontology/departsFromWorld> dark:EvaWorld ;
+                             <https://w3id.org/dark-ontology/occursInReality> dark:SecondReality ;
                              dark:arrivesAtTime dark:Year_2019 ;
                              dark:departsFromTime dark:Year_2052 ;
                              dark:hasTraveler dark:Jonas_2019 ,
@@ -1630,9 +1630,9 @@ dark:KatharinaNielsen rdf:type owl:NamedIndividual ,
 ###  https://w3id.org/dark-ontology/KatharinaTravel01_2020_1987
 dark:KatharinaTravel01_2020_1987 rdf:type owl:NamedIndividual ,
                                           dark:TimeTravelEvent ;
-                                 <http://www.w3id.org/dark-ontology/arrivesInWorld> dark:AdamWorld ;
-                                 <http://www.w3id.org/dark-ontology/departsFromWorld> dark:AdamWorld ;
-                                 <http://www.w3id.org/dark-ontology/occursInReality> dark:FirstReality ;
+                                 <https://w3id.org/dark-ontology/arrivesInWorld> dark:AdamWorld ;
+                                 <https://w3id.org/dark-ontology/departsFromWorld> dark:AdamWorld ;
+                                 <https://w3id.org/dark-ontology/occursInReality> dark:FirstReality ;
                                  dark:arrivesAtPlace dark:WindenCave ;
                                  dark:arrivesAtTime dark:Year_1987 ;
                                  dark:departsFromPlace dark:WindenCave ;
@@ -1664,7 +1664,7 @@ dark:MadsNielsen rdf:type owl:NamedIndividual ,
 ###  https://w3id.org/dark-ontology/MadsNielsenDisappearance_1986
 dark:MadsNielsenDisappearance_1986 rdf:type owl:NamedIndividual ,
                                             dark:DisappearanceEvent ;
-                                   <http://www.w3id.org/dark-ontology/occursInReality> dark:FirstReality ;
+                                   <https://w3id.org/dark-ontology/occursInReality> dark:FirstReality ;
                                    dark:hasParticipant dark:Mads ;
                                    dark:hasParticipant dark:Noah ;
                                    dark:hasParticipant dark:Helge ;
@@ -1688,7 +1688,7 @@ dark:Magnus rdf:type owl:NamedIndividual ,
 ###  https://w3id.org/dark-ontology/MarthaMeetsEva_2019
 dark:MarthaMeetsEva_2019 rdf:type owl:NamedIndividual ,
                                   dark:MeetingEvent ;
-                         <http://www.w3id.org/dark-ontology/occursInReality> dark:FirstReality ;
+                         <https://w3id.org/dark-ontology/occursInReality> dark:FirstReality ;
                          dark:hasParticipant dark:Eva ,
                                              dark:Martha_2019_EvaWorld ;
                          dark:occursAtPlace dark:EritLuxHeadquarters ;
@@ -1711,7 +1711,7 @@ dark:MagnusNielsen rdf:type owl:NamedIndividual ,
 dark:MarthaNielsen_AdamWorld rdf:type owl:NamedIndividual ,
                                       dark:Person ;
                              owl:differentFrom dark:MarthaNielsen_EvaWorld ;
-                             <http://www.W3id.org/dark-ontology/hasAlternateWorldCounterpart> dark:MarthaNielsen_EvaWorld ;
+                             <https://w3id.org/dark-ontology/hasAlternateWorldCounterpart> dark:MarthaNielsen_EvaWorld ;
                              dark:hasCanonicalName "Martha Nielsen" ;
                              rdfs:comment "The persistent personal identity of Martha Nielsen originating from Adam's world."@en ;
                              rdfs:label "Martha Nielsen"@en .
@@ -1729,9 +1729,9 @@ dark:MarthaNielsen_EvaWorld rdf:type owl:NamedIndividual ,
 ###  https://w3id.org/dark-ontology/MarthaTravel01_2019_1888
 dark:MarthaTravel01_2019_1888 rdf:type owl:NamedIndividual ,
                                        dark:TimeTravelEvent ;
-                              <http://www.w3id.org/dark-ontology/arrivesInWorld> dark:AdamWorld ;
-                              <http://www.w3id.org/dark-ontology/departsFromWorld> dark:EvaWorld ;
-                              <http://www.w3id.org/dark-ontology/occursInReality> dark:FirstReality ;
+                              <https://w3id.org/dark-ontology/arrivesInWorld> dark:AdamWorld ;
+                              <https://w3id.org/dark-ontology/departsFromWorld> dark:EvaWorld ;
+                              <https://w3id.org/dark-ontology/occursInReality> dark:FirstReality ;
                               dark:arrivesAtTime dark:Year_1888 ;
                               dark:departsFromTime dark:Year_2019 ;
                               dark:hasTraveler dark:Martha_2019_EvaWorld ;
@@ -1744,9 +1744,9 @@ dark:MarthaTravel01_2019_1888 rdf:type owl:NamedIndividual ,
 ###  https://w3id.org/dark-ontology/MarthaTravel02_1888_2053
 dark:MarthaTravel02_1888_2053 rdf:type owl:NamedIndividual ,
                                        dark:TimeTravelEvent ;
-                              <http://www.w3id.org/dark-ontology/arrivesInWorld> dark:AdamWorld ;
-                              <http://www.w3id.org/dark-ontology/departsFromWorld> dark:AdamWorld ;
-                              <http://www.w3id.org/dark-ontology/occursInReality> dark:FirstReality ;
+                              <https://w3id.org/dark-ontology/arrivesInWorld> dark:AdamWorld ;
+                              <https://w3id.org/dark-ontology/departsFromWorld> dark:AdamWorld ;
+                              <https://w3id.org/dark-ontology/occursInReality> dark:FirstReality ;
                               dark:arrivesAtTime dark:Year_2053 ;
                               dark:departsFromTime dark:Year_1888 ;
                               dark:hasTraveler dark:Martha_2019_EvaWorld ;
@@ -1797,7 +1797,7 @@ dark:Michael_2019 rdf:type owl:NamedIndividual ,
 ###  https://w3id.org/dark-ontology/MikkelDisappearance_2019
 dark:MikkelDisappearance_2019 rdf:type owl:NamedIndividual ,
                                        dark:DisappearanceEvent ;
-                              <http://www.w3id.org/dark-ontology/occursInReality> dark:FirstReality ;
+                              <https://w3id.org/dark-ontology/occursInReality> dark:FirstReality ;
                               dark:hasParticipant dark:Mikkel_2019 ;
                               dark:occursAtPlace dark:WindenCave ;
                               dark:occursAtTime dark:Year_2019 ;
@@ -1873,8 +1873,8 @@ dark:NoahTauber rdf:type owl:NamedIndividual ,
 ###  https://w3id.org/dark-ontology/NoahTravel01_2020_1920
 dark:NoahTravel01_2020_1920 rdf:type owl:NamedIndividual ,
                                      dark:TimeTravelEvent ;
-                            <http://www.w3id.org/dark-ontology/arrivesInWorld> dark:AdamWorld ;
-                            <http://www.w3id.org/dark-ontology/departsFromWorld> dark:AdamWorld ;
+                            <https://w3id.org/dark-ontology/arrivesInWorld> dark:AdamWorld ;
+                            <https://w3id.org/dark-ontology/departsFromWorld> dark:AdamWorld ;
                             dark:arrivesAtTime dark:Year_1920 ;
                             dark:departsFromTime dark:Year_2020 ;
                             dark:hasTraveler dark:Noah ;
@@ -1903,8 +1903,8 @@ dark:OldClaudia rdf:type owl:NamedIndividual ,
 ###  https://w3id.org/dark-ontology/OldClaudiaTravel01_2053_1987
 dark:OldClaudiaTravel01_2053_1987 rdf:type owl:NamedIndividual ,
                                            dark:TimeTravelEvent ;
-                                  <http://www.w3id.org/dark-ontology/arrivesInWorld> dark:AdamWorld ;
-                                  <http://www.w3id.org/dark-ontology/departsFromWorld> dark:AdamWorld ;
+                                  <https://w3id.org/dark-ontology/arrivesInWorld> dark:AdamWorld ;
+                                  <https://w3id.org/dark-ontology/departsFromWorld> dark:AdamWorld ;
                                   dark:arrivesAtTime dark:Year_1987 ;
                                   dark:departsFromTime dark:Year_2053 ;
                                   dark:hasTraveler dark:OldClaudia ;
@@ -1917,8 +1917,8 @@ dark:OldClaudiaTravel01_2053_1987 rdf:type owl:NamedIndividual ,
 ###  https://w3id.org/dark-ontology/OldClaudiaTravel02_1987_1954
 dark:OldClaudiaTravel02_1987_1954 rdf:type owl:NamedIndividual ,
                                            dark:TimeTravelEvent ;
-                                  <http://www.w3id.org/dark-ontology/arrivesInWorld> dark:AdamWorld ;
-                                  <http://www.w3id.org/dark-ontology/departsFromWorld> dark:AdamWorld ;
+                                  <https://w3id.org/dark-ontology/arrivesInWorld> dark:AdamWorld ;
+                                  <https://w3id.org/dark-ontology/departsFromWorld> dark:AdamWorld ;
                                   dark:arrivesAtTime dark:Year_1954 ;
                                   dark:departsFromTime dark:Year_1987 ;
                                   dark:hasTraveler dark:OldClaudia ;
@@ -1941,8 +1941,8 @@ dark:OldHelge rdf:type owl:NamedIndividual ,
 ###  https://w3id.org/dark-ontology/OldHelgeTravel01_2019_1986
 dark:OldHelgeTravel01_2019_1986 rdf:type owl:NamedIndividual ,
                                          dark:TimeTravelEvent ;
-                                <http://www.w3id.org/dark-ontology/arrivesInWorld> dark:AdamWorld ;
-                                <http://www.w3id.org/dark-ontology/departsFromWorld> dark:AdamWorld ;
+                                <https://w3id.org/dark-ontology/arrivesInWorld> dark:AdamWorld ;
+                                <https://w3id.org/dark-ontology/departsFromWorld> dark:AdamWorld ;
                                 dark:arrivesAtTime dark:Year_1986 ;
                                 dark:departsFromTime dark:Year_2019 ;
                                 dark:hasTraveler dark:OldHelge ;
@@ -2017,7 +2017,7 @@ dark:ReginaTiedemann rdf:type owl:NamedIndividual ,
 
 ###  https://w3id.org/dark-ontology/SecondReality
 dark:SecondReality rdf:type owl:NamedIndividual ,
-                            <http://www.w3id.org/dark-ontology/Reality> ;
+                            <https://w3id.org/dark-ontology/Reality> ;
                    owl:differentFrom dark:ThirdReality ;
                    rdfs:comment "The second narrative branch associated with an alternative unfolding of events within the temporal knot."@en ;
                    rdfs:label "Second reality"@en .
@@ -2066,9 +2066,9 @@ dark:SiljaTiedemann rdf:type owl:NamedIndividual ,
 ###  https://w3id.org/dark-ontology/StrangerTravel01_2052_2019
 dark:StrangerTravel01_2052_2019 rdf:type owl:NamedIndividual ,
                                          dark:TimeTravelEvent ;
-                                <http://www.w3id.org/dark-ontology/arrivesInWorld> dark:AdamWorld ;
-                                <http://www.w3id.org/dark-ontology/departsFromWorld> dark:AdamWorld ;
-                                <http://www.w3id.org/dark-ontology/occursInReality> dark:FirstReality ;
+                                <https://w3id.org/dark-ontology/arrivesInWorld> dark:AdamWorld ;
+                                <https://w3id.org/dark-ontology/departsFromWorld> dark:AdamWorld ;
+                                <https://w3id.org/dark-ontology/occursInReality> dark:FirstReality ;
                                 dark:arrivesAtTime dark:Year_2019 ;
                                 dark:departsFromTime dark:Year_2052 ;
                                 dark:hasTraveler dark:TheStranger ;
@@ -2081,9 +2081,9 @@ dark:StrangerTravel01_2052_2019 rdf:type owl:NamedIndividual ,
 ###  https://w3id.org/dark-ontology/StrangerTravel02_2019_1986
 dark:StrangerTravel02_2019_1986 rdf:type owl:NamedIndividual ,
                                          dark:TimeTravelEvent ;
-                                <http://www.w3id.org/dark-ontology/arrivesInWorld> dark:AdamWorld ;
-                                <http://www.w3id.org/dark-ontology/departsFromWorld> dark:AdamWorld ;
-                                <http://www.w3id.org/dark-ontology/occursInReality> dark:FirstReality ;
+                                <https://w3id.org/dark-ontology/arrivesInWorld> dark:AdamWorld ;
+                                <https://w3id.org/dark-ontology/departsFromWorld> dark:AdamWorld ;
+                                <https://w3id.org/dark-ontology/occursInReality> dark:FirstReality ;
                                 dark:arrivesAtPlace dark:WindenCave ;
                                 dark:arrivesAtTime dark:Year_1986 ;
                                 dark:departsFromPlace dark:WindenCave ;
@@ -2098,9 +2098,9 @@ dark:StrangerTravel02_2019_1986 rdf:type owl:NamedIndividual ,
 ###  https://w3id.org/dark-ontology/StrangerTravel03_1986_2019
 dark:StrangerTravel03_1986_2019 rdf:type owl:NamedIndividual ,
                                          dark:TimeTravelEvent ;
-                                <http://www.w3id.org/dark-ontology/arrivesInWorld> dark:AdamWorld ;
-                                <http://www.w3id.org/dark-ontology/departsFromWorld> dark:AdamWorld ;
-                                <http://www.w3id.org/dark-ontology/occursInReality> dark:FirstReality ;
+                                <https://w3id.org/dark-ontology/arrivesInWorld> dark:AdamWorld ;
+                                <https://w3id.org/dark-ontology/departsFromWorld> dark:AdamWorld ;
+                                <https://w3id.org/dark-ontology/occursInReality> dark:FirstReality ;
                                 dark:arrivesAtTime dark:Year_2019 ;
                                 dark:departsFromTime dark:Year_1986 ;
                                 dark:hasTraveler dark:TheStranger ;
@@ -2113,9 +2113,9 @@ dark:StrangerTravel03_1986_2019 rdf:type owl:NamedIndividual ,
 ###  https://w3id.org/dark-ontology/StrangerTravel04_2020_1987
 dark:StrangerTravel04_2020_1987 rdf:type owl:NamedIndividual ,
                                          dark:TimeTravelEvent ;
-                                <http://www.w3id.org/dark-ontology/arrivesInWorld> dark:AdamWorld ;
-                                <http://www.w3id.org/dark-ontology/departsFromWorld> dark:AdamWorld ;
-                                <http://www.w3id.org/dark-ontology/occursInReality> dark:FirstReality ;
+                                <https://w3id.org/dark-ontology/arrivesInWorld> dark:AdamWorld ;
+                                <https://w3id.org/dark-ontology/departsFromWorld> dark:AdamWorld ;
+                                <https://w3id.org/dark-ontology/occursInReality> dark:FirstReality ;
                                 dark:arrivesAtTime dark:Year_1987 ;
                                 dark:departsFromTime dark:Year_2020 ;
                                 dark:hasTraveler dark:Hannah ,
@@ -2129,9 +2129,9 @@ dark:StrangerTravel04_2020_1987 rdf:type owl:NamedIndividual ,
 ###  https://w3id.org/dark-ontology/StrangerTravel05_1987_2020
 dark:StrangerTravel05_1987_2020 rdf:type owl:NamedIndividual ,
                                          dark:TimeTravelEvent ;
-                                <http://www.w3id.org/dark-ontology/arrivesInWorld> dark:AdamWorld ;
-                                <http://www.w3id.org/dark-ontology/departsFromWorld> dark:AdamWorld ;
-                                <http://www.w3id.org/dark-ontology/occursInReality> dark:FirstReality ;
+                                <https://w3id.org/dark-ontology/arrivesInWorld> dark:AdamWorld ;
+                                <https://w3id.org/dark-ontology/departsFromWorld> dark:AdamWorld ;
+                                <https://w3id.org/dark-ontology/occursInReality> dark:FirstReality ;
                                 dark:arrivesAtTime dark:Year_2020 ;
                                 dark:departsFromTime dark:Year_1987 ;
                                 dark:hasTraveler dark:TheStranger ;
@@ -2179,7 +2179,7 @@ dark:TheStranger rdf:type owl:NamedIndividual ,
 
 ###  https://w3id.org/dark-ontology/ThirdReality
 dark:ThirdReality rdf:type owl:NamedIndividual ,
-                           <http://www.w3id.org/dark-ontology/Reality> ;
+                           <https://w3id.org/dark-ontology/Reality> ;
                   rdfs:comment "The narrative branch in which Jonas and Martha reach the origin world and prevent the creation of the temporal knot."@en ;
                   rdfs:label "Third reality"@en .
 
@@ -2255,9 +2255,9 @@ dark:UlrichNielsen rdf:type owl:NamedIndividual ,
 ###  https://w3id.org/dark-ontology/UlrichTravel01_2019_1953
 dark:UlrichTravel01_2019_1953 rdf:type owl:NamedIndividual ,
                                        dark:TimeTravelEvent ;
-                              <http://www.w3id.org/dark-ontology/arrivesInWorld> dark:AdamWorld ;
-                              <http://www.w3id.org/dark-ontology/departsFromWorld> dark:AdamWorld ;
-                              <http://www.w3id.org/dark-ontology/occursInReality> dark:FirstReality ;
+                              <https://w3id.org/dark-ontology/arrivesInWorld> dark:AdamWorld ;
+                              <https://w3id.org/dark-ontology/departsFromWorld> dark:AdamWorld ;
+                              <https://w3id.org/dark-ontology/occursInReality> dark:FirstReality ;
                               dark:arrivesAtPlace dark:WindenCave ;
                               dark:arrivesAtTime dark:Year_1953 ;
                               dark:departsFromPlace dark:WindenCave ;
@@ -2310,7 +2310,7 @@ dark:YasinFriese rdf:type owl:NamedIndividual ,
 ###  https://w3id.org/dark-ontology/YasinFrieseDisappearance_2019
 dark:YasinFrieseDisappearance_2019 rdf:type owl:NamedIndividual ,
                                             dark:DisappearanceEvent ;
-                                   <http://www.w3id.org/dark-ontology/occursInReality> dark:FirstReality ;
+                                   <https://w3id.org/dark-ontology/occursInReality> dark:FirstReality ;
                                    dark:hasParticipant dark:Yasin ;
                                    dark:hasParticipant dark:Noah ;
                                    dark:hasParticipant dark:Helge ;
@@ -2451,8 +2451,8 @@ dark:YoungHelge rdf:type owl:NamedIndividual ,
 ###  https://w3id.org/dark-ontology/YoungHelgeTravel01_1953_1986
 dark:YoungHelgeTravel01_1953_1986 rdf:type owl:NamedIndividual ,
                                            dark:TimeTravelEvent ;
-                                  <http://www.w3id.org/dark-ontology/arrivesInWorld> dark:AdamWorld ;
-                                  <http://www.w3id.org/dark-ontology/departsFromWorld> dark:AdamWorld ;
+                                  <https://w3id.org/dark-ontology/arrivesInWorld> dark:AdamWorld ;
+                                  <https://w3id.org/dark-ontology/departsFromWorld> dark:AdamWorld ;
                                   dark:arrivesAtTime dark:Year_1986 ;
                                   dark:departsFromPlace dark:DopplerBunker ;
                                   dark:departsFromTime dark:Year_1953 ;
@@ -2466,8 +2466,8 @@ dark:YoungHelgeTravel01_1953_1986 rdf:type owl:NamedIndividual ,
 ###  https://w3id.org/dark-ontology/YoungHelgeTravel02_1986_1954
 dark:YoungHelgeTravel02_1986_1954 rdf:type owl:NamedIndividual ,
                                            dark:TimeTravelEvent ;
-                                  <http://www.w3id.org/dark-ontology/arrivesInWorld> dark:AdamWorld ;
-                                  <http://www.w3id.org/dark-ontology/departsFromWorld> dark:AdamWorld ;
+                                  <https://w3id.org/dark-ontology/arrivesInWorld> dark:AdamWorld ;
+                                  <https://w3id.org/dark-ontology/departsFromWorld> dark:AdamWorld ;
                                   dark:arrivesAtPlace dark:DopplerBunker ;
                                   dark:arrivesAtTime dark:Year_1954 ;
                                   dark:departsFromPlace dark:DopplerBunker ;
